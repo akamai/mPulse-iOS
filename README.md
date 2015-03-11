@@ -1,5 +1,5 @@
 # mPulse-iOS
-iOS tracking library for mPulse Analytics
+iOS library for mPulse Analytics
 
 mPulse supports `Cocoapods` for easy installation.
 
