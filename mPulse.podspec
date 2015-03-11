@@ -6,7 +6,8 @@ Pod::Spec.new do |s|
   s.summary        = "iOS tracking library for mPulse Analytics"
   s.homepage       = "https://github.com/SOASTA/mPulse-iOS"
   s.social_media_url = 'https://twitter.com/cloudtest'
-  s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS", :tag => s.version }
+# s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS", :tag => s.version }
+  s.source         = { :git => "git@github.com:SOASTA/mPulse-iOS.git", :tag => s.version }
   s.author         = { "SOASTA" => "support@soasta.com" }
 
   s.platform       = :ios
