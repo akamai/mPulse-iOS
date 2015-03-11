@@ -1,20 +1,19 @@
 Pod::Spec.new do |s|
 
   s.name           = "mPulse"
-  s.version        = "0.0.2"
+  s.version        = "0.0.3"
   s.license        = { :type => 'Apache License, Version 2.0', :file => 'LICENSE'}
   s.summary        = "iOS tracking library for mPulse Analytics"
   s.homepage       = "https://github.com/SOASTA/mPulse-iOS"
   s.social_media_url = 'https://twitter.com/cloudtest'
-# s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS", :tag => s.version }
-  s.source         = { :git => "git@github.com:SOASTA/mPulse-iOS.git", :tag => s.version }
+  s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS.git", :tag => s.version }
   s.author         = { "SOASTA" => "support@soasta.com" }
 
   s.platform       = :ios
   s.ios.deployment_target = "6.0"
 
   s.source_files   = 'include/*.h'
-  s.public_header_files = 'include/MPulse.h'
+  s.public_header_files = 'include/*.h'
   s.preserve_paths = 'libMPulse.a'
   s.ios.vendored_library = 'libMPulse.a'
   s.libraries      = 'z', 'stdc++', 'MPulse'
