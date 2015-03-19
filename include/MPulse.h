@@ -10,6 +10,7 @@
 
 @interface MPulse : NSObject
 
+// mPulse Build Number -
 extern NSString* const BOOMERANG_VERSION;
 
 /**
@@ -43,18 +44,44 @@ extern NSString* const BOOMERANG_VERSION;
  */+(MPulse *) sharedInstance;
 
 /**
- * @name    ViewGroup
- * @brief   Property used to get or set the value of ViewGroup.
+ * @name    Get ViewGroup
+ * @brief   Returns the current value of ViewGroup.
  *
- * This API lets users get or set the value of ViewGroup which is sent with every beacon to the server.
+ * This API lets users retreive the value of currently set view group value.
  *
  * Example Usage:
  * @code
- *    NSString* viewGroup = [[MPulse sharedInstance] viewGroup];
- *    [[MPulse sharedInstance] setViewGroup:@"testViewGroup"];
+ *    NSString *viewGroup = [[MPulse sharedInstance] getViewGroup];
  * @endcode
  */
-@property(readwrite) NSString* viewGroup;
+-(NSString *) getViewGroup;
+
+/**
+ * @name    Set ViewGroup
+ * @brief   Sets the value of ViewGroup.
+ *
+ * This API lets users set the value of ViewGroup which will be a part of all future beacons sent to server.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] setViewGroup:@"ViewGroup1"];
+ * @endcode
+ */
+-(void) setViewGroup:(NSString *)viewGroup;
+
+
+/**
+ * @name    Reset ViewGroup
+ * @brief   Resets the currently set ViewGroup value.
+ *
+ * This API lets users reset the current set ViewGroup value.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] resetViewGroup];
+ * @endcode
+ */
+-(void) resetViewGroup;
 
 /**
  * @name    Enable MPulse
@@ -84,9 +111,9 @@ extern NSString* const BOOMERANG_VERSION;
 
 /**
  * @name    Start Timer
- * @brief   Starts Custom Timer and returns the Timer ID.
+ * @brief   Starts Timer and returns the Timer ID.
  *
- * This API lets users start a Custom Timer specified by timerName and returns
+ * This API lets users start a Timer specified by timerName and returns
  * the timerID which can be used to stop this Timer.
  *
  * Example Usage:
@@ -98,9 +125,9 @@ extern NSString* const BOOMERANG_VERSION;
 
 /**
  * @name    Cancel Timer
- * @brief   Cancels Custom Timer so that a timer beacon is not sent to the server.
+ * @brief   Cancels Timer so that a timer beacon is not sent to the server.
  *
- * This API lets users cancel any previously started Custom Timer specified by the timerID.
+ * This API lets users cancel any previously started Timer specified by the timerID.
  *
  * Example Usage:
  * @code
@@ -111,9 +138,9 @@ extern NSString* const BOOMERANG_VERSION;
 
 /**
  * @name    Stop Timer
- * @brief   Stops Custom Timer and prepares the timer beacon to be sent to server.
+ * @brief   Stops Timer and prepares the timer beacon to be sent to server.
  *
- * This API lets users stop a previously started Custom Timer specified by the timerID.
+ * This API lets users stop a previously started Timer specified by the timerID.
  * This also prepares the timer beacon to be sent to the server.
  *
  * Example Usage:
@@ -124,25 +151,37 @@ extern NSString* const BOOMERANG_VERSION;
 -(void) stopTimer:(NSString *) timerID;
 
 /**
- * @name    Set Metric
- * @brief   Sets the value of a Custom Metric and prepares the metric beacon to be sent to server.
+ * @name    Send Timer
+ * @brief   Sends the value of a Timer to server.
  *
- * This API lets users set the value of a Custom Metric specified by the metricName.
- * This also prepares the metric beacon to be sent to the server.
+ * This API lets users send the value of a Timer specified by the timerName.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] setMetric:@"CustomMetric" value:23];
+ *    [[MPulse sharedInstance] sendTimer:@"CustomTimer" value:200];
  * @endcode
  */
--(void) setMetric:(NSString *)metricName value:(NSNumber *)value;
+
+-(void) sendTimer:(NSString *)timerName value:(NSTimeInterval)value;
+
+/**
+ * @name    Send Metric
+ * @brief   Sends the value of a Metric to server.
+ *
+ * This API lets users send the value of a Metric specified by the metricName.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] sendMetric:@"CustomMetric" value:23];
+ * @endcode
+ */
+-(void) sendMetric:(NSString *)metricName value:(NSNumber *)value;
 
 /**
  * @name    Set Dimension
- * @brief   Sets the value of a Custom Dimension and prepares the dimension beacon to be sent to server.
+ * @brief   Sets the value of a Dimension.
  *
- * This API lets users set the value of a Custom Dimension specified by the dimensionName.
- * This also prepares the dimension beacon to be sent to the server.
+ * This API lets users set the value of a Dimension specified by the dimensionName.
  *
  * Example Usage:
  * @code
@@ -151,4 +190,16 @@ extern NSString* const BOOMERANG_VERSION;
  */
 -(void) setDimension:(NSString *)dimensionName value:(NSString *)value;
 
+/**
+ * @name    Reset Dimension
+ * @brief   Resets the value of a Dimension.
+ *
+ * This API lets users reset the value of a Dimension specified by the dimensionName.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] resetDimension:@"CustomDimension"];
+ * @endcode
+ */
+-(void) resetDimension:(NSString *)dimensionName;
 @end
