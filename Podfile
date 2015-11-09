@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.0'
+xcodeproj './Boomerang.xcodeproj'
+pod 'AFNetworking', '1.3.3'
+pod 'SDWebImage', '3.7.3'
+link_with 'BoomerangTestsWithPods'

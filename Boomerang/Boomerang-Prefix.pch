@@ -1,0 +1,41 @@
+//
+// Prefix header for all source files of the 'Boomerang' target in the 'Boomerang' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import "MPLog.h"
+#import "MPASLLogger.h"
+#import "MPTTYLogger.h"
+#endif
+
+// Instead of defining the value of int mpLogLevel in each class, we can define the Global log levels for Lumberjack here.
+#ifdef DEBUG
+#define GLOBAL_LOG_LEVEL LOG_LEVEL_VERBOSE
+#define LOCAL_LOG_LEVEL GLOBAL_LOG_LEVEL
+#define LOG_LEVEL_DEF LOCAL_LOG_LEVEL
+#else
+#define GLOBAL_LOG_LEVEL LOG_LEVEL_INFO
+#define LOCAL_LOG_LEVEL GLOBAL_LOG_LEVEL
+#define LOG_LEVEL_DEF LOCAL_LOG_LEVEL
+#endif
+
+// TTLog() is for internal debug output that should only be seen by TouchTest developers.
+// It will be removed from Release builds.
+#ifdef TOUCHTESTDRIVER_DEBUG
+#define TTLog( s, ... ) NSLog( @"<%@:(%d)> [%@] %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [[NSThread currentThread] description], [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define TTLog( s, ... )
+#endif
+
+// TTLogInfo() is for output that we want customers to see in their own apps.  Use sparingly!
+#define TTLogInfo( s, ... ) NSLog( @"<TouchTestDriver> %@", [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+// Sometimes Lumberjack doesn't compile. For such cases, developers can use MPLogMacro().
+// MPLogMacro() is for internal debug output that should only be seen by developers.
+// It will be removed from Release builds.
+#ifdef MPULSE_DEBUG
+#define MPLogMacro( s, ... ) NSLog( @"<%@:(%d)> [%@] %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [[NSThread currentThread] description], [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define MPLogMacro( s, ... )
+#endif

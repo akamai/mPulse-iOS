@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0
+apiversion: 2
+description: My module
+author: SOASTA, Inc.
+license: Copyright 2013 SOASTA, Inc.  All rights reserved.
+copyright: SOASTA, Inc.
+
+
+# these should not be edited
+name: Boomerang
+moduleid: com.soasta.boomerang
+guid: 8921c177-4f15-4d80-8e24-4aa5808491d6
+platform: iphone
+minsdk: 3.0.0.GA
