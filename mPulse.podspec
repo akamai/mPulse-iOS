@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name           = "mPulse"
-  s.version        = "1.0.1"
+  s.version        = "1.1.0"
   s.license        = { :type => 'Apache License, Version 2.0', :file => 'LICENSE'}
   s.summary        = "iOS library for mPulse Analytics"
   s.homepage       = "https://github.com/SOASTA/mPulse-iOS"
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'include/*.h'
   s.preserve_paths = 'libMPulse.a'
   s.ios.vendored_library = 'libMPulse.a'
-  s.libraries      = 'z', 'c++', 'MPulse'
+  s.libraries      = 'z', 'c++', 'MPulse', 'MPulseSim'
   s.frameworks     = 'CoreLocation', 'CoreTelephony', 'SystemConfiguration'
   s.requires_arc   = true
 
