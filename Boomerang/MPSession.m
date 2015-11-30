@@ -45,11 +45,10 @@ static MPSession *sessionInstance = NULL; // Singleton
   if (!_started || [self expired])
   {
     MPLogDebug(@"Session has expired. Resetting network request counts.");
-    _started = NO;
-    _totalNetworkRequestCount = 0;
-    _totalNetworkRequestDuration = 0;
+
+    [self reset];
   }
-  
+
   if (!_started)
   {
     NSString *sessionID = [[notification userInfo] objectForKey:SESSION_ID_KEY];
@@ -88,6 +87,15 @@ static MPSession *sessionInstance = NULL; // Singleton
 {
   NSTimeInterval sessionExpirationTime = [[MPConfig sharedInstance] sessionExpirationTime];
   return fabs([_lastBeaconTime timeIntervalSinceNow]) > sessionExpirationTime;
+}
+
+-(void) reset
+{
+  _totalNetworkRequestCount = 0;
+  _totalNetworkRequestDuration = 0;
+  _started = NO;
+  
+  MPLogDebug(@"Session %@ reset", _ID);
 }
 
 @end

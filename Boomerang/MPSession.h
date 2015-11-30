@@ -17,6 +17,7 @@
 
 +(MPSession *) sharedInstance;
 -(void) addBeacon:(MPBeacon*) beacon;
+-(void) reset;
 
 @property (readonly) int totalNetworkRequestDuration;
 @property (readonly) int totalNetworkRequestCount;
