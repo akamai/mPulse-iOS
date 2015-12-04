@@ -9,6 +9,7 @@
 #import "MPNetworkCallBeacon.h"
 #import "MPBeaconCollector.h"
 #import "MPConfig.h"
+#import "MPSession.h"
 
 @implementation MPNetworkCallBeacon
 {
