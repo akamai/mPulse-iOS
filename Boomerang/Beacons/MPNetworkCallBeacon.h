@@ -11,6 +11,8 @@
 
 @interface MPNetworkCallBeacon : MPBeacon
 
+@property int sessionToken;
+
 +(id) initWithURL:(NSURL*)url;
 
 -(void) endRequestWithBytes:(NSUInteger)bytes;

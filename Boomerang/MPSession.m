@@ -44,8 +44,7 @@ static MPSession *sessionInstance = NULL; // Singleton
   // If the session has expired, reset network request duration and count.
   if (!_started || [self expired])
   {
-    MPLogDebug(@"Session has expired. Resetting network request counts.");
-
+    MPLogDebug(@"Session is new or has expired. Resetting network request counts.");
     [self reset];
   }
 
@@ -55,7 +54,7 @@ static MPSession *sessionInstance = NULL; // Singleton
     if (sessionID)
     {
       [self initWithSessionID:sessionID];
-      MPLogInfo(@"Boomerang session has started.");
+      MPLogInfo(@"Boomerang session %@ has started.", sessionID);
       
       // App has finished launching, send the first beacon
       [MPAppFinishedLaunchingBeacon sendBeacon];
@@ -95,7 +94,10 @@ static MPSession *sessionInstance = NULL; // Singleton
   _totalNetworkRequestDuration = 0;
   _started = NO;
   
-  MPLogDebug(@"Session %@ reset", _ID);
+  // increment the session token
+  _token++;
+
+  MPLogDebug(@"Session %@ reset (token %d)", _ID, _token);
 }
 
 @end

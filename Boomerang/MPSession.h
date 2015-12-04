@@ -25,5 +25,6 @@
 @property (readonly) NSDate* startTime;
 @property (readonly) NSDate* lastBeaconTime;
 @property (readonly) BOOL started;
+@property (readonly) int token;
 
 @end

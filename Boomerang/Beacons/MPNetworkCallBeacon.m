@@ -33,6 +33,9 @@
     beacon.networkErrorCode = 0;
     beacon.errorMessage = @"";
 
+    // save the session ID so we know if it's reset later
+    beacon.sessionToken = [MPSession sharedInstance].token;
+
     MPLogDebug(@"Initialized network beacon: %@", beacon);
   }
 
@@ -45,9 +48,15 @@
   _contentSize = bytes;
 
   self.requestDuration = [_endTime timeIntervalSinceDate:self.timestamp];
-  
+
+  if (_sessionToken != [MPSession sharedInstance].token)
+  {
+    MPLogDebug(@"Skipping \"success\" network beacon (old session token %d)", _sessionToken);
+    return;
+  }
+
   MPLogDebug(@"Adding \"success\" network beacon to BatchRecord: [URL=%@, contentSize=%lu, requestDuration=%f]", self.url, (unsigned long)_contentSize, self.requestDuration);
-  
+
   [[MPBeaconCollector sharedInstance] addBeacon:self];
 }
 
@@ -58,9 +67,15 @@
   self.errorMessage = errorMessage;
 
   self.requestDuration = [_endTime timeIntervalSinceDate:self.timestamp];
-  
+
+  if (_sessionToken != [MPSession sharedInstance].token)
+  {
+    MPLogDebug(@"Skipping \"success\" network beacon (old session token %d)", _sessionToken);
+    return;
+  }
+
   MPLogDebug(@"Adding \"failure\" network beacon to BatchRecord: [URL=%@, networkErrorCode=%d, errorMessage=%@]", self.url, self.networkErrorCode, self.errorMessage);
-  
+
   [[MPBeaconCollector sharedInstance] addBeacon:self];
 }
 
