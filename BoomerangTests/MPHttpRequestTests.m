@@ -41,8 +41,9 @@ NSString * const LONG_DOWNLOAD_URL_DOMAIN = @"http://67.111.67.24/";
 
 // Wait for beacon to be added after connection - ensures MPBeaconCollector has records.
 static int const BEACON_ADD_WAIT = 5;
-// Timeout is 30 seconds because we are running in simulator
-// iOS devices have 4 minute timeout - set this to 300 seconds.
+// How long to set the session to timeout
+static int const SESSION_TIMEOUT_INTERVAL = 10;
+// How long to wait for a timed-out beacon to be sent
 static int const SOCKET_TIMEOUT_ASYNC_WAIT = 30;
 // Connection time out : 30 seconds
 static int const CONNECTION_TIMEOUT_ASYNC_WAIT = 30;
@@ -702,6 +703,10 @@ static BOOL networkRequestComplete = NO;
   
   // grab the shared session
   NSURLSession* session = [NSURLSession sharedSession];
+  
+  // set our timeouts
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
 
   // NOTE they're specifically asking for dataTaskWithRequest: without a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
@@ -731,6 +736,10 @@ static BOOL networkRequestComplete = NO;
   // grab the shared session
   NSURLSession* session = [NSURLSession sharedSession];
   
+  // set our timeouts
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
+
   NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     [self checkDataResponse:data
                    response:response
@@ -754,8 +763,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   // NOTE they're specifically asking for dataTaskWithURL: without a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
@@ -781,8 +790,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   NSURLSessionDataTask* task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     [self checkDataResponse:data
@@ -812,8 +821,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   // NOTE they're specifically asking for uploadTaskWithRequest:fromFile: without a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
@@ -844,8 +853,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   NSURLSessionUploadTask* task = [session uploadTaskWithRequest:request
                                                      fromFile:url
@@ -877,8 +886,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   // NOTE they're specifically asking for uploadTaskWithRequest:fromData: without a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
@@ -909,8 +918,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   NSURLSessionUploadTask* task = [session uploadTaskWithRequest:request
                                                      fromData:[[NSData alloc] init]
@@ -939,6 +948,10 @@ static BOOL networkRequestComplete = NO;
   // grab the shared session
   NSURLSession* session = [NSURLSession sharedSession];
   
+  // set our timeouts
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
+
   // NOTE they're specifically asking for downloadTaskWithRequest: without a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
   NSURLSessionDownloadTask* task = [session downloadTaskWithRequest:request];
@@ -967,6 +980,10 @@ static BOOL networkRequestComplete = NO;
   // grab the shared session
   NSURLSession* session = [NSURLSession sharedSession];
   
+  // set our timeouts
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
+
   NSURLSessionDownloadTask* task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
     [self checkDataResponse:nil
                    response:response
@@ -990,8 +1007,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   // NOTE they're specifically asking for downloadTaskWithURL: without a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
@@ -1017,8 +1034,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   NSURLSessionDownloadTask* task = [session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
     [self checkDataResponse:nil
@@ -1055,8 +1072,8 @@ static BOOL networkRequestComplete = NO;
                                                    delegateQueue:nil];
 
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   // NOTE they're specifically asking for uploadTaskWithStreamedRequest, which doesn't a completionHandler, so we need to test
   // that.  However, this doesn't give us the ability to look at the response.
@@ -1779,8 +1796,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   NSURLSessionDownloadTask* task = [session downloadTaskWithURL:url];
   
@@ -1827,8 +1844,8 @@ static BOOL networkRequestComplete = NO;
   NSURLSession* session = [NSURLSession sharedSession];
   
   // set our timeouts
-  session.configuration.timeoutIntervalForRequest = 30;
-  session.configuration.timeoutIntervalForResource = 30;
+  session.configuration.timeoutIntervalForRequest = SESSION_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SESSION_TIMEOUT_INTERVAL;
   
   NSURLSessionDownloadTask* task = [session downloadTaskWithURL:url];
   
