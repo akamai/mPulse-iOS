@@ -10,7 +10,7 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 7950.23
+// mPulse Build Number - 8282.40.109
 extern NSString* const BOOMERANG_VERSION;
 
 /**
