@@ -447,6 +447,14 @@
 		6D690B19190715610086B220 /* NSString+MPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D690B13190715610086B220 /* NSString+MPExtensions.m */; };
 		6D690B1B190715610086B220 /* NSString+MPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D690B13190715610086B220 /* NSString+MPExtensions.m */; };
 		6D690B1C190715610086B220 /* NSString+MPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D690B13190715610086B220 /* NSString+MPExtensions.m */; };
+		6D6AF34A1C20A38E008B51B4 /* TTDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6AF3481C20A38E008B51B4 /* TTDevice.h */; };
+		6D6AF34B1C20A38E008B51B4 /* TTDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6AF3481C20A38E008B51B4 /* TTDevice.h */; };
+		6D6AF34C1C20A38E008B51B4 /* TTDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6AF3481C20A38E008B51B4 /* TTDevice.h */; };
+		6D6AF34D1C20A38E008B51B4 /* TTDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6AF3481C20A38E008B51B4 /* TTDevice.h */; };
+		6D6AF34E1C20A38E008B51B4 /* TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AF3491C20A38E008B51B4 /* TTDevice.m */; };
+		6D6AF34F1C20A38E008B51B4 /* TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AF3491C20A38E008B51B4 /* TTDevice.m */; };
+		6D6AF3501C20A38E008B51B4 /* TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AF3491C20A38E008B51B4 /* TTDevice.m */; };
+		6D6AF3511C20A38E008B51B4 /* TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AF3491C20A38E008B51B4 /* TTDevice.m */; };
 		6D88F05C19357FC60039B631 /* MPTouchAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D88F05A19357FC60039B631 /* MPTouchAction.h */; };
 		6D88F05D19357FC60039B631 /* MPTouchAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D88F05A19357FC60039B631 /* MPTouchAction.h */; };
 		6D88F05E19357FC60039B631 /* MPTouchAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D88F05A19357FC60039B631 /* MPTouchAction.h */; };
@@ -1051,6 +1059,8 @@
 		6D570A971908812A00DAB8EE /* MPTouchConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTouchConfig.m; path = Config/MPTouchConfig.m; sourceTree = "<group>"; };
 		6D690B12190715610086B220 /* NSString+MPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MPExtensions.h"; sourceTree = "<group>"; };
 		6D690B13190715610086B220 /* NSString+MPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MPExtensions.m"; sourceTree = "<group>"; };
+		6D6AF3481C20A38E008B51B4 /* TTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTDevice.h; path = ../../TouchTestDriver/TouchTestDriver/Classes/TTDevice.h; sourceTree = "<group>"; };
+		6D6AF3491C20A38E008B51B4 /* TTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTDevice.m; path = ../../TouchTestDriver/TouchTestDriver/Classes/TTDevice.m; sourceTree = "<group>"; };
 		6D88F05A19357FC60039B631 /* MPTouchAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTouchAction.h; path = Config/MPTouchAction.h; sourceTree = "<group>"; };
 		6D88F05B19357FC60039B631 /* MPTouchAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTouchAction.m; path = Config/MPTouchAction.m; sourceTree = "<group>"; };
 		6D88F06719357FE70039B631 /* MPTouchCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTouchCondition.h; path = Config/MPTouchCondition.h; sourceTree = "<group>"; };
@@ -1439,6 +1449,8 @@
 		5B90061A1A7EEC940099D2F7 /* TouchTestDriver */ = {
 			isa = PBXGroup;
 			children = (
+				6D6AF3481C20A38E008B51B4 /* TTDevice.h */,
+				6D6AF3491C20A38E008B51B4 /* TTDevice.m */,
 				5B9006261A7EED020099D2F7 /* Elements */,
 				5B90061B1A7EEC9C0099D2F7 /* Locator */,
 			);
@@ -1767,6 +1779,7 @@
 				6D690B15190715610086B220 /* NSString+MPExtensions.h in Headers */,
 				5B89EC921929B1DF00F85499 /* MPLog.h in Headers */,
 				2C912A561663FF3900163C98 /* MPulse.h in Headers */,
+				6D6AF34B1C20A38E008B51B4 /* TTDevice.h in Headers */,
 				F78AF586190F629C00915617 /* atomicops_internals_x86_msvc.h in Headers */,
 				5B31D8561A75CC7500941F62 /* MPulsePrivate.h in Headers */,
 				F78AF4A2190F629C00915617 /* descriptor.pb.h in Headers */,
@@ -1946,6 +1959,7 @@
 				6D0EBBC118D10BB500FB62AA /* MPUtilities.h in Headers */,
 				F78AF4A9190F629C00915617 /* descriptor_database.h in Headers */,
 				F78AF5A7190F629C00915617 /* stl_util.h in Headers */,
+				6D6AF34A1C20A38E008B51B4 /* TTDevice.h in Headers */,
 				F78AF516190F629C00915617 /* zero_copy_stream.h in Headers */,
 				6D570A981908812A00DAB8EE /* MPTouchConfig.h in Headers */,
 				F78AF4F9190F629C00915617 /* package_info.h in Headers */,
@@ -2071,6 +2085,7 @@
 				F78AF4AB190F629C00915617 /* descriptor_database.h in Headers */,
 				F78AF5A9190F629C00915617 /* stl_util.h in Headers */,
 				F78AF518190F629C00915617 /* zero_copy_stream.h in Headers */,
+				6D6AF34C1C20A38E008B51B4 /* TTDevice.h in Headers */,
 				6D570A9A1908812A00DAB8EE /* MPTouchConfig.h in Headers */,
 				F78AF4FB190F629C00915617 /* package_info.h in Headers */,
 				F78AF587190F629C00915617 /* atomicops_internals_x86_msvc.h in Headers */,
@@ -2196,6 +2211,7 @@
 				5B1899691911691F009794C1 /* generated_enum_reflection.h in Headers */,
 				5B18997D19116930009794C1 /* gzip_stream.h in Headers */,
 				5B18999719116945009794C1 /* atomicops_internals_mips_gcc.h in Headers */,
+				6D6AF34D1C20A38E008B51B4 /* TTDevice.h in Headers */,
 				5B18996F19116928009794C1 /* message.h in Headers */,
 				5B18996119116907009794C1 /* descriptor.pb.h in Headers */,
 				6D690B17190715610086B220 /* NSString+MPExtensions.h in Headers */,
@@ -2380,6 +2396,7 @@
 				F7A761FE1906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				6D9BE159192581800074F273 /* TT_SBJSON.m in Sources */,
 				F799739A192086F0002BCFAB /* NSNumber+MPExtensions.m in Sources */,
+				6D6AF34F1C20A38E008B51B4 /* TTDevice.m in Sources */,
 				F78AF4C0190F629C00915617 /* extension_set.cc in Sources */,
 				F775D6121907758300EF7369 /* MPBeacon.m in Sources */,
 				F7A761F41906E29100DF0BE5 /* MPBatchRecord.m in Sources */,
@@ -2485,6 +2502,7 @@
 				6D9BE19C192581800074F273 /* TTMethodSwizzle.c in Sources */,
 				F78AF5C8190F629C00915617 /* substitute.cc in Sources */,
 				F78AF581190F629C00915617 /* atomicops_internals_x86_msvc.cc in Sources */,
+				6D6AF34E1C20A38E008B51B4 /* TTDevice.m in Sources */,
 				6D9BE158192581800074F273 /* TT_SBJSON.m in Sources */,
 				F7A761FD1906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				F78AF4FC190F629C00915617 /* printer.cc in Sources */,
@@ -2590,6 +2608,7 @@
 				6D9BE19F192581800074F273 /* TTMethodSwizzle.c in Sources */,
 				F78AF5CB190F629C00915617 /* substitute.cc in Sources */,
 				F78AF584190F629C00915617 /* atomicops_internals_x86_msvc.cc in Sources */,
+				6D6AF3501C20A38E008B51B4 /* TTDevice.m in Sources */,
 				6D9BE15B192581800074F273 /* TT_SBJSON.m in Sources */,
 				F7A762001906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				F78AF4FF190F629C00915617 /* printer.cc in Sources */,
@@ -2752,6 +2771,7 @@
 				5B18993C19102268009794C1 /* MPDemographics.m in Sources */,
 				5B18996E19116928009794C1 /* message.cc in Sources */,
 				6D570AA01908812A00DAB8EE /* MPTouchConfig.m in Sources */,
+				6D6AF3511C20A38E008B51B4 /* TTDevice.m in Sources */,
 				6D3104DE19088926002A05D4 /* MPShutdownEvent.m in Sources */,
 				27EE519918FC64760079D9E7 /* MPTimerBeacon.m in Sources */,
 				271A7FA318FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */,
