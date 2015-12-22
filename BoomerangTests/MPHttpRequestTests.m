@@ -111,10 +111,19 @@ static short const NSURLSUCCESS = 0;
                minDuration:(long)minDuration
           networkErrorCode:(short)networkErrorCode
 {
-  NSArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
+  NSMutableArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
   
   XCTAssertNotEqual(testBeacons, nil);
   
+  // ensure there isn't a rogue AppLaunch beacon, and if so, remove it first
+  if ([testBeacons count] >= 1)
+  {
+    if ([[testBeacons objectAtIndex:0] getBeaconType] == APP_LAUNCH)
+    {
+      [testBeacons removeObjectAtIndex:0];
+    }
+  }
+
   // beacon count
   XCTAssertEqual([testBeacons count], 1, "Beacons count incorrect");
   

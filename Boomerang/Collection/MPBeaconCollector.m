@@ -97,6 +97,8 @@ static MPBeaconCollector *sharedObject = nil;
 {
   @try
   {
+    MPLogDebug(@"MPBeaconCollector: Adding beacon (type #%lu)", (unsigned long)[beacon getBeaconType]);
+    
     // If we are cannot send beacons, return.
     if (![[MPConfig sharedInstance] beaconsEnabled])
     {
@@ -139,6 +141,8 @@ static MPBeaconCollector *sharedObject = nil;
     return;
   }
   
+  MPLogDebug(@"MPBeaconCollector: Sending batch");
+  
   @try
   {
     // determine if we actually have to do anything
@@ -174,7 +178,9 @@ static MPBeaconCollector *sharedObject = nil;
  */
 -(void) clearBatch
 {
-    [_beacons removeAllObjects];
+  MPLogDebug(@"MPBeaconCollector: Clearing batch");
+
+  [_beacons removeAllObjects];
 }
 
 /**

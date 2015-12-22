@@ -72,7 +72,7 @@ BOOL networkRequestComplete = NO;
   NSTimeInterval executionTime = [timerEnd timeIntervalSinceDate:timerStart];
   
   XCTAssertTrue(executionTime < 1, @"initializeWithAPIKey and setServerURL calls did not return quickly. Time taken: %f seconds", executionTime);
-  XCTAssertFalse([[MPConfig sharedInstance] beaconsEnabled], @"Beacons should not be enable when we are supposed to timeout.");
+  XCTAssertFalse([[MPConfig sharedInstance] beaconsEnabled], @"Beacons should not be enabled when we are supposed to timeout.");
   
   [self waitForNetworkRequestCompletion];
 }
@@ -99,7 +99,10 @@ BOOL networkRequestComplete = NO;
   networkRequestComplete = NO;
   
   // MPConfig will notify us when network request is complete.
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveConfigRefreshCompleteNotification:) name:CONFIG_GET_REQUEST_COMPLETE object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(receiveConfigRefreshCompleteNotification:)
+                                               name:CONFIG_GET_REQUEST_COMPLETE
+                                             object:nil];
   
   // Timeout after 30 seconds
   double waitTime = 0.0f;
