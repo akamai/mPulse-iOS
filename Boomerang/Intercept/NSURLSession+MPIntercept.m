@@ -46,7 +46,7 @@
 
 #import "NSURLSession+MPIntercept.h"
 #import "MPInterceptURLSessionDelegate.h"
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 #import "MPConfig.h"
 #import "MPInterceptUtils.h"
 
@@ -84,30 +84,30 @@
     }
     
     // create a beacon to track
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:[request URL]];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
     
     task = [self boomerangDataTaskWithRequest:request
                             completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
-            {
-              @try
-              {
-                // the task is complete, parse the beacon
-                [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
-              }
-              @catch (NSException *exception)
-              {
-                MPLogError(@"Exception occured in boomerangDataTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
-              }
-              @finally
-              {
-                // call back the completionHandler if specified
-                if (completionHandler != nil)
-                {
-                  completionHandler(data, response, error);
-                }
-              }
-            }];
-    
+    {
+      @try
+      {
+        // the task is complete, parse the beacon
+        [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
+      }
+      @catch (NSException *exception)
+      {
+        MPLogError(@"Exception occured in boomerangDataTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
+      }
+      @finally
+      {
+        // call back the completionHandler if specified
+        if (completionHandler != nil)
+        {
+          completionHandler(data, response, error);
+        }
+      }
+    }];
+
     return task;
   }
   @catch (NSException *exception)
@@ -163,7 +163,7 @@
     }
     
     // create a beacon to track
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:[request URL]];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
     
     task = [self boomerangUploadTaskWithRequest:request
                                        fromFile:fileURL
@@ -245,7 +245,7 @@
     }
     
     // create a beacon to track
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:[request URL]];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
     
     task = [self boomerangUploadTaskWithRequest:request
                                        fromData:data
@@ -306,7 +306,7 @@
     }
     
     // create a beacon to track
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:[request URL]];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
     
     task = [self boomerangUploadTaskWithStreamedRequest:request];
     
@@ -350,7 +350,7 @@
     }
     
     // create a beacon to track
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:[request URL]];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
     
     task = [self boomerangDownloadTaskWithRequest:request
                                 completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
@@ -421,10 +421,10 @@
     }
     
     // create a beacon to track
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:url];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
     
     task = [self boomerangDownloadTaskWithResumeData:resumeData
-                                                             completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
+                                   completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
     {
       @try
       {

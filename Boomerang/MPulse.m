@@ -22,27 +22,27 @@
 #import "NSURLSession+MPIntercept.h"
 #import "MPInterceptURLConnectionDelegate.h"
 #import "MPInterceptURLSessionDelegate.h"
-#import "MPMetricBeacon.h"
-#import "MPAppFinishedLaunchingBeacon.h"
-#import "MPAppIsInactiveBeacon.h"
+#import "MPApiCustomMetricBeacon.h"
+#import "MPAppLaunchBeacon.h"
+#import "MPAppInactiveBeacon.h"
 #import "MPConfig.h"
 #import "MPSession.h"
 #import "MPGeoLocation.h"
-#import "MPTimerBeacon.h"
+#import "MPApiCustomTimerBeacon.h"
 
 @implementation MPulse
 {
   // Dictionary to store Custom Timer instances
   NSMutableDictionary* _customTimerDictionary;
   NSString *_pageGroup;
+  NSString *_abTest;
   NSMutableArray *_customDimensions;
   NSString *_viewGroup;
 }
 
 static NSString* const DEFAULT_MPULSE_SERVER_URL = @"https://c.go-mpulse.net/api/config.json";
 
-NSString* const BOOMERANG_VERSION =  @"0.9.1397582781";
-NSString* const MPULSE_BUILD_VERSION_NUMBER = @"";
+NSString* const MPULSE_BUILD_VERSION_NUMBER = @"1.0.0";
 dispatch_queue_t mpulse_async_queue = nil;
 
 /**
@@ -51,7 +51,6 @@ dispatch_queue_t mpulse_async_queue = nil;
 + (void) load
 {
   NSLog(@"SOASTA mPulse Mobile Build : %@", MPULSE_BUILD_VERSION_NUMBER);
-  NSLog(@"SOASTA Boomerang version %@ initializing...", BOOMERANG_VERSION);
   [MPulse private_initDriver];
   NSLog(@"SOASTA MPulse initialized.");
 }
@@ -238,14 +237,14 @@ static MPulse *mPulseInstance = nil;
     // Notifications for app going into Background or being Terminated
     if ([notificationName isEqualToString:@"UIApplicationDidEnterBackgroundNotification"] || [notificationName isEqualToString:@"UIApplicationWillTerminateNotification"])
     {
-      [MPAppIsInactiveBeacon sendBeacon];
+      [MPAppInactiveBeacon sendBeacon];
       return;
     }
     
     // Notification for app returning to Foreground
     if ([notificationName isEqualToString:@"UIApplicationWillEnterForegroundNotification"])
     {
-      [MPAppFinishedLaunchingBeacon sendBeacon];
+      [MPAppLaunchBeacon sendBeacon];
       return;
     }
   }
@@ -275,6 +274,21 @@ static MPulse *mPulseInstance = nil;
   _viewGroup = @"";
 }
 
+-(NSString *) getABTest
+{
+  return _abTest;
+}
+
+-(void) setABTest:(NSString *)abTest
+{
+  _abTest = abTest;
+}
+
+-(void) resetABTest
+{
+  _abTest = @"";
+}
+
 -(void) sendMetric:(NSString *)metricName value:(NSNumber *)value
 {
   @try
@@ -284,7 +298,7 @@ static MPulse *mPulseInstance = nil;
       return; // mPulse Instance is not ready for work.
     }
     
-    [[MPMetricBeacon alloc] initWithMetricName:metricName andValue:value];
+    [[MPApiCustomMetricBeacon alloc] initWithMetricName:metricName andValue:value];
   }
   @catch (NSException *exception)
   {
@@ -301,7 +315,7 @@ static MPulse *mPulseInstance = nil;
       return @""; // mPulse Instance is not ready for work.
     }
     
-    MPTimerBeacon *beacon = [[MPTimerBeacon alloc] initWithStart:timerName];
+    MPApiCustomTimerBeacon *beacon = [[MPApiCustomTimerBeacon alloc] initAndStart:timerName];
     
     NSString *timerKey = [NSString stringWithFormat:@"%@-%@", timerName, [MPUtilities getUUID]];
     NSLog(@"TimerKey - %@", timerKey);
@@ -362,7 +376,7 @@ static MPulse *mPulseInstance = nil;
       return; // mPulse Instance is not ready for work.
     }
     
-    MPTimerBeacon *beacon = [_customTimerDictionary objectForKey:timerID];
+    MPApiCustomTimerBeacon *beacon = [_customTimerDictionary objectForKey:timerID];
     if (beacon != nil)
     {
       [beacon endTimer]; // End timer and send the beacon
@@ -384,7 +398,7 @@ static MPulse *mPulseInstance = nil;
       return; // mPulse Instance is not ready for work.
     }
     
-    [[MPTimerBeacon alloc] initWithTimerName:timerName andValue:value];
+    [[MPApiCustomTimerBeacon alloc] initWithName:timerName andValue:value];
   }
   @catch (NSException *exception)
   {

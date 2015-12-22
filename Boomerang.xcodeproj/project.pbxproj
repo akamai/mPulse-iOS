@@ -23,15 +23,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		271A7F9B18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */; };
-		271A7F9C18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */; };
-		271A7F9D18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */; };
-		271A7F9E18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */; };
-		271A7F9F18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
-		271A7FA018FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
-		271A7FA118FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
-		271A7FA218FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
-		271A7FA318FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
 		272075D818F59B8B008DB644 /* MPBeaconCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 272075D618F59B8B008DB644 /* MPBeaconCollector.h */; };
 		272075D918F59B8B008DB644 /* MPBeaconCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 272075D618F59B8B008DB644 /* MPBeaconCollector.h */; };
 		272075DA18F59B8B008DB644 /* MPBeaconCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 272075D618F59B8B008DB644 /* MPBeaconCollector.h */; };
@@ -78,33 +69,6 @@
 		27E4BAD7199D67E700FBD812 /* TTTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E4BABF199D67E700FBD812 /* TTTextFieldDelegate.h */; };
 		27E4BAD8199D67E700FBD812 /* TTTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E4BABF199D67E700FBD812 /* TTTextFieldDelegate.h */; };
 		27E4BAD9199D67E700FBD812 /* TTTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E4BABF199D67E700FBD812 /* TTTextFieldDelegate.h */; };
-		27EE519118FC64760079D9E7 /* MPTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */; };
-		27EE519218FC64760079D9E7 /* MPTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */; };
-		27EE519318FC64760079D9E7 /* MPTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */; };
-		27EE519418FC64760079D9E7 /* MPTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */; };
-		27EE519518FC64760079D9E7 /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
-		27EE519618FC64760079D9E7 /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
-		27EE519718FC64760079D9E7 /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
-		27EE519818FC64760079D9E7 /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
-		27EE519918FC64760079D9E7 /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
-		27EE51A418FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */; };
-		27EE51A518FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */; };
-		27EE51A618FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */; };
-		27EE51A718FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */; };
-		27EE51A818FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
-		27EE51A918FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
-		27EE51AA18FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
-		27EE51AB18FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
-		27EE51AC18FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
-		27EE51B818FC8A760079D9E7 /* MPMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */; };
-		27EE51B918FC8A760079D9E7 /* MPMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */; };
-		27EE51BA18FC8A760079D9E7 /* MPMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */; };
-		27EE51BB18FC8A760079D9E7 /* MPMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */; };
-		27EE51BC18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
-		27EE51BD18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
-		27EE51BE18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
-		27EE51BF18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
-		27EE51C018FC8A760079D9E7 /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
 		2C2A07D7165460AE008EC81E /* libMPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428C81642E1CD0058AC81 /* libMPulse.a */; };
 		2C801929164C36BF0037FF54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
 		2C80192B164C41520037FF54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
@@ -132,7 +96,6 @@
 		5B0DDAD51940FC33005D43BD /* text_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF34F190F629C00915617 /* text_format.cc */; };
 		5B0DDAD61940FC33005D43BD /* TouchTestDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC38192580A20074F273 /* TouchTestDriver.m */; };
 		5B0DDAD71940FC33005D43BD /* zero_copy_stream_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF306190F629C00915617 /* zero_copy_stream_impl.cc */; };
-		5B0DDAD81940FC33005D43BD /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
 		5B0DDAD91940FC33005D43BD /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		5B0DDADA1940FC33005D43BD /* TTTouchesEventRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBF5192580A20074F273 /* TTTouchesEventRecorder.m */; };
 		5B0DDADB1940FC33005D43BD /* NSData+TTGzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE12B192581800074F273 /* NSData+TTGzip.m */; };
@@ -173,7 +136,6 @@
 		5B0DDB001940FC33005D43BD /* (null) in Sources */ = {isa = PBXBuildFile; };
 		5B0DDB011940FC33005D43BD /* TTMainThreadRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB9B192580A10074F273 /* TTMainThreadRunner.m */; };
 		5B0DDB021940FC33005D43BD /* TTTaskResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC2F192580A20074F273 /* TTTaskResponder.m */; };
-		5B0DDB041940FC33005D43BD /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
 		5B0DDB051940FC33005D43BD /* TTAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB95192580A10074F273 /* TTAutomation.m */; };
 		5B0DDB061940FC33005D43BD /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF363190F629C00915617 /* wire_format.cc */; };
 		5B0DDB071940FC33005D43BD /* UIPanGestureRecognizer+TTRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC01192580A20074F273 /* UIPanGestureRecognizer+TTRecorder.m */; };
@@ -198,10 +160,8 @@
 		5B0DDB1A1940FC33005D43BD /* atomicops_internals_x86_msvc.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF325190F629C00915617 /* atomicops_internals_x86_msvc.cc */; };
 		5B0DDB1B1940FC33005D43BD /* TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE11C192581800074F273 /* TT_SBJSON.m */; };
 		5B0DDB1C1940FC33005D43BD /* TTPickerViewListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBEA192580A20074F273 /* TTPickerViewListener.m */; };
-		5B0DDB1D1940FC33005D43BD /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
 		5B0DDB1E1940FC33005D43BD /* TTWaitComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB9F192580A10074F273 /* TTWaitComparison.m */; };
 		5B0DDB1F1940FC33005D43BD /* printer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2FE190F629C00915617 /* printer.cc */; };
-		5B0DDB201940FC33005D43BD /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
 		5B0DDB211940FC33005D43BD /* TTUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC47192580A20074F273 /* TTUIApplicationDelegateHelper.m */; };
 		5B0DDB221940FC33005D43BD /* TTHybridWebViewDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC50192580A20074F273 /* TTHybridWebViewDriver.m */; };
 		5B0DDB231940FC33005D43BD /* UIView+TTTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE21F192585630074F273 /* UIView+TTTest.m */; };
@@ -234,7 +194,6 @@
 		5B0DDB3F1940FC33005D43BD /* TTToucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB9D192580A10074F273 /* TTToucher.m */; };
 		5B0DDB401940FC33005D43BD /* TTPanSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C3B0E192E854A0057DD9B /* TTPanSender.m */; };
 		5B0DDB411940FC33005D43BD /* TTScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC43192580A20074F273 /* TTScreenshot.m */; };
-		5B0DDB421940FC33005D43BD /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
 		5B0DDB431940FC33005D43BD /* TTNativeWebViewElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB57192580A10074F273 /* TTNativeWebViewElement.m */; };
 		5B0DDB441940FC33005D43BD /* TTQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC41192580A20074F273 /* TTQueue.m */; };
 		5B0DDB451940FC33005D43BD /* TTNativeTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB4F192580A10074F273 /* TTNativeTextElement.m */; };
@@ -244,7 +203,6 @@
 		5B0DDB491940FC33005D43BD /* MPASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89EC7C1929B1DF00F85499 /* MPASLLogger.m */; };
 		5B0DDB4A1940FC33005D43BD /* NSObject+TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE118192581800074F273 /* NSObject+TT_SBJSON.m */; };
 		5B0DDB4B1940FC33005D43BD /* TTAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC09192580A20074F273 /* TTAlertViewDelegate.m */; };
-		5B0DDB4C1940FC33005D43BD /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
 		5B0DDB4D1940FC33005D43BD /* MPTouchMetricValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEE05391917B60E00B63181 /* MPTouchMetricValue.m */; };
 		5B0DDB4E1940FC33005D43BD /* TTTouchesJourney.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBF7192580A20074F273 /* TTTouchesJourney.m */; };
 		5B0DDB4F1940FC33005D43BD /* TTElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB39192580A10074F273 /* TTElement.m */; };
@@ -261,7 +219,6 @@
 		5B0DDB5A1940FC33005D43BD /* MKMapView+TTMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBC7192580A20074F273 /* MKMapView+TTMKMapView.m */; };
 		5B0DDB5B1940FC33005D43BD /* TTMetricMonitorBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBD6192580A20074F273 /* TTMetricMonitorBase.m */; };
 		5B0DDB5D1940FC33005D43BD /* TTAutomationGestureDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB5D192580A10074F273 /* TTAutomationGestureDetail.m */; };
-		5B0DDB5E1940FC33005D43BD /* MPAppIsInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */; };
 		5B0DDB5F1940FC33005D43BD /* TTTouchHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C3AE5192E85250057DD9B /* TTTouchHud.m */; };
 		5B0DDB601940FC33005D43BD /* TTRecordingTaskHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC11192580A20074F273 /* TTRecordingTaskHandler.m */; };
 		5B0DDB611940FC33005D43BD /* extension_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2EB190F629C00915617 /* extension_set.cc */; };
@@ -271,7 +228,6 @@
 		5B0DDB651940FC33005D43BD /* TTNativeElement+TTAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB3F192580A10074F273 /* TTNativeElement+TTAccessors.m */; };
 		5B0DDB661940FC33005D43BD /* TTNativeTableViewElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB4D192580A10074F273 /* TTNativeTableViewElement.m */; };
 		5B0DDB671940FC33005D43BD /* TTJsonPrecision.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBED192580A20074F273 /* TTJsonPrecision.m */; };
-		5B0DDB681940FC33005D43BD /* MPBeaconURLProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */; };
 		5B0DDB691940FC33005D43BD /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
 		5B0DDB6A1940FC33005D43BD /* TTSessionDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC28192580A20074F273 /* TTSessionDictionary.m */; };
 		5B0DDB6B1940FC33005D43BD /* UIView+MPTouchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE14AF41912CD9A00F345E3 /* UIView+MPTouchHandler.m */; };
@@ -300,7 +256,6 @@
 		5B0DDB831940FC33005D43BD /* extension_set_heavy.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2ED190F629C00915617 /* extension_set_heavy.cc */; };
 		5B0DDB841940FC33005D43BD /* generated_message_reflection.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F0190F629C00915617 /* generated_message_reflection.cc */; };
 		5B0DDB851940FC33005D43BD /* TTNativeSegmentedControlElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB49192580A10074F273 /* TTNativeSegmentedControlElement.m */; };
-		5B0DDB861940FC33005D43BD /* MPBucketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27B9B1905924300881F84 /* MPBucketUtility.m */; };
 		5B0DDB871940FC33005D43BD /* TTLocatorValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBC4192580A20074F273 /* TTLocatorValue.m */; };
 		5B0DDB881940FC33005D43BD /* TTNativeTextFieldElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB51192580A10074F273 /* TTNativeTextFieldElement.m */; };
 		5B0DDB891940FC33005D43BD /* TTTapOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1001925813D0074F273 /* TTTapOptions.m */; };
@@ -319,10 +274,8 @@
 		5B0DDB961940FC33005D43BD /* TTScrollViewListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC1F192580A20074F273 /* TTScrollViewListener.m */; };
 		5B0DDB971940FC33005D43BD /* TTRecordedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC0B192580A20074F273 /* TTRecordedAction.m */; };
 		5B0DDB981940FC33005D43BD /* TTNativeMKMapViewElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB43192580A10074F273 /* TTNativeMKMapViewElement.m */; };
-		5B0DDB991940FC33005D43BD /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
 		5B0DDB9A1940FC33005D43BD /* stringprintf.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF331190F629C00915617 /* stringprintf.cc */; };
 		5B0DDB9B1940FC33005D43BD /* TTGestureGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C3AF3192E854A0057DD9B /* TTGestureGenerator.m */; };
-		5B0DDB9C1940FC33005D43BD /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
 		5B0DDB9D1940FC33005D43BD /* MPTouchMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE6D711908E56100934EEB /* MPTouchMetric.m */; };
 		5B0DDB9E1940FC33005D43BD /* MPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87FC551909DA81009CA061 /* MPConfig.m */; };
 		5B0DDB9F1940FC33005D43BD /* TTUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC49192580A20074F273 /* TTUncaughtExceptionHandler.m */; };
@@ -349,7 +302,6 @@
 		5B0DDBB71940FC33005D43BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
 		5B0DDBB81940FC33005D43BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428CB1642E1CD0058AC81 /* Foundation.framework */; };
 		5B0DDBBA1940FC33005D43BD /* TTTaskHandlerThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC2C192580A20074F273 /* TTTaskHandlerThread.h */; };
-		5B0DDBBB1940FC33005D43BD /* MPBatchRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */; };
 		5B0DDBBC1940FC33005D43BD /* TTInspectorPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBB1192580A10074F273 /* TTInspectorPopover.h */; };
 		5B0DDBBD1940FC33005D43BD /* GSMaps.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3B08192E854A0057DD9B /* GSMaps.h */; };
 		5B0DDBBE1940FC33005D43BD /* descriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2E0190F629C00915617 /* descriptor.h */; };
@@ -445,12 +397,10 @@
 		5B0DDC1B1940FC33005D43BD /* TTNativeElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB40192580A10074F273 /* TTNativeElement.h */; };
 		5B0DDC1C1940FC33005D43BD /* wire_format_lite_inl.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF367190F629C00915617 /* wire_format_lite_inl.h */; };
 		5B0DDC1D1940FC33005D43BD /* UIGestureRecognizer+TTAutomation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBA2192580A10074F273 /* UIGestureRecognizer+TTAutomation.h */; };
-		5B0DDC1E1940FC33005D43BD /* MPMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */; };
 		5B0DDC1F1940FC33005D43BD /* MPASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B89EC7B1929B1DF00F85499 /* MPASLLogger.h */; };
 		5B0DDC201940FC33005D43BD /* descriptor.pb.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2E2190F629C00915617 /* descriptor.pb.h */; };
 		5B0DDC211940FC33005D43BD /* NSObject+TT_SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE117192581800074F273 /* NSObject+TT_SBJSON.h */; };
 		5B0DDC221940FC33005D43BD /* TTNativeElement+TTAccessors.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB3E192580A10074F273 /* TTNativeElement+TTAccessors.h */; };
-		5B0DDC231940FC33005D43BD /* MPAppFinishedLaunchingBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */; };
 		5B0DDC241940FC33005D43BD /* TT_SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE11D192581800074F273 /* TT_SBJsonBase.h */; };
 		5B0DDC251940FC33005D43BD /* TTCPUMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBCF192580A20074F273 /* TTCPUMonitor.h */; };
 		5B0DDC261940FC33005D43BD /* GSHiccup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3B05192E854A0057DD9B /* GSHiccup.h */; };
@@ -459,13 +409,11 @@
 		5B0DDC291940FC33005D43BD /* NSData+TT_Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE126192581800074F273 /* NSData+TT_Base64.h */; };
 		5B0DDC2A1940FC33005D43BD /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF328190F629C00915617 /* common.h */; };
 		5B0DDC2B1940FC33005D43BD /* ClientBeaconBatch.pb.h in Headers */ = {isa = PBXBuildFile; fileRef = F76730B1190882BB00228AB7 /* ClientBeaconBatch.pb.h */; };
-		5B0DDC2C1940FC33005D43BD /* MPTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */; };
 		5B0DDC2D1940FC33005D43BD /* TTGestureGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3AF2192E854A0057DD9B /* TTGestureGenerator.h */; };
 		5B0DDC2E1940FC33005D43BD /* TTElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB38192580A10074F273 /* TTElement.h */; };
 		5B0DDC2F1940FC33005D43BD /* atomicops_internals_pnacl.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF322190F629C00915617 /* atomicops_internals_pnacl.h */; };
 		5B0DDC301940FC33005D43BD /* TTNativeProgressViewElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB46192580A10074F273 /* TTNativeProgressViewElement.h */; };
 		5B0DDC311940FC33005D43BD /* MPConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B87FC541909DA81009CA061 /* MPConfig.h */; };
-		5B0DDC321940FC33005D43BD /* MPTimerData.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761F71906E36700DF0BE5 /* MPTimerData.h */; };
 		5B0DDC331940FC33005D43BD /* NSString+TT_SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE119192581800074F273 /* NSString+TT_SBJSON.h */; };
 		5B0DDC341940FC33005D43BD /* TTScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC42192580A20074F273 /* TTScreenshot.h */; };
 		5B0DDC351940FC33005D43BD /* TTElement+TTAccessors.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB36192580A10074F273 /* TTElement+TTAccessors.h */; };
@@ -508,8 +456,6 @@
 		5B0DDC5C1940FC33005D43BD /* text_format.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF350190F629C00915617 /* text_format.h */; };
 		5B0DDC5D1940FC33005D43BD /* TouchTestDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC37192580A20074F273 /* TouchTestDriver.h */; };
 		5B0DDC5F1940FC33005D43BD /* NSData+TTGzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE12A192581800074F273 /* NSData+TTGzip.h */; };
-		5B0DDC601940FC33005D43BD /* MPNumberDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = F79973A41920AB71002BCFAB /* MPNumberDictionary.h */; };
-		5B0DDC611940FC33005D43BD /* MPBeaconURLProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */; };
 		5B0DDC621940FC33005D43BD /* TTScreenshotCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC44192580A20074F273 /* TTScreenshotCore.h */; };
 		5B0DDC631940FC33005D43BD /* TTTouchSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3B13192E854A0057DD9B /* TTTouchSequence.h */; };
 		5B0DDC641940FC33005D43BD /* MPBatchTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF64319105FF400915617 /* MPBatchTransport.h */; };
@@ -521,7 +467,6 @@
 		5B0DDC6A1940FC33005D43BD /* coded_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2F7190F629C00915617 /* coded_stream.h */; };
 		5B0DDC6B1940FC33005D43BD /* NSURLConnection+MPIntercept.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE1E21925825A0074F273 /* NSURLConnection+MPIntercept.h */; };
 		5B0DDC6C1940FC33005D43BD /* TTInspectorActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBAD192580A10074F273 /* TTInspectorActions.h */; };
-		5B0DDC6D1940FC33005D43BD /* MPNetworkCallBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */; };
 		5B0DDC6E1940FC33005D43BD /* TTSessionDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC27192580A20074F273 /* TTSessionDictionary.h */; };
 		5B0DDC6F1940FC33005D43BD /* GSWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3B0A192E854A0057DD9B /* GSWindow.h */; };
 		5B0DDC701940FC33005D43BD /* MPLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B89EC7F1929B1DF00F85499 /* MPLog.h */; };
@@ -575,7 +520,6 @@
 		5B0DDCA01940FC33005D43BD /* GSStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3B09192E854A0057DD9B /* GSStatusBar.h */; };
 		5B0DDCA11940FC33005D43BD /* service.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF31A190F629C00915617 /* service.h */; };
 		5B0DDCA21940FC33005D43BD /* TTHighLevelRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBF0192580A20074F273 /* TTHighLevelRecorder.h */; };
-		5B0DDCA31940FC33005D43BD /* MPAppIsInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */; };
 		5B0DDCA41940FC33005D43BD /* TTPanSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C3B0D192E854A0057DD9B /* TTPanSender.h */; };
 		5B0DDCA51940FC33005D43BD /* gzip_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2FB190F629C00915617 /* gzip_stream.h */; };
 		5B0DDCA61940FC33005D43BD /* MPTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B89EC991929B67100F85499 /* MPTTYLogger.h */; };
@@ -590,7 +534,6 @@
 		5B0DDCAF1940FC33005D43BD /* atomicops_internals_x86_gcc.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF324190F629C00915617 /* atomicops_internals_x86_gcc.h */; };
 		5B0DDCB01940FC33005D43BD /* UIApplication+TTInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBB8192580A10074F273 /* UIApplication+TTInspector.h */; };
 		5B0DDCB11940FC33005D43BD /* TTConnectionTypeMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBCD192580A20074F273 /* TTConnectionTypeMonitor.h */; };
-		5B0DDCB21940FC33005D43BD /* MPBucketUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD27B9A1905924300881F84 /* MPBucketUtility.h */; };
 		5B0DDCB31940FC33005D43BD /* TTPickerViewListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBE9192580A20074F273 /* TTPickerViewListener.h */; };
 		5B0DDCB41940FC33005D43BD /* strutil.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF337190F629C00915617 /* strutil.h */; };
 		5B0DDCB51940FC33005D43BD /* printer.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2FF190F629C00915617 /* printer.h */; };
@@ -712,8 +655,6 @@
 		5B1899AD19116945009794C1 /* type_traits.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF33D190F629C00915617 /* type_traits.h */; };
 		5B1899B2191169D1009794C1 /* MPBeaconCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 272075D618F59B8B008DB644 /* MPBeaconCollector.h */; };
 		5B1899B3191169D4009794C1 /* MPBeaconCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 272075D718F59B8B008DB644 /* MPBeaconCollector.m */; };
-		5B1899B4191169DD009794C1 /* MPBatchRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */; };
-		5B1899B5191169DD009794C1 /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
 		5B23480E198957910037EFEC /* MPNetworkErrorBeaconGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B23480C198957910037EFEC /* MPNetworkErrorBeaconGenerator.h */; };
 		5B23480F198957910037EFEC /* MPNetworkErrorBeaconGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B23480C198957910037EFEC /* MPNetworkErrorBeaconGenerator.h */; };
 		5B234810198957910037EFEC /* MPNetworkErrorBeaconGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B23480C198957910037EFEC /* MPNetworkErrorBeaconGenerator.h */; };
@@ -726,7 +667,7 @@
 		5B234817198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23480D198957910037EFEC /* MPNetworkErrorBeaconGenerator.m */; };
 		5B234818198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23480D198957910037EFEC /* MPNetworkErrorBeaconGenerator.m */; };
 		5B234819198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23480D198957910037EFEC /* MPNetworkErrorBeaconGenerator.m */; };
-		5B27002B1B0FA20F00F49358 /* MPTimerBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B27002A1B0FA20F00F49358 /* MPTimerBeaconTests.m */; };
+		5B27002B1B0FA20F00F49358 /* MPApiCustomTimerBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B27002A1B0FA20F00F49358 /* MPApiCustomTimerBeaconTests.m */; };
 		5B2E6EAC1A3628FB00EEB56C /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF363190F629C00915617 /* wire_format.cc */; };
 		5B2E6EB31A3628FB00EEB56C /* tokenizer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF301190F629C00915617 /* tokenizer.cc */; };
 		5B2E6EB51A3628FB00EEB56C /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
@@ -871,14 +812,6 @@
 		5B9CA7FC1925DA7C009BE429 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7FB1925DA7C009BE429 /* MapKit.framework */; };
 		5B9CA7FE1925DA80009BE429 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7FD1925DA80009BE429 /* QuartzCore.framework */; };
 		5B9CA8001925DA89009BE429 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7FF1925DA89009BE429 /* OpenGLES.framework */; };
-		5B9CA8031925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */; };
-		5B9CA8041925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */; };
-		5B9CA8051925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */; };
-		5B9CA8061925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */; };
-		5B9CA8071925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */; };
-		5B9CA8081925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */; };
-		5B9CA8091925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */; };
-		5B9CA80A1925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */; };
 		5BC4AE421ADF0D2E00873E29 /* IOHIDDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC4AE301ADF0D2E00873E29 /* IOHIDDisplay.h */; };
 		5BC4AE431ADF0D2E00873E29 /* IOHIDDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC4AE301ADF0D2E00873E29 /* IOHIDDisplay.h */; };
 		5BC4AE441ADF0D2E00873E29 /* IOHIDEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC4AE311ADF0D2E00873E29 /* IOHIDEvent.h */; };
@@ -927,15 +860,6 @@
 		5BC5E06318D0FD820095F33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
 		5BC5E06418D0FD820095F33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428CB1642E1CD0058AC81 /* Foundation.framework */; };
 		5BC5E06E18D0FD820095F33A /* MPURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF428FE164470E00058AC81 /* MPURLConnection.h */; };
-		5BD27B9C1905924300881F84 /* MPBucketUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD27B9A1905924300881F84 /* MPBucketUtility.h */; };
-		5BD27B9D1905924300881F84 /* MPBucketUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD27B9A1905924300881F84 /* MPBucketUtility.h */; };
-		5BD27B9E1905924300881F84 /* MPBucketUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD27B9A1905924300881F84 /* MPBucketUtility.h */; };
-		5BD27B9F1905924300881F84 /* MPBucketUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD27B9A1905924300881F84 /* MPBucketUtility.h */; };
-		5BD27BA01905924300881F84 /* MPBucketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27B9B1905924300881F84 /* MPBucketUtility.m */; };
-		5BD27BA11905924300881F84 /* MPBucketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27B9B1905924300881F84 /* MPBucketUtility.m */; };
-		5BD27BA21905924300881F84 /* MPBucketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27B9B1905924300881F84 /* MPBucketUtility.m */; };
-		5BD27BA31905924300881F84 /* MPBucketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27B9B1905924300881F84 /* MPBucketUtility.m */; };
-		5BD27BA519059CBC00881F84 /* MPBucketUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27BA419059CBC00881F84 /* MPBucketUtilityTests.m */; };
 		5BD27BA71905A0A300881F84 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD27BA61905A0A300881F84 /* XCTest.framework */; };
 		5BD27BA91905A0FE00881F84 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD27BA81905A0FE00881F84 /* SystemConfiguration.framework */; };
 		5BD27BAE190839BA00881F84 /* (null) in Headers */ = {isa = PBXBuildFile; };
@@ -954,14 +878,6 @@
 		5BEA20A6197588A400368577 /* TTLocatorCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA209C197588A400368577 /* TTLocatorCollection.m */; };
 		5BEA20A7197588A400368577 /* TTLocatorCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA209C197588A400368577 /* TTLocatorCollection.m */; };
 		5BEA20A8197588A400368577 /* TTLocatorCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA209C197588A400368577 /* TTLocatorCollection.m */; };
-		5BF6D58C19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */; };
-		5BF6D58D19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */; };
-		5BF6D58E19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */; };
-		5BF6D58F19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */; };
-		5BF6D59019085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */; };
-		5BF6D59119085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */; };
-		5BF6D59219085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */; };
-		5BF6D59319085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */; };
 		6D0974401912D96B00A180AD /* MPTouchPageGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D09743E1912D96B00A180AD /* MPTouchPageGroup.h */; };
 		6D0974411912D96B00A180AD /* MPTouchPageGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D09743E1912D96B00A180AD /* MPTouchPageGroup.h */; };
 		6D0974421912D96B00A180AD /* MPTouchPageGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D09743E1912D96B00A180AD /* MPTouchPageGroup.h */; };
@@ -979,7 +895,6 @@
 		6D0C3919192E82870057DD9B /* text_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF34F190F629C00915617 /* text_format.cc */; };
 		6D0C391A192E82870057DD9B /* TouchTestDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC38192580A20074F273 /* TouchTestDriver.m */; };
 		6D0C391B192E82870057DD9B /* zero_copy_stream_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF306190F629C00915617 /* zero_copy_stream_impl.cc */; };
-		6D0C391C192E82870057DD9B /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
 		6D0C391D192E82870057DD9B /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		6D0C391E192E82870057DD9B /* TTTouchesEventRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBF5192580A20074F273 /* TTTouchesEventRecorder.m */; };
 		6D0C391F192E82870057DD9B /* NSData+TTGzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE12B192581800074F273 /* NSData+TTGzip.m */; };
@@ -1019,7 +934,6 @@
 		6D0C3944192E82870057DD9B /* TTScreenshotCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC45192580A20074F273 /* TTScreenshotCore.m */; };
 		6D0C3946192E82870057DD9B /* TTMainThreadRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB9B192580A10074F273 /* TTMainThreadRunner.m */; };
 		6D0C3947192E82870057DD9B /* TTTaskResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC2F192580A20074F273 /* TTTaskResponder.m */; };
-		6D0C3949192E82870057DD9B /* MPAppFinishedLaunchingBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */; };
 		6D0C394A192E82870057DD9B /* TTAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB95192580A10074F273 /* TTAutomation.m */; };
 		6D0C394B192E82870057DD9B /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF363190F629C00915617 /* wire_format.cc */; };
 		6D0C394C192E82870057DD9B /* UIPanGestureRecognizer+TTRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC01192580A20074F273 /* UIPanGestureRecognizer+TTRecorder.m */; };
@@ -1041,10 +955,8 @@
 		6D0C395C192E82870057DD9B /* atomicops_internals_x86_msvc.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF325190F629C00915617 /* atomicops_internals_x86_msvc.cc */; };
 		6D0C395D192E82870057DD9B /* TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE11C192581800074F273 /* TT_SBJSON.m */; };
 		6D0C395E192E82870057DD9B /* TTPickerViewListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBEA192580A20074F273 /* TTPickerViewListener.m */; };
-		6D0C395F192E82870057DD9B /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
 		6D0C3960192E82870057DD9B /* TTWaitComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB9F192580A10074F273 /* TTWaitComparison.m */; };
 		6D0C3961192E82870057DD9B /* printer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2FE190F629C00915617 /* printer.cc */; };
-		6D0C3962192E82870057DD9B /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
 		6D0C3963192E82870057DD9B /* TTUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC47192580A20074F273 /* TTUIApplicationDelegateHelper.m */; };
 		6D0C3964192E82870057DD9B /* TTHybridWebViewDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC50192580A20074F273 /* TTHybridWebViewDriver.m */; };
 		6D0C3965192E82870057DD9B /* UIView+TTTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE21F192585630074F273 /* UIView+TTTest.m */; };
@@ -1072,7 +984,6 @@
 		6D0C397C192E82870057DD9B /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
 		6D0C397D192E82870057DD9B /* TTToucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB9D192580A10074F273 /* TTToucher.m */; };
 		6D0C397E192E82870057DD9B /* TTScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC43192580A20074F273 /* TTScreenshot.m */; };
-		6D0C397F192E82870057DD9B /* MPNetworkCallBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */; };
 		6D0C3980192E82870057DD9B /* TTNativeWebViewElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB57192580A10074F273 /* TTNativeWebViewElement.m */; };
 		6D0C3981192E82870057DD9B /* TTQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC41192580A20074F273 /* TTQueue.m */; };
 		6D0C3982192E82870057DD9B /* TTNativeTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB4F192580A10074F273 /* TTNativeTextElement.m */; };
@@ -1082,7 +993,6 @@
 		6D0C3986192E82870057DD9B /* MPASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89EC7C1929B1DF00F85499 /* MPASLLogger.m */; };
 		6D0C3987192E82870057DD9B /* NSObject+TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE118192581800074F273 /* NSObject+TT_SBJSON.m */; };
 		6D0C3988192E82870057DD9B /* TTAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC09192580A20074F273 /* TTAlertViewDelegate.m */; };
-		6D0C3989192E82870057DD9B /* MPTimerBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE519018FC64760079D9E7 /* MPTimerBeacon.m */; };
 		6D0C398A192E82870057DD9B /* MPTouchMetricValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEE05391917B60E00B63181 /* MPTouchMetricValue.m */; };
 		6D0C398B192E82870057DD9B /* TTTouchesJourney.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBF7192580A20074F273 /* TTTouchesJourney.m */; };
 		6D0C398C192E82870057DD9B /* TTElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB39192580A10074F273 /* TTElement.m */; };
@@ -1098,7 +1008,6 @@
 		6D0C3996192E82870057DD9B /* MKMapView+TTMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBC7192580A20074F273 /* MKMapView+TTMKMapView.m */; };
 		6D0C3997192E82870057DD9B /* TTMetricMonitorBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBD6192580A20074F273 /* TTMetricMonitorBase.m */; };
 		6D0C3999192E82870057DD9B /* TTAutomationGestureDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB5D192580A10074F273 /* TTAutomationGestureDetail.m */; };
-		6D0C399A192E82870057DD9B /* MPAppIsInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */; };
 		6D0C399B192E82870057DD9B /* TTRecordingTaskHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC11192580A20074F273 /* TTRecordingTaskHandler.m */; };
 		6D0C399C192E82870057DD9B /* extension_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2EB190F629C00915617 /* extension_set.cc */; };
 		6D0C399D192E82870057DD9B /* TTNetworkDataCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBDF192580A20074F273 /* TTNetworkDataCounter.m */; };
@@ -1106,7 +1015,6 @@
 		6D0C399F192E82870057DD9B /* TTNativeElement+TTAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB3F192580A10074F273 /* TTNativeElement+TTAccessors.m */; };
 		6D0C39A0192E82870057DD9B /* TTNativeTableViewElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB4D192580A10074F273 /* TTNativeTableViewElement.m */; };
 		6D0C39A1192E82870057DD9B /* TTJsonPrecision.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBED192580A20074F273 /* TTJsonPrecision.m */; };
-		6D0C39A2192E82870057DD9B /* MPBeaconURLProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */; };
 		6D0C39A3192E82870057DD9B /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
 		6D0C39A4192E82870057DD9B /* TTSessionDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC28192580A20074F273 /* TTSessionDictionary.m */; };
 		6D0C39A5192E82870057DD9B /* UIView+MPTouchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE14AF41912CD9A00F345E3 /* UIView+MPTouchHandler.m */; };
@@ -1133,7 +1041,6 @@
 		6D0C39BB192E82870057DD9B /* extension_set_heavy.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2ED190F629C00915617 /* extension_set_heavy.cc */; };
 		6D0C39BC192E82870057DD9B /* generated_message_reflection.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F0190F629C00915617 /* generated_message_reflection.cc */; };
 		6D0C39BD192E82870057DD9B /* TTNativeSegmentedControlElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB49192580A10074F273 /* TTNativeSegmentedControlElement.m */; };
-		6D0C39BE192E82870057DD9B /* MPBucketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD27B9B1905924300881F84 /* MPBucketUtility.m */; };
 		6D0C39BF192E82870057DD9B /* TTLocatorValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDBC4192580A20074F273 /* TTLocatorValue.m */; };
 		6D0C39C0192E82870057DD9B /* TTNativeTextFieldElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB51192580A10074F273 /* TTNativeTextFieldElement.m */; };
 		6D0C39C1192E82870057DD9B /* TTTapOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1001925813D0074F273 /* TTTapOptions.m */; };
@@ -1151,9 +1058,7 @@
 		6D0C39CD192E82870057DD9B /* TTScrollViewListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC1F192580A20074F273 /* TTScrollViewListener.m */; };
 		6D0C39CE192E82870057DD9B /* TTRecordedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC0B192580A20074F273 /* TTRecordedAction.m */; };
 		6D0C39CF192E82870057DD9B /* TTNativeMKMapViewElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDB43192580A10074F273 /* TTNativeMKMapViewElement.m */; };
-		6D0C39D0192E82870057DD9B /* MPMetricBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */; };
 		6D0C39D1192E82870057DD9B /* stringprintf.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF331190F629C00915617 /* stringprintf.cc */; };
-		6D0C39D2192E82870057DD9B /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
 		6D0C39D3192E82870057DD9B /* MPTouchMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE6D711908E56100934EEB /* MPTouchMetric.m */; };
 		6D0C39D4192E82870057DD9B /* MPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87FC551909DA81009CA061 /* MPConfig.m */; };
 		6D0C39D5192E82870057DD9B /* TTUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BDC49192580A20074F273 /* TTUncaughtExceptionHandler.m */; };
@@ -1180,7 +1085,6 @@
 		6D0C39EE192E82870057DD9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
 		6D0C39EF192E82870057DD9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428CB1642E1CD0058AC81 /* Foundation.framework */; };
 		6D0C39F1192E82870057DD9B /* TTTaskHandlerThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC2C192580A20074F273 /* TTTaskHandlerThread.h */; };
-		6D0C39F2192E82870057DD9B /* MPBatchRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */; };
 		6D0C39F3192E82870057DD9B /* TTInspectorPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBB1192580A10074F273 /* TTInspectorPopover.h */; };
 		6D0C39F4192E82870057DD9B /* descriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2E0190F629C00915617 /* descriptor.h */; };
 		6D0C39F5192E82870057DD9B /* substitute.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF33A190F629C00915617 /* substitute.h */; };
@@ -1264,12 +1168,10 @@
 		6D0C3A47192E82870057DD9B /* TTNativeElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB40192580A10074F273 /* TTNativeElement.h */; };
 		6D0C3A48192E82870057DD9B /* wire_format_lite_inl.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF367190F629C00915617 /* wire_format_lite_inl.h */; };
 		6D0C3A49192E82870057DD9B /* UIGestureRecognizer+TTAutomation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBA2192580A10074F273 /* UIGestureRecognizer+TTAutomation.h */; };
-		6D0C3A4A192E82870057DD9B /* MPMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */; };
 		6D0C3A4B192E82870057DD9B /* MPASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B89EC7B1929B1DF00F85499 /* MPASLLogger.h */; };
 		6D0C3A4C192E82870057DD9B /* descriptor.pb.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2E2190F629C00915617 /* descriptor.pb.h */; };
 		6D0C3A4D192E82870057DD9B /* NSObject+TT_SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE117192581800074F273 /* NSObject+TT_SBJSON.h */; };
 		6D0C3A4E192E82870057DD9B /* TTNativeElement+TTAccessors.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB3E192580A10074F273 /* TTNativeElement+TTAccessors.h */; };
-		6D0C3A4F192E82870057DD9B /* MPAppFinishedLaunchingBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */; };
 		6D0C3A50192E82870057DD9B /* TT_SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE11D192581800074F273 /* TT_SBJsonBase.h */; };
 		6D0C3A51192E82870057DD9B /* TTCPUMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBCF192580A20074F273 /* TTCPUMonitor.h */; };
 		6D0C3A52192E82870057DD9B /* TouchTestDriver-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC36192580A20074F273 /* TouchTestDriver-Prefix.pch */; };
@@ -1277,12 +1179,10 @@
 		6D0C3A54192E82870057DD9B /* NSData+TT_Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE126192581800074F273 /* NSData+TT_Base64.h */; };
 		6D0C3A55192E82870057DD9B /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF328190F629C00915617 /* common.h */; };
 		6D0C3A56192E82870057DD9B /* ClientBeaconBatch.pb.h in Headers */ = {isa = PBXBuildFile; fileRef = F76730B1190882BB00228AB7 /* ClientBeaconBatch.pb.h */; };
-		6D0C3A57192E82870057DD9B /* MPTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */; };
 		6D0C3A58192E82870057DD9B /* TTElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB38192580A10074F273 /* TTElement.h */; };
 		6D0C3A59192E82870057DD9B /* atomicops_internals_pnacl.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF322190F629C00915617 /* atomicops_internals_pnacl.h */; };
 		6D0C3A5A192E82870057DD9B /* TTNativeProgressViewElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB46192580A10074F273 /* TTNativeProgressViewElement.h */; };
 		6D0C3A5B192E82870057DD9B /* MPConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B87FC541909DA81009CA061 /* MPConfig.h */; };
-		6D0C3A5C192E82870057DD9B /* MPTimerData.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761F71906E36700DF0BE5 /* MPTimerData.h */; };
 		6D0C3A5D192E82870057DD9B /* NSString+TT_SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE119192581800074F273 /* NSString+TT_SBJSON.h */; };
 		6D0C3A5E192E82870057DD9B /* TTScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC42192580A20074F273 /* TTScreenshot.h */; };
 		6D0C3A5F192E82870057DD9B /* TTElement+TTAccessors.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDB36192580A10074F273 /* TTElement+TTAccessors.h */; };
@@ -1320,8 +1220,6 @@
 		6D0C3A82192E82870057DD9B /* text_format.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF350190F629C00915617 /* text_format.h */; };
 		6D0C3A83192E82870057DD9B /* TouchTestDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC37192580A20074F273 /* TouchTestDriver.h */; };
 		6D0C3A85192E82870057DD9B /* NSData+TTGzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE12A192581800074F273 /* NSData+TTGzip.h */; };
-		6D0C3A86192E82870057DD9B /* MPNumberDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = F79973A41920AB71002BCFAB /* MPNumberDictionary.h */; };
-		6D0C3A87192E82870057DD9B /* MPBeaconURLProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */; };
 		6D0C3A88192E82870057DD9B /* TTScreenshotCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC44192580A20074F273 /* TTScreenshotCore.h */; };
 		6D0C3A89192E82870057DD9B /* MPBatchTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF64319105FF400915617 /* MPBatchTransport.h */; };
 		6D0C3A8A192E82870057DD9B /* type_traits.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF33D190F629C00915617 /* type_traits.h */; };
@@ -1332,7 +1230,6 @@
 		6D0C3A8F192E82870057DD9B /* coded_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2F7190F629C00915617 /* coded_stream.h */; };
 		6D0C3A90192E82870057DD9B /* NSURLConnection+MPIntercept.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE1E21925825A0074F273 /* NSURLConnection+MPIntercept.h */; };
 		6D0C3A91192E82870057DD9B /* TTInspectorActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBAD192580A10074F273 /* TTInspectorActions.h */; };
-		6D0C3A92192E82870057DD9B /* MPNetworkCallBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */; };
 		6D0C3A93192E82870057DD9B /* TTSessionDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC27192580A20074F273 /* TTSessionDictionary.h */; };
 		6D0C3A94192E82870057DD9B /* MPLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B89EC7F1929B1DF00F85499 /* MPLog.h */; };
 		6D0C3A95192E82870057DD9B /* TTElement+Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BE218192585630074F273 /* TTElement+Test.h */; };
@@ -1376,7 +1273,6 @@
 		6D0C3ABB192E82870057DD9B /* NSString+MPExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D690B12190715610086B220 /* NSString+MPExtensions.h */; };
 		6D0C3ABC192E82870057DD9B /* service.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF31A190F629C00915617 /* service.h */; };
 		6D0C3ABD192E82870057DD9B /* TTHighLevelRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBF0192580A20074F273 /* TTHighLevelRecorder.h */; };
-		6D0C3ABE192E82870057DD9B /* MPAppIsInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */; };
 		6D0C3ABF192E82870057DD9B /* gzip_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2FB190F629C00915617 /* gzip_stream.h */; };
 		6D0C3AC0192E82870057DD9B /* MPTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B89EC991929B67100F85499 /* MPTTYLogger.h */; };
 		6D0C3AC1192E82870057DD9B /* TTTaskResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDC2E192580A20074F273 /* TTTaskResponder.h */; };
@@ -1389,7 +1285,6 @@
 		6D0C3AC9192E82870057DD9B /* atomicops_internals_x86_gcc.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF324190F629C00915617 /* atomicops_internals_x86_gcc.h */; };
 		6D0C3ACA192E82870057DD9B /* UIApplication+TTInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBB8192580A10074F273 /* UIApplication+TTInspector.h */; };
 		6D0C3ACB192E82870057DD9B /* TTConnectionTypeMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBCD192580A20074F273 /* TTConnectionTypeMonitor.h */; };
-		6D0C3ACC192E82870057DD9B /* MPBucketUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD27B9A1905924300881F84 /* MPBucketUtility.h */; };
 		6D0C3ACD192E82870057DD9B /* TTPickerViewListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9BDBE9192580A20074F273 /* TTPickerViewListener.h */; };
 		6D0C3ACE192E82870057DD9B /* strutil.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF337190F629C00915617 /* strutil.h */; };
 		6D0C3ACF192E82870057DD9B /* printer.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2FF190F629C00915617 /* printer.h */; };
@@ -2934,12 +2829,97 @@
 		9348A25E1BA3348400732150 /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A611B94EA88003A430F /* NSURLSession+MPIntercept.m */; };
 		9348A25F1BA3348400732150 /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A611B94EA88003A430F /* NSURLSession+MPIntercept.m */; };
 		9348A2601BA3348400732150 /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A611B94EA88003A430F /* NSURLSession+MPIntercept.m */; };
+		934E97E51BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */; };
+		934E97E61BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */; };
+		934E97E71BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */; };
+		934E97E81BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */; };
+		934E97E91BD06D06008BBDE8 /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */; };
+		934E97EA1BD06D06008BBDE8 /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */; };
+		934E97EB1BD06D06008BBDE8 /* MPAppInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */; };
+		934E97EC1BD06D06008BBDE8 /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */; };
+		934E97ED1BD06D06008BBDE8 /* MPAppLaunchBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */; };
+		934E97EE1BD06D06008BBDE8 /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */; };
+		934E97EF1BD06D06008BBDE8 /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		934E97F21BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */; };
+		934E97F31BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		934E97F51BD08C53008BBDE8 /* MPApiCustomMetricBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F41BD08C53008BBDE8 /* MPApiCustomMetricBeaconTests.m */; };
+		934E97F71BD09035008BBDE8 /* MPAppCrashBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F61BD09035008BBDE8 /* MPAppCrashBeaconTests.m */; };
+		934E97F91BD0904C008BBDE8 /* MPAppInactiveBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F81BD0904C008BBDE8 /* MPAppInactiveBeaconTests.m */; };
+		934E97FB1BD0905A008BBDE8 /* MPAppLaunchBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FA1BD0905A008BBDE8 /* MPAppLaunchBeaconTests.m */; };
+		934E97FD1BD093F3008BBDE8 /* MPBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FC1BD093F3008BBDE8 /* MPBeaconTests.m */; };
+		934F6DB11C0CD9FF00405F41 /* MPBeaconTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 934F6DB01C0CD9FF00405F41 /* MPBeaconTestBase.m */; };
+		934F6DB21C0CD9FF00405F41 /* MPBeaconTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 934F6DB01C0CD9FF00405F41 /* MPBeaconTestBase.m */; };
+		93F2244D1C29B26C00C8580E /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */; };
+		93F2244E1C29B2C300C8580E /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */; };
+		93F2244F1C29B2C300C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93F224501C29B2C300C8580E /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */; };
+		93F224511C29B2C300C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */; };
+		93F224521C29B2C300C8580E /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */; };
+		93F224531C29B33C00C8580E /* MPApiCustomMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */; };
+		93F224541C29B33C00C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */; };
+		93F224551C29B33C00C8580E /* MPApiNetworkRequestBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */; };
+		93F224561C29B33C00C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F224571C29B33C00C8580E /* MPAppInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */; };
+		93F224581C29B33C00C8580E /* MPAppLaunchBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */; };
+		93F224591C29B3D600C8580E /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		93F2245A1C29B43800C8580E /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */; };
+		93F2245B1C29B43800C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93F2245C1C29B43800C8580E /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */; };
+		93F2245D1C29B43800C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */; };
+		93F2245E1C29B43800C8580E /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */; };
+		93F2245F1C29B43800C8580E /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */; };
+		93F224601C29B43800C8580E /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		93F224611C29B44B00C8580E /* MPApiCustomMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */; };
+		93F224621C29B44B00C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */; };
+		93F224631C29B44B00C8580E /* MPApiNetworkRequestBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */; };
+		93F224641C29B44B00C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F224651C29B44B00C8580E /* MPAppInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */; };
+		93F224661C29B44B00C8580E /* MPAppLaunchBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */; };
+		93F224681C29B46500C8580E /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		93F224691C29B47000C8580E /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */; };
+		93F2246A1C29B47000C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93F2246B1C29B47000C8580E /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */; };
+		93F2246C1C29B47000C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */; };
+		93F2246D1C29B47000C8580E /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */; };
+		93F2246E1C29B47000C8580E /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */; };
+		93F2246F1C29B47000C8580E /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		93F224701C29B47A00C8580E /* MPApiCustomMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */; };
+		93F224711C29B47A00C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */; };
+		93F224721C29B47B00C8580E /* MPApiNetworkRequestBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */; };
+		93F224731C29B47B00C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F224741C29B47B00C8580E /* MPAppInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */; };
+		93F224751C29B47B00C8580E /* MPAppLaunchBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */; };
+		93F224761C29B48600C8580E /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */; };
+		93F224771C29B48600C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93F224781C29B48600C8580E /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */; };
+		93F224791C29B48600C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */; };
+		93F2247A1C29B48600C8580E /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */; };
+		93F2247B1C29B48600C8580E /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */; };
+		93F2247C1C29B48600C8580E /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		93F2247D1C29B49300C8580E /* MPApiCustomMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */; };
+		93F2247E1C29B49300C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */; };
+		93F2247F1C29B49300C8580E /* MPApiNetworkRequestBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */; };
+		93F224801C29B49300C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F224811C29B49300C8580E /* MPAppInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */; };
+		93F224821C29B49300C8580E /* MPAppLaunchBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */; };
+		93F224831C29B49D00C8580E /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */; };
+		93F224841C29B49D00C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93F224851C29B49D00C8580E /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */; };
+		93F224861C29B49D00C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */; };
+		93F224871C29B49D00C8580E /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */; };
+		93F224881C29B49D00C8580E /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */; };
+		93F224891C29B49D00C8580E /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97E41BD06D06008BBDE8 /* MPBeacon.mm */; };
+		93F2248A1C29B4A800C8580E /* MPApiCustomMetricBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */; };
+		93F2248B1C29B4A800C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */; };
+		93F2248C1C29B4A800C8580E /* MPApiNetworkRequestBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */; };
+		93F2248D1C29B4A800C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F2248E1C29B4A800C8580E /* MPAppInactiveBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */; };
+		93F2248F1C29B4A800C8580E /* MPAppLaunchBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */; };
 		C46F4BD2195B6D1A00A3A508 /* MPHttpRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C46F4BD1195B6D1A00A3A508 /* MPHttpRequestTests.m */; };
 		C4F2E16E196C87E200D7BFD8 /* MPHttpRequestDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F2E16D196C87E200D7BFD8 /* MPHttpRequestDelegateHelper.m */; };
 		F73041241936533000C45682 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F71925D8E8009BE429 /* MapKit.framework */; };
 		F73041251936534400C45682 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F91925D906009BE429 /* QuartzCore.framework */; };
 		F73041261936536900C45682 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F51925D8E1009BE429 /* OpenGLES.framework */; };
-		F7304128193656D300C45682 /* MPBatchRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7304127193656D300C45682 /* MPBatchRecordTests.m */; };
 		F76730B2190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		F76730B3190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		F76730B4190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
@@ -2954,16 +2934,11 @@
 		F767435F1909D5FB00228AB7 /* MPBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F767435C1909D5FB00228AB7 /* MPBatch.mm */; };
 		F76743601909D5FB00228AB7 /* MPBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F767435C1909D5FB00228AB7 /* MPBatch.mm */; };
 		F76743611909D5FB00228AB7 /* MPBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F767435C1909D5FB00228AB7 /* MPBatch.mm */; };
-		F767436A190CB68500228AB7 /* MPBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7674369190CB68500228AB7 /* MPBatchTests.m */; };
+		F767436A190CB68500228AB7 /* MPBatchTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7674369190CB68500228AB7 /* MPBatchTests.mm */; };
 		F775D60D1907758300EF7369 /* MPBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = F775D60B1907758300EF7369 /* MPBeacon.h */; };
 		F775D60E1907758300EF7369 /* MPBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = F775D60B1907758300EF7369 /* MPBeacon.h */; };
 		F775D60F1907758300EF7369 /* MPBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = F775D60B1907758300EF7369 /* MPBeacon.h */; };
 		F775D6101907758300EF7369 /* MPBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = F775D60B1907758300EF7369 /* MPBeacon.h */; };
-		F775D6111907758300EF7369 /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
-		F775D6121907758300EF7369 /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
-		F775D6131907758300EF7369 /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
-		F775D6141907758300EF7369 /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
-		F775D6151907758300EF7369 /* MPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.m */; };
 		F78AF496190F629C00915617 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
 		F78AF497190F629C00915617 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
 		F78AF498190F629C00915617 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
@@ -3259,40 +3234,13 @@
 		F799739F192086F0002BCFAB /* NSNumber+MPExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = F7997398192086F0002BCFAB /* NSNumber+MPExtensions.h */; };
 		F79973A0192086F0002BCFAB /* NSNumber+MPExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = F7997398192086F0002BCFAB /* NSNumber+MPExtensions.h */; };
 		F79973A1192086F0002BCFAB /* NSNumber+MPExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = F7997398192086F0002BCFAB /* NSNumber+MPExtensions.h */; };
-		F79973A61920AB71002BCFAB /* MPNumberDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = F79973A41920AB71002BCFAB /* MPNumberDictionary.h */; };
-		F79973A71920AB71002BCFAB /* MPNumberDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = F79973A41920AB71002BCFAB /* MPNumberDictionary.h */; };
-		F79973A81920AB71002BCFAB /* MPNumberDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = F79973A41920AB71002BCFAB /* MPNumberDictionary.h */; };
-		F79973A91920AB71002BCFAB /* MPNumberDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = F79973A41920AB71002BCFAB /* MPNumberDictionary.h */; };
-		F79973AA1920AB71002BCFAB /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
-		F79973AB1920AB71002BCFAB /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
-		F79973AC1920AB71002BCFAB /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
-		F79973AD1920AB71002BCFAB /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
-		F79973AE1920AB71002BCFAB /* MPNumberDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973A51920AB71002BCFAB /* MPNumberDictionary.m */; };
-		F79973B019212074002BCFAB /* MPNumberDictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F79973AF19212074002BCFAB /* MPNumberDictionaryTest.m */; };
 		F79973B119212233002BCFAB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE14B1D1912CDFD00F345E3 /* libxml2.dylib */; };
 		F79973B2192122BF002BCFAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B63D66A1912EBA700F4D865 /* CoreGraphics.framework */; };
 		F79973B3192122DB002BCFAB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1899B0191169A1009794C1 /* libz.dylib */; };
-		F7A761F01906E29100DF0BE5 /* MPBatchRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */; };
-		F7A761F11906E29100DF0BE5 /* MPBatchRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */; };
-		F7A761F21906E29100DF0BE5 /* MPBatchRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */; };
-		F7A761F31906E29100DF0BE5 /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
-		F7A761F41906E29100DF0BE5 /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
-		F7A761F51906E29100DF0BE5 /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
-		F7A761F61906E29100DF0BE5 /* MPBatchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */; };
-		F7A761F91906E36700DF0BE5 /* MPTimerData.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761F71906E36700DF0BE5 /* MPTimerData.h */; };
-		F7A761FA1906E36700DF0BE5 /* MPTimerData.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761F71906E36700DF0BE5 /* MPTimerData.h */; };
-		F7A761FB1906E36700DF0BE5 /* MPTimerData.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761F71906E36700DF0BE5 /* MPTimerData.h */; };
-		F7A761FC1906E36700DF0BE5 /* MPTimerData.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A761F71906E36700DF0BE5 /* MPTimerData.h */; };
-		F7A761FD1906E36700DF0BE5 /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
-		F7A761FE1906E36700DF0BE5 /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
-		F7A761FF1906E36700DF0BE5 /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
-		F7A762001906E36700DF0BE5 /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
-		F7A762011906E36700DF0BE5 /* MPTimerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A761F81906E36700DF0BE5 /* MPTimerData.m */; };
 		F7A762041906E45500DF0BE5 /* MPBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A762021906E45500DF0BE5 /* MPBatch.h */; };
 		F7A762051906E45500DF0BE5 /* MPBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A762021906E45500DF0BE5 /* MPBatch.h */; };
 		F7A762061906E45500DF0BE5 /* MPBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A762021906E45500DF0BE5 /* MPBatch.h */; };
 		F7A762071906E45500DF0BE5 /* MPBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = F7A762021906E45500DF0BE5 /* MPBatch.h */; };
-		F7C7F44A1923EFA900670E8C /* MPBeaconURLProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C7F4491923EFA900670E8C /* MPBeaconURLProcessorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3327,8 +3275,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppFinishedLaunchingBeacon.h; path = Beacons/MPAppFinishedLaunchingBeacon.h; sourceTree = "<group>"; };
-		271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPAppFinishedLaunchingBeacon.m; path = Beacons/MPAppFinishedLaunchingBeacon.m; sourceTree = "<group>"; };
 		272075D618F59B8B008DB644 /* MPBeaconCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBeaconCollector.h; path = Collection/MPBeaconCollector.h; sourceTree = "<group>"; };
 		272075D718F59B8B008DB644 /* MPBeaconCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBeaconCollector.m; path = Collection/MPBeaconCollector.m; sourceTree = "<group>"; };
 		2783853E19AC0BE20065D082 /* TTMultiTouchRecordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMultiTouchRecordInfo.h; sourceTree = "<group>"; };
@@ -3337,12 +3283,6 @@
 		27E4BABD199D67E700FBD812 /* TTTextFieldListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTextFieldListener.h; path = TextField/TTTextFieldListener.h; sourceTree = "<group>"; };
 		27E4BABE199D67E700FBD812 /* TTTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTextFieldDelegate.m; path = TextField/TTTextFieldDelegate.m; sourceTree = "<group>"; };
 		27E4BABF199D67E700FBD812 /* TTTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTextFieldDelegate.h; path = TextField/TTTextFieldDelegate.h; sourceTree = "<group>"; };
-		27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTimerBeacon.h; sourceTree = "<group>"; };
-		27EE519018FC64760079D9E7 /* MPTimerBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTimerBeacon.m; sourceTree = "<group>"; };
-		27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPNetworkCallBeacon.h; path = Beacons/MPNetworkCallBeacon.h; sourceTree = "<group>"; };
-		27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPNetworkCallBeacon.m; path = Beacons/MPNetworkCallBeacon.m; sourceTree = "<group>"; };
-		27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMetricBeacon.h; path = Beacons/MPMetricBeacon.h; sourceTree = "<group>"; };
-		27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMetricBeacon.m; path = Beacons/MPMetricBeacon.m; sourceTree = "<group>"; };
 		2C801928164C36BF0037FF54 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2C80192F164C7B8D0037FF54 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		2C8019371651537C0037FF54 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -3369,7 +3309,7 @@
 		5B1899B0191169A1009794C1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5B23480C198957910037EFEC /* MPNetworkErrorBeaconGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPNetworkErrorBeaconGenerator.h; path = Beacons/MPNetworkErrorBeaconGenerator.h; sourceTree = "<group>"; };
 		5B23480D198957910037EFEC /* MPNetworkErrorBeaconGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPNetworkErrorBeaconGenerator.m; path = Beacons/MPNetworkErrorBeaconGenerator.m; sourceTree = "<group>"; };
-		5B27002A1B0FA20F00F49358 /* MPTimerBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTimerBeaconTests.m; sourceTree = "<group>"; };
+		5B27002A1B0FA20F00F49358 /* MPApiCustomTimerBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPApiCustomTimerBeaconTests.m; sourceTree = "<group>"; };
 		5B2E6F911A3628FB00EEB56C /* BoomerangTests copy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoomerangTests copy.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2E6F921A3628FC00EEB56C /* BoomerangTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BoomerangTests copy-Info.plist"; path = "/Users/msharma/Documents/soasta/source/MobileApplications/iOS/BoomerangTTD/BoomerangTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		5B2E6F931A36349900EEB56C /* MPPodFrameworksNetworkingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPodFrameworksNetworkingTests.m; sourceTree = "<group>"; };
@@ -3399,8 +3339,6 @@
 		5B9CA7FB1925DA7C009BE429 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		5B9CA7FD1925DA80009BE429 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		5B9CA7FF1925DA89009BE429 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
-		5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBeaconURLProcessor.h; path = Collection/MPBeaconURLProcessor.h; sourceTree = "<group>"; };
-		5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBeaconURLProcessor.m; path = Collection/MPBeaconURLProcessor.m; sourceTree = "<group>"; };
 		5BC4AE301ADF0D2E00873E29 /* IOHIDDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDDisplay.h; sourceTree = "<group>"; };
 		5BC4AE311ADF0D2E00873E29 /* IOHIDEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEvent.h; sourceTree = "<group>"; };
 		5BC4AE321ADF0D2E00873E29 /* IOHIDEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventData.h; sourceTree = "<group>"; };
@@ -3421,15 +3359,10 @@
 		5BC4AE411ADF0D2E00873E29 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
 		5BC5E05318D0FD790095F33A /* libMPulse.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libMPulse.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC5E07518D0FD820095F33A /* libMPulse.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMPulse.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BD27B9A1905924300881F84 /* MPBucketUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBucketUtility.h; path = Collection/MPBucketUtility.h; sourceTree = "<group>"; };
-		5BD27B9B1905924300881F84 /* MPBucketUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBucketUtility.m; path = Collection/MPBucketUtility.m; sourceTree = "<group>"; };
-		5BD27BA419059CBC00881F84 /* MPBucketUtilityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBucketUtilityTests.m; sourceTree = "<group>"; };
 		5BD27BA61905A0A300881F84 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5BD27BA81905A0FE00881F84 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5BEA209B197588A400368577 /* TTLocatorCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLocatorCollection.h; sourceTree = "<group>"; };
 		5BEA209C197588A400368577 /* TTLocatorCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLocatorCollection.m; sourceTree = "<group>"; };
-		5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppIsInactiveBeacon.h; path = Beacons/MPAppIsInactiveBeacon.h; sourceTree = "<group>"; };
-		5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPAppIsInactiveBeacon.m; path = Beacons/MPAppIsInactiveBeacon.m; sourceTree = "<group>"; };
 		6D0974331912D6DE00A180AD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		6D0974351912D6EC00A180AD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libxml2.2.dylib; sourceTree = DEVELOPER_DIR; };
 		6D09743E1912D96B00A180AD /* MPTouchPageGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTouchPageGroup.h; path = Config/MPTouchPageGroup.h; sourceTree = "<group>"; };
@@ -3803,19 +3736,37 @@
 		93318A5F1B94EA88003A430F /* MPInterceptUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPInterceptUtils.m; path = Intercept/MPInterceptUtils.m; sourceTree = "<group>"; };
 		93318A601B94EA88003A430F /* NSURLSession+MPIntercept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+MPIntercept.h"; path = "Intercept/NSURLSession+MPIntercept.h"; sourceTree = "<group>"; };
 		93318A611B94EA88003A430F /* NSURLSession+MPIntercept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+MPIntercept.m"; path = "Intercept/NSURLSession+MPIntercept.m"; sourceTree = "<group>"; };
+		934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPApiCustomMetricBeacon.h; path = Beacons/MPApiCustomMetricBeacon.h; sourceTree = "<group>"; };
+		934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPApiCustomMetricBeacon.mm; path = Beacons/MPApiCustomMetricBeacon.mm; sourceTree = "<group>"; };
+		934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPApiNetworkRequestBeacon.h; path = Beacons/MPApiNetworkRequestBeacon.h; sourceTree = "<group>"; };
+		934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPApiNetworkRequestBeacon.mm; path = Beacons/MPApiNetworkRequestBeacon.mm; sourceTree = "<group>"; };
+		934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppCrashBeacon.h; path = Beacons/MPAppCrashBeacon.h; sourceTree = "<group>"; };
+		934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPAppCrashBeacon.mm; path = Beacons/MPAppCrashBeacon.mm; sourceTree = "<group>"; };
+		934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppInactiveBeacon.h; path = Beacons/MPAppInactiveBeacon.h; sourceTree = "<group>"; };
+		934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPAppInactiveBeacon.m; path = Beacons/MPAppInactiveBeacon.m; sourceTree = "<group>"; };
+		934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppLaunchBeacon.h; path = Beacons/MPAppLaunchBeacon.h; sourceTree = "<group>"; };
+		934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPAppLaunchBeacon.mm; path = Beacons/MPAppLaunchBeacon.mm; sourceTree = "<group>"; };
+		934E97E41BD06D06008BBDE8 /* MPBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPBeacon.mm; path = Beacons/MPBeacon.mm; sourceTree = "<group>"; };
+		934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPApiCustomTimerBeacon.h; path = Beacons/MPApiCustomTimerBeacon.h; sourceTree = "<group>"; };
+		934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPApiCustomTimerBeacon.mm; path = Beacons/MPApiCustomTimerBeacon.mm; sourceTree = "<group>"; };
+		934E97F41BD08C53008BBDE8 /* MPApiCustomMetricBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPApiCustomMetricBeaconTests.m; sourceTree = "<group>"; };
+		934E97F61BD09035008BBDE8 /* MPAppCrashBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppCrashBeaconTests.m; sourceTree = "<group>"; };
+		934E97F81BD0904C008BBDE8 /* MPAppInactiveBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppInactiveBeaconTests.m; sourceTree = "<group>"; };
+		934E97FA1BD0905A008BBDE8 /* MPAppLaunchBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppLaunchBeaconTests.m; sourceTree = "<group>"; };
+		934E97FC1BD093F3008BBDE8 /* MPBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconTests.m; sourceTree = "<group>"; };
+		934F6DAF1C0CD9FF00405F41 /* MPBeaconTestBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBeaconTestBase.h; sourceTree = "<group>"; };
+		934F6DB01C0CD9FF00405F41 /* MPBeaconTestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconTestBase.m; sourceTree = "<group>"; };
 		C46F4BD1195B6D1A00A3A508 /* MPHttpRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestTests.m; sourceTree = "<group>"; };
 		C4F2E16C196C87E200D7BFD8 /* MPHttpRequestDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHttpRequestDelegateHelper.h; sourceTree = "<group>"; };
 		C4F2E16D196C87E200D7BFD8 /* MPHttpRequestDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestDelegateHelper.m; sourceTree = "<group>"; };
 		DDD801557B828A1872ECC26C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A774000E4C7617F29828EB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F7304127193656D300C45682 /* MPBatchRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBatchRecordTests.m; sourceTree = "<group>"; };
 		F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientBeaconBatch.pb.cc; sourceTree = "<group>"; };
 		F76730B1190882BB00228AB7 /* ClientBeaconBatch.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientBeaconBatch.pb.h; sourceTree = "<group>"; };
 		F767435C1909D5FB00228AB7 /* MPBatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPBatch.mm; path = Collection/MPBatch.mm; sourceTree = "<group>"; };
-		F7674369190CB68500228AB7 /* MPBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBatchTests.m; sourceTree = "<group>"; };
+		F7674369190CB68500228AB7 /* MPBatchTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPBatchTests.mm; sourceTree = "<group>"; };
 		F767436B190CBDE300228AB7 /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libprotobuf-lite.a"; path = "../../../NIH/Google/lib/iOS/libprotobuf-lite.a"; sourceTree = "<group>"; };
 		F775D60B1907758300EF7369 /* MPBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBeacon.h; path = Beacons/MPBeacon.h; sourceTree = "<group>"; };
-		F775D60C1907758300EF7369 /* MPBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBeacon.m; path = Beacons/MPBeacon.m; sourceTree = "<group>"; };
 		F78AF2DF190F629C00915617 /* descriptor.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = descriptor.cc; sourceTree = "<group>"; };
 		F78AF2E0190F629C00915617 /* descriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptor.h; sourceTree = "<group>"; };
 		F78AF2E1190F629C00915617 /* descriptor.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = descriptor.pb.cc; sourceTree = "<group>"; };
@@ -3902,15 +3853,7 @@
 		F78AF64419105FF400915617 /* MPBatchTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBatchTransport.m; path = Collection/MPBatchTransport.m; sourceTree = "<group>"; };
 		F7997397192086F0002BCFAB /* NSNumber+MPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MPExtensions.m"; sourceTree = "<group>"; };
 		F7997398192086F0002BCFAB /* NSNumber+MPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MPExtensions.h"; sourceTree = "<group>"; };
-		F79973A41920AB71002BCFAB /* MPNumberDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPNumberDictionary.h; path = Collection/MPNumberDictionary.h; sourceTree = "<group>"; };
-		F79973A51920AB71002BCFAB /* MPNumberDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPNumberDictionary.m; path = Collection/MPNumberDictionary.m; sourceTree = "<group>"; };
-		F79973AF19212074002BCFAB /* MPNumberDictionaryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNumberDictionaryTest.m; sourceTree = "<group>"; };
-		F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBatchRecord.h; path = Collection/MPBatchRecord.h; sourceTree = "<group>"; };
-		F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBatchRecord.m; path = Collection/MPBatchRecord.m; sourceTree = "<group>"; };
-		F7A761F71906E36700DF0BE5 /* MPTimerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTimerData.h; path = Collection/MPTimerData.h; sourceTree = "<group>"; };
-		F7A761F81906E36700DF0BE5 /* MPTimerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPTimerData.m; path = Collection/MPTimerData.m; sourceTree = "<group>"; };
 		F7A762021906E45500DF0BE5 /* MPBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBatch.h; path = Collection/MPBatch.h; sourceTree = "<group>"; };
-		F7C7F4491923EFA900670E8C /* MPBeaconURLProcessorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconURLProcessorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4060,20 +4003,10 @@
 				F76730B1190882BB00228AB7 /* ClientBeaconBatch.pb.h */,
 				F7A762021906E45500DF0BE5 /* MPBatch.h */,
 				F767435C1909D5FB00228AB7 /* MPBatch.mm */,
-				F7A761EE1906E29100DF0BE5 /* MPBatchRecord.h */,
-				F7A761EF1906E29100DF0BE5 /* MPBatchRecord.m */,
 				F78AF64319105FF400915617 /* MPBatchTransport.h */,
 				F78AF64419105FF400915617 /* MPBatchTransport.m */,
 				272075D618F59B8B008DB644 /* MPBeaconCollector.h */,
 				272075D718F59B8B008DB644 /* MPBeaconCollector.m */,
-				5B9CA8011925DC8D009BE429 /* MPBeaconURLProcessor.h */,
-				5B9CA8021925DC8D009BE429 /* MPBeaconURLProcessor.m */,
-				5BD27B9A1905924300881F84 /* MPBucketUtility.h */,
-				5BD27B9B1905924300881F84 /* MPBucketUtility.m */,
-				F79973A41920AB71002BCFAB /* MPNumberDictionary.h */,
-				F79973A51920AB71002BCFAB /* MPNumberDictionary.m */,
-				F7A761F71906E36700DF0BE5 /* MPTimerData.h */,
-				F7A761F81906E36700DF0BE5 /* MPTimerData.m */,
 			);
 			name = Collection;
 			sourceTree = "<group>";
@@ -4081,20 +4014,22 @@
 		272075CC18F32155008DB644 /* Beacons */ = {
 			isa = PBXGroup;
 			children = (
-				271A7F9918FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h */,
-				271A7F9A18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m */,
-				5BF6D58A19085E5E00C5F991 /* MPAppIsInactiveBeacon.h */,
-				5BF6D58B19085E5E00C5F991 /* MPAppIsInactiveBeacon.m */,
+				934E97DA1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h */,
+				934E97DB1BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm */,
+				934E97F01BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h */,
+				934E97F11BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm */,
+				934E97DC1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h */,
+				934E97DD1BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm */,
+				934E97DE1BD06D06008BBDE8 /* MPAppCrashBeacon.h */,
+				934E97DF1BD06D06008BBDE8 /* MPAppCrashBeacon.mm */,
+				934E97E01BD06D06008BBDE8 /* MPAppInactiveBeacon.h */,
+				934E97E11BD06D06008BBDE8 /* MPAppInactiveBeacon.m */,
+				934E97E21BD06D06008BBDE8 /* MPAppLaunchBeacon.h */,
+				934E97E31BD06D06008BBDE8 /* MPAppLaunchBeacon.mm */,
 				F775D60B1907758300EF7369 /* MPBeacon.h */,
-				F775D60C1907758300EF7369 /* MPBeacon.m */,
-				27EE51B618FC8A760079D9E7 /* MPMetricBeacon.h */,
-				27EE51B718FC8A760079D9E7 /* MPMetricBeacon.m */,
-				27EE51A018FC8A2D0079D9E7 /* MPNetworkCallBeacon.h */,
-				27EE51A118FC8A2D0079D9E7 /* MPNetworkCallBeacon.m */,
+				934E97E41BD06D06008BBDE8 /* MPBeacon.mm */,
 				5B23480C198957910037EFEC /* MPNetworkErrorBeaconGenerator.h */,
 				5B23480D198957910037EFEC /* MPNetworkErrorBeaconGenerator.m */,
-				27EE518F18FC64760079D9E7 /* MPTimerBeacon.h */,
-				27EE519018FC64760079D9E7 /* MPTimerBeacon.m */,
 			);
 			name = Beacons;
 			sourceTree = "<group>";
@@ -4181,23 +4116,23 @@
 				5B18992E19102268009794C1 /* Demographics */,
 				6DB0BC22192530EF00F17FE1 /* Extensions */,
 				6D9BE1DF192582460074F273 /* Intercept */,
+				6DB0BC271925315300F17FE1 /* Other Sources */,
 				6D34CB571907052A00D4E08D /* ThirdParty */,
 				6D3104C8190887F9002A05D4 /* TouchHandler */,
-				6DB0BC271925315300F17FE1 /* Other Sources */,
-				5B9006451A7F14940099D2F7 /* MPulse.h */,
-				5B9006461A7F14940099D2F7 /* MPulse.m */,
-				5B9006471A7F14940099D2F7 /* MPulsePrivate.h */,
+				2CF428CE1642E1CD0058AC81 /* Supporting Files */,
 				5B87FC541909DA81009CA061 /* MPConfig.h */,
 				5B87FC551909DA81009CA061 /* MPConfig.m */,
 				5B87FC561909DA81009CA061 /* MPSession.h */,
 				5B87FC571909DA81009CA061 /* MPSession.m */,
 				6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */,
 				6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */,
+				5B9006451A7F14940099D2F7 /* MPulse.h */,
+				5B9006461A7F14940099D2F7 /* MPulse.m */,
+				5B9006471A7F14940099D2F7 /* MPulsePrivate.h */,
 				2CF428FE164470E00058AC81 /* MPURLConnection.h */,
 				2CF428FF164470E00058AC81 /* MPURLConnection.m */,
 				6D0EBBAB18D10BB500FB62AA /* MPUtilities.h */,
 				6D0EBBAC18D10BB500FB62AA /* MPUtilities.m */,
-				2CF428CE1642E1CD0058AC81 /* Supporting Files */,
 			);
 			path = Boomerang;
 			sourceTree = "<group>";
@@ -4213,19 +4148,22 @@
 		2CF428E11642E1CD0058AC81 /* BoomerangTests */ = {
 			isa = PBXGroup;
 			children = (
-				2CF428E21642E1CD0058AC81 /* Supporting Files */,
-				5B2E6F931A36349900EEB56C /* MPPodFrameworksNetworkingTests.m */,
-				F7304127193656D300C45682 /* MPBatchRecordTests.m */,
-				F7674369190CB68500228AB7 /* MPBatchTests.m */,
-				F7C7F4491923EFA900670E8C /* MPBeaconURLProcessorTests.m */,
-				5BD27BA419059CBC00881F84 /* MPBucketUtilityTests.m */,
+				934E97F41BD08C53008BBDE8 /* MPApiCustomMetricBeaconTests.m */,
+				5B27002A1B0FA20F00F49358 /* MPApiCustomTimerBeaconTests.m */,
+				934E97F61BD09035008BBDE8 /* MPAppCrashBeaconTests.m */,
+				934E97F81BD0904C008BBDE8 /* MPAppInactiveBeaconTests.m */,
+				934E97FA1BD0905A008BBDE8 /* MPAppLaunchBeaconTests.m */,
+				F7674369190CB68500228AB7 /* MPBatchTests.mm */,
+				934F6DAF1C0CD9FF00405F41 /* MPBeaconTestBase.h */,
+				934F6DB01C0CD9FF00405F41 /* MPBeaconTestBase.m */,
+				934E97FC1BD093F3008BBDE8 /* MPBeaconTests.m */,
 				5B7270831B18065F00AEA3B3 /* MPConfigTests.m */,
 				C46F4BD1195B6D1A00A3A508 /* MPHttpRequestTests.m */,
+				5B2E6F931A36349900EEB56C /* MPPodFrameworksNetworkingTests.m */,
 				5B4BD2D1196C948C0063411F /* MPRemoveUnicodeCharsTest.m */,
-				F79973AF19212074002BCFAB /* MPNumberDictionaryTest.m */,
-				5B27002A1B0FA20F00F49358 /* MPTimerBeaconTests.m */,
 				6DB656D6193660B8009453FB /* MPTouchMetricTests.m */,
 				6DB656D819366100009453FB /* MPTouchTimerTests.m */,
+				2CF428E21642E1CD0058AC81 /* Supporting Files */,
 			);
 			path = BoomerangTests;
 			sourceTree = "<group>";
@@ -4927,14 +4865,14 @@
 		6D9BE1DF192582460074F273 /* Intercept */ = {
 			isa = PBXGroup;
 			children = (
-				93318A5E1B94EA88003A430F /* MPInterceptUtils.h */,
-				93318A5F1B94EA88003A430F /* MPInterceptUtils.m */,
 				6D9BE1E01925825A0074F273 /* MPInterceptURLConnectionDelegate.h */,
 				6D9BE1E11925825A0074F273 /* MPInterceptURLConnectionDelegate.m */,
-				6D9BE1E21925825A0074F273 /* NSURLConnection+MPIntercept.h */,
-				6D9BE1E31925825A0074F273 /* NSURLConnection+MPIntercept.m */,
 				93318A5C1B94EA88003A430F /* MPInterceptURLSessionDelegate.h */,
 				93318A5D1B94EA88003A430F /* MPInterceptURLSessionDelegate.m */,
+				93318A5E1B94EA88003A430F /* MPInterceptUtils.h */,
+				93318A5F1B94EA88003A430F /* MPInterceptUtils.m */,
+				6D9BE1E21925825A0074F273 /* NSURLConnection+MPIntercept.h */,
+				6D9BE1E31925825A0074F273 /* NSURLConnection+MPIntercept.m */,
 				93318A601B94EA88003A430F /* NSURLSession+MPIntercept.h */,
 				93318A611B94EA88003A430F /* NSURLSession+MPIntercept.m */,
 			);
@@ -5110,6 +5048,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224611C29B44B00C8580E /* MPApiCustomMetricBeacon.h in Headers */,
+				93F224621C29B44B00C8580E /* MPApiCustomTimerBeacon.h in Headers */,
+				93F224631C29B44B00C8580E /* MPApiNetworkRequestBeacon.h in Headers */,
+				93F224641C29B44B00C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F224651C29B44B00C8580E /* MPAppInactiveBeacon.h in Headers */,
+				93F224661C29B44B00C8580E /* MPAppLaunchBeacon.h in Headers */,
 				F78AF60A190F629C00915617 /* text_format.h in Headers */,
 				6D9BE182192581800074F273 /* NSData+TT_Base64.h in Headers */,
 				6D9BE0C5192580A20074F273 /* TTUncaughtExceptionHandler.h in Headers */,
@@ -5119,7 +5063,6 @@
 				6D9BDC7B192580A20074F273 /* TTNativeElement+TTAccessors.h in Headers */,
 				6D9BDF29192580A20074F273 /* NSString+TTExtensions.h in Headers */,
 				6D9BE079192580A20074F273 /* TouchTestDriver.h in Headers */,
-				27EE51A518FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */,
 				6D9BE14C192581800074F273 /* NSString+TT_SBJSON.h in Headers */,
 				6D0974411912D96B00A180AD /* MPTouchPageGroup.h in Headers */,
 				6D9BDEE6192580A20074F273 /* TTMetricMonitorBase.h in Headers */,
@@ -5135,7 +5078,6 @@
 				F78AF638190F629C00915617 /* wire_format_lite_inl.h in Headers */,
 				6D37C67E1ACB6D1200880BA0 /* TTBlockingGestureRecognizer.h in Headers */,
 				F78AF4F6190F629C00915617 /* gzip_stream.h in Headers */,
-				5B9CA8041925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */,
 				6D570A991908812A00DAB8EE /* MPTouchConfig.h in Headers */,
 				6D9BDDFB192580A20074F273 /* TTToucher.h in Headers */,
 				F78AF563190F629C00915617 /* service.h in Headers */,
@@ -5235,7 +5177,6 @@
 				5B5F94CD1936AA6A0012D36F /* TTMultiTouchHud.h in Headers */,
 				6D9BE0AA192580A20074F273 /* TTScreenshot.h in Headers */,
 				6D9BE086192580A20074F273 /* TTAppActionStatus.h in Headers */,
-				27EE51B918FC8A760079D9E7 /* MPMetricBeacon.h in Headers */,
 				F78AF5AF190F629C00915617 /* stringprintf.h in Headers */,
 				6D9BE13F192581800074F273 /* JSON.h in Headers */,
 				5B5F94CB1936AA6A0012D36F /* TTAutomationHud.h in Headers */,
@@ -5249,7 +5190,6 @@
 				6D9BDDD7192580A20074F273 /* TTAutomation.h in Headers */,
 				6D9BDFD8192580A20074F273 /* TTRecordingTaskHandler.h in Headers */,
 				F78AF572190F629C00915617 /* atomicops_internals_macosx.h in Headers */,
-				F7A761FA1906E36700DF0BE5 /* MPTimerData.h in Headers */,
 				6D9BDE55192580A20074F273 /* TTInspectorPopover.h in Headers */,
 				6D9BE143192581800074F273 /* NSObject+TT_SBJSON.h in Headers */,
 				9348A2581BA3347A00732150 /* NSURLSession+MPIntercept.h in Headers */,
@@ -5260,7 +5200,6 @@
 				F78AF5D7190F629C00915617 /* type_traits.h in Headers */,
 				F78AF51E190F629C00915617 /* zero_copy_stream_impl.h in Headers */,
 				F78AF4E1190F629C00915617 /* generated_message_util.h in Headers */,
-				F7A761F11906E29100DF0BE5 /* MPBatchRecord.h in Headers */,
 				6D9BDCA8192580A20074F273 /* TTNativeSegmentedControlElement.h in Headers */,
 				5B234810198957910037EFEC /* MPNetworkErrorBeaconGenerator.h in Headers */,
 				6D9BE1F21925825A0074F273 /* NSURLConnection+MPIntercept.h in Headers */,
@@ -5270,11 +5209,9 @@
 				6D9BE0A1192580A20074F273 /* TTQueue.h in Headers */,
 				F78AF50C190F629C00915617 /* tokenizer.h in Headers */,
 				F78AF4FA190F629C00915617 /* package_info.h in Headers */,
-				27EE519218FC64760079D9E7 /* MPTimerBeacon.h in Headers */,
 				6D9BE1021925813D0074F273 /* TTPickerOptions.h in Headers */,
 				6D9BDDE9192580A20074F273 /* TTAutomationTaskHandler.h in Headers */,
 				6D9BE18B192581800074F273 /* NSData+TTCommonCrypto.h in Headers */,
-				5BF6D58D19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */,
 				6D9BDCF0192580A20074F273 /* UITableView+TTAutomation.h in Headers */,
 				F78AF575190F629C00915617 /* atomicops_internals_mips_gcc.h in Headers */,
 				F78AF5A5190F629C00915617 /* platform_macros.h in Headers */,
@@ -5338,12 +5275,10 @@
 				6D0ECD8619413187004345DD /* MPTouchExtract.h in Headers */,
 				6D9BE0CE192580A20074F273 /* TTUtilities.h in Headers */,
 				6D9BE06C192580A20074F273 /* TTURLConnection.h in Headers */,
-				271A7F9C18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */,
 				F78AF5C2190F629C00915617 /* strutil.h in Headers */,
 				6D9BDFE1192580A20074F273 /* UIAlertView+TTRecorder.h in Headers */,
 				5B90064A1A7F14940099D2F7 /* MPulse.h in Headers */,
 				6D9BDFBD192580A20074F273 /* TTRecordedAction.h in Headers */,
-				F79973A71920AB71002BCFAB /* MPNumberDictionary.h in Headers */,
 				88BE9F1619C89D4F00CA204D /* TTNativeCollectionViewElement.h in Headers */,
 				6D9BE082192580A20074F273 /* TouchTestDriverPrivate.h in Headers */,
 				6D9BDF56192580A20074F273 /* TTMultitouchGesture.h in Headers */,
@@ -5356,7 +5291,6 @@
 				6D9BDEB0192580A20074F273 /* TTMKMapViewWrapperDelegate.h in Headers */,
 				27E4BAC9199D67E700FBD812 /* TTTextFieldListener.h in Headers */,
 				6D9BE03B192580A20074F273 /* TTShutdownEvent.h in Headers */,
-				5BD27B9D1905924300881F84 /* MPBucketUtility.h in Headers */,
 				F78AF525190F629C00915617 /* zero_copy_stream_impl_lite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5366,17 +5300,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D9BE047192580A20074F273 /* TTTaskHandlerThread.h in Headers */,
-				F7A761F01906E29100DF0BE5 /* MPBatchRecord.h in Headers */,
 				6D37C6A31ACB6D1200880BA0 /* TTPopoverParentView.h in Headers */,
 				6D9BDE54192580A20074F273 /* TTInspectorPopover.h in Headers */,
 				F78AF49A190F629C00915617 /* descriptor.h in Headers */,
 				F78AF5CC190F629C00915617 /* substitute.h in Headers */,
 				6D9BE1A1192581800074F273 /* TTMethodSwizzle.h in Headers */,
+				934E97EB1BD06D06008BBDE8 /* MPAppInactiveBeacon.h in Headers */,
 				F78AF596190F629C00915617 /* map-util.h in Headers */,
 				6D9BDFE9192580A20074F273 /* UIControl+TTRecorder.h in Headers */,
 				F78AF553190F629C00915617 /* repeated_field.h in Headers */,
 				6D9BDEE5192580A20074F273 /* TTMetricMonitorBase.h in Headers */,
 				6D9BDE8B192580A20074F273 /* TTLocatorOptions.h in Headers */,
+				934E97E71BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.h in Headers */,
 				F78AF541190F629C00915617 /* package_info.h in Headers */,
 				6D9BDEDC192580A20074F273 /* TTMemoryMonitor.h in Headers */,
 				6D9BDF82192580A20074F273 /* TTGestureDetail.h in Headers */,
@@ -5403,6 +5338,7 @@
 				6D9BE166192581800074F273 /* TT_SBJsonParser.h in Headers */,
 				6DE14AF71912CD9A00F345E3 /* NSObject+MPExtensions.h in Headers */,
 				6D9BDF0D192580A20074F273 /* TTNetworkDataCounter.h in Headers */,
+				934E97ED1BD06D06008BBDE8 /* MPAppLaunchBeacon.h in Headers */,
 				5B18993519102268009794C1 /* MPDemographics.h in Headers */,
 				6D9BDEAF192580A20074F273 /* TTMKMapViewWrapperDelegate.h in Headers */,
 				6D9BDD2E192580A20074F273 /* NSFileManager+TTExtensions.h in Headers */,
@@ -5428,6 +5364,7 @@
 				6D3104CB19088838002A05D4 /* MPTouchHandlerThread.h in Headers */,
 				27E4BAD4199D67E700FBD812 /* TTTextFieldDelegate.h in Headers */,
 				6D9BE0C4192580A20074F273 /* TTUncaughtExceptionHandler.h in Headers */,
+				934E97F21BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.h in Headers */,
 				F78AF524190F629C00915617 /* zero_copy_stream_impl_lite.h in Headers */,
 				6D9BE23B192585630074F273 /* UIView+TTTest.h in Headers */,
 				93318A661B94EA88003A430F /* NSURLSession+MPIntercept.h in Headers */,
@@ -5460,13 +5397,11 @@
 				6D9BDC83192580A20074F273 /* TTNativeElement.h in Headers */,
 				F78AF637190F629C00915617 /* wire_format_lite_inl.h in Headers */,
 				6D9BDE15192580A20074F273 /* UIGestureRecognizer+TTAutomation.h in Headers */,
-				27EE51B818FC8A760079D9E7 /* MPMetricBeacon.h in Headers */,
 				5B89EC811929B1DF00F85499 /* MPASLLogger.h in Headers */,
 				F78AF4A1190F629C00915617 /* descriptor.pb.h in Headers */,
 				6D9BE142192581800074F273 /* NSObject+TT_SBJSON.h in Headers */,
 				6D9BDC7A192580A20074F273 /* TTNativeElement+TTAccessors.h in Headers */,
 				6D37C6891ACB6D1200880BA0 /* TTPopoverContainerView.h in Headers */,
-				271A7F9B18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */,
 				6D9BE15D192581800074F273 /* TT_SBJsonBase.h in Headers */,
 				6D9BDECA192580A20074F273 /* TTCPUMonitor.h in Headers */,
 				6D9BE074192580A20074F273 /* TouchTestDriver-Prefix.pch in Headers */,
@@ -5474,12 +5409,10 @@
 				6D9BE181192581800074F273 /* NSData+TT_Base64.h in Headers */,
 				F78AF58C190F629C00915617 /* common.h in Headers */,
 				F76730B7190882BB00228AB7 /* ClientBeaconBatch.pb.h in Headers */,
-				27EE519118FC64760079D9E7 /* MPTimerBeacon.h in Headers */,
 				6D9BDC5F192580A20074F273 /* TTElement.h in Headers */,
 				F78AF577190F629C00915617 /* atomicops_internals_pnacl.h in Headers */,
 				6D9BDC9E192580A20074F273 /* TTNativeProgressViewElement.h in Headers */,
 				5B87FC581909DA81009CA061 /* MPConfig.h in Headers */,
-				F7A761F91906E36700DF0BE5 /* MPTimerData.h in Headers */,
 				5B9006561A7F14940099D2F7 /* MPulsePrivate.h in Headers */,
 				6D88F05C19357FC60039B631 /* MPTouchAction.h in Headers */,
 				6D9BE14B192581800074F273 /* NSString+TT_SBJSON.h in Headers */,
@@ -5491,6 +5424,7 @@
 				6D9BDE9D192580A20074F273 /* TTLocatorValue.h in Headers */,
 				6D9BDC95192580A20074F273 /* TTNativePickerTableViewElement.h in Headers */,
 				6D9BE08E192580A20074F273 /* TTDevice.h in Headers */,
+				934E97E91BD06D06008BBDE8 /* MPAppCrashBeacon.h in Headers */,
 				F78AF56E190F629C00915617 /* atomicops_internals_atomicword_compat.h in Headers */,
 				88BE9F1419C89D4F00CA204D /* TTNativeCollectionViewElement.h in Headers */,
 				6D9BDDD6192580A20074F273 /* TTAutomation.h in Headers */,
@@ -5524,8 +5458,6 @@
 				F78AF609190F629C00915617 /* text_format.h in Headers */,
 				6D9BE078192580A20074F273 /* TouchTestDriver.h in Headers */,
 				6D9BE193192581800074F273 /* NSData+TTGzip.h in Headers */,
-				F79973A61920AB71002BCFAB /* MPNumberDictionary.h in Headers */,
-				5B9CA8031925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */,
 				6D9BE0B2192580A20074F273 /* TTScreenshotCore.h in Headers */,
 				F78AF64519105FF400915617 /* MPBatchTransport.h in Headers */,
 				F78AF5D6190F629C00915617 /* type_traits.h in Headers */,
@@ -5537,7 +5469,6 @@
 				6D9BE1F11925825A0074F273 /* NSURLConnection+MPIntercept.h in Headers */,
 				6D37C6961ACB6D1200880BA0 /* TTPopoverController.h in Headers */,
 				6D9BDE42192580A20074F273 /* TTInspectorActions.h in Headers */,
-				27EE51A418FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */,
 				6D9BE031192580A20074F273 /* TTSessionDictionary.h in Headers */,
 				5B89EC911929B1DF00F85499 /* MPLog.h in Headers */,
 				6D9BE220192585630074F273 /* TTElement+Test.h in Headers */,
@@ -5585,7 +5516,6 @@
 				6D690B14190715610086B220 /* NSString+MPExtensions.h in Headers */,
 				F78AF562190F629C00915617 /* service.h in Headers */,
 				6D9BDF4C192580A20074F273 /* TTHighLevelRecorder.h in Headers */,
-				5BF6D58C19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */,
 				F78AF4F5190F629C00915617 /* gzip_stream.h in Headers */,
 				5B89EC9B1929B67100F85499 /* MPTTYLogger.h in Headers */,
 				88BE9F0719C89D4F00CA204D /* TTNativeViewElement+TTScrollToVisible.h in Headers */,
@@ -5600,10 +5530,10 @@
 				F78AF57E190F629C00915617 /* atomicops_internals_x86_gcc.h in Headers */,
 				6D9BDE70192580A20074F273 /* UIApplication+TTInspector.h in Headers */,
 				6D9BDEC1192580A20074F273 /* TTConnectionTypeMonitor.h in Headers */,
-				5BD27B9C1905924300881F84 /* MPBucketUtility.h in Headers */,
 				6D9BDF3A192580A20074F273 /* TTPickerViewListener.h in Headers */,
 				F78AF5C1190F629C00915617 /* strutil.h in Headers */,
 				F78AF500190F629C00915617 /* printer.h in Headers */,
+				934E97E51BD06D06008BBDE8 /* MPApiCustomMetricBeacon.h in Headers */,
 				6D9BDFF2192580A20074F273 /* UIView+TTRecorder.h in Headers */,
 				5B18994519102268009794C1 /* MPReachability.h in Headers */,
 				6D9BDE4B192580A20074F273 /* TTInspectorFrameControl.h in Headers */,
@@ -5621,8 +5551,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224531C29B33C00C8580E /* MPApiCustomMetricBeacon.h in Headers */,
+				93F224541C29B33C00C8580E /* MPApiCustomTimerBeacon.h in Headers */,
+				93F224551C29B33C00C8580E /* MPApiNetworkRequestBeacon.h in Headers */,
+				93F224561C29B33C00C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F224571C29B33C00C8580E /* MPAppInactiveBeacon.h in Headers */,
+				93F224581C29B33C00C8580E /* MPAppLaunchBeacon.h in Headers */,
 				5B0DDBBA1940FC33005D43BD /* TTTaskHandlerThread.h in Headers */,
-				5B0DDBBB1940FC33005D43BD /* MPBatchRecord.h in Headers */,
 				5B0DDBBC1940FC33005D43BD /* TTInspectorPopover.h in Headers */,
 				5B0DDBBD1940FC33005D43BD /* GSMaps.h in Headers */,
 				5B0DDBBE1940FC33005D43BD /* descriptor.h in Headers */,
@@ -5737,12 +5672,10 @@
 				5B0DDC1C1940FC33005D43BD /* wire_format_lite_inl.h in Headers */,
 				9348A24C1BA3346500732150 /* MPInterceptURLSessionDelegate.h in Headers */,
 				5B0DDC1D1940FC33005D43BD /* UIGestureRecognizer+TTAutomation.h in Headers */,
-				5B0DDC1E1940FC33005D43BD /* MPMetricBeacon.h in Headers */,
 				5B0DDC1F1940FC33005D43BD /* MPASLLogger.h in Headers */,
 				5B0DDC201940FC33005D43BD /* descriptor.pb.h in Headers */,
 				5B0DDC211940FC33005D43BD /* NSObject+TT_SBJSON.h in Headers */,
 				5B0DDC221940FC33005D43BD /* TTNativeElement+TTAccessors.h in Headers */,
-				5B0DDC231940FC33005D43BD /* MPAppFinishedLaunchingBeacon.h in Headers */,
 				5B0DDC241940FC33005D43BD /* TT_SBJsonBase.h in Headers */,
 				5B0DDC251940FC33005D43BD /* TTCPUMonitor.h in Headers */,
 				5B0DDC261940FC33005D43BD /* GSHiccup.h in Headers */,
@@ -5751,13 +5684,11 @@
 				5B0DDC291940FC33005D43BD /* NSData+TT_Base64.h in Headers */,
 				5B0DDC2A1940FC33005D43BD /* common.h in Headers */,
 				5B0DDC2B1940FC33005D43BD /* ClientBeaconBatch.pb.h in Headers */,
-				5B0DDC2C1940FC33005D43BD /* MPTimerBeacon.h in Headers */,
 				5B0DDC2D1940FC33005D43BD /* TTGestureGenerator.h in Headers */,
 				5B0DDC2E1940FC33005D43BD /* TTElement.h in Headers */,
 				5B0DDC2F1940FC33005D43BD /* atomicops_internals_pnacl.h in Headers */,
 				5B0DDC301940FC33005D43BD /* TTNativeProgressViewElement.h in Headers */,
 				5B0DDC311940FC33005D43BD /* MPConfig.h in Headers */,
-				5B0DDC321940FC33005D43BD /* MPTimerData.h in Headers */,
 				5B23480F198957910037EFEC /* MPNetworkErrorBeaconGenerator.h in Headers */,
 				5B0DDC331940FC33005D43BD /* NSString+TT_SBJSON.h in Headers */,
 				5B0DDC341940FC33005D43BD /* TTScreenshot.h in Headers */,
@@ -5808,8 +5739,6 @@
 				5B0DDC5C1940FC33005D43BD /* text_format.h in Headers */,
 				5B0DDC5D1940FC33005D43BD /* TouchTestDriver.h in Headers */,
 				5B0DDC5F1940FC33005D43BD /* NSData+TTGzip.h in Headers */,
-				5B0DDC601940FC33005D43BD /* MPNumberDictionary.h in Headers */,
-				5B0DDC611940FC33005D43BD /* MPBeaconURLProcessor.h in Headers */,
 				5B0DDC621940FC33005D43BD /* TTScreenshotCore.h in Headers */,
 				5B0DDC631940FC33005D43BD /* TTTouchSequence.h in Headers */,
 				5B0DDC641940FC33005D43BD /* MPBatchTransport.h in Headers */,
@@ -5823,7 +5752,6 @@
 				5B0DDC6A1940FC33005D43BD /* coded_stream.h in Headers */,
 				5B0DDC6B1940FC33005D43BD /* NSURLConnection+MPIntercept.h in Headers */,
 				5B0DDC6C1940FC33005D43BD /* TTInspectorActions.h in Headers */,
-				5B0DDC6D1940FC33005D43BD /* MPNetworkCallBeacon.h in Headers */,
 				5B0DDC6E1940FC33005D43BD /* TTSessionDictionary.h in Headers */,
 				5B0DDC6F1940FC33005D43BD /* GSWindow.h in Headers */,
 				5B0DDC701940FC33005D43BD /* MPLog.h in Headers */,
@@ -5885,7 +5813,6 @@
 				5B0DDCA11940FC33005D43BD /* service.h in Headers */,
 				9348A2421BA3343600732150 /* MPInterceptUtils.h in Headers */,
 				5B0DDCA21940FC33005D43BD /* TTHighLevelRecorder.h in Headers */,
-				5B0DDCA31940FC33005D43BD /* MPAppIsInactiveBeacon.h in Headers */,
 				5B0DDCA41940FC33005D43BD /* TTPanSender.h in Headers */,
 				5B0DDCA51940FC33005D43BD /* gzip_stream.h in Headers */,
 				5B0DDCA61940FC33005D43BD /* MPTTYLogger.h in Headers */,
@@ -5902,7 +5829,6 @@
 				5B0DDCAF1940FC33005D43BD /* atomicops_internals_x86_gcc.h in Headers */,
 				5B0DDCB01940FC33005D43BD /* UIApplication+TTInspector.h in Headers */,
 				5B0DDCB11940FC33005D43BD /* TTConnectionTypeMonitor.h in Headers */,
-				5B0DDCB21940FC33005D43BD /* MPBucketUtility.h in Headers */,
 				5B0DDCB31940FC33005D43BD /* TTPickerViewListener.h in Headers */,
 				5B0DDCB41940FC33005D43BD /* strutil.h in Headers */,
 				5B0DDCB51940FC33005D43BD /* printer.h in Headers */,
@@ -5922,8 +5848,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224701C29B47A00C8580E /* MPApiCustomMetricBeacon.h in Headers */,
+				93F224711C29B47A00C8580E /* MPApiCustomTimerBeacon.h in Headers */,
+				93F224721C29B47B00C8580E /* MPApiNetworkRequestBeacon.h in Headers */,
+				93F224731C29B47B00C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F224741C29B47B00C8580E /* MPAppInactiveBeacon.h in Headers */,
+				93F224751C29B47B00C8580E /* MPAppLaunchBeacon.h in Headers */,
 				6D9BE049192580A20074F273 /* TTTaskHandlerThread.h in Headers */,
-				F7A761F21906E29100DF0BE5 /* MPBatchRecord.h in Headers */,
 				6D37C6A61ACB6D1200880BA0 /* TTPopoverParentView.h in Headers */,
 				6D9BDE56192580A20074F273 /* TTInspectorPopover.h in Headers */,
 				F78AF49C190F629C00915617 /* descriptor.h in Headers */,
@@ -6019,13 +5950,11 @@
 				6D9BDC85192580A20074F273 /* TTNativeElement.h in Headers */,
 				F78AF639190F629C00915617 /* wire_format_lite_inl.h in Headers */,
 				6D9BDE17192580A20074F273 /* UIGestureRecognizer+TTAutomation.h in Headers */,
-				27EE51BA18FC8A760079D9E7 /* MPMetricBeacon.h in Headers */,
 				5B89EC831929B1DF00F85499 /* MPASLLogger.h in Headers */,
 				F78AF4A3190F629C00915617 /* descriptor.pb.h in Headers */,
 				6D9BE144192581800074F273 /* NSObject+TT_SBJSON.h in Headers */,
 				6D37C68C1ACB6D1200880BA0 /* TTPopoverContainerView.h in Headers */,
 				6D9BDC7C192580A20074F273 /* TTNativeElement+TTAccessors.h in Headers */,
-				271A7F9D18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */,
 				6D9BE15F192581800074F273 /* TT_SBJsonBase.h in Headers */,
 				6D9BDECC192580A20074F273 /* TTCPUMonitor.h in Headers */,
 				6D9BE076192580A20074F273 /* TouchTestDriver-Prefix.pch in Headers */,
@@ -6033,13 +5962,11 @@
 				6D9BE183192581800074F273 /* NSData+TT_Base64.h in Headers */,
 				F78AF58E190F629C00915617 /* common.h in Headers */,
 				F76730B9190882BB00228AB7 /* ClientBeaconBatch.pb.h in Headers */,
-				27EE519318FC64760079D9E7 /* MPTimerBeacon.h in Headers */,
 				6D9BDC61192580A20074F273 /* TTElement.h in Headers */,
 				F78AF579190F629C00915617 /* atomicops_internals_pnacl.h in Headers */,
 				6D9BDCA0192580A20074F273 /* TTNativeProgressViewElement.h in Headers */,
 				5B87FC5A1909DA81009CA061 /* MPConfig.h in Headers */,
 				5B9006591A7F14940099D2F7 /* MPulsePrivate.h in Headers */,
-				F7A761FB1906E36700DF0BE5 /* MPTimerData.h in Headers */,
 				6D88F05E19357FC60039B631 /* MPTouchAction.h in Headers */,
 				6D0ECD8719413187004345DD /* MPTouchExtract.h in Headers */,
 				6D9BE14D192581800074F273 /* NSString+TT_SBJSON.h in Headers */,
@@ -6082,8 +6009,6 @@
 				F78AF60B190F629C00915617 /* text_format.h in Headers */,
 				6D9BE07A192580A20074F273 /* TouchTestDriver.h in Headers */,
 				6D9BE195192581800074F273 /* NSData+TTGzip.h in Headers */,
-				F79973A81920AB71002BCFAB /* MPNumberDictionary.h in Headers */,
-				5B9CA8051925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */,
 				6D9BE0B4192580A20074F273 /* TTScreenshotCore.h in Headers */,
 				F78AF64719105FF400915617 /* MPBatchTransport.h in Headers */,
 				F78AF5D8190F629C00915617 /* type_traits.h in Headers */,
@@ -6095,7 +6020,6 @@
 				6D9BE1F31925825A0074F273 /* NSURLConnection+MPIntercept.h in Headers */,
 				6D37C6991ACB6D1200880BA0 /* TTPopoverController.h in Headers */,
 				6D9BDE44192580A20074F273 /* TTInspectorActions.h in Headers */,
-				27EE51A618FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */,
 				6D9BE033192580A20074F273 /* TTSessionDictionary.h in Headers */,
 				5B5F94C1193665B60012D36F /* TTTouchHud.h in Headers */,
 				5B89EC931929B1DF00F85499 /* MPLog.h in Headers */,
@@ -6143,7 +6067,6 @@
 				6D690B16190715610086B220 /* NSString+MPExtensions.h in Headers */,
 				F78AF564190F629C00915617 /* service.h in Headers */,
 				6D9BDF4E192580A20074F273 /* TTHighLevelRecorder.h in Headers */,
-				5BF6D58E19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */,
 				F78AF4F7190F629C00915617 /* gzip_stream.h in Headers */,
 				88BE9F0A19C89D4F00CA204D /* TTNativeViewElement+TTScrollToVisible.h in Headers */,
 				5B89EC9D1929B67100F85499 /* MPTTYLogger.h in Headers */,
@@ -6157,7 +6080,6 @@
 				F78AF580190F629C00915617 /* atomicops_internals_x86_gcc.h in Headers */,
 				6D9BDE72192580A20074F273 /* UIApplication+TTInspector.h in Headers */,
 				6D9BDEC3192580A20074F273 /* TTConnectionTypeMonitor.h in Headers */,
-				5BD27B9E1905924300881F84 /* MPBucketUtility.h in Headers */,
 				6D9BDF3C192580A20074F273 /* TTPickerViewListener.h in Headers */,
 				F78AF5C3190F629C00915617 /* strutil.h in Headers */,
 				F78AF502190F629C00915617 /* printer.h in Headers */,
@@ -6178,6 +6100,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F2247D1C29B49300C8580E /* MPApiCustomMetricBeacon.h in Headers */,
+				93F2247E1C29B49300C8580E /* MPApiCustomTimerBeacon.h in Headers */,
+				93F2247F1C29B49300C8580E /* MPApiNetworkRequestBeacon.h in Headers */,
+				93F224801C29B49300C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F224811C29B49300C8580E /* MPAppInactiveBeacon.h in Headers */,
+				93F224821C29B49300C8580E /* MPAppLaunchBeacon.h in Headers */,
 				F79973A1192086F0002BCFAB /* NSNumber+MPExtensions.h in Headers */,
 				6D9BE235192585630074F273 /* TTLocator+Test.h in Headers */,
 				6D37C6A71ACB6D1200880BA0 /* TTPopoverParentView.h in Headers */,
@@ -6202,7 +6130,6 @@
 				6D9BDED6192580A20074F273 /* TTLocationMonitor.h in Headers */,
 				6D37C6BA1ACB6D1200880BA0 /* TTTouchableView.h in Headers */,
 				5B18997419116928009794C1 /* reflection_ops.h in Headers */,
-				27EE51A718FC8A2D0079D9E7 /* MPNetworkCallBeacon.h in Headers */,
 				F775D6101907758300EF7369 /* MPBeacon.h in Headers */,
 				5B18998C19116939009794C1 /* unknown_field_set.h in Headers */,
 				6D9BDDFD192580A20074F273 /* TTToucher.h in Headers */,
@@ -6250,7 +6177,6 @@
 				6D9BDF61192580A20074F273 /* TTTouchesEventRecorder.h in Headers */,
 				6D9BDEA9192580A20074F273 /* MKMapView+TTMKMapView.h in Headers */,
 				5B18999619116945009794C1 /* atomicops_internals_macosx.h in Headers */,
-				5B1899B4191169DD009794C1 /* MPBatchRecord.h in Headers */,
 				5B18999A19116945009794C1 /* atomicops_internals_x86_gcc.h in Headers */,
 				5B18996D1911691F009794C1 /* generated_message_util.h in Headers */,
 				9348A2451BA3343800732150 /* MPInterceptUtils.h in Headers */,
@@ -6289,7 +6215,6 @@
 				6D9BE0E2192580A20074F273 /* TTHybridWebViewDriver.h in Headers */,
 				5B1899AB19116945009794C1 /* substitute.h in Headers */,
 				6D9BDE21192580A20074F273 /* UIPinchGestureRecognizer+TTAutomation.h in Headers */,
-				5BD27B9F1905924300881F84 /* MPBucketUtility.h in Headers */,
 				6D9BDD28192580A20074F273 /* TTKeyPlane.h in Headers */,
 				5BD27BB1190839BA00881F84 /* (null) in Headers */,
 				5B90065A1A7F14940099D2F7 /* MPulsePrivate.h in Headers */,
@@ -6310,7 +6235,6 @@
 				5B18999C19116945009794C1 /* atomicops_internals_x86_msvc.h in Headers */,
 				5B1899AD19116945009794C1 /* type_traits.h in Headers */,
 				6D9BE088192580A20074F273 /* TTAppActionStatus.h in Headers */,
-				271A7F9E18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.h in Headers */,
 				6D9BE141192581800074F273 /* JSON.h in Headers */,
 				F78AF642190F671A00915617 /* config.h in Headers */,
 				5B1899A319116945009794C1 /* platform_macros.h in Headers */,
@@ -6328,23 +6252,18 @@
 				27E4BACB199D67E700FBD812 /* TTTextFieldListener.h in Headers */,
 				5B18999419116945009794C1 /* atomicops_internals_arm_qnx.h in Headers */,
 				5B18999319116945009794C1 /* atomicops_internals_arm_gcc.h in Headers */,
-				27EE51BB18FC8A760079D9E7 /* MPMetricBeacon.h in Headers */,
 				6D9BDCAA192580A20074F273 /* TTNativeSegmentedControlElement.h in Headers */,
 				6DC855E71AA79F530026B82E /* MPTouchDimension.h in Headers */,
 				6D9BE211192585360074F273 /* TTFileURLProtocol.h in Headers */,
 				6D9BE1F41925825A0074F273 /* NSURLConnection+MPIntercept.h in Headers */,
-				F7A761FC1906E36700DF0BE5 /* MPTimerData.h in Headers */,
 				6DE14B031912CD9A00F345E3 /* UIView+MPTouchHandler.h in Headers */,
 				5BC5E06E18D0FD820095F33A /* MPURLConnection.h in Headers */,
 				6D9BDFB6192580A20074F273 /* TTAlertViewDelegate.h in Headers */,
 				6D9BE0A3192580A20074F273 /* TTQueue.h in Headers */,
-				27EE519418FC64760079D9E7 /* MPTimerBeacon.h in Headers */,
 				6DE14AFA1912CD9A00F345E3 /* NSObject+MPExtensions.h in Headers */,
-				5B9CA8061925DC8D009BE429 /* MPBeaconURLProcessor.h in Headers */,
 				6D9BE1041925813D0074F273 /* TTPickerOptions.h in Headers */,
 				6D9BDDEB192580A20074F273 /* TTAutomationTaskHandler.h in Headers */,
 				6D9BE18D192581800074F273 /* NSData+TTCommonCrypto.h in Headers */,
-				F79973A91920AB71002BCFAB /* MPNumberDictionary.h in Headers */,
 				6D9BDCF2192580A20074F273 /* UITableView+TTAutomation.h in Headers */,
 				5B1899671911691F009794C1 /* extension_set.h in Headers */,
 				5B18997119116928009794C1 /* message_lite.h in Headers */,
@@ -6410,7 +6329,6 @@
 				6D9BE0D0192580A20074F273 /* TTUtilities.h in Headers */,
 				6D3104CE19088838002A05D4 /* MPTouchHandlerThread.h in Headers */,
 				6D9BE06E192580A20074F273 /* TTURLConnection.h in Headers */,
-				5BF6D58F19085E5E00C5F991 /* MPAppIsInactiveBeacon.h in Headers */,
 				6D9BDFE3192580A20074F273 /* UIAlertView+TTRecorder.h in Headers */,
 				5B18996319116910009794C1 /* descriptor_database.h in Headers */,
 				6D9BDFBF192580A20074F273 /* TTRecordedAction.h in Headers */,
@@ -6434,8 +6352,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F2248A1C29B4A800C8580E /* MPApiCustomMetricBeacon.h in Headers */,
+				93F2248B1C29B4A800C8580E /* MPApiCustomTimerBeacon.h in Headers */,
+				93F2248C1C29B4A800C8580E /* MPApiNetworkRequestBeacon.h in Headers */,
+				93F2248D1C29B4A800C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F2248E1C29B4A800C8580E /* MPAppInactiveBeacon.h in Headers */,
+				93F2248F1C29B4A800C8580E /* MPAppLaunchBeacon.h in Headers */,
 				6D0C39F1192E82870057DD9B /* TTTaskHandlerThread.h in Headers */,
-				6D0C39F2192E82870057DD9B /* MPBatchRecord.h in Headers */,
 				6D0C39F3192E82870057DD9B /* TTInspectorPopover.h in Headers */,
 				6D0C3B2D192E854A0057DD9B /* GSMaps.h in Headers */,
 				6D0C39F4192E82870057DD9B /* descriptor.h in Headers */,
@@ -6550,12 +6473,10 @@
 				6D0C3A47192E82870057DD9B /* TTNativeElement.h in Headers */,
 				6D0C3A48192E82870057DD9B /* wire_format_lite_inl.h in Headers */,
 				6D0C3A49192E82870057DD9B /* UIGestureRecognizer+TTAutomation.h in Headers */,
-				6D0C3A4A192E82870057DD9B /* MPMetricBeacon.h in Headers */,
 				6D0C3A4B192E82870057DD9B /* MPASLLogger.h in Headers */,
 				6D0C3A4C192E82870057DD9B /* descriptor.pb.h in Headers */,
 				6D0C3A4D192E82870057DD9B /* NSObject+TT_SBJSON.h in Headers */,
 				6D0C3A4E192E82870057DD9B /* TTNativeElement+TTAccessors.h in Headers */,
-				6D0C3A4F192E82870057DD9B /* MPAppFinishedLaunchingBeacon.h in Headers */,
 				6D0C3A50192E82870057DD9B /* TT_SBJsonBase.h in Headers */,
 				6D0C3A51192E82870057DD9B /* TTCPUMonitor.h in Headers */,
 				6D0C3B2A192E854A0057DD9B /* GSHiccup.h in Headers */,
@@ -6564,7 +6485,6 @@
 				6D0C3A54192E82870057DD9B /* NSData+TT_Base64.h in Headers */,
 				6D0C3A55192E82870057DD9B /* common.h in Headers */,
 				6D0C3A56192E82870057DD9B /* ClientBeaconBatch.pb.h in Headers */,
-				6D0C3A57192E82870057DD9B /* MPTimerBeacon.h in Headers */,
 				9348A2461BA3343800732150 /* MPInterceptUtils.h in Headers */,
 				6D0C3B18192E854A0057DD9B /* TTGestureGenerator.h in Headers */,
 				6D0C3A58192E82870057DD9B /* TTElement.h in Headers */,
@@ -6572,7 +6492,6 @@
 				6D0C3A5A192E82870057DD9B /* TTNativeProgressViewElement.h in Headers */,
 				6D0C3A5B192E82870057DD9B /* MPConfig.h in Headers */,
 				5B234813198957910037EFEC /* MPNetworkErrorBeaconGenerator.h in Headers */,
-				6D0C3A5C192E82870057DD9B /* MPTimerData.h in Headers */,
 				6D0C3A5D192E82870057DD9B /* NSString+TT_SBJSON.h in Headers */,
 				6D0C3A5E192E82870057DD9B /* TTScreenshot.h in Headers */,
 				6DC855E81AA79F540026B82E /* MPTouchDimension.h in Headers */,
@@ -6621,8 +6540,6 @@
 				6D0C3A82192E82870057DD9B /* text_format.h in Headers */,
 				6D0C3A83192E82870057DD9B /* TouchTestDriver.h in Headers */,
 				6D0C3A85192E82870057DD9B /* NSData+TTGzip.h in Headers */,
-				6D0C3A86192E82870057DD9B /* MPNumberDictionary.h in Headers */,
-				6D0C3A87192E82870057DD9B /* MPBeaconURLProcessor.h in Headers */,
 				6D0C3A88192E82870057DD9B /* TTScreenshotCore.h in Headers */,
 				6D0C3B38192E854A0057DD9B /* TTTouchSequence.h in Headers */,
 				6D0C3A89192E82870057DD9B /* MPBatchTransport.h in Headers */,
@@ -6636,7 +6553,6 @@
 				6D0C3A8F192E82870057DD9B /* coded_stream.h in Headers */,
 				6D0C3A90192E82870057DD9B /* NSURLConnection+MPIntercept.h in Headers */,
 				6D0C3A91192E82870057DD9B /* TTInspectorActions.h in Headers */,
-				6D0C3A92192E82870057DD9B /* MPNetworkCallBeacon.h in Headers */,
 				6D0C3A93192E82870057DD9B /* TTSessionDictionary.h in Headers */,
 				6D0C3B2F192E854A0057DD9B /* GSWindow.h in Headers */,
 				6D0C3A94192E82870057DD9B /* MPLog.h in Headers */,
@@ -6697,7 +6613,6 @@
 				6D0C3B2E192E854A0057DD9B /* GSStatusBar.h in Headers */,
 				6D0C3ABC192E82870057DD9B /* service.h in Headers */,
 				6D0C3ABD192E82870057DD9B /* TTHighLevelRecorder.h in Headers */,
-				6D0C3ABE192E82870057DD9B /* MPAppIsInactiveBeacon.h in Headers */,
 				6D0C3B32192E854A0057DD9B /* TTPanSender.h in Headers */,
 				6D0C3ABF192E82870057DD9B /* gzip_stream.h in Headers */,
 				6D0C3AC0192E82870057DD9B /* MPTTYLogger.h in Headers */,
@@ -6714,7 +6629,6 @@
 				6D0C3AC9192E82870057DD9B /* atomicops_internals_x86_gcc.h in Headers */,
 				6D0C3ACA192E82870057DD9B /* UIApplication+TTInspector.h in Headers */,
 				6D0C3ACB192E82870057DD9B /* TTConnectionTypeMonitor.h in Headers */,
-				6D0C3ACC192E82870057DD9B /* MPBucketUtility.h in Headers */,
 				6D0C3ACD192E82870057DD9B /* TTPickerViewListener.h in Headers */,
 				6D0C3ACE192E82870057DD9B /* strutil.h in Headers */,
 				6D0C3ACF192E82870057DD9B /* printer.h in Headers */,
@@ -6775,6 +6689,7 @@
 				2CF428D41642E1CD0058AC81 /* Frameworks */,
 				2CF428D51642E1CD0058AC81 /* Resources */,
 				2CF428D61642E1CD0058AC81 /* ShellScript */,
+				934E98021BD1915F008BBDE8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -7018,6 +6933,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		934E98021BD1915F008BBDE8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then\n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\"\nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\"\nfi\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -7025,6 +6953,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F2245A1C29B43800C8580E /* MPApiCustomMetricBeacon.mm in Sources */,
+				93F2245B1C29B43800C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
+				93F2245C1C29B43800C8580E /* MPApiNetworkRequestBeacon.mm in Sources */,
+				93F2245D1C29B43800C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F2245E1C29B43800C8580E /* MPAppInactiveBeacon.m in Sources */,
+				93F2245F1C29B43800C8580E /* MPAppLaunchBeacon.mm in Sources */,
+				93F224601C29B43800C8580E /* MPBeacon.mm in Sources */,
 				6D9BDCB5192580A20074F273 /* TTNativeSwitchElement.m in Sources */,
 				F78AF4D2190F629C00915617 /* generated_message_reflection.cc in Sources */,
 				F78AF57B190F629C00915617 /* atomicops_internals_x86_gcc.cc in Sources */,
@@ -7082,7 +7017,6 @@
 				6D9BDFF7192580A20074F273 /* UIView+TTRecorder.m in Sources */,
 				F78AF62A190F629C00915617 /* wire_format.cc in Sources */,
 				F78AF4DD190F629C00915617 /* generated_message_util.cc in Sources */,
-				27EE519618FC64760079D9E7 /* MPTimerBeacon.m in Sources */,
 				6D9BDC88192580A20074F273 /* TTNativeElement.m in Sources */,
 				6D9BE19D192581800074F273 /* TTMethodSwizzle.c in Sources */,
 				F78AF51A190F629C00915617 /* zero_copy_stream_impl.cc in Sources */,
@@ -7095,7 +7029,6 @@
 				6D9BDE59192580A20074F273 /* TTInspectorPopover.m in Sources */,
 				6D9BDED8192580A20074F273 /* TTLocationMonitor.m in Sources */,
 				6D9BDF9D192580A20074F273 /* UIPinchGestureRecognizer+TTRecorder.m in Sources */,
-				F7A761FE1906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				6D9BE159192581800074F273 /* TT_SBJSON.m in Sources */,
 				6D9BDF3F192580A20074F273 /* TTPickerViewListener.m in Sources */,
 				F799739A192086F0002BCFAB /* NSNumber+MPExtensions.m in Sources */,
@@ -7103,11 +7036,9 @@
 				F78AF4C0190F629C00915617 /* extension_set.cc in Sources */,
 				6D9BE0C0192580A20074F273 /* TTUIApplicationDelegateHelper.m in Sources */,
 				6D9BE0E4192580A20074F273 /* TTHybridWebViewDriver.m in Sources */,
-				F775D6121907758300EF7369 /* MPBeacon.m in Sources */,
 				6D9BDE62192580A20074F273 /* TTInspectorView.m in Sources */,
 				6D9BDCA3192580A20074F273 /* TTNativeProgressViewElement.m in Sources */,
 				6D9BE240192585630074F273 /* UIView+TTTest.m in Sources */,
-				F7A761F41906E29100DF0BE5 /* MPBatchRecord.m in Sources */,
 				6D9BDF75192580A20074F273 /* UIEventGesture.m in Sources */,
 				6D9BE02D192580A20074F273 /* TTGetTasks.m in Sources */,
 				6D9BDF51192580A20074F273 /* TTHighLevelRecorder.m in Sources */,
@@ -7170,15 +7101,12 @@
 				F78AF4FD190F629C00915617 /* printer.cc in Sources */,
 				6D9BDFDC192580A20074F273 /* TTRecordingTaskHandler.m in Sources */,
 				6D37C6841ACB6D1200880BA0 /* TTBlockingGestureRecognizer.m in Sources */,
-				271A7FA018FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				6D9BDF12192580A20074F273 /* TTNetworkDataCounter.m in Sources */,
 				5B87FC5D1909DA81009CA061 /* MPConfig.m in Sources */,
 				6D9BDC7F192580A20074F273 /* TTNativeElement+TTAccessors.m in Sources */,
 				5B9006501A7F14940099D2F7 /* MPulse.m in Sources */,
-				5B9CA8081925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */,
 				6D9BDCBE192580A20074F273 /* TTNativeTableViewElement.m in Sources */,
 				6D9BDF48192580A20074F273 /* TTJsonPrecision.m in Sources */,
-				5BD27BA11905924300881F84 /* MPBucketUtility.m in Sources */,
 				6D9BE036192580A20074F273 /* TTSessionDictionary.m in Sources */,
 				F767435E1909D5FB00228AB7 /* MPBatch.mm in Sources */,
 				6D9BDE23192580A20074F273 /* UIPinchGestureRecognizer+TTAutomation.m in Sources */,
@@ -7208,7 +7136,6 @@
 				6D9BE1F61925825A0074F273 /* NSURLConnection+MPIntercept.m in Sources */,
 				6D88F06219357FC60039B631 /* MPTouchAction.m in Sources */,
 				6D9BDFE5192580A20074F273 /* UIAlertView+TTRecorder.m in Sources */,
-				F79973AB1920AB71002BCFAB /* MPNumberDictionary.m in Sources */,
 				6D9BDCAC192580A20074F273 /* TTNativeSegmentedControlElement.m in Sources */,
 				6D9BDEA2192580A20074F273 /* TTLocatorValue.m in Sources */,
 				6D9BDCD0192580A20074F273 /* TTNativeTextFieldElement.m in Sources */,
@@ -7220,11 +7147,9 @@
 				6D9BE18F192581800074F273 /* NSData+TTCommonCrypto.m in Sources */,
 				2783854819AC0BE20065D082 /* TTMultiTouchRecordInfo.m in Sources */,
 				6D9BDF00192580A20074F273 /* TTNetworkBytesRecvdMonitor.m in Sources */,
-				5BF6D59119085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */,
 				6D0EBBBE18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				6D570A9D1908812A00DAB8EE /* MPTouchConfig.m in Sources */,
 				6D9BE0DB192580A20074F273 /* TTW_Base64Encoded_Scripts.m in Sources */,
-				27EE51A918FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */,
 				6D9BDD2A192580A20074F273 /* TTKeyPlane.m in Sources */,
 				6D37C69E1ACB6D1200880BA0 /* TTPopoverController.m in Sources */,
 				6DE14B051912CD9A00F345E3 /* UIView+MPTouchHandler.m in Sources */,
@@ -7232,7 +7157,6 @@
 				6D9BE012192580A20074F273 /* TTScrollViewListener.m in Sources */,
 				6D9BDFC1192580A20074F273 /* TTRecordedAction.m in Sources */,
 				6D9BDC91192580A20074F273 /* TTNativeMKMapViewElement.m in Sources */,
-				27EE51BD18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */,
 				F78AF497190F629C00915617 /* descriptor.cc in Sources */,
 				F78AF55F190F629C00915617 /* service.cc in Sources */,
 				F78AF589190F629C00915617 /* common.cc in Sources */,
@@ -7263,7 +7187,6 @@
 				F78AF605190F629C00915617 /* text_format.cc in Sources */,
 				6D9BE07C192580A20074F273 /* TouchTestDriver.m in Sources */,
 				F78AF519190F629C00915617 /* zero_copy_stream_impl.cc in Sources */,
-				F7A761F31906E29100DF0BE5 /* MPBatchRecord.m in Sources */,
 				F76730B2190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */,
 				6D9BDF62192580A20074F273 /* TTTouchesEventRecorder.m in Sources */,
 				6D9BE197192581800074F273 /* NSData+TTGzip.m in Sources */,
@@ -7298,6 +7221,7 @@
 				6D9BE09B192580A20074F273 /* TTLaunchDeviceAgent.m in Sources */,
 				6D9BDEE0192580A20074F273 /* TTMemoryMonitor.m in Sources */,
 				6D9BE0EC192580A20074F273 /* TTWebViewDelegate.m in Sources */,
+				934E97E81BD06D06008BBDE8 /* MPApiNetworkRequestBeacon.mm in Sources */,
 				6D9BDCD8192580A20074F273 /* TTNativeTextViewElement.m in Sources */,
 				6D9BDF59192580A20074F273 /* TTMultitouchGesture.m in Sources */,
 				6D9BE1051925813D0074F273 /* TTPickerOptions.m in Sources */,
@@ -7307,7 +7231,6 @@
 				6D9BE0B6192580A20074F273 /* TTScreenshotCore.m in Sources */,
 				6D9BDDF5192580A20074F273 /* TTMainThreadRunner.m in Sources */,
 				6D9BE054192580A20074F273 /* TTTaskResponder.m in Sources */,
-				271A7F9F18FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				6D9BDDDA192580A20074F273 /* TTAutomation.m in Sources */,
 				F78AF629190F629C00915617 /* wire_format.cc in Sources */,
 				6D9BDF93192580A20074F273 /* UIPanGestureRecognizer+TTRecorder.m in Sources */,
@@ -7320,6 +7243,7 @@
 				6D9BE224192585630074F273 /* TTElement+Test.m in Sources */,
 				6D9BE19C192581800074F273 /* TTMethodSwizzle.c in Sources */,
 				6D9BE1D1192581800074F273 /* TTXMLWriter.m in Sources */,
+				934E97EA1BD06D06008BBDE8 /* MPAppCrashBeacon.mm in Sources */,
 				5B5F94C61936AA6A0012D36F /* TTAutomationHud.m in Sources */,
 				6D9BE023192580A20074F273 /* TTDataTransporter.m in Sources */,
 				93318A651B94EA88003A430F /* MPInterceptUtils.m in Sources */,
@@ -7331,10 +7255,8 @@
 				F78AF581190F629C00915617 /* atomicops_internals_x86_msvc.cc in Sources */,
 				6D9BE158192581800074F273 /* TT_SBJSON.m in Sources */,
 				6D9BDF3E192580A20074F273 /* TTPickerViewListener.m in Sources */,
-				F7A761FD1906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				6D9BDE07192580A20074F273 /* TTWaitComparison.m in Sources */,
 				F78AF4FC190F629C00915617 /* printer.cc in Sources */,
-				F775D6111907758300EF7369 /* MPBeacon.m in Sources */,
 				6D9BE0BF192580A20074F273 /* TTUIApplicationDelegateHelper.m in Sources */,
 				6D9BE0E3192580A20074F273 /* TTHybridWebViewDriver.m in Sources */,
 				6D9BE23F192585630074F273 /* UIView+TTTest.m in Sources */,
@@ -7351,8 +7273,10 @@
 				272075DB18F59B8B008DB644 /* MPBeaconCollector.m in Sources */,
 				6D9BDE6A192580A20074F273 /* TTInspectorViewController.m in Sources */,
 				6D9BDFED192580A20074F273 /* UIControl+TTRecorder.m in Sources */,
+				934E97E61BD06D06008BBDE8 /* MPApiCustomMetricBeacon.mm in Sources */,
 				6D9BE22D192585630074F273 /* TTInternalTest.m in Sources */,
 				6D9BDD20192580A20074F273 /* TTKeyboardAutomation.m in Sources */,
+				934E97EE1BD06D06008BBDE8 /* MPAppLaunchBeacon.mm in Sources */,
 				F78AF4E3190F629C00915617 /* coded_stream.cc in Sources */,
 				6D9BDE7D192580A20074F273 /* UIViewController+TTInspector.m in Sources */,
 				6D9BDF23192580A20074F273 /* NSObject+TTExtensions.m in Sources */,
@@ -7365,10 +7289,10 @@
 				6D0EBBBD18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				6D9BDDFE192580A20074F273 /* TTToucher.m in Sources */,
 				6D9BE0AD192580A20074F273 /* TTScreenshot.m in Sources */,
-				27EE51A818FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */,
 				6D9BDCEA192580A20074F273 /* TTNativeWebViewElement.m in Sources */,
 				6D9BE0A4192580A20074F273 /* TTQueue.m in Sources */,
 				6D37C6AF1ACB6D1200880BA0 /* TTPopoverResources.m in Sources */,
+				934E97F31BD06F7E008BBDE8 /* MPApiCustomTimerBeacon.mm in Sources */,
 				6D9BDCC6192580A20074F273 /* TTNativeTextElement.m in Sources */,
 				6D9BE236192585630074F273 /* TTLocator+Test.m in Sources */,
 				6D9BDFA5192580A20074F273 /* UIRotationGestureRecognizer+TTRecorder.m in Sources */,
@@ -7377,7 +7301,6 @@
 				6D9BE146192581800074F273 /* NSObject+TT_SBJSON.m in Sources */,
 				5B234814198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */,
 				6D9BDFB7192580A20074F273 /* TTAlertViewDelegate.m in Sources */,
-				27EE519518FC64760079D9E7 /* MPTimerBeacon.m in Sources */,
 				6DEE053E1917B60E00B63181 /* MPTouchMetricValue.m in Sources */,
 				6D9BDF6B192580A20074F273 /* TTTouchesJourney.m in Sources */,
 				6D9BDC63192580A20074F273 /* TTElement.m in Sources */,
@@ -7393,9 +7316,9 @@
 				6D9BE066192580A20074F273 /* TTTaskResponseHandler.m in Sources */,
 				6D9BDEB3192580A20074F273 /* TTMKMapViewWrapperDelegate.m in Sources */,
 				6D9BDEAA192580A20074F273 /* MKMapView+TTMKMapView.m in Sources */,
+				934E97EF1BD06D06008BBDE8 /* MPBeacon.mm in Sources */,
 				6D9BDEE9192580A20074F273 /* TTMetricMonitorBase.m in Sources */,
 				6D9BDCFC192580A20074F273 /* TTAutomationGestureDetail.m in Sources */,
-				5BF6D59019085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */,
 				5B5F94CA1936AA6A0012D36F /* TTTouchHud.m in Sources */,
 				6D9BDFDB192580A20074F273 /* TTRecordingTaskHandler.m in Sources */,
 				F78AF4BF190F629C00915617 /* extension_set.cc in Sources */,
@@ -7406,7 +7329,6 @@
 				6D9BDCBD192580A20074F273 /* TTNativeTableViewElement.m in Sources */,
 				5B90064E1A7F14940099D2F7 /* MPulse.m in Sources */,
 				6D9BDF47192580A20074F273 /* TTJsonPrecision.m in Sources */,
-				5B9CA8071925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */,
 				F78AF49D190F629C00915617 /* descriptor.pb.cc in Sources */,
 				6D9BE035192580A20074F273 /* TTSessionDictionary.m in Sources */,
 				6DE14B041912CD9A00F345E3 /* UIView+MPTouchHandler.m in Sources */,
@@ -7415,6 +7337,7 @@
 				5B18993919102268009794C1 /* MPDemographics.m in Sources */,
 				6D9BDE46192580A20074F273 /* TTInspectorActions.m in Sources */,
 				6D9BE161192581800074F273 /* TT_SBJsonBase.m in Sources */,
+				934E97EC1BD06D06008BBDE8 /* MPAppInactiveBeacon.m in Sources */,
 				6D9BDCE1192580A20074F273 /* TTNativeViewElement.m in Sources */,
 				93318A671B94EA88003A430F /* NSURLSession+MPIntercept.m in Sources */,
 				6D9BE16A192581800074F273 /* TT_SBJsonParser.m in Sources */,
@@ -7438,7 +7361,6 @@
 				F78AF4D1190F629C00915617 /* generated_message_reflection.cc in Sources */,
 				6D88F06119357FC60039B631 /* MPTouchAction.m in Sources */,
 				6D9BDCAB192580A20074F273 /* TTNativeSegmentedControlElement.m in Sources */,
-				5BD27BA01905924300881F84 /* MPBucketUtility.m in Sources */,
 				6D9BDEA1192580A20074F273 /* TTLocatorValue.m in Sources */,
 				6D9BDCCF192580A20074F273 /* TTNativeTextFieldElement.m in Sources */,
 				6D9BE10E1925813D0074F273 /* TTTapOptions.m in Sources */,
@@ -7459,9 +7381,7 @@
 				6D37C69C1ACB6D1200880BA0 /* TTPopoverController.m in Sources */,
 				6D9BDFC0192580A20074F273 /* TTRecordedAction.m in Sources */,
 				6D9BDC90192580A20074F273 /* TTNativeMKMapViewElement.m in Sources */,
-				27EE51BC18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */,
 				F78AF5AA190F629C00915617 /* stringprintf.cc in Sources */,
-				F79973AA1920AB71002BCFAB /* MPNumberDictionary.m in Sources */,
 				6DDE6D761908E56100934EEB /* MPTouchMetric.m in Sources */,
 				5B87FC5C1909DA81009CA061 /* MPConfig.m in Sources */,
 				6D9BE0C8192580A20074F273 /* TTUncaughtExceptionHandler.m in Sources */,
@@ -7485,8 +7405,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224681C29B46500C8580E /* MPBeacon.mm in Sources */,
 				9348A2411BA31D0D00732150 /* NSURLSession+MPIntercept.m in Sources */,
-				5B27002B1B0FA20F00F49358 /* MPTimerBeaconTests.m in Sources */,
+				5B27002B1B0FA20F00F49358 /* MPApiCustomTimerBeaconTests.m in Sources */,
 				F78AF62B190F629C00915617 /* wire_format.cc in Sources */,
 				6D9BE238192585630074F273 /* TTLocator+Test.m in Sources */,
 				6D9BDF52192580A20074F273 /* TTHighLevelRecorder.m in Sources */,
@@ -7499,6 +7420,7 @@
 				6D9BE0C1192580A20074F273 /* TTUIApplicationDelegateHelper.m in Sources */,
 				6DB656D7193660B8009453FB /* MPTouchMetricTests.m in Sources */,
 				6D9BE1071925813D0074F273 /* TTPickerOptions.m in Sources */,
+				934E97F51BD08C53008BBDE8 /* MPApiCustomMetricBeaconTests.m in Sources */,
 				6D37C6BF1ACB6D1200880BA0 /* TTTouchableView.m in Sources */,
 				6D3104D119088838002A05D4 /* MPTouchHandlerThread.m in Sources */,
 				272075DD18F59B8B008DB644 /* MPBeaconCollector.m in Sources */,
@@ -7510,6 +7432,8 @@
 				6D9BDC77192580A20074F273 /* TTNativeDatePickerTableViewElement.m in Sources */,
 				F78AF4FE190F629C00915617 /* printer.cc in Sources */,
 				6D9BE040192580A20074F273 /* TTShutdownEvent.m in Sources */,
+				934E97FB1BD0905A008BBDE8 /* MPAppLaunchBeaconTests.m in Sources */,
+				934E97F71BD09035008BBDE8 /* MPAppCrashBeaconTests.m in Sources */,
 				6D9BE0CA192580A20074F273 /* TTUncaughtExceptionHandler.m in Sources */,
 				6D37C69F1ACB6D1200880BA0 /* TTPopoverController.m in Sources */,
 				6D9BDDF7192580A20074F273 /* TTMainThreadRunner.m in Sources */,
@@ -7530,8 +7454,6 @@
 				F78AF4A7190F629C00915617 /* descriptor_database.cc in Sources */,
 				6D9BDCE3192580A20074F273 /* TTNativeViewElement.m in Sources */,
 				6D9BE199192581800074F273 /* NSData+TTGzip.m in Sources */,
-				27EE519718FC64760079D9E7 /* MPTimerBeacon.m in Sources */,
-				5BD27BA519059CBC00881F84 /* MPBucketUtilityTests.m in Sources */,
 				6D9BDDE5192580A20074F273 /* TTAutomationTaskHandler+LocateElement.m in Sources */,
 				6D9BDFF8192580A20074F273 /* UIView+TTRecorder.m in Sources */,
 				6D9BDEA3192580A20074F273 /* TTLocatorValue.m in Sources */,
@@ -7566,6 +7488,7 @@
 				6D9BDF13192580A20074F273 /* TTNetworkDataCounter.m in Sources */,
 				6D9BDE88192580A20074F273 /* TTLocator.m in Sources */,
 				5B7270841B18065F00AEA3B3 /* MPConfigTests.m in Sources */,
+				934E97FD1BD093F3008BBDE8 /* MPBeaconTests.m in Sources */,
 				6D9BDCAD192580A20074F273 /* TTNativeSegmentedControlElement.m in Sources */,
 				6D9BDCDA192580A20074F273 /* TTNativeTextViewElement.m in Sources */,
 				6D9BE1D3192581800074F273 /* TTXMLWriter.m in Sources */,
@@ -7585,7 +7508,6 @@
 				6DDE6D781908E56100934EEB /* MPTouchMetric.m in Sources */,
 				6D9BE0AF192580A20074F273 /* TTScreenshot.m in Sources */,
 				6D9BDF9E192580A20074F273 /* UIPinchGestureRecognizer+TTRecorder.m in Sources */,
-				F775D6131907758300EF7369 /* MPBeacon.m in Sources */,
 				6D9BDE9A192580A20074F273 /* TTLocatorPart.m in Sources */,
 				6D9BDEE2192580A20074F273 /* TTMemoryMonitor.m in Sources */,
 				6D9BDCC8192580A20074F273 /* TTNativeTextElement.m in Sources */,
@@ -7594,7 +7516,6 @@
 				6D9BDFD4192580A20074F273 /* TTRecorder.m in Sources */,
 				6D9BE02E192580A20074F273 /* TTGetTasks.m in Sources */,
 				F78AF620190F629C00915617 /* unknown_field_set.cc in Sources */,
-				F7304128193656D300C45682 /* MPBatchRecordTests.m in Sources */,
 				6D88F07019357FE70039B631 /* MPTouchCondition.m in Sources */,
 				6D9BDFDD192580A20074F273 /* TTRecordingTaskHandler.m in Sources */,
 				6D9BE025192580A20074F273 /* TTDataTransporter.m in Sources */,
@@ -7614,24 +7535,23 @@
 				6D0974461912D96B00A180AD /* MPTouchPageGroup.m in Sources */,
 				6D9BDCB6192580A20074F273 /* TTNativeSwitchElement.m in Sources */,
 				6D9BE175192581800074F273 /* TT_SBJsonWriter.m in Sources */,
-				27EE51BE18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */,
 				6DE14AFD1912CD9A00F345E3 /* NSObject+MPExtensions.m in Sources */,
 				6D690B1A190715610086B220 /* NSString+MPExtensions.m in Sources */,
 				27E4BAC3199D67E700FBD812 /* TTTextFieldListener.m in Sources */,
+				934F6DB11C0CD9FF00405F41 /* MPBeaconTestBase.m in Sources */,
 				6D9BE00A192580A20074F273 /* TTScrollViewDelegate.m in Sources */,
 				6D9BDE36192580A20074F273 /* UIViewController+TTAutomation.m in Sources */,
 				6DB656D919366100009453FB /* MPTouchTimerTests.m in Sources */,
+				934E97F91BD0904C008BBDE8 /* MPAppInactiveBeaconTests.m in Sources */,
 				6D9BDF95192580A20074F273 /* UIPanGestureRecognizer+TTRecorder.m in Sources */,
-				F767436A190CB68500228AB7 /* MPBatchTests.m in Sources */,
+				F767436A190CB68500228AB7 /* MPBatchTests.mm in Sources */,
 				6D9BDE00192580A20074F273 /* TTToucher.m in Sources */,
 				6D9BDFA7192580A20074F273 /* UIRotationGestureRecognizer+TTRecorder.m in Sources */,
 				6D9BE1F71925825A0074F273 /* NSURLConnection+MPIntercept.m in Sources */,
 				6D9BDE6C192580A20074F273 /* TTInspectorViewController.m in Sources */,
 				6D9BDF5B192580A20074F273 /* TTMultitouchGesture.m in Sources */,
 				6D9BDFB9192580A20074F273 /* TTAlertViewDelegate.m in Sources */,
-				27EE51AA18FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */,
 				6D9BDFCB192580A20074F273 /* TTRecordedGestureState.m in Sources */,
-				F79973AC1920AB71002BCFAB /* MPNumberDictionary.m in Sources */,
 				6D9BDF2E192580A20074F273 /* NSString+TTExtensions.m in Sources */,
 				6D9BDF6D192580A20074F273 /* TTTouchesJourney.m in Sources */,
 				F78AF58A190F629C00915617 /* common.cc in Sources */,
@@ -7641,10 +7561,8 @@
 				6D9BDFE6192580A20074F273 /* UIAlertView+TTRecorder.m in Sources */,
 				6DDE6D831908ED6900934EEB /* MPTouchTimer.m in Sources */,
 				6D9BE241192585630074F273 /* UIView+TTTest.m in Sources */,
-				F79973B019212074002BCFAB /* MPNumberDictionaryTest.m in Sources */,
 				F78AF522190F629C00915617 /* zero_copy_stream_impl_lite.cc in Sources */,
 				F78AF551190F629C00915617 /* repeated_field.cc in Sources */,
-				F7A761F51906E29100DF0BE5 /* MPBatchRecord.m in Sources */,
 				6D9BDE12192580A20074F273 /* UIDevice+TTAutomation.m in Sources */,
 				6D9BDC65192580A20074F273 /* TTElement.m in Sources */,
 				6D9BDF37192580A20074F273 /* TTPickerViewDelegate.m in Sources */,
@@ -7670,12 +7588,10 @@
 				6D9BE09D192580A20074F273 /* TTLaunchDeviceAgent.m in Sources */,
 				F78AF5BF190F629C00915617 /* strutil.cc in Sources */,
 				F76730B4190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */,
-				F7A761FF1906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				6D9BE190192581800074F273 /* NSData+TTCommonCrypto.m in Sources */,
 				6D9BDF76192580A20074F273 /* UIEventGesture.m in Sources */,
 				6D9BDE5A192580A20074F273 /* TTInspectorPopover.m in Sources */,
 				6D9BE214192585360074F273 /* TTFileURLProtocol.m in Sources */,
-				271A7FA118FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				6D9BDCA4192580A20074F273 /* TTNativeProgressViewElement.m in Sources */,
 				6D9BDF25192580A20074F273 /* NSObject+TTExtensions.m in Sources */,
 				6D9BDE63192580A20074F273 /* TTInspectorView.m in Sources */,
@@ -7686,7 +7602,6 @@
 				6D9BDEEB192580A20074F273 /* TTMetricMonitorBase.m in Sources */,
 				6D9BDD2B192580A20074F273 /* TTKeyPlane.m in Sources */,
 				6D9BE0B8192580A20074F273 /* TTScreenshotCore.m in Sources */,
-				F7C7F44A1923EFA900670E8C /* MPBeaconURLProcessorTests.m in Sources */,
 				6D9BE037192580A20074F273 /* TTSessionDictionary.m in Sources */,
 				6D9BE0E5192580A20074F273 /* TTHybridWebViewDriver.m in Sources */,
 				6D9BDF88192580A20074F273 /* TTGestureDetail.m in Sources */,
@@ -7707,6 +7622,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224591C29B3D600C8580E /* MPBeacon.mm in Sources */,
+				93F2244E1C29B2C300C8580E /* MPApiCustomMetricBeacon.mm in Sources */,
+				93F2244F1C29B2C300C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
+				93F224501C29B2C300C8580E /* MPApiNetworkRequestBeacon.mm in Sources */,
+				93F224511C29B2C300C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F224521C29B2C300C8580E /* MPAppLaunchBeacon.mm in Sources */,
+				93F2244D1C29B26C00C8580E /* MPAppInactiveBeacon.m in Sources */,
 				5B0DDACF1940FC33005D43BD /* TTNativeSwitchElement.m in Sources */,
 				5B0DDAD01940FC33005D43BD /* service.cc in Sources */,
 				6D37C6BD1ACB6D1200880BA0 /* TTTouchableView.m in Sources */,
@@ -7717,7 +7639,6 @@
 				5B0DDAD51940FC33005D43BD /* text_format.cc in Sources */,
 				5B0DDAD61940FC33005D43BD /* TouchTestDriver.m in Sources */,
 				5B0DDAD71940FC33005D43BD /* zero_copy_stream_impl.cc in Sources */,
-				5B0DDAD81940FC33005D43BD /* MPBatchRecord.m in Sources */,
 				5B0DDAD91940FC33005D43BD /* ClientBeaconBatch.pb.cc in Sources */,
 				5B0DDADA1940FC33005D43BD /* TTTouchesEventRecorder.m in Sources */,
 				5B0DDADB1940FC33005D43BD /* NSData+TTGzip.m in Sources */,
@@ -7760,7 +7681,6 @@
 				5B0DDB001940FC33005D43BD /* (null) in Sources */,
 				5B0DDB011940FC33005D43BD /* TTMainThreadRunner.m in Sources */,
 				5B0DDB021940FC33005D43BD /* TTTaskResponder.m in Sources */,
-				5B0DDB041940FC33005D43BD /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				5B0DDB051940FC33005D43BD /* TTAutomation.m in Sources */,
 				5B0DDB061940FC33005D43BD /* wire_format.cc in Sources */,
 				5B0DDB071940FC33005D43BD /* UIPanGestureRecognizer+TTRecorder.m in Sources */,
@@ -7788,11 +7708,9 @@
 				5B0DDB1A1940FC33005D43BD /* atomicops_internals_x86_msvc.cc in Sources */,
 				5B0DDB1B1940FC33005D43BD /* TT_SBJSON.m in Sources */,
 				5B0DDB1C1940FC33005D43BD /* TTPickerViewListener.m in Sources */,
-				5B0DDB1D1940FC33005D43BD /* MPTimerData.m in Sources */,
 				6D37C69D1ACB6D1200880BA0 /* TTPopoverController.m in Sources */,
 				5B0DDB1E1940FC33005D43BD /* TTWaitComparison.m in Sources */,
 				5B0DDB1F1940FC33005D43BD /* printer.cc in Sources */,
-				5B0DDB201940FC33005D43BD /* MPBeacon.m in Sources */,
 				5B0DDB211940FC33005D43BD /* TTUIApplicationDelegateHelper.m in Sources */,
 				5B0DDB221940FC33005D43BD /* TTHybridWebViewDriver.m in Sources */,
 				5B0DDB231940FC33005D43BD /* UIView+TTTest.m in Sources */,
@@ -7830,7 +7748,6 @@
 				9348A2471BA3344B00732150 /* MPInterceptUtils.m in Sources */,
 				5B0DDB401940FC33005D43BD /* TTPanSender.m in Sources */,
 				5B0DDB411940FC33005D43BD /* TTScreenshot.m in Sources */,
-				5B0DDB421940FC33005D43BD /* MPNetworkCallBeacon.m in Sources */,
 				5B0DDB431940FC33005D43BD /* TTNativeWebViewElement.m in Sources */,
 				5B0DDB441940FC33005D43BD /* TTQueue.m in Sources */,
 				5B0DDB451940FC33005D43BD /* TTNativeTextElement.m in Sources */,
@@ -7840,7 +7757,6 @@
 				5B0DDB491940FC33005D43BD /* MPASLLogger.m in Sources */,
 				5B0DDB4A1940FC33005D43BD /* NSObject+TT_SBJSON.m in Sources */,
 				5B0DDB4B1940FC33005D43BD /* TTAlertViewDelegate.m in Sources */,
-				5B0DDB4C1940FC33005D43BD /* MPTimerBeacon.m in Sources */,
 				5B0DDB4D1940FC33005D43BD /* MPTouchMetricValue.m in Sources */,
 				5B0DDB4E1940FC33005D43BD /* TTTouchesJourney.m in Sources */,
 				5B0DDB4F1940FC33005D43BD /* TTElement.m in Sources */,
@@ -7859,7 +7775,6 @@
 				5B0DDB5B1940FC33005D43BD /* TTMetricMonitorBase.m in Sources */,
 				88BE9F0E19C89D4F00CA204D /* TTNativeCollectionViewElement.m in Sources */,
 				5B0DDB5D1940FC33005D43BD /* TTAutomationGestureDetail.m in Sources */,
-				5B0DDB5E1940FC33005D43BD /* MPAppIsInactiveBeacon.m in Sources */,
 				5B0DDB5F1940FC33005D43BD /* TTTouchHud.m in Sources */,
 				5B0DDB601940FC33005D43BD /* TTRecordingTaskHandler.m in Sources */,
 				5B0DDB611940FC33005D43BD /* extension_set.cc in Sources */,
@@ -7869,7 +7784,6 @@
 				5B0DDB651940FC33005D43BD /* TTNativeElement+TTAccessors.m in Sources */,
 				5B0DDB661940FC33005D43BD /* TTNativeTableViewElement.m in Sources */,
 				5B0DDB671940FC33005D43BD /* TTJsonPrecision.m in Sources */,
-				5B0DDB681940FC33005D43BD /* MPBeaconURLProcessor.m in Sources */,
 				5B0DDB691940FC33005D43BD /* descriptor.pb.cc in Sources */,
 				5B0DDB6A1940FC33005D43BD /* TTSessionDictionary.m in Sources */,
 				5B0DDB6B1940FC33005D43BD /* UIView+MPTouchHandler.m in Sources */,
@@ -7899,7 +7813,6 @@
 				5B0DDB831940FC33005D43BD /* extension_set_heavy.cc in Sources */,
 				5B0DDB841940FC33005D43BD /* generated_message_reflection.cc in Sources */,
 				5B0DDB851940FC33005D43BD /* TTNativeSegmentedControlElement.m in Sources */,
-				5B0DDB861940FC33005D43BD /* MPBucketUtility.m in Sources */,
 				5B0DDB871940FC33005D43BD /* TTLocatorValue.m in Sources */,
 				5B0DDB881940FC33005D43BD /* TTNativeTextFieldElement.m in Sources */,
 				5B0DDB891940FC33005D43BD /* TTTapOptions.m in Sources */,
@@ -7918,11 +7831,9 @@
 				5B0DDB961940FC33005D43BD /* TTScrollViewListener.m in Sources */,
 				5B0DDB971940FC33005D43BD /* TTRecordedAction.m in Sources */,
 				5B0DDB981940FC33005D43BD /* TTNativeMKMapViewElement.m in Sources */,
-				5B0DDB991940FC33005D43BD /* MPMetricBeacon.m in Sources */,
 				5B0DDB9A1940FC33005D43BD /* stringprintf.cc in Sources */,
 				9348A25C1BA3348200732150 /* NSURLSession+MPIntercept.m in Sources */,
 				5B0DDB9B1940FC33005D43BD /* TTGestureGenerator.m in Sources */,
-				5B0DDB9C1940FC33005D43BD /* MPNumberDictionary.m in Sources */,
 				5B0DDB9D1940FC33005D43BD /* MPTouchMetric.m in Sources */,
 				5B0DDB9E1940FC33005D43BD /* MPConfig.m in Sources */,
 				5B0DDB9F1940FC33005D43BD /* TTUncaughtExceptionHandler.m in Sources */,
@@ -7977,6 +7888,7 @@
 				5B2E6F451A3628FB00EEB56C /* repeated_field.cc in Sources */,
 				5B2E6F4F1A3628FB00EEB56C /* atomicops_internals_x86_gcc.cc in Sources */,
 				5B2E6F501A3628FB00EEB56C /* structurally_valid.cc in Sources */,
+				934F6DB21C0CD9FF00405F41 /* MPBeaconTestBase.m in Sources */,
 				5B2E6F531A3628FB00EEB56C /* message.cc in Sources */,
 				5B2E6F541A3628FB00EEB56C /* once.cc in Sources */,
 				5B2E6F5D1A3628FB00EEB56C /* strutil.cc in Sources */,
@@ -7990,6 +7902,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224691C29B47000C8580E /* MPApiCustomMetricBeacon.mm in Sources */,
+				93F2246A1C29B47000C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
+				93F2246B1C29B47000C8580E /* MPApiNetworkRequestBeacon.mm in Sources */,
+				93F2246C1C29B47000C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F2246D1C29B47000C8580E /* MPAppInactiveBeacon.m in Sources */,
+				93F2246E1C29B47000C8580E /* MPAppLaunchBeacon.mm in Sources */,
+				93F2246F1C29B47000C8580E /* MPBeacon.mm in Sources */,
 				6D9BDCB7192580A20074F273 /* TTNativeSwitchElement.m in Sources */,
 				F78AF561190F629C00915617 /* service.cc in Sources */,
 				F78AF4B7190F629C00915617 /* dynamic_message.cc in Sources */,
@@ -7998,7 +7917,6 @@
 				F78AF608190F629C00915617 /* text_format.cc in Sources */,
 				6D9BE07F192580A20074F273 /* TouchTestDriver.m in Sources */,
 				F78AF51C190F629C00915617 /* zero_copy_stream_impl.cc in Sources */,
-				F7A761F61906E29100DF0BE5 /* MPBatchRecord.m in Sources */,
 				F76730B5190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */,
 				6D9BDF65192580A20074F273 /* TTTouchesEventRecorder.m in Sources */,
 				5B5F94BA193665A90012D36F /* TTAutomationHud.m in Sources */,
@@ -8043,7 +7961,6 @@
 				6D9BE0B9192580A20074F273 /* TTScreenshotCore.m in Sources */,
 				6D9BDDF8192580A20074F273 /* TTMainThreadRunner.m in Sources */,
 				6D9BE057192580A20074F273 /* TTTaskResponder.m in Sources */,
-				271A7FA218FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				6D9BDDDD192580A20074F273 /* TTAutomation.m in Sources */,
 				F78AF62C190F629C00915617 /* wire_format.cc in Sources */,
 				6D9BDF96192580A20074F273 /* UIPanGestureRecognizer+TTRecorder.m in Sources */,
@@ -8066,10 +7983,8 @@
 				6D9BE15B192581800074F273 /* TT_SBJSON.m in Sources */,
 				6D9BDF41192580A20074F273 /* TTPickerViewListener.m in Sources */,
 				5B5F94C3193665BA0012D36F /* TTTouchHud.m in Sources */,
-				F7A762001906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				6D9BDE0A192580A20074F273 /* TTWaitComparison.m in Sources */,
 				F78AF4FF190F629C00915617 /* printer.cc in Sources */,
-				F775D6141907758300EF7369 /* MPBeacon.m in Sources */,
 				6D9BE0C2192580A20074F273 /* TTUIApplicationDelegateHelper.m in Sources */,
 				6D9BE0E6192580A20074F273 /* TTHybridWebViewDriver.m in Sources */,
 				6D9BE242192585630074F273 /* UIView+TTTest.m in Sources */,
@@ -8100,7 +8015,6 @@
 				6D0EBBBF18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				6D9BDE01192580A20074F273 /* TTToucher.m in Sources */,
 				6D9BE0B0192580A20074F273 /* TTScreenshot.m in Sources */,
-				27EE51AB18FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */,
 				6D9BDCED192580A20074F273 /* TTNativeWebViewElement.m in Sources */,
 				6D37C6B31ACB6D1200880BA0 /* TTPopoverResources.m in Sources */,
 				6D9BE0A7192580A20074F273 /* TTQueue.m in Sources */,
@@ -8112,7 +8026,6 @@
 				5B234817198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */,
 				6D9BE149192581800074F273 /* NSObject+TT_SBJSON.m in Sources */,
 				6D9BDFBA192580A20074F273 /* TTAlertViewDelegate.m in Sources */,
-				27EE519818FC64760079D9E7 /* MPTimerBeacon.m in Sources */,
 				6DEE05411917B60E00B63181 /* MPTouchMetricValue.m in Sources */,
 				6D9BDF6E192580A20074F273 /* TTTouchesJourney.m in Sources */,
 				6D9BDC66192580A20074F273 /* TTElement.m in Sources */,
@@ -8131,7 +8044,6 @@
 				6D9BDEAD192580A20074F273 /* MKMapView+TTMKMapView.m in Sources */,
 				6D9BDEEC192580A20074F273 /* TTMetricMonitorBase.m in Sources */,
 				6D9BDCFF192580A20074F273 /* TTAutomationGestureDetail.m in Sources */,
-				5BF6D59219085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */,
 				6D9BDFDE192580A20074F273 /* TTRecordingTaskHandler.m in Sources */,
 				F78AF4C2190F629C00915617 /* extension_set.cc in Sources */,
 				6D37C6861ACB6D1200880BA0 /* TTBlockingGestureRecognizer.m in Sources */,
@@ -8141,7 +8053,6 @@
 				6D9BDCC0192580A20074F273 /* TTNativeTableViewElement.m in Sources */,
 				5B9006521A7F14940099D2F7 /* MPulse.m in Sources */,
 				6D9BDF4A192580A20074F273 /* TTJsonPrecision.m in Sources */,
-				5B9CA8091925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */,
 				F78AF4A0190F629C00915617 /* descriptor.pb.cc in Sources */,
 				6D9BE038192580A20074F273 /* TTSessionDictionary.m in Sources */,
 				6DE14B071912CD9A00F345E3 /* UIView+MPTouchHandler.m in Sources */,
@@ -8173,7 +8084,6 @@
 				F78AF4D4190F629C00915617 /* generated_message_reflection.cc in Sources */,
 				6D88F06419357FC60039B631 /* MPTouchAction.m in Sources */,
 				6D9BDCAE192580A20074F273 /* TTNativeSegmentedControlElement.m in Sources */,
-				5BD27BA21905924300881F84 /* MPBucketUtility.m in Sources */,
 				6D9BDEA4192580A20074F273 /* TTLocatorValue.m in Sources */,
 				6D9BDCD2192580A20074F273 /* TTNativeTextFieldElement.m in Sources */,
 				6D9BE1111925813D0074F273 /* TTTapOptions.m in Sources */,
@@ -8194,9 +8104,7 @@
 				6D37C6A01ACB6D1200880BA0 /* TTPopoverController.m in Sources */,
 				6D9BDFC3192580A20074F273 /* TTRecordedAction.m in Sources */,
 				6D9BDC93192580A20074F273 /* TTNativeMKMapViewElement.m in Sources */,
-				27EE51BF18FC8A760079D9E7 /* MPMetricBeacon.m in Sources */,
 				F78AF5AD190F629C00915617 /* stringprintf.cc in Sources */,
-				F79973AD1920AB71002BCFAB /* MPNumberDictionary.m in Sources */,
 				6DDE6D791908E56100934EEB /* MPTouchMetric.m in Sources */,
 				5B87FC5E1909DA81009CA061 /* MPConfig.m in Sources */,
 				6D9BE0CB192580A20074F273 /* TTUncaughtExceptionHandler.m in Sources */,
@@ -8220,6 +8128,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224761C29B48600C8580E /* MPApiCustomMetricBeacon.mm in Sources */,
+				93F224771C29B48600C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
+				93F224781C29B48600C8580E /* MPApiNetworkRequestBeacon.mm in Sources */,
+				93F224791C29B48600C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F2247A1C29B48600C8580E /* MPAppInactiveBeacon.m in Sources */,
+				93F2247B1C29B48600C8580E /* MPAppLaunchBeacon.mm in Sources */,
+				93F2247C1C29B48600C8580E /* MPBeacon.mm in Sources */,
 				6D9BDCB8192580A20074F273 /* TTNativeSwitchElement.m in Sources */,
 				5B18996A1911691F009794C1 /* generated_message_reflection.cc in Sources */,
 				6D9BE153192581800074F273 /* NSString+TT_SBJSON.m in Sources */,
@@ -8228,13 +8143,11 @@
 				5B18995E19116900009794C1 /* descriptor.cc in Sources */,
 				6D9BE080192580A20074F273 /* TouchTestDriver.m in Sources */,
 				5B18996019116905009794C1 /* descriptor.pb.cc in Sources */,
-				5BF6D59319085E5E00C5F991 /* MPAppIsInactiveBeacon.m in Sources */,
 				6D9BDF66192580A20074F273 /* TTTouchesEventRecorder.m in Sources */,
 				6D9BE19B192581800074F273 /* NSData+TTGzip.m in Sources */,
 				5B1899A519116945009794C1 /* stringprintf.cc in Sources */,
 				6D9BDDF0192580A20074F273 /* TTAutomationTaskHandler.m in Sources */,
 				5B18997019116928009794C1 /* message_lite.cc in Sources */,
-				5B1899B5191169DD009794C1 /* MPBatchRecord.m in Sources */,
 				6D9BDEC0192580A20074F273 /* TTBatteryMonitor.m in Sources */,
 				5B18999D19116945009794C1 /* common.cc in Sources */,
 				F799739D192086F0002BCFAB /* NSNumber+MPExtensions.m in Sources */,
@@ -8303,11 +8216,9 @@
 				6D9BDE5C192580A20074F273 /* TTInspectorPopover.m in Sources */,
 				6D9BDEDB192580A20074F273 /* TTLocationMonitor.m in Sources */,
 				6D9BDFA0192580A20074F273 /* UIPinchGestureRecognizer+TTRecorder.m in Sources */,
-				F79973AE1920AB71002BCFAB /* MPNumberDictionary.m in Sources */,
 				6D9BE15C192581800074F273 /* TT_SBJSON.m in Sources */,
 				6D9BDF42192580A20074F273 /* TTPickerViewListener.m in Sources */,
 				6D9BDE0B192580A20074F273 /* TTWaitComparison.m in Sources */,
-				5BD27BA31905924300881F84 /* MPBucketUtility.m in Sources */,
 				5B1899A819116945009794C1 /* strutil.cc in Sources */,
 				6D9BE0C3192580A20074F273 /* TTUIApplicationDelegateHelper.m in Sources */,
 				2783854B19AC0BE20065D082 /* TTMultiTouchRecordInfo.m in Sources */,
@@ -8366,7 +8277,6 @@
 				5B1899621911690E009794C1 /* descriptor_database.cc in Sources */,
 				6D9BDFDF192580A20074F273 /* TTRecordingTaskHandler.m in Sources */,
 				27E4BAD2199D67E700FBD812 /* TTTextFieldDelegate.m in Sources */,
-				F7A762011906E36700DF0BE5 /* MPTimerData.m in Sources */,
 				5B1899AA19116945009794C1 /* substitute.cc in Sources */,
 				6D0EBBC018D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				6D9BDF15192580A20074F273 /* TTNetworkDataCounter.m in Sources */,
@@ -8393,7 +8303,6 @@
 				6D9BE189192581800074F273 /* NSData+TT_Base64.m in Sources */,
 				6D9BE04F192580A20074F273 /* TTTaskHandlerThread.m in Sources */,
 				6D9BE01E192580A20074F273 /* TTControllerClient.m in Sources */,
-				27EE51C018FC8A760079D9E7 /* MPMetricBeacon.m in Sources */,
 				6D9BDFD6192580A20074F273 /* TTRecorder.m in Sources */,
 				6D9BDFCD192580A20074F273 /* TTRecordedGestureState.m in Sources */,
 				6D9BDC70192580A20074F273 /* TTNativeButtonElement.m in Sources */,
@@ -8402,13 +8311,10 @@
 				6D9BE1F91925825A0074F273 /* NSURLConnection+MPIntercept.m in Sources */,
 				6D9BDFE8192580A20074F273 /* UIAlertView+TTRecorder.m in Sources */,
 				6D88F06519357FC60039B631 /* MPTouchAction.m in Sources */,
-				F775D6151907758300EF7369 /* MPBeacon.m in Sources */,
 				6D9BDCAF192580A20074F273 /* TTNativeSegmentedControlElement.m in Sources */,
-				27EE51AC18FC8A2D0079D9E7 /* MPNetworkCallBeacon.m in Sources */,
 				6D9BDEA5192580A20074F273 /* TTLocatorValue.m in Sources */,
 				6D9BDCD3192580A20074F273 /* TTNativeTextFieldElement.m in Sources */,
 				6D9BE1121925813D0074F273 /* TTTapOptions.m in Sources */,
-				5B9CA80A1925DC8D009BE429 /* MPBeaconURLProcessor.m in Sources */,
 				6D9BDE41192580A20074F273 /* TTInspector.m in Sources */,
 				5B1899A119116945009794C1 /* once.cc in Sources */,
 				6D9BE192192581800074F273 /* NSData+TTCommonCrypto.m in Sources */,
@@ -8430,12 +8336,10 @@
 				6D570AA01908812A00DAB8EE /* MPTouchConfig.m in Sources */,
 				88BE9F0519C89D4F00CA204D /* TTNativeViewElement+TTScrollToVisible.m in Sources */,
 				6D3104DE19088926002A05D4 /* MPShutdownEvent.m in Sources */,
-				27EE519918FC64760079D9E7 /* MPTimerBeacon.m in Sources */,
 				6D9BE0CC192580A20074F273 /* TTUncaughtExceptionHandler.m in Sources */,
 				6D9BDF1E192580A20074F273 /* TTReachability.m in Sources */,
 				6D9BDF0C192580A20074F273 /* TTNetworkBytesSentMonitor.m in Sources */,
 				5B5F94BB193665AA0012D36F /* TTAutomationHud.m in Sources */,
-				271A7FA318FDBD8500DA420A /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				6D9BDFB2192580A20074F273 /* UISwipeGestureRecognizer+TTRecorder.m in Sources */,
 				6D9BDCF7192580A20074F273 /* UITableView+TTAutomation.m in Sources */,
 				6D9BDC9D192580A20074F273 /* TTNativePickerTableViewElement.m in Sources */,
@@ -8451,6 +8355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F224831C29B49D00C8580E /* MPApiCustomMetricBeacon.mm in Sources */,
+				93F224841C29B49D00C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
+				93F224851C29B49D00C8580E /* MPApiNetworkRequestBeacon.mm in Sources */,
+				93F224861C29B49D00C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F224871C29B49D00C8580E /* MPAppInactiveBeacon.m in Sources */,
+				93F224881C29B49D00C8580E /* MPAppLaunchBeacon.mm in Sources */,
+				93F224891C29B49D00C8580E /* MPBeacon.mm in Sources */,
 				6D0C3914192E82870057DD9B /* TTNativeSwitchElement.m in Sources */,
 				6D0C3915192E82870057DD9B /* service.cc in Sources */,
 				6D37C6C21ACB6D1200880BA0 /* TTTouchableView.m in Sources */,
@@ -8461,7 +8372,6 @@
 				6D0C3919192E82870057DD9B /* text_format.cc in Sources */,
 				6D0C391A192E82870057DD9B /* TouchTestDriver.m in Sources */,
 				6D0C391B192E82870057DD9B /* zero_copy_stream_impl.cc in Sources */,
-				6D0C391C192E82870057DD9B /* MPBatchRecord.m in Sources */,
 				6D0C391D192E82870057DD9B /* ClientBeaconBatch.pb.cc in Sources */,
 				6D0C391E192E82870057DD9B /* TTTouchesEventRecorder.m in Sources */,
 				6D0C391F192E82870057DD9B /* NSData+TTGzip.m in Sources */,
@@ -8505,7 +8415,6 @@
 				6D0C3944192E82870057DD9B /* TTScreenshotCore.m in Sources */,
 				6D0C3946192E82870057DD9B /* TTMainThreadRunner.m in Sources */,
 				6D0C3947192E82870057DD9B /* TTTaskResponder.m in Sources */,
-				6D0C3949192E82870057DD9B /* MPAppFinishedLaunchingBeacon.m in Sources */,
 				6D0C394A192E82870057DD9B /* TTAutomation.m in Sources */,
 				6D0C394B192E82870057DD9B /* wire_format.cc in Sources */,
 				6D0C394C192E82870057DD9B /* UIPanGestureRecognizer+TTRecorder.m in Sources */,
@@ -8534,11 +8443,9 @@
 				6D0C395D192E82870057DD9B /* TT_SBJSON.m in Sources */,
 				9348A2601BA3348400732150 /* NSURLSession+MPIntercept.m in Sources */,
 				6D0C395E192E82870057DD9B /* TTPickerViewListener.m in Sources */,
-				6D0C395F192E82870057DD9B /* MPTimerData.m in Sources */,
 				6D37C6A21ACB6D1200880BA0 /* TTPopoverController.m in Sources */,
 				6D0C3960192E82870057DD9B /* TTWaitComparison.m in Sources */,
 				6D0C3961192E82870057DD9B /* printer.cc in Sources */,
-				6D0C3962192E82870057DD9B /* MPBeacon.m in Sources */,
 				6D0C3963192E82870057DD9B /* TTUIApplicationDelegateHelper.m in Sources */,
 				6D0C3964192E82870057DD9B /* TTHybridWebViewDriver.m in Sources */,
 				6D0C3965192E82870057DD9B /* UIView+TTTest.m in Sources */,
@@ -8575,7 +8482,6 @@
 				6D0C397D192E82870057DD9B /* TTToucher.m in Sources */,
 				6D0C3B33192E854A0057DD9B /* TTPanSender.m in Sources */,
 				6D0C397E192E82870057DD9B /* TTScreenshot.m in Sources */,
-				6D0C397F192E82870057DD9B /* MPNetworkCallBeacon.m in Sources */,
 				6D0C3980192E82870057DD9B /* TTNativeWebViewElement.m in Sources */,
 				6D0C3981192E82870057DD9B /* TTQueue.m in Sources */,
 				6D0C3982192E82870057DD9B /* TTNativeTextElement.m in Sources */,
@@ -8585,7 +8491,6 @@
 				6D0C3986192E82870057DD9B /* MPASLLogger.m in Sources */,
 				6D0C3987192E82870057DD9B /* NSObject+TT_SBJSON.m in Sources */,
 				6D0C3988192E82870057DD9B /* TTAlertViewDelegate.m in Sources */,
-				6D0C3989192E82870057DD9B /* MPTimerBeacon.m in Sources */,
 				6D0C398A192E82870057DD9B /* MPTouchMetricValue.m in Sources */,
 				6D0C398B192E82870057DD9B /* TTTouchesJourney.m in Sources */,
 				6D0C398C192E82870057DD9B /* TTElement.m in Sources */,
@@ -8603,7 +8508,6 @@
 				6D0C3997192E82870057DD9B /* TTMetricMonitorBase.m in Sources */,
 				88BE9F1319C89D4F00CA204D /* TTNativeCollectionViewElement.m in Sources */,
 				6D0C3999192E82870057DD9B /* TTAutomationGestureDetail.m in Sources */,
-				6D0C399A192E82870057DD9B /* MPAppIsInactiveBeacon.m in Sources */,
 				6D0C3AEB192E85250057DD9B /* TTTouchHud.m in Sources */,
 				6D0C399B192E82870057DD9B /* TTRecordingTaskHandler.m in Sources */,
 				6D0C399C192E82870057DD9B /* extension_set.cc in Sources */,
@@ -8613,7 +8517,6 @@
 				6D0C399F192E82870057DD9B /* TTNativeElement+TTAccessors.m in Sources */,
 				6D0C39A0192E82870057DD9B /* TTNativeTableViewElement.m in Sources */,
 				6D0C39A1192E82870057DD9B /* TTJsonPrecision.m in Sources */,
-				6D0C39A2192E82870057DD9B /* MPBeaconURLProcessor.m in Sources */,
 				6D0C39A3192E82870057DD9B /* descriptor.pb.cc in Sources */,
 				6D0C39A4192E82870057DD9B /* TTSessionDictionary.m in Sources */,
 				6D0C39A5192E82870057DD9B /* UIView+MPTouchHandler.m in Sources */,
@@ -8644,7 +8547,6 @@
 				6D0C39BB192E82870057DD9B /* extension_set_heavy.cc in Sources */,
 				6D0C39BC192E82870057DD9B /* generated_message_reflection.cc in Sources */,
 				6D0C39BD192E82870057DD9B /* TTNativeSegmentedControlElement.m in Sources */,
-				6D0C39BE192E82870057DD9B /* MPBucketUtility.m in Sources */,
 				6D0C39BF192E82870057DD9B /* TTLocatorValue.m in Sources */,
 				6D0C39C0192E82870057DD9B /* TTNativeTextFieldElement.m in Sources */,
 				6D0C39C1192E82870057DD9B /* TTTapOptions.m in Sources */,
@@ -8663,10 +8565,8 @@
 				6D0C39CD192E82870057DD9B /* TTScrollViewListener.m in Sources */,
 				6D0C39CE192E82870057DD9B /* TTRecordedAction.m in Sources */,
 				6D0C39CF192E82870057DD9B /* TTNativeMKMapViewElement.m in Sources */,
-				6D0C39D0192E82870057DD9B /* MPMetricBeacon.m in Sources */,
 				6D0C39D1192E82870057DD9B /* stringprintf.cc in Sources */,
 				6D0C3B19192E854A0057DD9B /* TTGestureGenerator.m in Sources */,
-				6D0C39D2192E82870057DD9B /* MPNumberDictionary.m in Sources */,
 				6D0C39D3192E82870057DD9B /* MPTouchMetric.m in Sources */,
 				6D0C39D4192E82870057DD9B /* MPConfig.m in Sources */,
 				6D0C39D5192E82870057DD9B /* TTUncaughtExceptionHandler.m in Sources */,

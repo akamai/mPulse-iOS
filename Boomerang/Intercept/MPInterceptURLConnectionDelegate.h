@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 
 @interface MPInterceptURLConnectionDelegate : NSObject
 {
@@ -15,8 +15,8 @@
 }
 
 +(MPInterceptURLConnectionDelegate*) sharedInstance;
--(void)addBeacon:(MPNetworkCallBeacon *)value forKey:(NSString *)key;
--(MPNetworkCallBeacon *)getBeaconForKey:(NSString *)key;
+-(void)addBeacon:(MPApiNetworkRequestBeacon *)value forKey:(NSString *)key;
+-(MPApiNetworkRequestBeacon *)getBeaconForKey:(NSString *)key;
 -(void)processDelegate:(Class)klass;
 -(void)processNonConformingDelegate:(Class)klass;
 

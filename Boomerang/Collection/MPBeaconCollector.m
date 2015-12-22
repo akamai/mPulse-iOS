@@ -9,21 +9,24 @@
 #import <dispatch/dispatch.h>
 
 #import "MPBeaconCollector.h"
-#import "MPBatchRecord.h"
 #import "MPBatchTransport.h"
 #import "MPBeacon.h"
-#import "MPBeaconURLProcessor.h"
 #import "MPConfig.h"
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 #import "MPSession.h"
 #import "NSString+MPExtensions.h"
 
 @implementation MPBeaconCollector
 {
+  /**
+   * Dispatch queue
+   */
   dispatch_queue_t _dispatchQueue;
-  NSMutableDictionary* _records;
-  //This flag is only used by Unit Tests
-  BOOL _disableBatchSending;
+  
+  /**
+   * Array of beacons
+   */
+  NSMutableArray *_beacons;
 }
 
 // Singleton BeaconCollector object
@@ -32,7 +35,7 @@ static MPBeaconCollector *sharedObject = nil;
 /**
  * Singleton access
  */
-+(MPBeaconCollector*) sharedInstance
++(MPBeaconCollector *) sharedInstance
 {
   static dispatch_once_t _singletonPredicate;
   
@@ -43,39 +46,54 @@ static MPBeaconCollector *sharedObject = nil;
   return sharedObject;
 }
 
+/**
+ * Initializes the beacon collector
+ */
 -(id) init
 {
   // Create the Grand Central Dispatch queue that will be used for all beacon processing.
   _dispatchQueue = dispatch_queue_create("com.soasta.mpulse.boomerang.MPBeaconCollector", NULL);
   
-  // Create the internal dictionary that will be used to store aggregated records.
-  _records = [[NSMutableDictionary alloc] init];
+  // Create the internal array that will be used to store beacons
+  _beacons = [[NSMutableArray alloc] init];
   
-  // Create a scheduled task to flush all records on a regular basis (the first execution will re-schedule itself when finished).
+  // Create a scheduled task to flush all beacons on a regular basis (the first execution will re-schedule itself when finished).
   // NOTE: We cannot obtain the beaconInterval value from a MPConfig instance because calling sharedInstance
   // method of MPConfig inside the dispatch will cause a deadlock and hang the app.
   // Thats why we start the thread with a 5 second interval which will be updated using the config
   // during next iteration.
-  _disableBatchSending = NO; // By default, we should be sending batch records to server.
+  _disableBatchSending = NO; // By default, we should be sending batch beacons to server.
+
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC),
-                 _dispatchQueue, ^{ [self sendBatch]; });
+                 _dispatchQueue, ^{
+                   [self sendBatch];
+                 });
   
   return self;
 }
 
--(void) addBeacon:(MPBeacon*)beacon
+/**
+ * Adds a beacon to the collector
+ * @param beacon Beacon
+ */
+-(void) addBeacon:(MPBeacon *)beacon
 {
   // All beacon processing is done on a dedicated Grand Central Dispatch queue,
   // to avoid blocking the calling thread, and also to single-thread access to the
-  // record dictionary.
+  // beacon array.
   //
   // Dispatch a task to do the "real" work.
   dispatch_async(_dispatchQueue, ^{
-    [self addBeaconInternal:beacon ]; });
+    [self addBeaconInternal:beacon];
+  });
 }
 
-// Impl note:  this method must not throw!  GCD will cause the app to crash.
--(void) addBeaconInternal:(MPBeacon*)beacon
+/**
+ * Adds the beacon
+ *
+ * Implementation note: This method must not throw!  GCD will cause the app to crash.
+ */
+-(void) addBeaconInternal:(MPBeacon *)beacon
 {
   @try
   {
@@ -95,60 +113,27 @@ static MPBeaconCollector *sharedObject = nil;
     // Update Session data
     [[MPSession sharedInstance] addBeacon:beacon];
     
-    // Convert NSDate to Unix timestamp (in milliseconds).
-    int64_t timestamp = (int64_t)[beacon.timestamp timeIntervalSince1970] * 1000;
-    
-    // Round to the nearest minute.
-    timestamp = timestamp - (timestamp % 60000);
-
-    // Extract the URL, if any, from this beacon (including
-    // processing it via URL patterns in the config).
-    NSString* url = [MPBeaconURLProcessor extractURL:beacon urlPatterns:[MPConfig sharedInstance].urlPatterns];
-
-    // Create the "stub" record for this timestamp, A/B test, etc.
-    // We may or may not actually use this (see below).
-    MPBatchRecord* record = [MPBatchRecord initWithTimestamp:timestamp
-                                                   pageGroup:beacon.pageGroup
-                                                      abTest:beacon.abTest
-                                                         url:url
-                                            networkErrorCode:beacon.networkErrorCode];
-    
-    // Check for a previously-existing record.
-    MPBatchRecord* prevRecord = [_records objectForKey:record.key];
-    if (prevRecord == nil)
-    {
-      // There's no previously-existing record
-      // for this key combination.  The "stub"
-      // will become the real record.
-      MPLogDebug(@"Record key %@ being used for the first time.", record.key);
-      [_records setObject:record forKey:record.key];
-    }
-    else
-    {
-      // There's already a record for this key combination.
-      // We'll use that instead.
-      MPLogDebug(@"Updating existing record with key %@", record.key);
-      record = prevRecord;
-    }
-    
-    // Let the record itself do the "real" beacon processing.
-    [record addBeacon:beacon];
+    // Add beacon to our list
+    [_beacons addObject:beacon];
     
     // This beacon has been added to Collector, set the flag so that it's not added twice.
     [beacon setAddedToCollector:true];
   }
-  @catch (NSException* e)
+  @catch (NSException *e)
   {
-    // TODO: ??
     MPLogDebug(@"Failed to process incoming beacon. %@", e);
   }
 }
 
-// Impl note:  this method must not throw!  GCD will cause the app to crash.
+/**
+ * Sends the batch of beacons
+ *
+ * Implementation note: This method must not throw!  GCD will cause the app to crash.
+ */
 -(void) sendBatch
 {
   // Do not try to send a batch if batch sending has been disabled.
-  //This flag is only used by Unit Tests
+  // This flag is only used by Unit Tests
   if (_disableBatchSending)
   {
     return;
@@ -156,35 +141,48 @@ static MPBeaconCollector *sharedObject = nil;
   
   @try
   {
-    if ([_records count] == 0)
+    // determine if we actually have to do anything
+    if ([_beacons count] == 0)
     {
-      MPLogDebug(@"No records to send.");
+      MPLogDebug(@"No beacons to send.");
     }
     else
     {
       // Swap the existing dictionary for a new one.
-      NSDictionary* batchedRecords = _records;
-      _records = [[NSMutableDictionary alloc] init];
+      NSArray *beacons = _beacons;
+      _beacons = [[NSMutableArray alloc] init];
 
       // Send it!
-      MPBatchTransport* transport = [[MPBatchTransport alloc] init];
-      [transport sendBatch:batchedRecords];
+      MPBatchTransport *transport = [[MPBatchTransport alloc] init];
+      [transport sendBatch:beacons];
     }
 
     // Run again after n seconds
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, [[MPConfig sharedInstance] beaconInterval] * NSEC_PER_SEC),
-                   _dispatchQueue, ^{ [self sendBatch]; });
+                   _dispatchQueue, ^{
+                     [self sendBatch];
+                   });
   }
-  @catch (NSException* e)
+  @catch (NSException *e)
   {
-    // TODO: ??
     MPLogDebug(@"Failed to send batch. %@", e);
   }
 }
 
+/**
+ * Clears the batch of beacons
+ */
 -(void) clearBatch
 {
-    [_records removeAllObjects];
+    [_beacons removeAllObjects];
+}
+
+/**
+ * Gets all of the collected beacons
+ */
+-(NSMutableArray *) getBeacons
+{
+  return _beacons;
 }
 
 @end

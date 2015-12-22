@@ -15,19 +15,7 @@
 
 @implementation MPRemoveUnicodeCharsTest
 
-- (void)setUp
-{
-  [super setUp];
-  // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-  // Put teardown code here. This method is called after the invocation of each test method in the class.
-  [super tearDown];
-}
-
-- (void)testRemoving_LEFT_TO_RIGHT_EMBEDDING_UnicodeChar
+-(void) testRemoving_LEFT_TO_RIGHT_EMBEDDING_UnicodeChar
 {
   // Create a mutable string with capacity of 20. We will not insert substrings larger than 20 code points.
   NSMutableString *testStringWithUnicode = [NSMutableString stringWithCapacity:20];
@@ -43,7 +31,7 @@
   XCTAssertTrue([[testStringWithUnicode tt_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
 }
 
-- (void)testRemoving_POP_DIRECTIONAL_FORMATTING_UnicodeChar
+-(void) testRemoving_POP_DIRECTIONAL_FORMATTING_UnicodeChar
 {
   // Create a mutable string with capacity of 20. We will not insert substrings larger than 20 code points.
   NSMutableString *testStringWithUnicode = [NSMutableString stringWithCapacity:20];
@@ -59,7 +47,7 @@
   XCTAssertTrue([[testStringWithUnicode tt_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
 }
 
-- (void)testRemoving_LINE_FEED_UnicodeChar
+-(void) testRemoving_LINE_FEED_UnicodeChar
 {
   // Create a mutable string with capacity of 20. We will not insert substrings larger than 20 code points.
   NSMutableString *testStringWithUnicode = [NSMutableString stringWithCapacity:20];

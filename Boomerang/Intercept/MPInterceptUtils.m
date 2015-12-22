@@ -8,7 +8,7 @@
 #import <objc/runtime.h>
 #import "MPInterceptUtils.h"
 #import "MPConfig.h"
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 
 @implementation MPInterceptUtils
 
@@ -103,7 +103,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
  * @param response Response from network call
  * @param error Error from network call
  */
-+ (void)parseResponse:(MPNetworkCallBeacon *)beacon
++ (void)parseResponse:(MPApiNetworkRequestBeacon *)beacon
                  data:(NSData *)data
              response:(NSURLResponse *)response
                 error:(NSError *)error
@@ -135,7 +135,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
     {
       MPLogDebug(@"NSURLSession HTTP Error : %li", (long)[httpResponse statusCode]);
       // Look for this connection in our timers
-      [beacon setNetworkError:[httpResponse statusCode]:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
+      [beacon setNetworkError:[httpResponse statusCode] errorMessage:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
     }
   }
   else
@@ -144,7 +144,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
     
     // Send a failure beacon with the error code.
     MPLogDebug(@"NSURLSession NetworkErrorCode : %ld",(long)[error code]);
-    [beacon setNetworkError:[error code]:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
+    [beacon setNetworkError:[error code] errorMessage:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
   }
 }
 

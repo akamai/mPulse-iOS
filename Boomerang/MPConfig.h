@@ -36,6 +36,7 @@ extern NSString* const SESSION_ID_KEY;
 @property (readonly) NSTimeInterval beaconInterval;
 @property (readonly) NSTimeInterval sessionExpirationTime;
 @property (readwrite) BOOL refreshDisabled;
+@property (readonly) BOOL stripQueryStrings;
 
 @property (readonly) MPTouchConfig* touchConfig;
 

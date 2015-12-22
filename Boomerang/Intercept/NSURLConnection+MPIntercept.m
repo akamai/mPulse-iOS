@@ -8,7 +8,7 @@
 
 #import "NSURLConnection+MPIntercept.h"
 #import "MPInterceptURLConnectionDelegate.h"
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 #import "MPConfig.h"
 #import "MPInterceptUtils.h"
 
@@ -39,7 +39,7 @@
       return [self boomerangSendSynchronousRequest: request returningResponse:response error:error];
     }
     
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:url];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
     result = [self boomerangSendSynchronousRequest: request returningResponse:&localResponse error:&localError];
     
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)localResponse;
@@ -58,7 +58,7 @@
       {
         MPLogDebug(@"boomerangSendSynchronousRequest HTTP Error : %li", (long)[httpResponse statusCode]);
         // Look for this connection in our timers
-        [beacon setNetworkError:[httpResponse statusCode]:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
+        [beacon setNetworkError:[httpResponse statusCode] errorMessage:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
       }
     }
     else
@@ -67,7 +67,7 @@
       
       // Send a failure beacon with the error code.
       MPLogDebug(@"boomerangSendSynchronousRequest NetworkErrorCode : %ld",(long)[localError code]);
-      [beacon setNetworkError:[localError code]:[[localError userInfo] objectForKey:@"NSLocalizedDescription"]];
+      [beacon setNetworkError:[localError code] errorMessage:[[localError userInfo] objectForKey:@"NSLocalizedDescription"]];
     }
     
     // Did the caller provide a valid "out pointer" for errors?
@@ -122,14 +122,14 @@
 {
   @try
   {
-    NSURL *url = [request URL];
+    NSURL* url = [request URL];
     
     if (![MPInterceptUtils shouldIntercept:url])
     {
       return [self boomerangSendAsynchronousRequest:request queue:queue completionHandler:handler];
     }
     
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:url];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
     
     // Create a new handler, adding our code
     [self boomerangSendAsynchronousRequest: request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
@@ -137,10 +137,11 @@
        @try
        {
          NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+         NSURL *url = [request URL];
          
          if (error == nil)
          {
-           if([httpResponse statusCode] < 400)
+           if ([httpResponse statusCode] < 400)
            {
              NSString *urlString = [[url absoluteString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
              MPLogDebug(@"boomerangSendAsynchronousRequest: urlString: %@", urlString);
@@ -149,13 +150,13 @@
            else
            {
              MPLogDebug(@"boomerangSendAsynchronousRequest HTTP Error : %li", (long)[httpResponse statusCode]);
-             [beacon setNetworkError:[httpResponse statusCode]:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
+             [beacon setNetworkError:[httpResponse statusCode] errorMessage:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
            }
          }
          else
          {
            MPLogDebug(@"boomerangSendAsynchronousRequest failed! error code => %ld, error msg => %@", (long)[error code], [[error userInfo] objectForKey:@"NSLocalizedDescription"]);
-           [beacon setNetworkError:[error code]:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
+           [beacon setNetworkError:[error code] errorMessage:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
          }
        }
        @catch (NSException *exception)
@@ -196,7 +197,7 @@
     // and thus we miss swizzling them during init.
     [[MPInterceptURLConnectionDelegate sharedInstance] processNonConformingDelegate:[delegate class]];
     
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:url];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
     [[MPInterceptURLConnectionDelegate sharedInstance] addBeacon:beacon forKey:[NSString stringWithFormat:@"%p", self]];
   }
   @catch (NSException *exception)
@@ -219,12 +220,11 @@
     {
       return [self boomerangInitWithRequest:request delegate:delegate startImmediately:startImmediately];
     }
-    
     // We should try and swizzle all input delegates. Sometimes they don't respond to NSURLConnectionDelegate
     // and thus we miss swizzling them during init.
     [[MPInterceptURLConnectionDelegate sharedInstance] processNonConformingDelegate:[delegate class]];
     
-    MPNetworkCallBeacon *beacon = [MPNetworkCallBeacon initWithURL:url];
+    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
     [[MPInterceptURLConnectionDelegate sharedInstance] addBeacon:beacon forKey:[NSString stringWithFormat:@"%p", self]];
   }
   @catch (NSException *exception)
@@ -236,6 +236,5 @@
     return [self boomerangInitWithRequest:request delegate:delegate startImmediately:startImmediately];
   }
 }
-
 
 @end

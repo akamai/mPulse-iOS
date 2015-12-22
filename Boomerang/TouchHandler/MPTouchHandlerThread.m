@@ -17,8 +17,8 @@
 //#import "TTNativeButtonElement.h"
 //#import "TTAutomationHud.h"
 
-#import "MPMetricBeacon.h"
-#import "MPTimerBeacon.h"
+#import "MPApiCustomMetricBeacon.h"
+#import "MPApiCustomTimerBeacon.h"
 #import "MPTouchMetricValue.h"
 #import "NSString+MPExtensions.h"
 #import "NSObject+TTExtensions.h"
@@ -492,7 +492,7 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
           [self displayHUD:labelText withDescriptionLabel:[NSString stringWithFormat:@"Beacon sent for \"%@\" with value: %@", metric.extract, extractOutputValue]];
           
           // Send it!
-          [[MPMetricBeacon alloc] initWithMetricIndex:metric.index andValue:[extractOutputValue mp_numberValue:metric.dataType]];
+          [[MPApiCustomMetricBeacon alloc] initWithMetricIndex:metric.index andValue:[extractOutputValue mp_numberValue:metric.dataType]];
           
           // Remember this for the next time around.
           metric.beaconSent = YES;
@@ -580,7 +580,7 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
   }
 }
 
-- (void)processConditionTimerStart:(MPTimerBeacon *)beacon timer:(MPTouchTimer *)timer
+- (void)processConditionTimerStart:(MPApiCustomTimerBeacon *)beacon timer:(MPTouchTimer *)timer
 {
   // If timer has already started, we don't start it again.
   if (![beacon hasTimerStarted])
@@ -600,7 +600,7 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
   }
 }
 
-- (void)processConditionalTimerEnd:(MPTouchTimer *)timer beacon:(MPTimerBeacon *)beacon
+- (void)processConditionalTimerEnd:(MPTouchTimer *)timer beacon:(MPApiCustomTimerBeacon *)beacon
 {
   // If timer has not started or already ended, we cannot end it.
   if ([beacon hasTimerStarted] && ![beacon hasTimerEnded])
@@ -624,13 +624,13 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
 - (void)processTouchTimers:(MPTouchTimer *)timer
 {
   // Do we already have a beacon for this timer in our dictionary?
-  MPTimerBeacon *beacon = [timer beacon];
+  MPApiCustomTimerBeacon *beacon = [timer beacon];
   if (beacon == nil || [beacon hasTimerEnded])
   {
     // Beacon was either not found or has already ended and sent to server.
     
     // Creating a beacon we will use to start/stop timer.
-    beacon = [[MPTimerBeacon alloc] initWithIndex:timer.index];
+    beacon = [[MPApiCustomTimerBeacon alloc] initWithIndex:timer.index];
   }
   
   // Store the beacon with timer as key because endTimer
@@ -842,7 +842,7 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
       NSString* labelText = [NSString stringWithFormat:@"%@ on %@",metric.action.name, [metric.action.locator serializeShort]];
       [self displayHUD:labelText withDescriptionLabel:[NSString stringWithFormat:@"Beacon sent for \"%@\" with value: %@", metric.extract, outputValue]];
 
-      [[MPMetricBeacon alloc] initWithMetricIndex:metric.index andValue:outputValueNumber];
+      [[MPApiCustomMetricBeacon alloc] initWithMetricIndex:metric.index andValue:outputValueNumber];
     }
   }
 }
@@ -885,7 +885,7 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
   {
     if (timer.pageGroup == nil || [self isEqualToCurrentPageGroup:timer.pageGroup])
     {
-      MPTimerBeacon *beacon = [timer beacon];
+      MPApiCustomTimerBeacon *beacon = [timer beacon];
 
       if (beacon == nil || [beacon hasTimerStarted])
       {
@@ -909,7 +909,7 @@ int const SCAN_INTERVAL = 0.5L; // In seconds
   {
     if (timer.pageGroup == nil || [self isEqualToCurrentPageGroup:timer.pageGroup])
     {
-      MPTimerBeacon *beacon = [timer beacon];
+      MPApiCustomTimerBeacon *beacon = [timer beacon];
       
       // If timer has not started, we cannot end it.
       if (beacon == nil || ![beacon hasTimerStarted] || [beacon hasTimerEnded])

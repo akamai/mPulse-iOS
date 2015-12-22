@@ -36,7 +36,35 @@ class ClientBeaconBatch;
 class ClientBeaconBatch_ClientBeaconBatchRecord;
 class ClientBeaconBatch_ClientBeaconBatchRecord_TimerData;
 class ClientBeaconBatch_ClientBeaconBatchRecord_NetworkTimers;
+class ClientBeaconBatch_ClientBeaconRecord;
+class ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData;
+class ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData;
+class ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData;
+class ClientBeaconBatch_ClientBeaconRecord_AppLaunchData;
+class ClientBeaconBatch_ClientBeaconRecord_AppInactiveData;
+class ClientBeaconBatch_ClientBeaconRecord_AppCrashData;
 class ClientBeaconBatch_SessionInfo;
+
+enum ClientBeaconBatch_BeaconType {
+  ClientBeaconBatch_BeaconType_PAGE_VIEW = 0,
+  ClientBeaconBatch_BeaconType_MANUAL = 1,
+  ClientBeaconBatch_BeaconType_SPA = 2,
+  ClientBeaconBatch_BeaconType_SPA_HARD = 3,
+  ClientBeaconBatch_BeaconType_XHR = 4,
+  ClientBeaconBatch_BeaconType_CLICK = 5,
+  ClientBeaconBatch_BeaconType_API = 6,
+  ClientBeaconBatch_BeaconType_API_NETWORK_REQUEST = 7,
+  ClientBeaconBatch_BeaconType_API_CUSTOM_METRIC = 8,
+  ClientBeaconBatch_BeaconType_API_CUSTOM_TIMER = 9,
+  ClientBeaconBatch_BeaconType_APP_LAUNCH = 10,
+  ClientBeaconBatch_BeaconType_APP_INACTIVE = 11,
+  ClientBeaconBatch_BeaconType_APP_CRASH = 12,
+  ClientBeaconBatch_BeaconType_BATCH = 13
+};
+bool ClientBeaconBatch_BeaconType_IsValid(int value);
+const ClientBeaconBatch_BeaconType ClientBeaconBatch_BeaconType_BeaconType_MIN = ClientBeaconBatch_BeaconType_PAGE_VIEW;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch_BeaconType_BeaconType_MAX = ClientBeaconBatch_BeaconType_BATCH;
+const int ClientBeaconBatch_BeaconType_BeaconType_ARRAYSIZE = ClientBeaconBatch_BeaconType_BeaconType_MAX + 1;
 
 // ===================================================================
 
@@ -564,6 +592,878 @@ class ClientBeaconBatch_ClientBeaconBatchRecord : public ::google::protobuf::Mes
 };
 // -------------------------------------------------------------------
 
+class ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData();
+
+  ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& operator=(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 duration = 1;
+  inline bool has_duration() const;
+  inline void clear_duration();
+  static const int kDurationFieldNumber = 1;
+  inline ::google::protobuf::int32 duration() const;
+  inline void set_duration(::google::protobuf::int32 value);
+
+  // optional string url = 2;
+  inline bool has_url() const;
+  inline void clear_url();
+  static const int kUrlFieldNumber = 2;
+  inline const ::std::string& url() const;
+  inline void set_url(const ::std::string& value);
+  inline void set_url(const char* value);
+  inline void set_url(const char* value, size_t size);
+  inline ::std::string* mutable_url();
+  inline ::std::string* release_url();
+  inline void set_allocated_url(::std::string* url);
+
+  // optional int32 network_error_code = 3;
+  inline bool has_network_error_code() const;
+  inline void clear_network_error_code();
+  static const int kNetworkErrorCodeFieldNumber = 3;
+  inline ::google::protobuf::int32 network_error_code() const;
+  inline void set_network_error_code(::google::protobuf::int32 value);
+
+  // optional int32 dns = 4;
+  inline bool has_dns() const;
+  inline void clear_dns();
+  static const int kDnsFieldNumber = 4;
+  inline ::google::protobuf::int32 dns() const;
+  inline void set_dns(::google::protobuf::int32 value);
+
+  // optional int32 tcp = 5;
+  inline bool has_tcp() const;
+  inline void clear_tcp();
+  static const int kTcpFieldNumber = 5;
+  inline ::google::protobuf::int32 tcp() const;
+  inline void set_tcp(::google::protobuf::int32 value);
+
+  // optional int32 ssl = 6;
+  inline bool has_ssl() const;
+  inline void clear_ssl();
+  static const int kSslFieldNumber = 6;
+  inline ::google::protobuf::int32 ssl() const;
+  inline void set_ssl(::google::protobuf::int32 value);
+
+  // optional int32 ttfb = 7;
+  inline bool has_ttfb() const;
+  inline void clear_ttfb();
+  static const int kTtfbFieldNumber = 7;
+  inline ::google::protobuf::int32 ttfb() const;
+  inline void set_ttfb(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData)
+ private:
+  inline void set_has_duration();
+  inline void clear_has_duration();
+  inline void set_has_url();
+  inline void clear_has_url();
+  inline void set_has_network_error_code();
+  inline void clear_has_network_error_code();
+  inline void set_has_dns();
+  inline void clear_has_dns();
+  inline void set_has_tcp();
+  inline void clear_has_tcp();
+  inline void set_has_ssl();
+  inline void clear_has_ssl();
+  inline void set_has_ttfb();
+  inline void clear_has_ttfb();
+
+  ::std::string* url_;
+  ::google::protobuf::int32 duration_;
+  ::google::protobuf::int32 network_error_code_;
+  ::google::protobuf::int32 dns_;
+  ::google::protobuf::int32 tcp_;
+  ::google::protobuf::int32 ssl_;
+  ::google::protobuf::int32 ttfb_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData();
+
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& operator=(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 timer_value = 1;
+  inline bool has_timer_value() const;
+  inline void clear_timer_value();
+  static const int kTimerValueFieldNumber = 1;
+  inline ::google::protobuf::int32 timer_value() const;
+  inline void set_timer_value(::google::protobuf::int32 value);
+
+  // optional int32 timer_index = 2;
+  inline bool has_timer_index() const;
+  inline void clear_timer_index();
+  static const int kTimerIndexFieldNumber = 2;
+  inline ::google::protobuf::int32 timer_index() const;
+  inline void set_timer_index(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData)
+ private:
+  inline void set_has_timer_value();
+  inline void clear_has_timer_value();
+  inline void set_has_timer_index();
+  inline void clear_has_timer_index();
+
+  ::google::protobuf::int32 timer_value_;
+  ::google::protobuf::int32 timer_index_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData();
+
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& operator=(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 metric_value = 1;
+  inline bool has_metric_value() const;
+  inline void clear_metric_value();
+  static const int kMetricValueFieldNumber = 1;
+  inline ::google::protobuf::int32 metric_value() const;
+  inline void set_metric_value(::google::protobuf::int32 value);
+
+  // optional int32 metric_index = 2;
+  inline bool has_metric_index() const;
+  inline void clear_metric_index();
+  static const int kMetricIndexFieldNumber = 2;
+  inline ::google::protobuf::int32 metric_index() const;
+  inline void set_metric_index(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData)
+ private:
+  inline void set_has_metric_value();
+  inline void clear_has_metric_value();
+  inline void set_has_metric_index();
+  inline void clear_has_metric_index();
+
+  ::google::protobuf::int32 metric_value_;
+  ::google::protobuf::int32 metric_index_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientBeaconBatch_ClientBeaconRecord_AppLaunchData : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord_AppLaunchData();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord_AppLaunchData();
+
+  ClientBeaconBatch_ClientBeaconRecord_AppLaunchData(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& operator=(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool is_first_install = 1;
+  inline bool has_is_first_install() const;
+  inline void clear_is_first_install();
+  static const int kIsFirstInstallFieldNumber = 1;
+  inline bool is_first_install() const;
+  inline void set_is_first_install(bool value);
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData)
+ private:
+  inline void set_has_is_first_install();
+  inline void clear_has_is_first_install();
+
+  bool is_first_install_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientBeaconBatch_ClientBeaconRecord_AppInactiveData : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord_AppInactiveData();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord_AppInactiveData();
+
+  ClientBeaconBatch_ClientBeaconRecord_AppInactiveData(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& operator=(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData)
+ private:
+
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[1];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientBeaconBatch_ClientBeaconRecord_AppCrashData : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord_AppCrashData();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord_AppCrashData();
+
+  ClientBeaconBatch_ClientBeaconRecord_AppCrashData(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord_AppCrashData& operator=(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord_AppCrashData* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord_AppCrashData* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord_AppCrashData* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 code = 1;
+  inline bool has_code() const;
+  inline void clear_code();
+  static const int kCodeFieldNumber = 1;
+  inline ::google::protobuf::int32 code() const;
+  inline void set_code(::google::protobuf::int32 value);
+
+  // optional string message = 2;
+  inline bool has_message() const;
+  inline void clear_message();
+  static const int kMessageFieldNumber = 2;
+  inline const ::std::string& message() const;
+  inline void set_message(const ::std::string& value);
+  inline void set_message(const char* value);
+  inline void set_message(const char* value, size_t size);
+  inline ::std::string* mutable_message();
+  inline ::std::string* release_message();
+  inline void set_allocated_message(::std::string* message);
+
+  // optional string function = 3;
+  inline bool has_function() const;
+  inline void clear_function();
+  static const int kFunctionFieldNumber = 3;
+  inline const ::std::string& function() const;
+  inline void set_function(const ::std::string& value);
+  inline void set_function(const char* value);
+  inline void set_function(const char* value, size_t size);
+  inline ::std::string* mutable_function();
+  inline ::std::string* release_function();
+  inline void set_allocated_function(::std::string* function);
+
+  // optional string file = 4;
+  inline bool has_file() const;
+  inline void clear_file();
+  static const int kFileFieldNumber = 4;
+  inline const ::std::string& file() const;
+  inline void set_file(const ::std::string& value);
+  inline void set_file(const char* value);
+  inline void set_file(const char* value, size_t size);
+  inline ::std::string* mutable_file();
+  inline ::std::string* release_file();
+  inline void set_allocated_file(::std::string* file);
+
+  // optional int32 line = 5;
+  inline bool has_line() const;
+  inline void clear_line();
+  static const int kLineFieldNumber = 5;
+  inline ::google::protobuf::int32 line() const;
+  inline void set_line(::google::protobuf::int32 value);
+
+  // optional int32 character = 6;
+  inline bool has_character() const;
+  inline void clear_character();
+  static const int kCharacterFieldNumber = 6;
+  inline ::google::protobuf::int32 character() const;
+  inline void set_character(::google::protobuf::int32 value);
+
+  // optional string stack = 7;
+  inline bool has_stack() const;
+  inline void clear_stack();
+  static const int kStackFieldNumber = 7;
+  inline const ::std::string& stack() const;
+  inline void set_stack(const ::std::string& value);
+  inline void set_stack(const char* value);
+  inline void set_stack(const char* value, size_t size);
+  inline ::std::string* mutable_stack();
+  inline ::std::string* release_stack();
+  inline void set_allocated_stack(::std::string* stack);
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData)
+ private:
+  inline void set_has_code();
+  inline void clear_has_code();
+  inline void set_has_message();
+  inline void clear_has_message();
+  inline void set_has_function();
+  inline void clear_has_function();
+  inline void set_has_file();
+  inline void clear_has_file();
+  inline void set_has_line();
+  inline void clear_has_line();
+  inline void set_has_character();
+  inline void clear_has_character();
+  inline void set_has_stack();
+  inline void clear_has_stack();
+
+  ::std::string* message_;
+  ::std::string* function_;
+  ::google::protobuf::int32 code_;
+  ::google::protobuf::int32 line_;
+  ::std::string* file_;
+  ::std::string* stack_;
+  ::google::protobuf::int32 character_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord_AppCrashData* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientBeaconBatch_ClientBeaconRecord : public ::google::protobuf::MessageLite {
+ public:
+  ClientBeaconBatch_ClientBeaconRecord();
+  virtual ~ClientBeaconBatch_ClientBeaconRecord();
+
+  ClientBeaconBatch_ClientBeaconRecord(const ClientBeaconBatch_ClientBeaconRecord& from);
+
+  inline ClientBeaconBatch_ClientBeaconRecord& operator=(const ClientBeaconBatch_ClientBeaconRecord& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ClientBeaconBatch_ClientBeaconRecord& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const ClientBeaconBatch_ClientBeaconRecord* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(ClientBeaconBatch_ClientBeaconRecord* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientBeaconBatch_ClientBeaconRecord* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const ClientBeaconBatch_ClientBeaconRecord& from);
+  void MergeFrom(const ClientBeaconBatch_ClientBeaconRecord& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData ApiNetworkRequestData;
+  typedef ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData ApiCustomTimerData;
+  typedef ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData ApiCustomMetricData;
+  typedef ClientBeaconBatch_ClientBeaconRecord_AppLaunchData AppLaunchData;
+  typedef ClientBeaconBatch_ClientBeaconRecord_AppInactiveData AppInactiveData;
+  typedef ClientBeaconBatch_ClientBeaconRecord_AppCrashData AppCrashData;
+
+  // accessors -------------------------------------------------------
+
+  // optional int64 timestamp = 1;
+  inline bool has_timestamp() const;
+  inline void clear_timestamp();
+  static const int kTimestampFieldNumber = 1;
+  inline ::google::protobuf::int64 timestamp() const;
+  inline void set_timestamp(::google::protobuf::int64 value);
+
+  // optional .client_beacon_batch.ClientBeaconBatch.BeaconType beacon_type = 2;
+  inline bool has_beacon_type() const;
+  inline void clear_beacon_type();
+  static const int kBeaconTypeFieldNumber = 2;
+  inline ::client_beacon_batch::ClientBeaconBatch_BeaconType beacon_type() const;
+  inline void set_beacon_type(::client_beacon_batch::ClientBeaconBatch_BeaconType value);
+
+  // optional string page_group = 3;
+  inline bool has_page_group() const;
+  inline void clear_page_group();
+  static const int kPageGroupFieldNumber = 3;
+  inline const ::std::string& page_group() const;
+  inline void set_page_group(const ::std::string& value);
+  inline void set_page_group(const char* value);
+  inline void set_page_group(const char* value, size_t size);
+  inline ::std::string* mutable_page_group();
+  inline ::std::string* release_page_group();
+  inline void set_allocated_page_group(::std::string* page_group);
+
+  // optional string ab_test = 4;
+  inline bool has_ab_test() const;
+  inline void clear_ab_test();
+  static const int kAbTestFieldNumber = 4;
+  inline const ::std::string& ab_test() const;
+  inline void set_ab_test(const ::std::string& value);
+  inline void set_ab_test(const char* value);
+  inline void set_ab_test(const char* value, size_t size);
+  inline ::std::string* mutable_ab_test();
+  inline ::std::string* release_ab_test();
+  inline void set_allocated_ab_test(::std::string* ab_test);
+
+  // repeated string custom_dimensions = 5;
+  inline int custom_dimensions_size() const;
+  inline void clear_custom_dimensions();
+  static const int kCustomDimensionsFieldNumber = 5;
+  inline const ::std::string& custom_dimensions(int index) const;
+  inline ::std::string* mutable_custom_dimensions(int index);
+  inline void set_custom_dimensions(int index, const ::std::string& value);
+  inline void set_custom_dimensions(int index, const char* value);
+  inline void set_custom_dimensions(int index, const char* value, size_t size);
+  inline ::std::string* add_custom_dimensions();
+  inline void add_custom_dimensions(const ::std::string& value);
+  inline void add_custom_dimensions(const char* value);
+  inline void add_custom_dimensions(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& custom_dimensions() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_custom_dimensions();
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData api_network_request_data = 6;
+  inline bool has_api_network_request_data() const;
+  inline void clear_api_network_request_data();
+  static const int kApiNetworkRequestDataFieldNumber = 6;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& api_network_request_data() const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* mutable_api_network_request_data();
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* release_api_network_request_data();
+  inline void set_allocated_api_network_request_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* api_network_request_data);
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData api_custom_timer_data = 7;
+  inline bool has_api_custom_timer_data() const;
+  inline void clear_api_custom_timer_data();
+  static const int kApiCustomTimerDataFieldNumber = 7;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& api_custom_timer_data() const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* mutable_api_custom_timer_data();
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* release_api_custom_timer_data();
+  inline void set_allocated_api_custom_timer_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* api_custom_timer_data);
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData api_custom_metric_data = 8;
+  inline bool has_api_custom_metric_data() const;
+  inline void clear_api_custom_metric_data();
+  static const int kApiCustomMetricDataFieldNumber = 8;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& api_custom_metric_data() const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* mutable_api_custom_metric_data();
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* release_api_custom_metric_data();
+  inline void set_allocated_api_custom_metric_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* api_custom_metric_data);
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData app_launch_data = 9;
+  inline bool has_app_launch_data() const;
+  inline void clear_app_launch_data();
+  static const int kAppLaunchDataFieldNumber = 9;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& app_launch_data() const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* mutable_app_launch_data();
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* release_app_launch_data();
+  inline void set_allocated_app_launch_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* app_launch_data);
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData app_inactive_data = 10;
+  inline bool has_app_inactive_data() const;
+  inline void clear_app_inactive_data();
+  static const int kAppInactiveDataFieldNumber = 10;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& app_inactive_data() const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* mutable_app_inactive_data();
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* release_app_inactive_data();
+  inline void set_allocated_app_inactive_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* app_inactive_data);
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData app_crash_data = 11;
+  inline bool has_app_crash_data() const;
+  inline void clear_app_crash_data();
+  static const int kAppCrashDataFieldNumber = 11;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData& app_crash_data() const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* mutable_app_crash_data();
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* release_app_crash_data();
+  inline void set_allocated_app_crash_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* app_crash_data);
+
+  // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord)
+ private:
+  inline void set_has_timestamp();
+  inline void clear_has_timestamp();
+  inline void set_has_beacon_type();
+  inline void clear_has_beacon_type();
+  inline void set_has_page_group();
+  inline void clear_has_page_group();
+  inline void set_has_ab_test();
+  inline void clear_has_ab_test();
+  inline void set_has_api_network_request_data();
+  inline void clear_has_api_network_request_data();
+  inline void set_has_api_custom_timer_data();
+  inline void clear_has_api_custom_timer_data();
+  inline void set_has_api_custom_metric_data();
+  inline void clear_has_api_custom_metric_data();
+  inline void set_has_app_launch_data();
+  inline void clear_has_app_launch_data();
+  inline void set_has_app_inactive_data();
+  inline void clear_has_app_inactive_data();
+  inline void set_has_app_crash_data();
+  inline void clear_has_app_crash_data();
+
+  ::google::protobuf::int64 timestamp_;
+  ::std::string* page_group_;
+  ::std::string* ab_test_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> custom_dimensions_;
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* api_network_request_data_;
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* api_custom_timer_data_;
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* api_custom_metric_data_;
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* app_launch_data_;
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* app_inactive_data_;
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* app_crash_data_;
+  int beacon_type_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(11 + 31) / 32];
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_ClientBeaconBatch_2eproto();
+  friend void protobuf_ShutdownFile_ClientBeaconBatch_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientBeaconBatch_ClientBeaconRecord* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class ClientBeaconBatch_SessionInfo : public ::google::protobuf::MessageLite {
  public:
   ClientBeaconBatch_SessionInfo();
@@ -744,7 +1644,33 @@ class ClientBeaconBatch : public ::google::protobuf::MessageLite {
   // nested types ----------------------------------------------------
 
   typedef ClientBeaconBatch_ClientBeaconBatchRecord ClientBeaconBatchRecord;
+  typedef ClientBeaconBatch_ClientBeaconRecord ClientBeaconRecord;
   typedef ClientBeaconBatch_SessionInfo SessionInfo;
+
+  typedef ClientBeaconBatch_BeaconType BeaconType;
+  static const BeaconType PAGE_VIEW = ClientBeaconBatch_BeaconType_PAGE_VIEW;
+  static const BeaconType MANUAL = ClientBeaconBatch_BeaconType_MANUAL;
+  static const BeaconType SPA = ClientBeaconBatch_BeaconType_SPA;
+  static const BeaconType SPA_HARD = ClientBeaconBatch_BeaconType_SPA_HARD;
+  static const BeaconType XHR = ClientBeaconBatch_BeaconType_XHR;
+  static const BeaconType CLICK = ClientBeaconBatch_BeaconType_CLICK;
+  static const BeaconType API = ClientBeaconBatch_BeaconType_API;
+  static const BeaconType API_NETWORK_REQUEST = ClientBeaconBatch_BeaconType_API_NETWORK_REQUEST;
+  static const BeaconType API_CUSTOM_METRIC = ClientBeaconBatch_BeaconType_API_CUSTOM_METRIC;
+  static const BeaconType API_CUSTOM_TIMER = ClientBeaconBatch_BeaconType_API_CUSTOM_TIMER;
+  static const BeaconType APP_LAUNCH = ClientBeaconBatch_BeaconType_APP_LAUNCH;
+  static const BeaconType APP_INACTIVE = ClientBeaconBatch_BeaconType_APP_INACTIVE;
+  static const BeaconType APP_CRASH = ClientBeaconBatch_BeaconType_APP_CRASH;
+  static const BeaconType BATCH = ClientBeaconBatch_BeaconType_BATCH;
+  static inline bool BeaconType_IsValid(int value) {
+    return ClientBeaconBatch_BeaconType_IsValid(value);
+  }
+  static const BeaconType BeaconType_MIN =
+    ClientBeaconBatch_BeaconType_BeaconType_MIN;
+  static const BeaconType BeaconType_MAX =
+    ClientBeaconBatch_BeaconType_BeaconType_MAX;
+  static const int BeaconType_ARRAYSIZE =
+    ClientBeaconBatch_BeaconType_BeaconType_ARRAYSIZE;
 
   // accessors -------------------------------------------------------
 
@@ -903,6 +1829,18 @@ class ClientBeaconBatch : public ::google::protobuf::MessageLite {
   inline ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconBatchRecord >*
       mutable_records();
 
+  // repeated .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord beacon_records = 15;
+  inline int beacon_records_size() const;
+  inline void clear_beacon_records();
+  static const int kBeaconRecordsFieldNumber = 15;
+  inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord& beacon_records(int index) const;
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord* mutable_beacon_records(int index);
+  inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord* add_beacon_records();
+  inline const ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord >&
+      beacon_records() const;
+  inline ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord >*
+      mutable_beacon_records();
+
   // @@protoc_insertion_point(class_scope:client_beacon_batch.ClientBeaconBatch)
  private:
   inline void set_has_boomerang_version();
@@ -946,9 +1884,10 @@ class ClientBeaconBatch : public ::google::protobuf::MessageLite {
   float longitude_;
   ::client_beacon_batch::ClientBeaconBatch_SessionInfo* session_;
   ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconBatchRecord > records_;
+  ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord > beacon_records_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(14 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(15 + 31) / 32];
 
   #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
   friend void  protobuf_AddDesc_ClientBeaconBatch_2eproto_impl();
@@ -1936,6 +2875,1173 @@ inline void ClientBeaconBatch_ClientBeaconBatchRecord::set_allocated_beacon_type
 
 // -------------------------------------------------------------------
 
+// ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData
+
+// optional int32 duration = 1;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_duration() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_duration() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_duration() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_duration() {
+  duration_ = 0;
+  clear_has_duration();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::duration() const {
+  return duration_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_duration(::google::protobuf::int32 value) {
+  set_has_duration();
+  duration_ = value;
+}
+
+// optional string url = 2;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_url() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_url() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_url() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_url() {
+  if (url_ != &::google::protobuf::internal::kEmptyString) {
+    url_->clear();
+  }
+  clear_has_url();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::url() const {
+  return *url_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_url(const ::std::string& value) {
+  set_has_url();
+  if (url_ == &::google::protobuf::internal::kEmptyString) {
+    url_ = new ::std::string;
+  }
+  url_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_url(const char* value) {
+  set_has_url();
+  if (url_ == &::google::protobuf::internal::kEmptyString) {
+    url_ = new ::std::string;
+  }
+  url_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_url(const char* value, size_t size) {
+  set_has_url();
+  if (url_ == &::google::protobuf::internal::kEmptyString) {
+    url_ = new ::std::string;
+  }
+  url_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::mutable_url() {
+  set_has_url();
+  if (url_ == &::google::protobuf::internal::kEmptyString) {
+    url_ = new ::std::string;
+  }
+  return url_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::release_url() {
+  clear_has_url();
+  if (url_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = url_;
+    url_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_allocated_url(::std::string* url) {
+  if (url_ != &::google::protobuf::internal::kEmptyString) {
+    delete url_;
+  }
+  if (url) {
+    set_has_url();
+    url_ = url;
+  } else {
+    clear_has_url();
+    url_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional int32 network_error_code = 3;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_network_error_code() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_network_error_code() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_network_error_code() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_network_error_code() {
+  network_error_code_ = 0;
+  clear_has_network_error_code();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::network_error_code() const {
+  return network_error_code_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_network_error_code(::google::protobuf::int32 value) {
+  set_has_network_error_code();
+  network_error_code_ = value;
+}
+
+// optional int32 dns = 4;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_dns() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_dns() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_dns() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_dns() {
+  dns_ = 0;
+  clear_has_dns();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::dns() const {
+  return dns_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_dns(::google::protobuf::int32 value) {
+  set_has_dns();
+  dns_ = value;
+}
+
+// optional int32 tcp = 5;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_tcp() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_tcp() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_tcp() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_tcp() {
+  tcp_ = 0;
+  clear_has_tcp();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::tcp() const {
+  return tcp_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_tcp(::google::protobuf::int32 value) {
+  set_has_tcp();
+  tcp_ = value;
+}
+
+// optional int32 ssl = 6;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_ssl() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_ssl() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_ssl() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_ssl() {
+  ssl_ = 0;
+  clear_has_ssl();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::ssl() const {
+  return ssl_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_ssl(::google::protobuf::int32 value) {
+  set_has_ssl();
+  ssl_ = value;
+}
+
+// optional int32 ttfb = 7;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::has_ttfb() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_has_ttfb() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_has_ttfb() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::clear_ttfb() {
+  ttfb_ = 0;
+  clear_has_ttfb();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::ttfb() const {
+  return ttfb_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::set_ttfb(::google::protobuf::int32 value) {
+  set_has_ttfb();
+  ttfb_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData
+
+// optional int32 timer_value = 1;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::has_timer_value() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::set_has_timer_value() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::clear_has_timer_value() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::clear_timer_value() {
+  timer_value_ = 0;
+  clear_has_timer_value();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::timer_value() const {
+  return timer_value_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::set_timer_value(::google::protobuf::int32 value) {
+  set_has_timer_value();
+  timer_value_ = value;
+}
+
+// optional int32 timer_index = 2;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::has_timer_index() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::set_has_timer_index() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::clear_has_timer_index() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::clear_timer_index() {
+  timer_index_ = 0;
+  clear_has_timer_index();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::timer_index() const {
+  return timer_index_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::set_timer_index(::google::protobuf::int32 value) {
+  set_has_timer_index();
+  timer_index_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData
+
+// optional int32 metric_value = 1;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::has_metric_value() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::set_has_metric_value() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::clear_has_metric_value() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::clear_metric_value() {
+  metric_value_ = 0;
+  clear_has_metric_value();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::metric_value() const {
+  return metric_value_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::set_metric_value(::google::protobuf::int32 value) {
+  set_has_metric_value();
+  metric_value_ = value;
+}
+
+// optional int32 metric_index = 2;
+inline bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::has_metric_index() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::set_has_metric_index() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::clear_has_metric_index() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::clear_metric_index() {
+  metric_index_ = 0;
+  clear_has_metric_index();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::metric_index() const {
+  return metric_index_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::set_metric_index(::google::protobuf::int32 value) {
+  set_has_metric_index();
+  metric_index_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientBeaconBatch_ClientBeaconRecord_AppLaunchData
+
+// optional bool is_first_install = 1;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::has_is_first_install() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::set_has_is_first_install() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::clear_has_is_first_install() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::clear_is_first_install() {
+  is_first_install_ = false;
+  clear_has_is_first_install();
+}
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::is_first_install() const {
+  return is_first_install_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::set_is_first_install(bool value) {
+  set_has_is_first_install();
+  is_first_install_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientBeaconBatch_ClientBeaconRecord_AppInactiveData
+
+// -------------------------------------------------------------------
+
+// ClientBeaconBatch_ClientBeaconRecord_AppCrashData
+
+// optional int32 code = 1;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_code() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_code() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_code() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_code() {
+  code_ = 0;
+  clear_has_code();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_AppCrashData::code() const {
+  return code_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_code(::google::protobuf::int32 value) {
+  set_has_code();
+  code_ = value;
+}
+
+// optional string message = 2;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_message() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_message() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_message() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_message() {
+  if (message_ != &::google::protobuf::internal::kEmptyString) {
+    message_->clear();
+  }
+  clear_has_message();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord_AppCrashData::message() const {
+  return *message_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_message(const ::std::string& value) {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::kEmptyString) {
+    message_ = new ::std::string;
+  }
+  message_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_message(const char* value) {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::kEmptyString) {
+    message_ = new ::std::string;
+  }
+  message_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_message(const char* value, size_t size) {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::kEmptyString) {
+    message_ = new ::std::string;
+  }
+  message_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::mutable_message() {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::kEmptyString) {
+    message_ = new ::std::string;
+  }
+  return message_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::release_message() {
+  clear_has_message();
+  if (message_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = message_;
+    message_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_allocated_message(::std::string* message) {
+  if (message_ != &::google::protobuf::internal::kEmptyString) {
+    delete message_;
+  }
+  if (message) {
+    set_has_message();
+    message_ = message;
+  } else {
+    clear_has_message();
+    message_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional string function = 3;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_function() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_function() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_function() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_function() {
+  if (function_ != &::google::protobuf::internal::kEmptyString) {
+    function_->clear();
+  }
+  clear_has_function();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord_AppCrashData::function() const {
+  return *function_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_function(const ::std::string& value) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::kEmptyString) {
+    function_ = new ::std::string;
+  }
+  function_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_function(const char* value) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::kEmptyString) {
+    function_ = new ::std::string;
+  }
+  function_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_function(const char* value, size_t size) {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::kEmptyString) {
+    function_ = new ::std::string;
+  }
+  function_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::mutable_function() {
+  set_has_function();
+  if (function_ == &::google::protobuf::internal::kEmptyString) {
+    function_ = new ::std::string;
+  }
+  return function_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::release_function() {
+  clear_has_function();
+  if (function_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = function_;
+    function_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_allocated_function(::std::string* function) {
+  if (function_ != &::google::protobuf::internal::kEmptyString) {
+    delete function_;
+  }
+  if (function) {
+    set_has_function();
+    function_ = function;
+  } else {
+    clear_has_function();
+    function_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional string file = 4;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_file() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_file() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_file() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_file() {
+  if (file_ != &::google::protobuf::internal::kEmptyString) {
+    file_->clear();
+  }
+  clear_has_file();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord_AppCrashData::file() const {
+  return *file_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_file(const ::std::string& value) {
+  set_has_file();
+  if (file_ == &::google::protobuf::internal::kEmptyString) {
+    file_ = new ::std::string;
+  }
+  file_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_file(const char* value) {
+  set_has_file();
+  if (file_ == &::google::protobuf::internal::kEmptyString) {
+    file_ = new ::std::string;
+  }
+  file_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_file(const char* value, size_t size) {
+  set_has_file();
+  if (file_ == &::google::protobuf::internal::kEmptyString) {
+    file_ = new ::std::string;
+  }
+  file_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::mutable_file() {
+  set_has_file();
+  if (file_ == &::google::protobuf::internal::kEmptyString) {
+    file_ = new ::std::string;
+  }
+  return file_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::release_file() {
+  clear_has_file();
+  if (file_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = file_;
+    file_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_allocated_file(::std::string* file) {
+  if (file_ != &::google::protobuf::internal::kEmptyString) {
+    delete file_;
+  }
+  if (file) {
+    set_has_file();
+    file_ = file;
+  } else {
+    clear_has_file();
+    file_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional int32 line = 5;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_line() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_line() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_line() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_line() {
+  line_ = 0;
+  clear_has_line();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_AppCrashData::line() const {
+  return line_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_line(::google::protobuf::int32 value) {
+  set_has_line();
+  line_ = value;
+}
+
+// optional int32 character = 6;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_character() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_character() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_character() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_character() {
+  character_ = 0;
+  clear_has_character();
+}
+inline ::google::protobuf::int32 ClientBeaconBatch_ClientBeaconRecord_AppCrashData::character() const {
+  return character_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_character(::google::protobuf::int32 value) {
+  set_has_character();
+  character_ = value;
+}
+
+// optional string stack = 7;
+inline bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::has_stack() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_has_stack() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_has_stack() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::clear_stack() {
+  if (stack_ != &::google::protobuf::internal::kEmptyString) {
+    stack_->clear();
+  }
+  clear_has_stack();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord_AppCrashData::stack() const {
+  return *stack_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_stack(const ::std::string& value) {
+  set_has_stack();
+  if (stack_ == &::google::protobuf::internal::kEmptyString) {
+    stack_ = new ::std::string;
+  }
+  stack_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_stack(const char* value) {
+  set_has_stack();
+  if (stack_ == &::google::protobuf::internal::kEmptyString) {
+    stack_ = new ::std::string;
+  }
+  stack_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_stack(const char* value, size_t size) {
+  set_has_stack();
+  if (stack_ == &::google::protobuf::internal::kEmptyString) {
+    stack_ = new ::std::string;
+  }
+  stack_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::mutable_stack() {
+  set_has_stack();
+  if (stack_ == &::google::protobuf::internal::kEmptyString) {
+    stack_ = new ::std::string;
+  }
+  return stack_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::release_stack() {
+  clear_has_stack();
+  if (stack_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = stack_;
+    stack_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::set_allocated_stack(::std::string* stack) {
+  if (stack_ != &::google::protobuf::internal::kEmptyString) {
+    delete stack_;
+  }
+  if (stack) {
+    set_has_stack();
+    stack_ = stack;
+  } else {
+    clear_has_stack();
+    stack_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// -------------------------------------------------------------------
+
+// ClientBeaconBatch_ClientBeaconRecord
+
+// optional int64 timestamp = 1;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_timestamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_timestamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_timestamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_timestamp() {
+  timestamp_ = GOOGLE_LONGLONG(0);
+  clear_has_timestamp();
+}
+inline ::google::protobuf::int64 ClientBeaconBatch_ClientBeaconRecord::timestamp() const {
+  return timestamp_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_timestamp(::google::protobuf::int64 value) {
+  set_has_timestamp();
+  timestamp_ = value;
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.BeaconType beacon_type = 2;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_beacon_type() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_beacon_type() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_beacon_type() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_beacon_type() {
+  beacon_type_ = 0;
+  clear_has_beacon_type();
+}
+inline ::client_beacon_batch::ClientBeaconBatch_BeaconType ClientBeaconBatch_ClientBeaconRecord::beacon_type() const {
+  return static_cast< ::client_beacon_batch::ClientBeaconBatch_BeaconType >(beacon_type_);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_beacon_type(::client_beacon_batch::ClientBeaconBatch_BeaconType value) {
+  assert(::client_beacon_batch::ClientBeaconBatch_BeaconType_IsValid(value));
+  set_has_beacon_type();
+  beacon_type_ = value;
+}
+
+// optional string page_group = 3;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_page_group() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_page_group() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_page_group() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_page_group() {
+  if (page_group_ != &::google::protobuf::internal::kEmptyString) {
+    page_group_->clear();
+  }
+  clear_has_page_group();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord::page_group() const {
+  return *page_group_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_page_group(const ::std::string& value) {
+  set_has_page_group();
+  if (page_group_ == &::google::protobuf::internal::kEmptyString) {
+    page_group_ = new ::std::string;
+  }
+  page_group_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_page_group(const char* value) {
+  set_has_page_group();
+  if (page_group_ == &::google::protobuf::internal::kEmptyString) {
+    page_group_ = new ::std::string;
+  }
+  page_group_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_page_group(const char* value, size_t size) {
+  set_has_page_group();
+  if (page_group_ == &::google::protobuf::internal::kEmptyString) {
+    page_group_ = new ::std::string;
+  }
+  page_group_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord::mutable_page_group() {
+  set_has_page_group();
+  if (page_group_ == &::google::protobuf::internal::kEmptyString) {
+    page_group_ = new ::std::string;
+  }
+  return page_group_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord::release_page_group() {
+  clear_has_page_group();
+  if (page_group_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = page_group_;
+    page_group_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_page_group(::std::string* page_group) {
+  if (page_group_ != &::google::protobuf::internal::kEmptyString) {
+    delete page_group_;
+  }
+  if (page_group) {
+    set_has_page_group();
+    page_group_ = page_group;
+  } else {
+    clear_has_page_group();
+    page_group_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional string ab_test = 4;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_ab_test() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_ab_test() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_ab_test() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_ab_test() {
+  if (ab_test_ != &::google::protobuf::internal::kEmptyString) {
+    ab_test_->clear();
+  }
+  clear_has_ab_test();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord::ab_test() const {
+  return *ab_test_;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_ab_test(const ::std::string& value) {
+  set_has_ab_test();
+  if (ab_test_ == &::google::protobuf::internal::kEmptyString) {
+    ab_test_ = new ::std::string;
+  }
+  ab_test_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_ab_test(const char* value) {
+  set_has_ab_test();
+  if (ab_test_ == &::google::protobuf::internal::kEmptyString) {
+    ab_test_ = new ::std::string;
+  }
+  ab_test_->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_ab_test(const char* value, size_t size) {
+  set_has_ab_test();
+  if (ab_test_ == &::google::protobuf::internal::kEmptyString) {
+    ab_test_ = new ::std::string;
+  }
+  ab_test_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord::mutable_ab_test() {
+  set_has_ab_test();
+  if (ab_test_ == &::google::protobuf::internal::kEmptyString) {
+    ab_test_ = new ::std::string;
+  }
+  return ab_test_;
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord::release_ab_test() {
+  clear_has_ab_test();
+  if (ab_test_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = ab_test_;
+    ab_test_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_ab_test(::std::string* ab_test) {
+  if (ab_test_ != &::google::protobuf::internal::kEmptyString) {
+    delete ab_test_;
+  }
+  if (ab_test) {
+    set_has_ab_test();
+    ab_test_ = ab_test;
+  } else {
+    clear_has_ab_test();
+    ab_test_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// repeated string custom_dimensions = 5;
+inline int ClientBeaconBatch_ClientBeaconRecord::custom_dimensions_size() const {
+  return custom_dimensions_.size();
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_custom_dimensions() {
+  custom_dimensions_.Clear();
+}
+inline const ::std::string& ClientBeaconBatch_ClientBeaconRecord::custom_dimensions(int index) const {
+  return custom_dimensions_.Get(index);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord::mutable_custom_dimensions(int index) {
+  return custom_dimensions_.Mutable(index);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_custom_dimensions(int index, const ::std::string& value) {
+  custom_dimensions_.Mutable(index)->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_custom_dimensions(int index, const char* value) {
+  custom_dimensions_.Mutable(index)->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_custom_dimensions(int index, const char* value, size_t size) {
+  custom_dimensions_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientBeaconBatch_ClientBeaconRecord::add_custom_dimensions() {
+  return custom_dimensions_.Add();
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::add_custom_dimensions(const ::std::string& value) {
+  custom_dimensions_.Add()->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::add_custom_dimensions(const char* value) {
+  custom_dimensions_.Add()->assign(value);
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::add_custom_dimensions(const char* value, size_t size) {
+  custom_dimensions_.Add()->assign(reinterpret_cast<const char*>(value), size);
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ClientBeaconBatch_ClientBeaconRecord::custom_dimensions() const {
+  return custom_dimensions_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ClientBeaconBatch_ClientBeaconRecord::mutable_custom_dimensions() {
+  return &custom_dimensions_;
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData api_network_request_data = 6;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_api_network_request_data() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_api_network_request_data() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_api_network_request_data() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_api_network_request_data() {
+  if (api_network_request_data_ != NULL) api_network_request_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::Clear();
+  clear_has_api_network_request_data();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& ClientBeaconBatch_ClientBeaconRecord::api_network_request_data() const {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return api_network_request_data_ != NULL ? *api_network_request_data_ : *default_instance().api_network_request_data_;
+#else
+  return api_network_request_data_ != NULL ? *api_network_request_data_ : *default_instance_->api_network_request_data_;
+#endif
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* ClientBeaconBatch_ClientBeaconRecord::mutable_api_network_request_data() {
+  set_has_api_network_request_data();
+  if (api_network_request_data_ == NULL) api_network_request_data_ = new ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData;
+  return api_network_request_data_;
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* ClientBeaconBatch_ClientBeaconRecord::release_api_network_request_data() {
+  clear_has_api_network_request_data();
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* temp = api_network_request_data_;
+  api_network_request_data_ = NULL;
+  return temp;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_api_network_request_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* api_network_request_data) {
+  delete api_network_request_data_;
+  api_network_request_data_ = api_network_request_data;
+  if (api_network_request_data) {
+    set_has_api_network_request_data();
+  } else {
+    clear_has_api_network_request_data();
+  }
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData api_custom_timer_data = 7;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_api_custom_timer_data() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_api_custom_timer_data() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_api_custom_timer_data() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_api_custom_timer_data() {
+  if (api_custom_timer_data_ != NULL) api_custom_timer_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::Clear();
+  clear_has_api_custom_timer_data();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& ClientBeaconBatch_ClientBeaconRecord::api_custom_timer_data() const {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return api_custom_timer_data_ != NULL ? *api_custom_timer_data_ : *default_instance().api_custom_timer_data_;
+#else
+  return api_custom_timer_data_ != NULL ? *api_custom_timer_data_ : *default_instance_->api_custom_timer_data_;
+#endif
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* ClientBeaconBatch_ClientBeaconRecord::mutable_api_custom_timer_data() {
+  set_has_api_custom_timer_data();
+  if (api_custom_timer_data_ == NULL) api_custom_timer_data_ = new ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData;
+  return api_custom_timer_data_;
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* ClientBeaconBatch_ClientBeaconRecord::release_api_custom_timer_data() {
+  clear_has_api_custom_timer_data();
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* temp = api_custom_timer_data_;
+  api_custom_timer_data_ = NULL;
+  return temp;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_api_custom_timer_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* api_custom_timer_data) {
+  delete api_custom_timer_data_;
+  api_custom_timer_data_ = api_custom_timer_data;
+  if (api_custom_timer_data) {
+    set_has_api_custom_timer_data();
+  } else {
+    clear_has_api_custom_timer_data();
+  }
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData api_custom_metric_data = 8;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_api_custom_metric_data() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_api_custom_metric_data() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_api_custom_metric_data() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_api_custom_metric_data() {
+  if (api_custom_metric_data_ != NULL) api_custom_metric_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::Clear();
+  clear_has_api_custom_metric_data();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& ClientBeaconBatch_ClientBeaconRecord::api_custom_metric_data() const {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return api_custom_metric_data_ != NULL ? *api_custom_metric_data_ : *default_instance().api_custom_metric_data_;
+#else
+  return api_custom_metric_data_ != NULL ? *api_custom_metric_data_ : *default_instance_->api_custom_metric_data_;
+#endif
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* ClientBeaconBatch_ClientBeaconRecord::mutable_api_custom_metric_data() {
+  set_has_api_custom_metric_data();
+  if (api_custom_metric_data_ == NULL) api_custom_metric_data_ = new ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData;
+  return api_custom_metric_data_;
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* ClientBeaconBatch_ClientBeaconRecord::release_api_custom_metric_data() {
+  clear_has_api_custom_metric_data();
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* temp = api_custom_metric_data_;
+  api_custom_metric_data_ = NULL;
+  return temp;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_api_custom_metric_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* api_custom_metric_data) {
+  delete api_custom_metric_data_;
+  api_custom_metric_data_ = api_custom_metric_data;
+  if (api_custom_metric_data) {
+    set_has_api_custom_metric_data();
+  } else {
+    clear_has_api_custom_metric_data();
+  }
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData app_launch_data = 9;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_app_launch_data() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_app_launch_data() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_app_launch_data() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_app_launch_data() {
+  if (app_launch_data_ != NULL) app_launch_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::Clear();
+  clear_has_app_launch_data();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& ClientBeaconBatch_ClientBeaconRecord::app_launch_data() const {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return app_launch_data_ != NULL ? *app_launch_data_ : *default_instance().app_launch_data_;
+#else
+  return app_launch_data_ != NULL ? *app_launch_data_ : *default_instance_->app_launch_data_;
+#endif
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* ClientBeaconBatch_ClientBeaconRecord::mutable_app_launch_data() {
+  set_has_app_launch_data();
+  if (app_launch_data_ == NULL) app_launch_data_ = new ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData;
+  return app_launch_data_;
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* ClientBeaconBatch_ClientBeaconRecord::release_app_launch_data() {
+  clear_has_app_launch_data();
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* temp = app_launch_data_;
+  app_launch_data_ = NULL;
+  return temp;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_app_launch_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* app_launch_data) {
+  delete app_launch_data_;
+  app_launch_data_ = app_launch_data;
+  if (app_launch_data) {
+    set_has_app_launch_data();
+  } else {
+    clear_has_app_launch_data();
+  }
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData app_inactive_data = 10;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_app_inactive_data() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_app_inactive_data() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_app_inactive_data() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_app_inactive_data() {
+  if (app_inactive_data_ != NULL) app_inactive_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::Clear();
+  clear_has_app_inactive_data();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& ClientBeaconBatch_ClientBeaconRecord::app_inactive_data() const {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return app_inactive_data_ != NULL ? *app_inactive_data_ : *default_instance().app_inactive_data_;
+#else
+  return app_inactive_data_ != NULL ? *app_inactive_data_ : *default_instance_->app_inactive_data_;
+#endif
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* ClientBeaconBatch_ClientBeaconRecord::mutable_app_inactive_data() {
+  set_has_app_inactive_data();
+  if (app_inactive_data_ == NULL) app_inactive_data_ = new ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData;
+  return app_inactive_data_;
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* ClientBeaconBatch_ClientBeaconRecord::release_app_inactive_data() {
+  clear_has_app_inactive_data();
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* temp = app_inactive_data_;
+  app_inactive_data_ = NULL;
+  return temp;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_app_inactive_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* app_inactive_data) {
+  delete app_inactive_data_;
+  app_inactive_data_ = app_inactive_data;
+  if (app_inactive_data) {
+    set_has_app_inactive_data();
+  } else {
+    clear_has_app_inactive_data();
+  }
+}
+
+// optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData app_crash_data = 11;
+inline bool ClientBeaconBatch_ClientBeaconRecord::has_app_crash_data() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_has_app_crash_data() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_has_app_crash_data() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::clear_app_crash_data() {
+  if (app_crash_data_ != NULL) app_crash_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData::Clear();
+  clear_has_app_crash_data();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData& ClientBeaconBatch_ClientBeaconRecord::app_crash_data() const {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return app_crash_data_ != NULL ? *app_crash_data_ : *default_instance().app_crash_data_;
+#else
+  return app_crash_data_ != NULL ? *app_crash_data_ : *default_instance_->app_crash_data_;
+#endif
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* ClientBeaconBatch_ClientBeaconRecord::mutable_app_crash_data() {
+  set_has_app_crash_data();
+  if (app_crash_data_ == NULL) app_crash_data_ = new ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData;
+  return app_crash_data_;
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* ClientBeaconBatch_ClientBeaconRecord::release_app_crash_data() {
+  clear_has_app_crash_data();
+  ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* temp = app_crash_data_;
+  app_crash_data_ = NULL;
+  return temp;
+}
+inline void ClientBeaconBatch_ClientBeaconRecord::set_allocated_app_crash_data(::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData* app_crash_data) {
+  delete app_crash_data_;
+  app_crash_data_ = app_crash_data;
+  if (app_crash_data) {
+    set_has_app_crash_data();
+  } else {
+    clear_has_app_crash_data();
+  }
+}
+
+// -------------------------------------------------------------------
+
 // ClientBeaconBatch_SessionInfo
 
 // optional string id = 1;
@@ -2909,6 +5015,31 @@ ClientBeaconBatch::records() const {
 inline ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconBatchRecord >*
 ClientBeaconBatch::mutable_records() {
   return &records_;
+}
+
+// repeated .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord beacon_records = 15;
+inline int ClientBeaconBatch::beacon_records_size() const {
+  return beacon_records_.size();
+}
+inline void ClientBeaconBatch::clear_beacon_records() {
+  beacon_records_.Clear();
+}
+inline const ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord& ClientBeaconBatch::beacon_records(int index) const {
+  return beacon_records_.Get(index);
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord* ClientBeaconBatch::mutable_beacon_records(int index) {
+  return beacon_records_.Mutable(index);
+}
+inline ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord* ClientBeaconBatch::add_beacon_records() {
+  return beacon_records_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord >&
+ClientBeaconBatch::beacon_records() const {
+  return beacon_records_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord >*
+ClientBeaconBatch::mutable_beacon_records() {
+  return &beacon_records_;
 }
 
 

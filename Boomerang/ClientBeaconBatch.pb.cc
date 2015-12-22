@@ -19,6 +19,13 @@ void protobuf_ShutdownFile_ClientBeaconBatch_2eproto() {
   delete ClientBeaconBatch_ClientBeaconBatchRecord::default_instance_;
   delete ClientBeaconBatch_ClientBeaconBatchRecord_TimerData::default_instance_;
   delete ClientBeaconBatch_ClientBeaconBatchRecord_NetworkTimers::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::default_instance_;
+  delete ClientBeaconBatch_ClientBeaconRecord_AppCrashData::default_instance_;
   delete ClientBeaconBatch_SessionInfo::default_instance_;
 }
 
@@ -38,11 +45,25 @@ void protobuf_AddDesc_ClientBeaconBatch_2eproto() {
   ClientBeaconBatch_ClientBeaconBatchRecord::default_instance_ = new ClientBeaconBatch_ClientBeaconBatchRecord();
   ClientBeaconBatch_ClientBeaconBatchRecord_TimerData::default_instance_ = new ClientBeaconBatch_ClientBeaconBatchRecord_TimerData();
   ClientBeaconBatch_ClientBeaconBatchRecord_NetworkTimers::default_instance_ = new ClientBeaconBatch_ClientBeaconBatchRecord_NetworkTimers();
+  ClientBeaconBatch_ClientBeaconRecord::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord();
+  ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData();
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData();
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData();
+  ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord_AppLaunchData();
+  ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord_AppInactiveData();
+  ClientBeaconBatch_ClientBeaconRecord_AppCrashData::default_instance_ = new ClientBeaconBatch_ClientBeaconRecord_AppCrashData();
   ClientBeaconBatch_SessionInfo::default_instance_ = new ClientBeaconBatch_SessionInfo();
   ClientBeaconBatch::default_instance_->InitAsDefaultInstance();
   ClientBeaconBatch_ClientBeaconBatchRecord::default_instance_->InitAsDefaultInstance();
   ClientBeaconBatch_ClientBeaconBatchRecord_TimerData::default_instance_->InitAsDefaultInstance();
   ClientBeaconBatch_ClientBeaconBatchRecord_NetworkTimers::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::default_instance_->InitAsDefaultInstance();
+  ClientBeaconBatch_ClientBeaconRecord_AppCrashData::default_instance_->InitAsDefaultInstance();
   ClientBeaconBatch_SessionInfo::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_ClientBeaconBatch_2eproto);
 }
@@ -64,6 +85,47 @@ struct StaticDescriptorInitializer_ClientBeaconBatch_2eproto {
 
 // ===================================================================
 
+bool ClientBeaconBatch_BeaconType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+    case 11:
+    case 12:
+    case 13:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#ifndef _MSC_VER
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::PAGE_VIEW;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::MANUAL;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::SPA;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::SPA_HARD;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::XHR;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::CLICK;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::API;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::API_NETWORK_REQUEST;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::API_CUSTOM_METRIC;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::API_CUSTOM_TIMER;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::APP_LAUNCH;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::APP_INACTIVE;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::APP_CRASH;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::BATCH;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::BeaconType_MIN;
+const ClientBeaconBatch_BeaconType ClientBeaconBatch::BeaconType_MAX;
+const int ClientBeaconBatch::BeaconType_ARRAYSIZE;
+#endif  // _MSC_VER
 #ifndef _MSC_VER
 const int ClientBeaconBatch_ClientBeaconBatchRecord_TimerData::kTotalFieldNumber;
 const int ClientBeaconBatch_ClientBeaconBatchRecord_TimerData::kMinFieldNumber;
@@ -1430,6 +1492,2062 @@ void ClientBeaconBatch_ClientBeaconBatchRecord::Swap(ClientBeaconBatch_ClientBea
 // -------------------------------------------------------------------
 
 #ifndef _MSC_VER
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kDurationFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kUrlFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kNetworkErrorCodeFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kDnsFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kTcpFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kSslFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::kTtfbFieldNumber;
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::InitAsDefaultInstance() {
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::SharedCtor() {
+  _cached_size_ = 0;
+  duration_ = 0;
+  url_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  network_error_code_ = 0;
+  dns_ = 0;
+  tcp_ = 0;
+  ssl_ = 0;
+  ttfb_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::~ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::SharedDtor() {
+  if (url_ != &::google::protobuf::internal::kEmptyString) {
+    delete url_;
+  }
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    duration_ = 0;
+    if (has_url()) {
+      if (url_ != &::google::protobuf::internal::kEmptyString) {
+        url_->clear();
+      }
+    }
+    network_error_code_ = 0;
+    dns_ = 0;
+    tcp_ = 0;
+    ssl_ = 0;
+    ttfb_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 duration = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &duration_)));
+          set_has_duration();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(18)) goto parse_url;
+        break;
+      }
+
+      // optional string url = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_url:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_url()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(24)) goto parse_network_error_code;
+        break;
+      }
+
+      // optional int32 network_error_code = 3;
+      case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_network_error_code:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &network_error_code_)));
+          set_has_network_error_code();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(32)) goto parse_dns;
+        break;
+      }
+
+      // optional int32 dns = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_dns:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &dns_)));
+          set_has_dns();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(40)) goto parse_tcp;
+        break;
+      }
+
+      // optional int32 tcp = 5;
+      case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_tcp:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &tcp_)));
+          set_has_tcp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(48)) goto parse_ssl;
+        break;
+      }
+
+      // optional int32 ssl = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_ssl:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &ssl_)));
+          set_has_ssl();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(56)) goto parse_ttfb;
+        break;
+      }
+
+      // optional int32 ttfb = 7;
+      case 7: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_ttfb:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &ttfb_)));
+          set_has_ttfb();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional int32 duration = 1;
+  if (has_duration()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->duration(), output);
+  }
+
+  // optional string url = 2;
+  if (has_url()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->url(), output);
+  }
+
+  // optional int32 network_error_code = 3;
+  if (has_network_error_code()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->network_error_code(), output);
+  }
+
+  // optional int32 dns = 4;
+  if (has_dns()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->dns(), output);
+  }
+
+  // optional int32 tcp = 5;
+  if (has_tcp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->tcp(), output);
+  }
+
+  // optional int32 ssl = 6;
+  if (has_ssl()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->ssl(), output);
+  }
+
+  // optional int32 ttfb = 7;
+  if (has_ttfb()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->ttfb(), output);
+  }
+
+}
+
+int ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 duration = 1;
+    if (has_duration()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->duration());
+    }
+
+    // optional string url = 2;
+    if (has_url()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->url());
+    }
+
+    // optional int32 network_error_code = 3;
+    if (has_network_error_code()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->network_error_code());
+    }
+
+    // optional int32 dns = 4;
+    if (has_dns()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->dns());
+    }
+
+    // optional int32 tcp = 5;
+    if (has_tcp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->tcp());
+    }
+
+    // optional int32 ssl = 6;
+    if (has_ssl()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->ssl());
+    }
+
+    // optional int32 ttfb = 7;
+    if (has_ttfb()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->ttfb());
+    }
+
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_duration()) {
+      set_duration(from.duration());
+    }
+    if (from.has_url()) {
+      set_url(from.url());
+    }
+    if (from.has_network_error_code()) {
+      set_network_error_code(from.network_error_code());
+    }
+    if (from.has_dns()) {
+      set_dns(from.dns());
+    }
+    if (from.has_tcp()) {
+      set_tcp(from.tcp());
+    }
+    if (from.has_ssl()) {
+      set_ssl(from.ssl());
+    }
+    if (from.has_ttfb()) {
+      set_ttfb(from.ttfb());
+    }
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::Swap(ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData* other) {
+  if (other != this) {
+    std::swap(duration_, other->duration_);
+    std::swap(url_, other->url_);
+    std::swap(network_error_code_, other->network_error_code_);
+    std::swap(dns_, other->dns_);
+    std::swap(tcp_, other->tcp_);
+    std::swap(ssl_, other->ssl_);
+    std::swap(ttfb_, other->ttfb_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::kTimerValueFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::kTimerIndexFieldNumber;
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::InitAsDefaultInstance() {
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::SharedCtor() {
+  _cached_size_ = 0;
+  timer_value_ = 0;
+  timer_index_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::~ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::SharedDtor() {
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    timer_value_ = 0;
+    timer_index_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 timer_value = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &timer_value_)));
+          set_has_timer_value();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(16)) goto parse_timer_index;
+        break;
+      }
+
+      // optional int32 timer_index = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_timer_index:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &timer_index_)));
+          set_has_timer_index();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional int32 timer_value = 1;
+  if (has_timer_value()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->timer_value(), output);
+  }
+
+  // optional int32 timer_index = 2;
+  if (has_timer_index()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->timer_index(), output);
+  }
+
+}
+
+int ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 timer_value = 1;
+    if (has_timer_value()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->timer_value());
+    }
+
+    // optional int32 timer_index = 2;
+    if (has_timer_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->timer_index());
+    }
+
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_timer_value()) {
+      set_timer_value(from.timer_value());
+    }
+    if (from.has_timer_index()) {
+      set_timer_index(from.timer_index());
+    }
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::Swap(ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData* other) {
+  if (other != this) {
+    std::swap(timer_value_, other->timer_value_);
+    std::swap(timer_index_, other->timer_index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::kMetricValueFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::kMetricIndexFieldNumber;
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::InitAsDefaultInstance() {
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::SharedCtor() {
+  _cached_size_ = 0;
+  metric_value_ = 0;
+  metric_index_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::~ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::SharedDtor() {
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    metric_value_ = 0;
+    metric_index_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 metric_value = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &metric_value_)));
+          set_has_metric_value();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(16)) goto parse_metric_index;
+        break;
+      }
+
+      // optional int32 metric_index = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_metric_index:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &metric_index_)));
+          set_has_metric_index();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional int32 metric_value = 1;
+  if (has_metric_value()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->metric_value(), output);
+  }
+
+  // optional int32 metric_index = 2;
+  if (has_metric_index()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->metric_index(), output);
+  }
+
+}
+
+int ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 metric_value = 1;
+    if (has_metric_value()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->metric_value());
+    }
+
+    // optional int32 metric_index = 2;
+    if (has_metric_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->metric_index());
+    }
+
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_metric_value()) {
+      set_metric_value(from.metric_value());
+    }
+    if (from.has_metric_index()) {
+      set_metric_index(from.metric_index());
+    }
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::Swap(ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData* other) {
+  if (other != this) {
+    std::swap(metric_value_, other->metric_value_);
+    std::swap(metric_index_, other->metric_index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::kIsFirstInstallFieldNumber;
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::InitAsDefaultInstance() {
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::SharedCtor() {
+  _cached_size_ = 0;
+  is_first_install_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::~ClientBeaconBatch_ClientBeaconRecord_AppLaunchData() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::SharedDtor() {
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord_AppLaunchData;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    is_first_install_ = false;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional bool is_first_install = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_first_install_)));
+          set_has_is_first_install();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional bool is_first_install = 1;
+  if (has_is_first_install()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->is_first_install(), output);
+  }
+
+}
+
+int ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bool is_first_install = 1;
+    if (has_is_first_install()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_is_first_install()) {
+      set_is_first_install(from.is_first_install());
+    }
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_AppLaunchData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::Swap(ClientBeaconBatch_ClientBeaconRecord_AppLaunchData* other) {
+  if (other != this) {
+    std::swap(is_first_install_, other->is_first_install_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::InitAsDefaultInstance() {
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::~ClientBeaconBatch_ClientBeaconRecord_AppInactiveData() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::SharedDtor() {
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord_AppInactiveData;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::Clear() {
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      return true;
+    }
+    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+}
+
+int ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::ByteSize() const {
+  int total_size = 0;
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_AppInactiveData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::Swap(ClientBeaconBatch_ClientBeaconRecord_AppInactiveData* other) {
+  if (other != this) {
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kCodeFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kMessageFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kFunctionFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kFileFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kLineFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kCharacterFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::kStackFieldNumber;
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord_AppCrashData::ClientBeaconBatch_ClientBeaconRecord_AppCrashData()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::InitAsDefaultInstance() {
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppCrashData::ClientBeaconBatch_ClientBeaconRecord_AppCrashData(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::SharedCtor() {
+  _cached_size_ = 0;
+  code_ = 0;
+  message_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  function_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  file_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  line_ = 0;
+  character_ = 0;
+  stack_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppCrashData::~ClientBeaconBatch_ClientBeaconRecord_AppCrashData() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::SharedDtor() {
+  if (message_ != &::google::protobuf::internal::kEmptyString) {
+    delete message_;
+  }
+  if (function_ != &::google::protobuf::internal::kEmptyString) {
+    delete function_;
+  }
+  if (file_ != &::google::protobuf::internal::kEmptyString) {
+    delete file_;
+  }
+  if (stack_ != &::google::protobuf::internal::kEmptyString) {
+    delete stack_;
+  }
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& ClientBeaconBatch_ClientBeaconRecord_AppCrashData::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord_AppCrashData* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord_AppCrashData* ClientBeaconBatch_ClientBeaconRecord_AppCrashData::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord_AppCrashData;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    code_ = 0;
+    if (has_message()) {
+      if (message_ != &::google::protobuf::internal::kEmptyString) {
+        message_->clear();
+      }
+    }
+    if (has_function()) {
+      if (function_ != &::google::protobuf::internal::kEmptyString) {
+        function_->clear();
+      }
+    }
+    if (has_file()) {
+      if (file_ != &::google::protobuf::internal::kEmptyString) {
+        file_->clear();
+      }
+    }
+    line_ = 0;
+    character_ = 0;
+    if (has_stack()) {
+      if (stack_ != &::google::protobuf::internal::kEmptyString) {
+        stack_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 code = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &code_)));
+          set_has_code();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(18)) goto parse_message;
+        break;
+      }
+
+      // optional string message = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_message:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_message()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(26)) goto parse_function;
+        break;
+      }
+
+      // optional string function = 3;
+      case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_function:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_function()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(34)) goto parse_file;
+        break;
+      }
+
+      // optional string file = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_file:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_file()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(40)) goto parse_line;
+        break;
+      }
+
+      // optional int32 line = 5;
+      case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_line:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &line_)));
+          set_has_line();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(48)) goto parse_character;
+        break;
+      }
+
+      // optional int32 character = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_character:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &character_)));
+          set_has_character();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(58)) goto parse_stack;
+        break;
+      }
+
+      // optional string stack = 7;
+      case 7: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_stack:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_stack()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional int32 code = 1;
+  if (has_code()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->code(), output);
+  }
+
+  // optional string message = 2;
+  if (has_message()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->message(), output);
+  }
+
+  // optional string function = 3;
+  if (has_function()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->function(), output);
+  }
+
+  // optional string file = 4;
+  if (has_file()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->file(), output);
+  }
+
+  // optional int32 line = 5;
+  if (has_line()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->line(), output);
+  }
+
+  // optional int32 character = 6;
+  if (has_character()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->character(), output);
+  }
+
+  // optional string stack = 7;
+  if (has_stack()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      7, this->stack(), output);
+  }
+
+}
+
+int ClientBeaconBatch_ClientBeaconRecord_AppCrashData::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 code = 1;
+    if (has_code()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->code());
+    }
+
+    // optional string message = 2;
+    if (has_message()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->message());
+    }
+
+    // optional string function = 3;
+    if (has_function()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->function());
+    }
+
+    // optional string file = 4;
+    if (has_file()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->file());
+    }
+
+    // optional int32 line = 5;
+    if (has_line()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->line());
+    }
+
+    // optional int32 character = 6;
+    if (has_character()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->character());
+    }
+
+    // optional string stack = 7;
+    if (has_stack()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->stack());
+    }
+
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord_AppCrashData*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_code()) {
+      set_code(from.code());
+    }
+    if (from.has_message()) {
+      set_message(from.message());
+    }
+    if (from.has_function()) {
+      set_function(from.function());
+    }
+    if (from.has_file()) {
+      set_file(from.file());
+    }
+    if (from.has_line()) {
+      set_line(from.line());
+    }
+    if (from.has_character()) {
+      set_character(from.character());
+    }
+    if (from.has_stack()) {
+      set_stack(from.stack());
+    }
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord_AppCrashData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord_AppCrashData::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord_AppCrashData::Swap(ClientBeaconBatch_ClientBeaconRecord_AppCrashData* other) {
+  if (other != this) {
+    std::swap(code_, other->code_);
+    std::swap(message_, other->message_);
+    std::swap(function_, other->function_);
+    std::swap(file_, other->file_);
+    std::swap(line_, other->line_);
+    std::swap(character_, other->character_);
+    std::swap(stack_, other->stack_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord_AppCrashData::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ClientBeaconBatch_ClientBeaconRecord::kTimestampFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kBeaconTypeFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kPageGroupFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kAbTestFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kCustomDimensionsFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kApiNetworkRequestDataFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kApiCustomTimerDataFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kApiCustomMetricDataFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kAppLaunchDataFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kAppInactiveDataFieldNumber;
+const int ClientBeaconBatch_ClientBeaconRecord::kAppCrashDataFieldNumber;
+#endif  // !_MSC_VER
+
+ClientBeaconBatch_ClientBeaconRecord::ClientBeaconBatch_ClientBeaconRecord()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::InitAsDefaultInstance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  api_network_request_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData*>(
+      ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::internal_default_instance());
+#else
+  api_network_request_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData*>(&::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::default_instance());
+#endif
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  api_custom_timer_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData*>(
+      ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::internal_default_instance());
+#else
+  api_custom_timer_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData*>(&::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::default_instance());
+#endif
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  api_custom_metric_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData*>(
+      ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::internal_default_instance());
+#else
+  api_custom_metric_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData*>(&::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::default_instance());
+#endif
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  app_launch_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData*>(
+      ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::internal_default_instance());
+#else
+  app_launch_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData*>(&::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::default_instance());
+#endif
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  app_inactive_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData*>(
+      ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::internal_default_instance());
+#else
+  app_inactive_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData*>(&::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::default_instance());
+#endif
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  app_crash_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData*>(
+      ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData::internal_default_instance());
+#else
+  app_crash_data_ = const_cast< ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData*>(&::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData::default_instance());
+#endif
+}
+
+ClientBeaconBatch_ClientBeaconRecord::ClientBeaconBatch_ClientBeaconRecord(const ClientBeaconBatch_ClientBeaconRecord& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::SharedCtor() {
+  _cached_size_ = 0;
+  timestamp_ = GOOGLE_LONGLONG(0);
+  beacon_type_ = 0;
+  page_group_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  ab_test_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  api_network_request_data_ = NULL;
+  api_custom_timer_data_ = NULL;
+  api_custom_metric_data_ = NULL;
+  app_launch_data_ = NULL;
+  app_inactive_data_ = NULL;
+  app_crash_data_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ClientBeaconBatch_ClientBeaconRecord::~ClientBeaconBatch_ClientBeaconRecord() {
+  SharedDtor();
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::SharedDtor() {
+  if (page_group_ != &::google::protobuf::internal::kEmptyString) {
+    delete page_group_;
+  }
+  if (ab_test_ != &::google::protobuf::internal::kEmptyString) {
+    delete ab_test_;
+  }
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+    delete api_network_request_data_;
+    delete api_custom_timer_data_;
+    delete api_custom_metric_data_;
+    delete app_launch_data_;
+    delete app_inactive_data_;
+    delete app_crash_data_;
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ClientBeaconBatch_ClientBeaconRecord& ClientBeaconBatch_ClientBeaconRecord::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_ClientBeaconBatch_2eproto();
+#endif
+  return *default_instance_;
+}
+
+ClientBeaconBatch_ClientBeaconRecord* ClientBeaconBatch_ClientBeaconRecord::default_instance_ = NULL;
+
+ClientBeaconBatch_ClientBeaconRecord* ClientBeaconBatch_ClientBeaconRecord::New() const {
+  return new ClientBeaconBatch_ClientBeaconRecord;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    timestamp_ = GOOGLE_LONGLONG(0);
+    beacon_type_ = 0;
+    if (has_page_group()) {
+      if (page_group_ != &::google::protobuf::internal::kEmptyString) {
+        page_group_->clear();
+      }
+    }
+    if (has_ab_test()) {
+      if (ab_test_ != &::google::protobuf::internal::kEmptyString) {
+        ab_test_->clear();
+      }
+    }
+    if (has_api_network_request_data()) {
+      if (api_network_request_data_ != NULL) api_network_request_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::Clear();
+    }
+    if (has_api_custom_timer_data()) {
+      if (api_custom_timer_data_ != NULL) api_custom_timer_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::Clear();
+    }
+    if (has_api_custom_metric_data()) {
+      if (api_custom_metric_data_ != NULL) api_custom_metric_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::Clear();
+    }
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (has_app_launch_data()) {
+      if (app_launch_data_ != NULL) app_launch_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::Clear();
+    }
+    if (has_app_inactive_data()) {
+      if (app_inactive_data_ != NULL) app_inactive_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::Clear();
+    }
+    if (has_app_crash_data()) {
+      if (app_crash_data_ != NULL) app_crash_data_->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData::Clear();
+    }
+  }
+  custom_dimensions_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int64 timestamp = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &timestamp_)));
+          set_has_timestamp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(16)) goto parse_beacon_type;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.BeaconType beacon_type = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_beacon_type:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::client_beacon_batch::ClientBeaconBatch_BeaconType_IsValid(value)) {
+            set_beacon_type(static_cast< ::client_beacon_batch::ClientBeaconBatch_BeaconType >(value));
+          }
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(26)) goto parse_page_group;
+        break;
+      }
+
+      // optional string page_group = 3;
+      case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_page_group:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_page_group()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(34)) goto parse_ab_test;
+        break;
+      }
+
+      // optional string ab_test = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_ab_test:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ab_test()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(42)) goto parse_custom_dimensions;
+        break;
+      }
+
+      // repeated string custom_dimensions = 5;
+      case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_custom_dimensions:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_custom_dimensions()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(42)) goto parse_custom_dimensions;
+        if (input->ExpectTag(50)) goto parse_api_network_request_data;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData api_network_request_data = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_api_network_request_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_api_network_request_data()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(58)) goto parse_api_custom_timer_data;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData api_custom_timer_data = 7;
+      case 7: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_api_custom_timer_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_api_custom_timer_data()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(66)) goto parse_api_custom_metric_data;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData api_custom_metric_data = 8;
+      case 8: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_api_custom_metric_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_api_custom_metric_data()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(74)) goto parse_app_launch_data;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData app_launch_data = 9;
+      case 9: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_app_launch_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_app_launch_data()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(82)) goto parse_app_inactive_data;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData app_inactive_data = 10;
+      case 10: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_app_inactive_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_app_inactive_data()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(90)) goto parse_app_crash_data;
+        break;
+      }
+
+      // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData app_crash_data = 11;
+      case 11: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_app_crash_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_app_crash_data()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional int64 timestamp = 1;
+  if (has_timestamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->timestamp(), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.BeaconType beacon_type = 2;
+  if (has_beacon_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->beacon_type(), output);
+  }
+
+  // optional string page_group = 3;
+  if (has_page_group()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->page_group(), output);
+  }
+
+  // optional string ab_test = 4;
+  if (has_ab_test()) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->ab_test(), output);
+  }
+
+  // repeated string custom_dimensions = 5;
+  for (int i = 0; i < this->custom_dimensions_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      5, this->custom_dimensions(i), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData api_network_request_data = 6;
+  if (has_api_network_request_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      6, this->api_network_request_data(), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData api_custom_timer_data = 7;
+  if (has_api_custom_timer_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      7, this->api_custom_timer_data(), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData api_custom_metric_data = 8;
+  if (has_api_custom_metric_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      8, this->api_custom_metric_data(), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData app_launch_data = 9;
+  if (has_app_launch_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      9, this->app_launch_data(), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData app_inactive_data = 10;
+  if (has_app_inactive_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      10, this->app_inactive_data(), output);
+  }
+
+  // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData app_crash_data = 11;
+  if (has_app_crash_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      11, this->app_crash_data(), output);
+  }
+
+}
+
+int ClientBeaconBatch_ClientBeaconRecord::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int64 timestamp = 1;
+    if (has_timestamp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
+          this->timestamp());
+    }
+
+    // optional .client_beacon_batch.ClientBeaconBatch.BeaconType beacon_type = 2;
+    if (has_beacon_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->beacon_type());
+    }
+
+    // optional string page_group = 3;
+    if (has_page_group()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->page_group());
+    }
+
+    // optional string ab_test = 4;
+    if (has_ab_test()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->ab_test());
+    }
+
+    // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiNetworkRequestData api_network_request_data = 6;
+    if (has_api_network_request_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->api_network_request_data());
+    }
+
+    // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomTimerData api_custom_timer_data = 7;
+    if (has_api_custom_timer_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->api_custom_timer_data());
+    }
+
+    // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.ApiCustomMetricData api_custom_metric_data = 8;
+    if (has_api_custom_metric_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->api_custom_metric_data());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppLaunchData app_launch_data = 9;
+    if (has_app_launch_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->app_launch_data());
+    }
+
+    // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppInactiveData app_inactive_data = 10;
+    if (has_app_inactive_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->app_inactive_data());
+    }
+
+    // optional .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord.AppCrashData app_crash_data = 11;
+    if (has_app_crash_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->app_crash_data());
+    }
+
+  }
+  // repeated string custom_dimensions = 5;
+  total_size += 1 * this->custom_dimensions_size();
+  for (int i = 0; i < this->custom_dimensions_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->custom_dimensions(i));
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const ClientBeaconBatch_ClientBeaconRecord*>(&from));
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::MergeFrom(const ClientBeaconBatch_ClientBeaconRecord& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  custom_dimensions_.MergeFrom(from.custom_dimensions_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_timestamp()) {
+      set_timestamp(from.timestamp());
+    }
+    if (from.has_beacon_type()) {
+      set_beacon_type(from.beacon_type());
+    }
+    if (from.has_page_group()) {
+      set_page_group(from.page_group());
+    }
+    if (from.has_ab_test()) {
+      set_ab_test(from.ab_test());
+    }
+    if (from.has_api_network_request_data()) {
+      mutable_api_network_request_data()->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiNetworkRequestData::MergeFrom(from.api_network_request_data());
+    }
+    if (from.has_api_custom_timer_data()) {
+      mutable_api_custom_timer_data()->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData::MergeFrom(from.api_custom_timer_data());
+    }
+    if (from.has_api_custom_metric_data()) {
+      mutable_api_custom_metric_data()->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomMetricData::MergeFrom(from.api_custom_metric_data());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_app_launch_data()) {
+      mutable_app_launch_data()->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppLaunchData::MergeFrom(from.app_launch_data());
+    }
+    if (from.has_app_inactive_data()) {
+      mutable_app_inactive_data()->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppInactiveData::MergeFrom(from.app_inactive_data());
+    }
+    if (from.has_app_crash_data()) {
+      mutable_app_crash_data()->::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_AppCrashData::MergeFrom(from.app_crash_data());
+    }
+  }
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::CopyFrom(const ClientBeaconBatch_ClientBeaconRecord& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClientBeaconBatch_ClientBeaconRecord::IsInitialized() const {
+
+  return true;
+}
+
+void ClientBeaconBatch_ClientBeaconRecord::Swap(ClientBeaconBatch_ClientBeaconRecord* other) {
+  if (other != this) {
+    std::swap(timestamp_, other->timestamp_);
+    std::swap(beacon_type_, other->beacon_type_);
+    std::swap(page_group_, other->page_group_);
+    std::swap(ab_test_, other->ab_test_);
+    custom_dimensions_.Swap(&other->custom_dimensions_);
+    std::swap(api_network_request_data_, other->api_network_request_data_);
+    std::swap(api_custom_timer_data_, other->api_custom_timer_data_);
+    std::swap(api_custom_metric_data_, other->api_custom_metric_data_);
+    std::swap(app_launch_data_, other->app_launch_data_);
+    std::swap(app_inactive_data_, other->app_inactive_data_);
+    std::swap(app_crash_data_, other->app_crash_data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string ClientBeaconBatch_ClientBeaconRecord::GetTypeName() const {
+  return "client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord";
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
 const int ClientBeaconBatch_SessionInfo::kIdFieldNumber;
 const int ClientBeaconBatch_SessionInfo::kStartTimeFieldNumber;
 const int ClientBeaconBatch_SessionInfo::kEndTimeFieldNumber;
@@ -1757,6 +3875,7 @@ const int ClientBeaconBatch::kLatitudeFieldNumber;
 const int ClientBeaconBatch::kLongitudeFieldNumber;
 const int ClientBeaconBatch::kSessionFieldNumber;
 const int ClientBeaconBatch::kRecordsFieldNumber;
+const int ClientBeaconBatch::kBeaconRecordsFieldNumber;
 #endif  // !_MSC_VER
 
 ClientBeaconBatch::ClientBeaconBatch()
@@ -1922,6 +4041,7 @@ void ClientBeaconBatch::Clear() {
     }
   }
   records_.Clear();
+  beacon_records_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2127,6 +4247,21 @@ bool ClientBeaconBatch::MergePartialFromCodedStream(
           goto handle_uninterpreted;
         }
         if (input->ExpectTag(114)) goto parse_records;
+        if (input->ExpectTag(122)) goto parse_beacon_records;
+        break;
+      }
+
+      // repeated .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord beacon_records = 15;
+      case 15: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_beacon_records:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_beacon_records()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(122)) goto parse_beacon_records;
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -2228,6 +4363,12 @@ void ClientBeaconBatch::SerializeWithCachedSizes(
   for (int i = 0; i < this->records_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
       14, this->records(i), output);
+  }
+
+  // repeated .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord beacon_records = 15;
+  for (int i = 0; i < this->beacon_records_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      15, this->beacon_records(i), output);
   }
 
 }
@@ -2334,6 +4475,14 @@ int ClientBeaconBatch::ByteSize() const {
         this->records(i));
   }
 
+  // repeated .client_beacon_batch.ClientBeaconBatch.ClientBeaconRecord beacon_records = 15;
+  total_size += 1 * this->beacon_records_size();
+  for (int i = 0; i < this->beacon_records_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->beacon_records(i));
+  }
+
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = total_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
@@ -2348,6 +4497,7 @@ void ClientBeaconBatch::CheckTypeAndMergeFrom(
 void ClientBeaconBatch::MergeFrom(const ClientBeaconBatch& from) {
   GOOGLE_CHECK_NE(&from, this);
   records_.MergeFrom(from.records_);
+  beacon_records_.MergeFrom(from.beacon_records_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_boomerang_version()) {
       set_boomerang_version(from.boomerang_version());
@@ -2420,6 +4570,7 @@ void ClientBeaconBatch::Swap(ClientBeaconBatch* other) {
     std::swap(longitude_, other->longitude_);
     std::swap(session_, other->session_);
     records_.Swap(&other->records_);
+    beacon_records_.Swap(&other->beacon_records_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_cached_size_, other->_cached_size_);
   }

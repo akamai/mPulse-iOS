@@ -236,6 +236,9 @@ NSString* const SESSION_ID_KEY = @"SESSION_ID";
     // Update the config URL to include session ID
     [self buildConfigRequestURL];
   }
+  
+  id stripQueryStringBody = [response objectForKey:@"strip_query_string"];
+  _stripQueryStrings = (stripQueryStringBody != nil && [stripQueryStringBody boolValue]);
 }
 
 -(BOOL) beaconsEnabled
@@ -273,10 +276,16 @@ NSString* const SESSION_ID_KEY = @"SESSION_ID";
   // In that case, we must append the key param (by using & prefix).
   NSString* key = ([urlString rangeOfString:@"?delay="].location != NSNotFound)? @"&key=" : @"?key=";
   
+  // API key
   [urlString appendString:key];
   [urlString appendString:_APIKey];
+
+  // Build version
   [urlString appendString:@"&v="];
-  [urlString appendString:BOOMERANG_VERSION];
+  [urlString appendString:MPULSE_BUILD_VERSION_NUMBER];
+
+  // Let them know this is a library
+  [urlString appendString:@"&l=ios"];
   
   MPSession *session = [MPSession sharedInstance];
   if ([session started])

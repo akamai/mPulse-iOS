@@ -174,7 +174,7 @@ void boomerangURLSession_task_didCompleteWithError(id self,
 {
   @try
   {
-    MPNetworkCallBeacon *beacon = [[MPInterceptURLSessionDelegate sharedInstance] getBeaconForTask:task];
+    MPApiNetworkRequestBeacon *beacon = [[MPInterceptURLSessionDelegate sharedInstance] getBeaconForTask:task];
     
     if (beacon != nil)
     {
@@ -205,7 +205,7 @@ void boomerangURLSession_task_didCompleteWithError(id self,
  * @param beacon Beacon to add
  * @param task NSURLSession task
  */
--(void)addBeacon:(MPNetworkCallBeacon *)beacon forTask:(NSURLSessionTask *)task
+-(void)addBeacon:(MPApiNetworkRequestBeacon *)beacon forTask:(NSURLSessionTask *)task
 {
   // The key is the address of the NSURLConnection
   NSString* key = [NSString stringWithFormat:@"%p", task];
@@ -220,11 +220,11 @@ void boomerangURLSession_task_didCompleteWithError(id self,
  * @param task NSURLSession task
  * @return Beacon
  */
--(MPNetworkCallBeacon *)getBeaconForTask:(NSURLSessionTask *)task
+-(MPApiNetworkRequestBeacon *)getBeaconForTask:(NSURLSessionTask *)task
 {
   NSString* key = [NSString stringWithFormat:@"%p", task];
   
-  MPNetworkCallBeacon* beacon = [m_beacons objectForKey:key];
+  MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
   
   return beacon;
 }

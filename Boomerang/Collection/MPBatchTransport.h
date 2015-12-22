@@ -10,6 +10,10 @@
 
 @interface MPBatchTransport : NSObject
 
--(void) sendBatch:(NSDictionary*) batchedRecords;
+/**
+ * Sends a batch of beacons
+ * @param batchedRecords Beacons
+ */
+-(void) sendBatch:(NSArray *)batchedRecords;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 
 @interface MPInterceptUtils : NSObject
 
@@ -31,7 +31,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace);
  * @param response Response from network call
  * @param error Error from network call
  */
-+ (void)parseResponse:(MPNetworkCallBeacon *)beacon
++ (void)parseResponse:(MPApiNetworkRequestBeacon *)beacon
                  data:(NSData *)data
              response:(NSURLResponse *)response
                 error:(NSError *)error;

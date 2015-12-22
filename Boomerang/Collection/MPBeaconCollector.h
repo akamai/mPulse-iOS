@@ -11,14 +11,44 @@
 
 @interface MPBeaconCollector : NSObject
 
-// Singleton access
-+(MPBeaconCollector*) sharedInstance;
-@property (readonly) NSMutableDictionary* records;
-//This flag is only used by Unit Tests
-@property (readwrite) BOOL disableBatchSending;
+//
+// Methods
+//
 
--(void) addBeacon:(MPBeacon*)beacon;
+/**
+ * Singleton access
+ */
++(MPBeaconCollector *) sharedInstance;
+
+/**
+ * Adds a beacon to the collector
+ * @param beacon Beacon
+ */
+-(void) addBeacon:(MPBeacon *)beacon;
+
+/**
+ * Sends the batch of beacons
+ */
 -(void) sendBatch;
+
+/**
+ * Clears the batch of beacons
+ */
 -(void) clearBatch;
+
+/**
+ * Gets all of the collected beacons
+ */
+-(NSMutableArray *) getBeacons;
+
+//
+// Properties
+//
+
+/**
+ * Disables Batch sending.
+ * This flag is only used by Unit Tests
+ */
+@property (readwrite) BOOL disableBatchSending;
 
 @end

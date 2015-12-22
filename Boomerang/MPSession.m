@@ -8,8 +8,8 @@
 
 #import "MPSession.h"
 #import "MPConfig.h"
-#import "MPAppFinishedLaunchingBeacon.h"
-#import "MPNetworkCallBeacon.h"
+#import "MPAppLaunchBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 #import "MPNetworkErrorBeaconGenerator.h"
 
 @implementation MPSession
@@ -30,7 +30,7 @@ static MPSession *sessionInstance = NULL; // Singleton
   return sessionInstance;
 }
 
--(void) initWithSessionID:(NSString*) ID
+-(void) initWithSessionID:(NSString *)ID
 {
   _ID = ID;
   _startTime = [NSDate date];
@@ -51,13 +51,14 @@ static MPSession *sessionInstance = NULL; // Singleton
   if (!_started)
   {
     NSString *sessionID = [[notification userInfo] objectForKey:SESSION_ID_KEY];
+
     if (sessionID)
     {
       [self initWithSessionID:sessionID];
       MPLogInfo(@"Boomerang session %@ has started.", sessionID);
       
       // App has finished launching, send the first beacon
-      [MPAppFinishedLaunchingBeacon sendBeacon];
+      [MPAppLaunchBeacon sendBeacon];
       
       // Start generating Network Error beacons
       [MPNetworkErrorBeaconGenerator startGenerator];
@@ -65,26 +66,28 @@ static MPSession *sessionInstance = NULL; // Singleton
   }
 }
 
--(void) addBeacon:(MPBeacon*) beacon
+-(void) addBeacon:(MPBeacon *)beacon
 {
   // Set last beacon timestamp
   _lastBeaconTime = beacon.timestamp;
   
-  if ([beacon isKindOfClass:[MPNetworkCallBeacon class]])
+  if ([beacon isKindOfClass:[MPApiNetworkRequestBeacon class]])
   {
-    // Convert to milliseconds.
-    int durationMS = [beacon requestDuration] * 1000;
+    MPApiNetworkRequestBeacon *requestBeacon = (MPApiNetworkRequestBeacon *)beacon;
     
     _totalNetworkRequestCount += 1;
-    _totalNetworkRequestDuration += durationMS;
-
-    MPLogDebug(@"Session request count incremented to %d, total request time incremented to %d", _totalNetworkRequestCount, _totalNetworkRequestDuration);
+    _totalNetworkRequestDuration += [requestBeacon duration];
+    
+    MPLogDebug(@"Session request count incremented to %d, total request time incremented to %d",
+               _totalNetworkRequestCount,
+               _totalNetworkRequestDuration);
   }
 }
 
 -(BOOL) expired
 {
   NSTimeInterval sessionExpirationTime = [[MPConfig sharedInstance] sessionExpirationTime];
+
   return fabs([_lastBeaconTime timeIntervalSinceNow]) > sessionExpirationTime;
 }
 
@@ -93,7 +96,7 @@ static MPSession *sessionInstance = NULL; // Singleton
   _totalNetworkRequestCount = 0;
   _totalNetworkRequestDuration = 0;
   _started = NO;
-  
+
   // increment the session token
   _token++;
 

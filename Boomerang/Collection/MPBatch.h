@@ -10,18 +10,15 @@
 
 @interface MPBatch : NSObject
 
-+(id) initWithRecords:(NSDictionary*)records;
-
--(NSData*) serialize;
+/**
+ * Initializes the batch with the specified beacons
+ * @param beacons Beacons
+ */
++(id) initWithBeacons:(NSArray *)beacons;
 
 /**
- * This method is public, and static, solely for unit-testing purposes.
+ * Serialize the batch to Protobuf
  */
-+ (Byte*) histogramIntArrayToBinary:(int*)values withLength:(int)histogramLength andFormat:(Byte)format outputLength:(int*)outputLength;
-
-/**
- * This method is solely used for unit-testing purposes.
- */
-+ (int*) binaryHistogramToIntArray:(Byte*)data withLength:(int)length;
+-(NSData *) serialize;
 
 @end

@@ -10,7 +10,9 @@
 
 @interface MPNetworkErrorBeaconGenerator : NSObject
 
-// Start the Network Error Beacon Generator
-+ (void) startGenerator;
+/**
+ * Start the Network Error Beacon Generator
+ */
++(void) startGenerator;
 
 @end

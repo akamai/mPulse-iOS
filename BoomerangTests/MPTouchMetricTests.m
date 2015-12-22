@@ -18,19 +18,7 @@
 
 @implementation MPTouchMetricTests
 
-- (void)setUp
-{
-  [super setUp];
-  // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-  // Put teardown code here. This method is called after the invocation of each test method in the class.
-  [super tearDown];
-}
-
-- (void)testActionMetric
+-(void) testActionMetric
 {
   NSString *metricJson = @"{\"name\":\"MetricButton\",\"index\":0,\"type\":\"TouchMetric\",\"label\":\"cmet.MetricButton\",\"dataType\":\"Currency\",\"action\":{\"name\":\"Tap\",\"locator\":\"text=Touch Metric Button[1]\"},\"extract\":{\"accessor\":\"output-elementText\",\"locator\":\"classname=UILabel[1]\"}}";
   MPTouchMetric *metric = [[MPTouchMetric alloc] initWithDictionary:[metricJson tt_JSONValue]];
@@ -48,7 +36,7 @@
   XCTAssertEqualObjects([metric.extract.locator serializeShort], @"classname=UILabel[1]", @"Incorrect metric extract locator.");
 }
 
-- (void)testConditionMetric
+-(void) testConditionMetric
 {
   NSString *metricJson = @"{\"name\":\"CondMetric\",\"index\":1,\"type\":\"TouchMetric\",\"label\":\"cmet.CondMetric\",\"dataType\":\"Currency\",\"condition\":{\"accessor\":\"output-elementPropertyValue\",\"locator\":\"text=Touch Metric Button[1]\",\"value\":\"1\",\"propertyName\":\"enabled\"},\"extract\":{\"accessor\":\"output-elementText\",\"locator\":\"classname=UILabel[1]\"}}";
   MPTouchMetric *metric = [[MPTouchMetric alloc] initWithDictionary:[metricJson tt_JSONValue]];
@@ -68,7 +56,7 @@
   XCTAssertEqualObjects([metric.extract.locator serializeShort], @"classname=UILabel[1]", @"Incorrect metric extract locator.");
 }
 
-- (void)testNumberValueParsing
+-(void) testNumberValueParsing
 {
   NSNumber *valueNumber = [@"$10.92" mp_numberValue:@"Currency"];
   XCTAssertEqual(1092, valueNumber.floatValue);

@@ -11,118 +11,89 @@
 #import "MPulse.h"
 #import "MPSession.h"
 #import "MPConfig.h"
-#import "MPBatchRecord.h"
-#import "MPTimerData.h"
 #import "MPBeaconCollector.h"
 #import "MPInterceptURLConnectionDelegate.h"
+#import "MPInterceptURLSessionDelegate.h"
 #import "MPHttpRequestDelegateHelper.h"
 #import "AFJSONRequestOperation.h"
 #import "AFImageRequestOperation.h"
 #import "AFXMLRequestOperation.h"
 #import "AFPropertyListRequestOperation.h"
 #import "SDWebImageDownloader.h"
+#import "MPBeaconTestBase.h"
 
-
-@interface MPPodFrameworksNetworkingTests : XCTestCase
+@interface MPPodFrameworksNetworkingTests : MPBeaconTestBase
 {
   MPHttpRequestDelegateHelper *requestHelper;
 }
+
 @end
 
 @implementation MPPodFrameworksNetworkingTests
 
-NSString * const SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=3000";
-NSString * const BATCH_URL = @"http://67.111.67.24/";
-NSString* IMAGE_DOWNLOAD_URL = @"http://indianapublicmedia.org/support/files/2011/09/04_03_1-Stock-Market-Prices_web.jpg";
-NSString* IMAGE_DOWNLOAD_BATCH_URL = @"http://indianapublicmedia.org/";
+//
+// Constants
+//
+
+//
+// URLs
+//
+// A good URL
+NSString *const SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=3000";
+
+// An Image download URL
+NSString *IMAGE_DOWNLOAD_URL = @"http://indianapublicmedia.org/support/files/2011/09/04_03_1-Stock-Market-Prices_web.jpg";
+
+//
+// Timeouts
+//
 
 // Wait for beacon to be added after connection - ensures MPBeaconCollector has records.
-int const BEACON_ADD_WAIT = 5;
-// Timeout is 30 seconds because we are running in simulator
-// iOS devices have 4 minute timeout - set this to 300 seconds.
-int const SOCKET_TIMEOUT_ASYNC_WAIT = 30;
-// Connection time out : 30 seconds
-int const CONNECTION_TIMEOUT_ASYNC_WAIT = 30;
-// Loop time out for connections that delegate
-int const LOOP_TIMEOUT = 300;
+static int const BEACON_ADD_WAIT = 5;
 
-short const HTTPERRORPAGENOTFOUND = 404;
-short const NSURLSUCCESS = 0;
+// NSURL Success Code
+static short const NSURLSUCCESS = 0;
 
+#pragma mark -
+#pragma mark Response XCTests
 
-- (void)setUp
+-(void) setUp
 {
   [super setUp];
   
-  // Disable Config refresh
-  [[MPConfig sharedInstance] setRefreshDisabled:YES];
-  
-  [MPulse initializeWithAPIKey:@"K9MSB-TL87R-NA6PR-XZPBL-5SLU5"];
-  
-  NSString *responseSample = @"{\"h.key\": \"K9MSB-TL87R-NA6PR-XZPBL-5SLU5\",\"h.d\": \"com.soasta.ios.SampleMPulseApp\",\"h.t\": 1428602384684,\"h.cr\": \"23a0384939e93bbc22af11b74654a82f180f5910\",  \"session_id\": \"5e29a2e6-4017-4fc8-97bc-f5e2a475d6fa\", \"site_domain\": \"com.soasta.ios.SampleMPulseApp\",\"beacon_url\": \"//rum-dev-collector.soasta.com/beacon/\",\"beacon_interval\": 5,\"BW\": {\"enabled\": false},\"RT\": {\"session_exp\": 1800},\"ResourceTiming\": {  \"enabled\": false},\"Angular\": {  \"enabled\": false},\"PageParams\": {\"pageGroups\": [], \"customMetrics\": [{\"name\":\"Metric1\",\"index\":0,\"type\":\"Programmatic\",\"label\":\"cmet.Metric1\",\"dataType\":\"Number\"}],  \"customTimers\": [{\"name\":\"Touch Timer\",\"index\":0,\"type\":\"Programmatic\",\"label\":\"custom0\"},{\"name\":\"Code Timer\",\"index\":1,\"type\":\"Programmatic\",\"label\":\"custom1\"}],  \"customDimensions\": [],\"urlPatterns\": [],\"params\": true},\"user_ip\": \"67.111.67.3\"}";
-  
-  // Initialize config object with sample string
-  [[MPConfig sharedInstance] initWithResponse:responseSample];
-  
-  // Initialize session object
-  [MPSession sharedInstance];
-  
-  // Disable batch record sending as the server is not receiving any beacons
-  [MPBeaconCollector sharedInstance].disableBatchSending = YES;
+  // Intialization of BoomerangURLSessionDelegate
+  [MPInterceptURLSessionDelegate sharedInstance];
   
   // Intialization of BoomerangURLConnectionDelegate
   [MPInterceptURLConnectionDelegate sharedInstance];
   
-  //sleep - waiting for session start beacon to be added
-  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
-  
-  //clearing beacons before adding
-  [[MPBeaconCollector sharedInstance] clearBatch];
-  
-  //initialize MPHttpRequestDelegateHelper for delegation
+  // Initialize MPHttpRequestDelegateHelper for delegation
   requestHelper = [[MPHttpRequestDelegateHelper alloc] init];
 }
-
-- (void)tearDown
-{
-  // Make sure we clean up after ourselves
-  [[MPBeaconCollector sharedInstance] clearBatch];
-
-  [super tearDown];
-}
-
-#pragma mark -
-#pragma mark Response XCTests
 
 /*
  * Checks if the records collected by MPBeaconCollector.have the desired number of beacons, network request duration,
  * url and network error code
  * called after each NSURLConnection methods
  */
-- (void) responseBeaconTest: (NSString*)urlString minDuration:(long)minDuration beaconCount:(int)beaconCount
-                 crashCount:(int)crashCount networkErrorCode:(short)networkErrorCode
+-(void) responseBeaconTest:(NSString *)urlString
+               minDuration:(long)minDuration
+          networkErrorCode:(short)networkErrorCode
 {
   // Sleep - wait for beacon to be added
   [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
   
-  NSMutableDictionary *testRecords = [[MPBeaconCollector sharedInstance] records];
-  XCTAssertEqual([testRecords count], 1, "Dictionary size incorrect");
+  NSArray *beacons = [[MPBeaconCollector sharedInstance] getBeacons];
+  XCTAssertEqual([beacons count], 1, "Dictionary size incorrect");
   
-  id key = [[testRecords allKeys] objectAtIndex:0];
-  MPBatchRecord *record = [testRecords objectForKey:key];
-  MPTimerData* networkRequestTimer = [record networkRequestTimer];
+  MPApiNetworkRequestBeacon *beacon = (MPApiNetworkRequestBeacon *)[beacons objectAtIndex:0];
   
-  MPLogDebug(@"Timer Duration : %ld Beacon Count : %d  Crash Count : %d ", [networkRequestTimer sum] , [record totalBeacons] , [record totalCrashes]);
-  MPLogDebug(@"URL : %@ Network Error Code: %hd ", [record url] , [record networkErrorCode]);
-  
-  XCTAssertTrue([networkRequestTimer sum] >= minDuration, "network request duration error");
-  XCTAssertEqual([record totalBeacons], beaconCount, @"Wrong beacon count.");
-  XCTAssertEqual([record totalCrashes ], crashCount, @"Wrong crash count.");
-  XCTAssertEqualObjects([record url], urlString, @" Wrong URL string.");
-  XCTAssertTrue([record networkErrorCode] == networkErrorCode, "Wrong network error code");
+  XCTAssertTrue([beacon duration] >= minDuration, "network request duration error");
+  XCTAssertEqualObjects([beacon url], urlString, @" Wrong URL string.");
+  XCTAssertTrue([beacon networkErrorCode] == networkErrorCode, "Wrong network error code");
 }
 
-- (void)testAFJSONRequestOperationInterception
+-(void) testAFJSONRequestOperationInterception
 {
   // This URL does not return JSON data, but it doesn't matter.
   // We are simply testing our ability to intercept requests performed using AFJSONRequestOperation class.
@@ -143,10 +114,10 @@ short const NSURLSUCCESS = 0;
   [operation waitUntilFinished];
 
   // Test for success
-  [self responseBeaconTest:BATCH_URL minDuration:3000 beaconCount:1 crashCount:0 networkErrorCode:NSURLSUCCESS];
+  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
 }
 
-- (void)testAFImageRequestOperation
+-(void) testAFImageRequestOperation
 {
   // This URL does not return an Image, but it doesn't matter.
   // We are simply testing our ability to intercept requests performed using AFImageRequestOperation class.
@@ -163,10 +134,10 @@ short const NSURLSUCCESS = 0;
   [operation waitUntilFinished];
 
   // Test for success
-  [self responseBeaconTest:BATCH_URL minDuration:3000 beaconCount:1 crashCount:0 networkErrorCode:NSURLSUCCESS];
+  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
 }
 
-- (void)testAFPropertyListRequestOperation
+-(void) testAFPropertyListRequestOperation
 {
   // This URL does not return a Property List, but it doesn't matter.
   // We are simply testing our ability to intercept requests performed using AFImageRequestOperation class.
@@ -187,10 +158,10 @@ short const NSURLSUCCESS = 0;
   [operation waitUntilFinished];
 
   // Test for success
-  [self responseBeaconTest:BATCH_URL minDuration:3000 beaconCount:1 crashCount:0 networkErrorCode:NSURLSUCCESS];
+  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
 }
 
-- (void)testAFXMLRequestOperation
+-(void) testAFXMLRequestOperation
 {
   // This URL does not return XML data, but it doesn't matter.
   // We are simply testing our ability to intercept requests performed using AFXMLRequestOperation class.
@@ -211,18 +182,22 @@ short const NSURLSUCCESS = 0;
   [operation waitUntilFinished];
 
   // Test for success
-  [self responseBeaconTest:BATCH_URL minDuration:3000 beaconCount:1 crashCount:0 networkErrorCode:NSURLSUCCESS];
+  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
 }
 
 // Downloads a sample image using SDWebImageDownloader and verifies that we add a beacon for the request.
-- (void)testSDWebImageDownloaderInterception
+-(void) testSDWebImageDownloaderInterception
 {
   __block BOOL downloadComplete = NO;
   [SDWebImageDownloader.sharedDownloader downloadImageWithURL:[NSURL URLWithString:IMAGE_DOWNLOAD_URL]
                                                       options:0
                                                      progress:nil
-                                                    completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+                                                    completed:^(UIImage *image,
+                                                                NSData * data,
+                                                                NSError * error,
+                                                                BOOL finished)
    {
+     // only the image is not null and we're finished
      if (image && finished)
      {
        // Image download complete
@@ -231,11 +206,13 @@ short const NSURLSUCCESS = 0;
    }];
   
   int secondsSlept = 0;
+
   while (!downloadComplete)
   {
+    // Timeout if we've waited for 30 seconds.
     if (secondsSlept >= 30)
     {
-      break; // Timeout if we've waited for 30 seconds.
+      break;
     }
     
     sleep(2); // Sleep until download is complete
@@ -243,7 +220,9 @@ short const NSURLSUCCESS = 0;
   }
   
   // Test for success
-  [self responseBeaconTest:IMAGE_DOWNLOAD_BATCH_URL minDuration:0 beaconCount:1 crashCount:0 networkErrorCode:NSURLSUCCESS];
+  [self responseBeaconTest:IMAGE_DOWNLOAD_URL
+               minDuration:0
+          networkErrorCode:NSURLSUCCESS];
 }
 
 @end

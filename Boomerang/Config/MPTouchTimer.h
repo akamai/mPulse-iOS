@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TTLocator.h"
 #import "TTLocatorCollection.h"
-#import "MPTimerBeacon.h"
+#import "MPApiCustomTimerBeacon.h"
 #import "MPTouchAction.h"
 #import "MPTouchCondition.h"
 
@@ -24,7 +24,7 @@
 @property (readonly) MPTouchAction *endAction;
 @property (readonly) MPTouchCondition *endCondition;
 @property (readonly) NSString *pageGroup;
-@property (readwrite) MPTimerBeacon *beacon;
+@property (readwrite) MPApiCustomTimerBeacon *beacon;
 
 -(id) initWithDictionary:(NSMutableDictionary *)dict;
 -(BOOL) isEqualToTimer:(MPTouchTimer *)object;

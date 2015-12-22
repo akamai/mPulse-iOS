@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MPNetworkCallBeacon.h"
+#import "MPApiNetworkRequestBeacon.h"
 
 @interface MPInterceptURLSessionDelegate : NSObject
 {
@@ -25,6 +25,6 @@
  * @param beacon Beacon to add
  * @param task NSURLSession task
  */
--(void)addBeacon:(MPNetworkCallBeacon *)beacon forTask:(NSURLSessionTask *)task;
+-(void)addBeacon:(MPApiNetworkRequestBeacon *)beacon forTask:(NSURLSessionTask *)task;
 
 @end

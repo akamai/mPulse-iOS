@@ -88,15 +88,15 @@ static MPInterceptURLConnectionDelegate *interceptURLConnectionDelegateInstance 
 }
 
 // The key is the address of the NSURLConnection
--(void)addBeacon:(MPNetworkCallBeacon *)value forKey:(NSString *)key
+-(void)addBeacon:(MPApiNetworkRequestBeacon *)value forKey:(NSString *)key
 {
   MPLogDebug(@"Adding beacon for key: %@", key);
   [m_beacons setObject:value forKey:key];
 }
 
--(MPNetworkCallBeacon *)getBeaconForKey:(NSString *)key
+-(MPApiNetworkRequestBeacon *)getBeaconForKey:(NSString *)key
 {
-  return (MPNetworkCallBeacon *)[m_beacons objectForKey:key];
+  return (MPApiNetworkRequestBeacon *)[m_beacons objectForKey:key];
 }
 
 // Process the Delegates that do not conform with NSURLConnectionDelegate Protocol
@@ -166,13 +166,13 @@ void boomerangConnection_didFailWithError(id self, SEL _cmd, NSURLConnection *co
 {
   @try
   {
-    MPNetworkCallBeacon *beacon = [[MPInterceptURLConnectionDelegate sharedInstance] getBeaconForKey:[NSString stringWithFormat:@"%p", connection]];
+    MPApiNetworkRequestBeacon *beacon = [[MPInterceptURLConnectionDelegate sharedInstance] getBeaconForKey:[NSString stringWithFormat:@"%p", connection]];
     // The request failed.
     if (beacon != nil)
     {
         // Send a failure beacon with the error code.
         MPLogDebug(@"boomerangConnection_didFailWithError NetworkErrorCode is %ld",(long)[error code]);
-        [beacon setNetworkError:[error code]:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
+        [beacon setNetworkError:[error code] errorMessage:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
     }
   }
   @catch (NSException *exception)
@@ -195,7 +195,7 @@ void boomerangConnection_didReceiveResponse(id self, SEL _cmd, NSURLConnection *
       if (([httpResponse statusCode] < 400))
       {
         //SUCCESS!
-        MPNetworkCallBeacon *beacon = [[MPInterceptURLConnectionDelegate sharedInstance] getBeaconForKey:[NSString stringWithFormat:@"%p", connection]];
+        MPApiNetworkRequestBeacon *beacon = [[MPInterceptURLConnectionDelegate sharedInstance] getBeaconForKey:[NSString stringWithFormat:@"%p", connection]];
         if (beacon != nil)
         {
           // This sends the beacon
@@ -206,10 +206,10 @@ void boomerangConnection_didReceiveResponse(id self, SEL _cmd, NSURLConnection *
       {
         MPLogDebug(@"HTTP Error : %li", (long)[httpResponse statusCode]);
         // Look for this connection in our timers
-        MPNetworkCallBeacon *beacon = [[MPInterceptURLConnectionDelegate sharedInstance] getBeaconForKey:[NSString stringWithFormat:@"%p", connection]];
+        MPApiNetworkRequestBeacon *beacon = [[MPInterceptURLConnectionDelegate sharedInstance] getBeaconForKey:[NSString stringWithFormat:@"%p", connection]];
         if (beacon != nil)
         {
-          [beacon setNetworkError:[httpResponse statusCode]:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
+          [beacon setNetworkError:[httpResponse statusCode] errorMessage:[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]];
         }
       }
     }
