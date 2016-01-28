@@ -1,0 +1,4 @@
+**/xcuserdata/*
+**/Pods/*
+*.DS_Store
+**/project.xcworkspace
