@@ -1,6 +1,6 @@
 //
 //  MPAppCrashBeacon.m
-//  Boomerang_NoTTD
+//  Boomerang
 //
 //  Copyright © 2015 SOASTA. All rights reserved.
 //

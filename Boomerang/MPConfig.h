@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MPTouchConfig.h"
+#import "MPConfigPageParams.h"
 
 /*
  * Singleton class to represent the mPulse configuration file and data available in the file.
@@ -38,7 +38,7 @@ extern NSString* const SESSION_ID_KEY;
 @property (readwrite) BOOL refreshDisabled;
 @property (readonly) BOOL stripQueryStrings;
 
-@property (readonly) MPTouchConfig* touchConfig;
+@property (readonly) MPConfigPageParams* pageParamsConfig;
 
 -(BOOL) beaconsEnabled;
 

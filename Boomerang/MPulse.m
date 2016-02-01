@@ -15,9 +15,6 @@
 #import "MPUtilities.h"
 #import "MPUIApplicationDelegateHelper.h"
 
-//Disabled as part of TTD Removal
-//#import "TTUIApplicationDelegateHelper.h"
-
 #import "NSURLConnection+MPIntercept.h"
 #import "NSURLSession+MPIntercept.h"
 #import "MPInterceptURLConnectionDelegate.h"
@@ -29,6 +26,10 @@
 #import "MPSession.h"
 #import "MPGeoLocation.h"
 #import "MPApiCustomTimerBeacon.h"
+#import "MPConfigDimension.h"
+#import "MPLog.h"
+#import "MPASLLogger.h"
+#import "MPTTYLogger.h"
 
 @implementation MPulse
 {
@@ -147,29 +148,6 @@ static MPulse *mPulseInstance = nil;
     [[NSNotificationCenter defaultCenter] addObserver:[self class] selector:@selector(notifyApplicationDidLoseFocus:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:[self class] selector:@selector(notifyApplicationDidLoseFocus:) name:UIApplicationWillTerminateNotification object:nil];
-
-/*
- * Disabled as part of TTD Removal - Since there would be no TouchLocator mode, we don't need to swizzle the UIApplicationDelegate either.
- 
-    // We need to swizzle the UIApplicationDelegate protocol
-    // We first list add Class from the runtime and then check it if is conform to UIApplicationDelegate
-    // If it is conform we add our methods and swizzle the UIApplicationDelegate methods
-    
-    int numClasses = objc_getClassList(NULL, 0);
-    Class classes[numClasses];
-    objc_getClassList(classes, numClasses);
-    for (int i=0; i<numClasses; i++)
-    {
-      Class klass = classes[i];
-      if([MPUtilities class:klass isConformsToProtocol:@protocol(UIApplicationDelegate)])
-      {
-        NSString* classname = @(object_getClassName(klass));
-        MPLogDebug(@"Found %@ <UIApplicationDelegate>", classname);
-        [TTUIApplicationDelegateHelper processApplicationDelegate:klass];
-      }
-    }
-*/
-    
   });
 }
 
@@ -420,7 +398,7 @@ static MPulse *mPulseInstance = nil;
       return; // mPulse Instance is not ready for work.
     }
     
-    MPTouchDimension *dimension = [self getDimensionFromConfig:dimensionName];
+    MPConfigDimension *dimension = [self getDimensionFromConfig:dimensionName];
     if (dimension != nil)
     {
       [_customDimensions replaceObjectAtIndex:dimension.index withObject:value];
@@ -441,7 +419,7 @@ static MPulse *mPulseInstance = nil;
       return; // mPulse Instance is not ready for work.
     }
     
-    MPTouchDimension *dimension = [self getDimensionFromConfig:dimensionName];
+    MPConfigDimension *dimension = [self getDimensionFromConfig:dimensionName];
     if (dimension != nil)
     {
       [_customDimensions replaceObjectAtIndex:dimension.index withObject:@""];
@@ -453,11 +431,11 @@ static MPulse *mPulseInstance = nil;
   }
 }
 
--(MPTouchDimension*) getDimensionFromConfig:(NSString *)dimensionName
+-(MPConfigDimension*) getDimensionFromConfig:(NSString *)dimensionName
 {
   MPConfig* config = [MPConfig sharedInstance];
   
-  for (MPTouchDimension *dimension in [[config touchConfig] dimensions])
+  for (MPConfigDimension *dimension in [[config pageParamsConfig] dimensions])
   {
     if ([dimensionName isEqualToString:dimension.name] && dimension.index < 10)
     {

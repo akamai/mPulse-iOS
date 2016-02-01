@@ -1,6 +1,6 @@
 //
 //  MPInterceptUtils.h
-//  Boomerang_NoTTD
+//  Boomerang
 //
 //  Created by Nicholas Jansma on 8/21/15.
 //  Copyright (c) 2015 SOASTA. All rights reserved.

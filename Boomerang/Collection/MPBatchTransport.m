@@ -10,7 +10,7 @@
 #import "MPBatch.h"
 #import "MPConfig.h"
 #import "MPURLConnection.h"
-#import "NSData+TTGzip.h"
+#import "NSData+Gzip.h"
 
 #define kMaxHttpRetries 5
 #define kHttpTimeout 10

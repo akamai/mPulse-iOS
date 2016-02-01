@@ -13,6 +13,7 @@
 #import "MPSession.h"
 #import "NSObject+TT_SBJSON.h"
 #import "JSON.h"
+#import "MPLog.h"
 
 @implementation MPConfig
 {
@@ -217,8 +218,8 @@ NSString* const SESSION_ID_KEY = @"SESSION_ID";
   }
 
   // We will initialize a temporary object first to make sure nobody tries to obtain it before its completely initialized.
-  MPTouchConfig *tempConfigObject = [[MPTouchConfig alloc] initWithJson:[response objectForKey:@"PageParams"]];
-  _touchConfig = tempConfigObject;
+  MPConfigPageParams *tempConfigObject = [[MPConfigPageParams alloc] initWithJson:[response objectForKey:@"PageParams"]];
+  _pageParamsConfig = tempConfigObject;
   
   _urlPatterns = [response objectForKey:@"urlPatterns"];
   
