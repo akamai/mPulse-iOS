@@ -443,6 +443,118 @@
 		93F34BAD1C5FBAA500AAF4C3 /* MPConfigTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F34B2A1C5FAE7200AAF4C3 /* MPConfigTimer.h */; };
 		93F34BAE1C5FBAA500AAF4C3 /* NSData+Gzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F34B381C5FB3AC00AAF4C3 /* NSData+Gzip.h */; };
 		93F34BAF1C5FBAA500AAF4C3 /* NSString+MPExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F34B401C5FB60D00AAF4C3 /* NSString+MPExtensions.h */; };
+		93F34C3F1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C2E1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m */; };
+		93F34C401C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C2F1C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m */; };
+		93F34C411C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C301C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m */; };
+		93F34C421C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C311C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m */; };
+		93F34C431C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C321C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m */; };
+		93F34C441C63CDC500AAF4C3 /* MPBatchTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C331C63CDC500AAF4C3 /* MPBatchTests.mm */; };
+		93F34C451C63CDC500AAF4C3 /* MPBeaconTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */; };
+		93F34C461C63CDC500AAF4C3 /* MPBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */; };
+		93F34C471C63CDC500AAF4C3 /* MPConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */; };
+		93F34C481C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */; };
+		93F34C491C63CDC500AAF4C3 /* MPHttpRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTests.m */; };
+		93F34C4B1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */; };
+		93F34C4C1C63CDC500AAF4C3 /* MPConfigMetricTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */; };
+		93F34C4D1C63CDC500AAF4C3 /* MPConfigTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */; };
+		93F34C691C63D2AE00AAF4C3 /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPApiCustomMetricBeacon.mm */; };
+		93F34C6A1C63D2AE00AAF4C3 /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93F34C6B1C63D2AE00AAF4C3 /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.mm */; };
+		93F34C6C1C63D2AE00AAF4C3 /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */; };
+		93F34C6D1C63D2AE00AAF4C3 /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */; };
+		93F34C6E1C63D2AE00AAF4C3 /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppLaunchBeacon.mm */; };
+		93F34C6F1C63D2AE00AAF4C3 /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.mm */; };
+		93F34C701C63D2AE00AAF4C3 /* MPNetworkErrorBeaconGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23480D198957910037EFEC /* MPNetworkErrorBeaconGenerator.m */; };
+		93F34C711C63D2AE00AAF4C3 /* MPBatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = F767435C1909D5FB00228AB7 /* MPBatch.mm */; };
+		93F34C721C63D2AE00AAF4C3 /* MPBatchTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = F78AF64419105FF400915617 /* MPBatchTransport.m */; };
+		93F34C731C63D2AE00AAF4C3 /* MPBeaconCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 272075D718F59B8B008DB644 /* MPBeaconCollector.m */; };
+		93F34C741C63D2AE00AAF4C3 /* MPConfigDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B251C5FAE7200AAF4C3 /* MPConfigDimension.m */; };
+		93F34C751C63D2AE00AAF4C3 /* MPConfigMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B271C5FAE7200AAF4C3 /* MPConfigMetric.m */; };
+		93F34C761C63D2AE00AAF4C3 /* MPConfigPageGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B291C5FAE7200AAF4C3 /* MPConfigPageGroup.m */; };
+		93F34C771C63D2AE00AAF4C3 /* MPConfigPageParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B071C5AD4AA00AAF4C3 /* MPConfigPageParams.m */; };
+		93F34C781C63D2AE00AAF4C3 /* MPConfigTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B2B1C5FAE7200AAF4C3 /* MPConfigTimer.m */; };
+		93F34C791C63D2AE00AAF4C3 /* MPDemographics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B18993019102268009794C1 /* MPDemographics.m */; };
+		93F34C7A1C63D2AE00AAF4C3 /* MPGeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B18993219102268009794C1 /* MPGeoLocation.m */; };
+		93F34C7B1C63D2AE00AAF4C3 /* MPReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B18993419102268009794C1 /* MPReachability.m */; };
+		93F34C7C1C63D2AE00AAF4C3 /* NSData+Gzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B391C5FB3AC00AAF4C3 /* NSData+Gzip.m */; };
+		93F34C7D1C63D2AE00AAF4C3 /* NSString+MPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34B411C5FB60D00AAF4C3 /* NSString+MPExtensions.m */; };
+		93F34C7E1C63D2AE00AAF4C3 /* MPInterceptURLConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1E11925825A0074F273 /* MPInterceptURLConnectionDelegate.m */; };
+		93F34C7F1C63D2AE00AAF4C3 /* MPInterceptURLSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A4D1B879488003A430F /* MPInterceptURLSessionDelegate.m */; };
+		93F34C801C63D2AE00AAF4C3 /* MPInterceptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A591B87A256003A430F /* MPInterceptUtils.m */; };
+		93F34C811C63D2AE00AAF4C3 /* NSURLConnection+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1E31925825A0074F273 /* NSURLConnection+MPIntercept.m */; };
+		93F34C821C63D2AE00AAF4C3 /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */; };
+		93F34C831C63D2AE00AAF4C3 /* NSObject+TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE118192581800074F273 /* NSObject+TT_SBJSON.m */; };
+		93F34C841C63D2AE00AAF4C3 /* NSString+TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE11A192581800074F273 /* NSString+TT_SBJSON.m */; };
+		93F34C851C63D2AE00AAF4C3 /* TT_SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE11C192581800074F273 /* TT_SBJSON.m */; };
+		93F34C861C63D2AE00AAF4C3 /* TT_SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE11E192581800074F273 /* TT_SBJsonBase.m */; };
+		93F34C871C63D2AE00AAF4C3 /* TT_SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE120192581800074F273 /* TT_SBJsonParser.m */; };
+		93F34C881C63D2AE00AAF4C3 /* TT_SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE122192581800074F273 /* TT_SBJsonWriter.m */; };
+		93F34C891C63D2AE00AAF4C3 /* MPASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34AF61C5ACEF300AAF4C3 /* MPASLLogger.m */; };
+		93F34C8A1C63D2AE00AAF4C3 /* MPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34AF81C5ACEF300AAF4C3 /* MPLog.m */; };
+		93F34C8B1C63D2AE00AAF4C3 /* MPTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34AFA1C5ACEF300AAF4C3 /* MPTTYLogger.m */; };
+		93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87FC551909DA81009CA061 /* MPConfig.m */; };
+		93F34C8D1C63D2AE00AAF4C3 /* MPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87FC571909DA81009CA061 /* MPSession.m */; };
+		93F34C8E1C63D2AE00AAF4C3 /* MPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF429121649A31D0058AC81 /* MPulse.m */; };
+		93F34C8F1C63D2AE00AAF4C3 /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
+		93F34C901C63D2AE00AAF4C3 /* MPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF428FF164470E00058AC81 /* MPURLConnection.m */; };
+		93F34C911C63D2AE00AAF4C3 /* MPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAC18D10BB500FB62AA /* MPUtilities.m */; };
+		93F34C921C63D33800AAF4C3 /* libMPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428C81642E1CD0058AC81 /* libMPulse.a */; };
+		93F34C931C63D34500AAF4C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
+		93F34C941C63D34900AAF4C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428CB1642E1CD0058AC81 /* Foundation.framework */; };
+		93F34C951C63D36D00AAF4C3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F51925D8E1009BE429 /* OpenGLES.framework */; };
+		93F34C961C63D37000AAF4C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F91925D906009BE429 /* QuartzCore.framework */; };
+		93F34C971C63D3B500AAF4C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD27BA81905A0FE00881F84 /* SystemConfiguration.framework */; };
+		93F34C991C63D3F700AAF4C3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F71925D8E8009BE429 /* MapKit.framework */; };
+		93F34C9A1C63D3FA00AAF4C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B63D66A1912EBA700F4D865 /* CoreGraphics.framework */; };
+		93F34C9B1C63D3FE00AAF4C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8019371651537C0037FF54 /* CoreLocation.framework */; };
+		93F34C9C1C63D40100AAF4C3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C80192F164C7B8D0037FF54 /* CoreTelephony.framework */; };
+		93F34C9E1C63D43600AAF4C3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F34C9D1C63D43600AAF4C3 /* libz.tbd */; };
+		93F34CDB1C63D4A700AAF4C3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F34C9D1C63D43600AAF4C3 /* libz.tbd */; };
+		93F34CDC1C63D4A700AAF4C3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C80192F164C7B8D0037FF54 /* CoreTelephony.framework */; };
+		93F34CDD1C63D4A700AAF4C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8019371651537C0037FF54 /* CoreLocation.framework */; };
+		93F34CDE1C63D4A700AAF4C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B63D66A1912EBA700F4D865 /* CoreGraphics.framework */; };
+		93F34CDF1C63D4A700AAF4C3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F71925D8E8009BE429 /* MapKit.framework */; };
+		93F34CE01C63D4A700AAF4C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD27BA81905A0FE00881F84 /* SystemConfiguration.framework */; };
+		93F34CE11C63D4A700AAF4C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F91925D906009BE429 /* QuartzCore.framework */; };
+		93F34CE21C63D4A700AAF4C3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F51925D8E1009BE429 /* OpenGLES.framework */; };
+		93F34CE31C63D4A700AAF4C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428CB1642E1CD0058AC81 /* Foundation.framework */; };
+		93F34CE41C63D4A700AAF4C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C801928164C36BF0037FF54 /* UIKit.framework */; };
+		93F34CE51C63D4A700AAF4C3 /* libMPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428C81642E1CD0058AC81 /* libMPulse.a */; };
+		93F34CED1C63D4CA00AAF4C3 /* MPPodFrameworksNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3B1C63CDC500AAF4C3 /* MPPodFrameworksNetworkingTests.m */; };
+		93F34CF41C63D68F00AAF4C3 /* MPBeaconTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */; };
+		93F34CF51C63D69700AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */; };
+		93F34CF61C63D74D00AAF4C3 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
+		93F34CF71C63D74D00AAF4C3 /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
+		93F34CF81C63D74D00AAF4C3 /* descriptor_database.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E4190F629C00915617 /* descriptor_database.cc */; };
+		93F34CF91C63D74D00AAF4C3 /* dynamic_message.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E8190F629C00915617 /* dynamic_message.cc */; };
+		93F34CFA1C63D74D00AAF4C3 /* extension_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2EB190F629C00915617 /* extension_set.cc */; };
+		93F34CFB1C63D74D00AAF4C3 /* extension_set_heavy.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2ED190F629C00915617 /* extension_set_heavy.cc */; };
+		93F34CFC1C63D74D00AAF4C3 /* generated_message_reflection.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F0190F629C00915617 /* generated_message_reflection.cc */; };
+		93F34CFD1C63D74D00AAF4C3 /* generated_message_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F3190F629C00915617 /* generated_message_util.cc */; };
+		93F34CFE1C63D74D00AAF4C3 /* coded_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F6190F629C00915617 /* coded_stream.cc */; };
+		93F34CFF1C63D74D00AAF4C3 /* gzip_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2FA190F629C00915617 /* gzip_stream.cc */; };
+		93F34D001C63D74D00AAF4C3 /* printer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2FE190F629C00915617 /* printer.cc */; };
+		93F34D011C63D74D00AAF4C3 /* tokenizer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF301190F629C00915617 /* tokenizer.cc */; };
+		93F34D021C63D74D00AAF4C3 /* zero_copy_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF304190F629C00915617 /* zero_copy_stream.cc */; };
+		93F34D031C63D74D00AAF4C3 /* zero_copy_stream_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF306190F629C00915617 /* zero_copy_stream_impl.cc */; };
+		93F34D041C63D74D00AAF4C3 /* zero_copy_stream_impl_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF308190F629C00915617 /* zero_copy_stream_impl_lite.cc */; };
+		93F34D051C63D74D00AAF4C3 /* message.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF30C190F629C00915617 /* message.cc */; };
+		93F34D061C63D74D00AAF4C3 /* message_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF30E190F629C00915617 /* message_lite.cc */; };
+		93F34D071C63D74D00AAF4C3 /* reflection_ops.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF312190F629C00915617 /* reflection_ops.cc */; };
+		93F34D081C63D74D00AAF4C3 /* repeated_field.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF315190F629C00915617 /* repeated_field.cc */; };
+		93F34D091C63D74D00AAF4C3 /* service.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF319190F629C00915617 /* service.cc */; };
+		93F34D0A1C63D74D00AAF4C3 /* atomicops_internals_x86_gcc.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF323190F629C00915617 /* atomicops_internals_x86_gcc.cc */; };
+		93F34D0B1C63D74D00AAF4C3 /* atomicops_internals_x86_msvc.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF325190F629C00915617 /* atomicops_internals_x86_msvc.cc */; };
+		93F34D0C1C63D74D00AAF4C3 /* common.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF327190F629C00915617 /* common.cc */; };
+		93F34D0D1C63D74D00AAF4C3 /* once.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF32C190F629C00915617 /* once.cc */; };
+		93F34D0E1C63D74D00AAF4C3 /* stringprintf.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF331190F629C00915617 /* stringprintf.cc */; };
+		93F34D0F1C63D74D00AAF4C3 /* structurally_valid.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF334190F629C00915617 /* structurally_valid.cc */; };
+		93F34D101C63D74D00AAF4C3 /* strutil.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF336190F629C00915617 /* strutil.cc */; };
+		93F34D111C63D74D00AAF4C3 /* substitute.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF339190F629C00915617 /* substitute.cc */; };
+		93F34D121C63D74D00AAF4C3 /* text_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF34F190F629C00915617 /* text_format.cc */; };
+		93F34D131C63D74D00AAF4C3 /* unknown_field_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF360190F629C00915617 /* unknown_field_set.cc */; };
+		93F34D141C63D74D00AAF4C3 /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF363190F629C00915617 /* wire_format.cc */; };
+		93F34D151C63D74D00AAF4C3 /* wire_format_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF365190F629C00915617 /* wire_format_lite.cc */; };
 		F76730B2190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		F76730B3190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		F76730B5190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
@@ -750,6 +862,20 @@
 			remoteGlobalIDString = 5BC5E05418D0FD820095F33A;
 			remoteInfo = "Boomerang-sim-dylib";
 		};
+		93F34C661C63D10E00AAF4C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CF428BF1642E1CD0058AC81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CF428C71642E1CD0058AC81;
+			remoteInfo = "Boomerang-iphone";
+		};
+		93F34CA11C63D4A700AAF4C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CF428BF1642E1CD0058AC81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CF428C71642E1CD0058AC81;
+			remoteInfo = "Boomerang-iphone";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -863,6 +989,31 @@
 		93F34B391C5FB3AC00AAF4C3 /* NSData+Gzip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Gzip.m"; path = "Extensions/NSData+Gzip.m"; sourceTree = "<group>"; };
 		93F34B401C5FB60D00AAF4C3 /* NSString+MPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MPExtensions.h"; path = "Extensions/NSString+MPExtensions.h"; sourceTree = "<group>"; };
 		93F34B411C5FB60D00AAF4C3 /* NSString+MPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MPExtensions.m"; path = "Extensions/NSString+MPExtensions.m"; sourceTree = "<group>"; };
+		93F34C261C63CD8900AAF4C3 /* BoomerangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomerangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F34C2A1C63CD8900AAF4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93F34C2E1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPApiCustomMetricBeaconTests.m; sourceTree = "<group>"; };
+		93F34C2F1C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPApiCustomTimerBeaconTests.m; sourceTree = "<group>"; };
+		93F34C301C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppCrashBeaconTests.m; sourceTree = "<group>"; };
+		93F34C311C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppInactiveBeaconTests.m; sourceTree = "<group>"; };
+		93F34C321C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppLaunchBeaconTests.m; sourceTree = "<group>"; };
+		93F34C331C63CDC500AAF4C3 /* MPBatchTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPBatchTests.mm; sourceTree = "<group>"; };
+		93F34C341C63CDC500AAF4C3 /* MPBeaconTestBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBeaconTestBase.h; sourceTree = "<group>"; };
+		93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconTestBase.m; sourceTree = "<group>"; };
+		93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconTests.m; sourceTree = "<group>"; };
+		93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigTests.m; sourceTree = "<group>"; };
+		93F34C381C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHttpRequestDelegateHelper.h; sourceTree = "<group>"; };
+		93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestDelegateHelper.m; sourceTree = "<group>"; };
+		93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestTests.m; sourceTree = "<group>"; };
+		93F34C3B1C63CDC500AAF4C3 /* MPPodFrameworksNetworkingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPodFrameworksNetworkingTests.m; path = ../BoomerangTests/MPPodFrameworksNetworkingTests.m; sourceTree = "<group>"; };
+		93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRemoveUnicodeCharsTest.m; sourceTree = "<group>"; };
+		93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigMetricTests.m; sourceTree = "<group>"; };
+		93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigTimerTests.m; sourceTree = "<group>"; };
+		93F34C561C63CDE500AAF4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93F34C9D1C63D43600AAF4C3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		93F34CEB1C63D4A700AAF4C3 /* BoomerangTestsWithPods.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomerangTestsWithPods.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F34CEE1C63D53400AAF4C3 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		93F34CF01C63D53600AAF4C3 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
+		93F34CF21C63D53A00AAF4C3 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
 		DDD801557B828A1872ECC26C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A774000E4C7617F29828EB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientBeaconBatch.pb.cc; sourceTree = "<group>"; };
@@ -1013,6 +1164,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93F34C231C63CD8900AAF4C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F34C9E1C63D43600AAF4C3 /* libz.tbd in Frameworks */,
+				93F34C9C1C63D40100AAF4C3 /* CoreTelephony.framework in Frameworks */,
+				93F34C9B1C63D3FE00AAF4C3 /* CoreLocation.framework in Frameworks */,
+				93F34C9A1C63D3FA00AAF4C3 /* CoreGraphics.framework in Frameworks */,
+				93F34C991C63D3F700AAF4C3 /* MapKit.framework in Frameworks */,
+				93F34C971C63D3B500AAF4C3 /* SystemConfiguration.framework in Frameworks */,
+				93F34C961C63D37000AAF4C3 /* QuartzCore.framework in Frameworks */,
+				93F34C951C63D36D00AAF4C3 /* OpenGLES.framework in Frameworks */,
+				93F34C941C63D34900AAF4C3 /* Foundation.framework in Frameworks */,
+				93F34C931C63D34500AAF4C3 /* UIKit.framework in Frameworks */,
+				93F34C921C63D33800AAF4C3 /* libMPulse.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F34CDA1C63D4A700AAF4C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F34CDB1C63D4A700AAF4C3 /* libz.tbd in Frameworks */,
+				93F34CDC1C63D4A700AAF4C3 /* CoreTelephony.framework in Frameworks */,
+				93F34CDD1C63D4A700AAF4C3 /* CoreLocation.framework in Frameworks */,
+				93F34CDE1C63D4A700AAF4C3 /* CoreGraphics.framework in Frameworks */,
+				93F34CDF1C63D4A700AAF4C3 /* MapKit.framework in Frameworks */,
+				93F34CE01C63D4A700AAF4C3 /* SystemConfiguration.framework in Frameworks */,
+				93F34CE11C63D4A700AAF4C3 /* QuartzCore.framework in Frameworks */,
+				93F34CE21C63D4A700AAF4C3 /* OpenGLES.framework in Frameworks */,
+				93F34CE31C63D4A700AAF4C3 /* Foundation.framework in Frameworks */,
+				93F34CE41C63D4A700AAF4C3 /* UIKit.framework in Frameworks */,
+				93F34CE51C63D4A700AAF4C3 /* libMPulse.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1067,6 +1254,8 @@
 			isa = PBXGroup;
 			children = (
 				2CF428CD1642E1CD0058AC81 /* Boomerang */,
+				93F34C271C63CD8900AAF4C3 /* BoomerangTests */,
+				93F34C531C63CDE500AAF4C3 /* BoomerangTestsWithPods */,
 				2CF428CA1642E1CD0058AC81 /* Frameworks */,
 				2CF428C91642E1CD0058AC81 /* Products */,
 				934E97D91BC70DB9008BBDE8 /* StyleSettings.plist */,
@@ -1081,6 +1270,8 @@
 				2C912A621663FF3900163C98 /* libMPulse.a */,
 				5BC5E05318D0FD790095F33A /* libMPulse.dylib */,
 				5BC5E07518D0FD820095F33A /* libMPulse.dylib */,
+				93F34C261C63CD8900AAF4C3 /* BoomerangTests.xctest */,
+				93F34CEB1C63D4A700AAF4C3 /* BoomerangTestsWithPods.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1088,6 +1279,10 @@
 		2CF428CA1642E1CD0058AC81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93F34CF21C63D53A00AAF4C3 /* libSDWebImage.a */,
+				93F34CF01C63D53600AAF4C3 /* libAFNetworking.a */,
+				93F34CEE1C63D53400AAF4C3 /* libPods.a */,
+				93F34C9D1C63D43600AAF4C3 /* libz.tbd */,
 				5B6D4B341A0307C9001BE659 /* libxml2.dylib */,
 				5B9CA7FF1925DA89009BE429 /* OpenGLES.framework */,
 				5B9CA7FD1925DA80009BE429 /* QuartzCore.framework */,
@@ -1256,6 +1451,39 @@
 				93F34B2B1C5FAE7200AAF4C3 /* MPConfigTimer.m */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		93F34C271C63CD8900AAF4C3 /* BoomerangTests */ = {
+			isa = PBXGroup;
+			children = (
+				93F34C2A1C63CD8900AAF4C3 /* Info.plist */,
+				93F34C2E1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m */,
+				93F34C2F1C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m */,
+				93F34C301C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m */,
+				93F34C311C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m */,
+				93F34C321C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m */,
+				93F34C331C63CDC500AAF4C3 /* MPBatchTests.mm */,
+				93F34C341C63CDC500AAF4C3 /* MPBeaconTestBase.h */,
+				93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */,
+				93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */,
+				93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */,
+				93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */,
+				93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */,
+				93F34C381C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.h */,
+				93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */,
+				93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTests.m */,
+				93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */,
+			);
+			path = BoomerangTests;
+			sourceTree = "<group>";
+		};
+		93F34C531C63CDE500AAF4C3 /* BoomerangTestsWithPods */ = {
+			isa = PBXGroup;
+			children = (
+				93F34C3B1C63CDC500AAF4C3 /* MPPodFrameworksNetworkingTests.m */,
+				93F34C561C63CDE500AAF4C3 /* Info.plist */,
+			);
+			path = BoomerangTestsWithPods;
 			sourceTree = "<group>";
 		};
 		F78AF281190F629C00915617 /* Protocol Buffers */ = {
@@ -1855,6 +2083,44 @@
 			productReference = 5BC5E07518D0FD820095F33A /* libMPulse.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
+		93F34C251C63CD8900AAF4C3 /* BoomerangTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F34C2B1C63CD8900AAF4C3 /* Build configuration list for PBXNativeTarget "BoomerangTests" */;
+			buildPhases = (
+				93F34C221C63CD8900AAF4C3 /* Sources */,
+				93F34C231C63CD8900AAF4C3 /* Frameworks */,
+				93F34C241C63CD8900AAF4C3 /* Resources */,
+				93F34C981C63D3D200AAF4C3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93F34C671C63D10E00AAF4C3 /* PBXTargetDependency */,
+			);
+			name = BoomerangTests;
+			productName = BoomerangTests;
+			productReference = 93F34C261C63CD8900AAF4C3 /* BoomerangTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		93F34C9F1C63D4A700AAF4C3 /* BoomerangTestsWithPods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F34CE81C63D4A700AAF4C3 /* Build configuration list for PBXNativeTarget "BoomerangTestsWithPods" */;
+			buildPhases = (
+				93F34CA21C63D4A700AAF4C3 /* Sources */,
+				93F34CDA1C63D4A700AAF4C3 /* Frameworks */,
+				93F34CE61C63D4A700AAF4C3 /* Resources */,
+				93F34CE71C63D4A700AAF4C3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93F34CA01C63D4A700AAF4C3 /* PBXTargetDependency */,
+			);
+			name = BoomerangTestsWithPods;
+			productName = BoomerangTests;
+			productReference = 93F34CEB1C63D4A700AAF4C3 /* BoomerangTestsWithPods.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1863,6 +2129,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SOASTA;
+				TargetAttributes = {
+					93F34C251C63CD8900AAF4C3 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
 			};
 			buildConfigurationList = 2CF428C21642E1CD0058AC81 /* Build configuration list for PBXProject "Boomerang" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1881,9 +2152,28 @@
 				2C2A076A165412F8008EC81E /* BoomerangLib */,
 				5BC5E02A18D0FD790095F33A /* Boomerang-iphone-dylib */,
 				5BC5E05418D0FD820095F33A /* Boomerang-sim-dylib */,
+				93F34C251C63CD8900AAF4C3 /* BoomerangTests */,
+				93F34C9F1C63D4A700AAF4C3 /* BoomerangTestsWithPods */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93F34C241C63CD8900AAF4C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F34CE61C63D4A700AAF4C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		2C2A076E1654137F008EC81E /* ShellScript */ = {
@@ -1911,6 +2201,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then\n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\"\nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\"\nfi\nfi";
+		};
+		93F34C981C63D3D200AAF4C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		93F34CE71C63D4A700AAF4C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2239,6 +2555,110 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93F34C221C63CD8900AAF4C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F34C691C63D2AE00AAF4C3 /* MPApiCustomMetricBeacon.mm in Sources */,
+				93F34C6A1C63D2AE00AAF4C3 /* MPApiCustomTimerBeacon.mm in Sources */,
+				93F34C6B1C63D2AE00AAF4C3 /* MPApiNetworkRequestBeacon.mm in Sources */,
+				93F34C6C1C63D2AE00AAF4C3 /* MPAppCrashBeacon.mm in Sources */,
+				93F34C6D1C63D2AE00AAF4C3 /* MPAppInactiveBeacon.m in Sources */,
+				93F34C6E1C63D2AE00AAF4C3 /* MPAppLaunchBeacon.mm in Sources */,
+				93F34C6F1C63D2AE00AAF4C3 /* MPBeacon.mm in Sources */,
+				93F34C701C63D2AE00AAF4C3 /* MPNetworkErrorBeaconGenerator.m in Sources */,
+				93F34C711C63D2AE00AAF4C3 /* MPBatch.mm in Sources */,
+				93F34C721C63D2AE00AAF4C3 /* MPBatchTransport.m in Sources */,
+				93F34C731C63D2AE00AAF4C3 /* MPBeaconCollector.m in Sources */,
+				93F34C741C63D2AE00AAF4C3 /* MPConfigDimension.m in Sources */,
+				93F34C751C63D2AE00AAF4C3 /* MPConfigMetric.m in Sources */,
+				93F34C761C63D2AE00AAF4C3 /* MPConfigPageGroup.m in Sources */,
+				93F34C771C63D2AE00AAF4C3 /* MPConfigPageParams.m in Sources */,
+				93F34C781C63D2AE00AAF4C3 /* MPConfigTimer.m in Sources */,
+				93F34C791C63D2AE00AAF4C3 /* MPDemographics.m in Sources */,
+				93F34C7A1C63D2AE00AAF4C3 /* MPGeoLocation.m in Sources */,
+				93F34C7B1C63D2AE00AAF4C3 /* MPReachability.m in Sources */,
+				93F34C7C1C63D2AE00AAF4C3 /* NSData+Gzip.m in Sources */,
+				93F34C7D1C63D2AE00AAF4C3 /* NSString+MPExtensions.m in Sources */,
+				93F34C7E1C63D2AE00AAF4C3 /* MPInterceptURLConnectionDelegate.m in Sources */,
+				93F34C7F1C63D2AE00AAF4C3 /* MPInterceptURLSessionDelegate.m in Sources */,
+				93F34C801C63D2AE00AAF4C3 /* MPInterceptUtils.m in Sources */,
+				93F34C811C63D2AE00AAF4C3 /* NSURLConnection+MPIntercept.m in Sources */,
+				93F34C821C63D2AE00AAF4C3 /* NSURLSession+MPIntercept.m in Sources */,
+				93F34C831C63D2AE00AAF4C3 /* NSObject+TT_SBJSON.m in Sources */,
+				93F34C841C63D2AE00AAF4C3 /* NSString+TT_SBJSON.m in Sources */,
+				93F34C851C63D2AE00AAF4C3 /* TT_SBJSON.m in Sources */,
+				93F34C861C63D2AE00AAF4C3 /* TT_SBJsonBase.m in Sources */,
+				93F34C871C63D2AE00AAF4C3 /* TT_SBJsonParser.m in Sources */,
+				93F34C881C63D2AE00AAF4C3 /* TT_SBJsonWriter.m in Sources */,
+				93F34C891C63D2AE00AAF4C3 /* MPASLLogger.m in Sources */,
+				93F34C8A1C63D2AE00AAF4C3 /* MPLog.m in Sources */,
+				93F34C8B1C63D2AE00AAF4C3 /* MPTTYLogger.m in Sources */,
+				93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */,
+				93F34C8D1C63D2AE00AAF4C3 /* MPSession.m in Sources */,
+				93F34C8E1C63D2AE00AAF4C3 /* MPulse.m in Sources */,
+				93F34C8F1C63D2AE00AAF4C3 /* MPUIApplicationDelegateHelper.m in Sources */,
+				93F34C901C63D2AE00AAF4C3 /* MPURLConnection.m in Sources */,
+				93F34C911C63D2AE00AAF4C3 /* MPUtilities.m in Sources */,
+				93F34C4B1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m in Sources */,
+				93F34C451C63CDC500AAF4C3 /* MPBeaconTestBase.m in Sources */,
+				93F34C4C1C63CDC500AAF4C3 /* MPConfigMetricTests.m in Sources */,
+				93F34C4D1C63CDC500AAF4C3 /* MPConfigTimerTests.m in Sources */,
+				93F34C431C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m in Sources */,
+				93F34C461C63CDC500AAF4C3 /* MPBeaconTests.m in Sources */,
+				93F34C481C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */,
+				93F34C401C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m in Sources */,
+				93F34C421C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m in Sources */,
+				93F34C441C63CDC500AAF4C3 /* MPBatchTests.mm in Sources */,
+				93F34C471C63CDC500AAF4C3 /* MPConfigTests.m in Sources */,
+				93F34C3F1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m in Sources */,
+				93F34C411C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m in Sources */,
+				93F34C491C63CDC500AAF4C3 /* MPHttpRequestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F34CA21C63D4A700AAF4C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F34CF61C63D74D00AAF4C3 /* descriptor.cc in Sources */,
+				93F34CF71C63D74D00AAF4C3 /* descriptor.pb.cc in Sources */,
+				93F34CF81C63D74D00AAF4C3 /* descriptor_database.cc in Sources */,
+				93F34CF91C63D74D00AAF4C3 /* dynamic_message.cc in Sources */,
+				93F34CFA1C63D74D00AAF4C3 /* extension_set.cc in Sources */,
+				93F34CFB1C63D74D00AAF4C3 /* extension_set_heavy.cc in Sources */,
+				93F34CFC1C63D74D00AAF4C3 /* generated_message_reflection.cc in Sources */,
+				93F34CFD1C63D74D00AAF4C3 /* generated_message_util.cc in Sources */,
+				93F34CFE1C63D74D00AAF4C3 /* coded_stream.cc in Sources */,
+				93F34CFF1C63D74D00AAF4C3 /* gzip_stream.cc in Sources */,
+				93F34D001C63D74D00AAF4C3 /* printer.cc in Sources */,
+				93F34D011C63D74D00AAF4C3 /* tokenizer.cc in Sources */,
+				93F34D021C63D74D00AAF4C3 /* zero_copy_stream.cc in Sources */,
+				93F34D031C63D74D00AAF4C3 /* zero_copy_stream_impl.cc in Sources */,
+				93F34D041C63D74D00AAF4C3 /* zero_copy_stream_impl_lite.cc in Sources */,
+				93F34D051C63D74D00AAF4C3 /* message.cc in Sources */,
+				93F34D061C63D74D00AAF4C3 /* message_lite.cc in Sources */,
+				93F34D071C63D74D00AAF4C3 /* reflection_ops.cc in Sources */,
+				93F34D081C63D74D00AAF4C3 /* repeated_field.cc in Sources */,
+				93F34D091C63D74D00AAF4C3 /* service.cc in Sources */,
+				93F34D0A1C63D74D00AAF4C3 /* atomicops_internals_x86_gcc.cc in Sources */,
+				93F34D0B1C63D74D00AAF4C3 /* atomicops_internals_x86_msvc.cc in Sources */,
+				93F34D0C1C63D74D00AAF4C3 /* common.cc in Sources */,
+				93F34D0D1C63D74D00AAF4C3 /* once.cc in Sources */,
+				93F34D0E1C63D74D00AAF4C3 /* stringprintf.cc in Sources */,
+				93F34D0F1C63D74D00AAF4C3 /* structurally_valid.cc in Sources */,
+				93F34D101C63D74D00AAF4C3 /* strutil.cc in Sources */,
+				93F34D111C63D74D00AAF4C3 /* substitute.cc in Sources */,
+				93F34D121C63D74D00AAF4C3 /* text_format.cc in Sources */,
+				93F34D131C63D74D00AAF4C3 /* unknown_field_set.cc in Sources */,
+				93F34D141C63D74D00AAF4C3 /* wire_format.cc in Sources */,
+				93F34D151C63D74D00AAF4C3 /* wire_format_lite.cc in Sources */,
+				93F34CF51C63D69700AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */,
+				93F34CF41C63D68F00AAF4C3 /* MPBeaconTestBase.m in Sources */,
+				93F34CED1C63D4CA00AAF4C3 /* MPPodFrameworksNetworkingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2261,6 +2681,16 @@
 			isa = PBXTargetDependency;
 			target = 5BC5E05418D0FD820095F33A /* Boomerang-sim-dylib */;
 			targetProxy = 5B189959191166EA009794C1 /* PBXContainerItemProxy */;
+		};
+		93F34C671C63D10E00AAF4C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CF428C71642E1CD0058AC81 /* Boomerang-iphone */;
+			targetProxy = 93F34C661C63D10E00AAF4C3 /* PBXContainerItemProxy */;
+		};
+		93F34CA01C63D4A700AAF4C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CF428C71642E1CD0058AC81 /* Boomerang-iphone */;
+			targetProxy = 93F34CA11C63D4A700AAF4C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2643,6 +3073,188 @@
 			};
 			name = Release;
 		};
+		93F34C2C1C63CD8900AAF4C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Boomerang/Boomerang-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = BoomerangTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soasta.BoomerangTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		93F34C2D1C63CD8900AAF4C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Boomerang/Boomerang-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = BoomerangTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soasta.BoomerangTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		93F34CE91C63D4A700AAF4C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4443B3EC6C73E0656837D087 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Boomerang/Boomerang-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = BoomerangTestsWithPods/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soasta.BoomerangTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		93F34CEA1C63D4A700AAF4C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0A774000E4C7617F29828EB /* Pods.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Boomerang/Boomerang-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = BoomerangTestsWithPods/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soasta.BoomerangTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2696,6 +3308,24 @@
 			buildConfigurations = (
 				5BC5E07318D0FD820095F33A /* Debug */,
 				5BC5E07418D0FD820095F33A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F34C2B1C63CD8900AAF4C3 /* Build configuration list for PBXNativeTarget "BoomerangTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F34C2C1C63CD8900AAF4C3 /* Debug */,
+				93F34C2D1C63CD8900AAF4C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F34CE81C63D4A700AAF4C3 /* Build configuration list for PBXNativeTarget "BoomerangTestsWithPods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F34CE91C63D4A700AAF4C3 /* Debug */,
+				93F34CEA1C63D4A700AAF4C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

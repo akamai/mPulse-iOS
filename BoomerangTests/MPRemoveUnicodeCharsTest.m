@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSString+TTExtensions.h"
+#import "NSString+MPExtensions.h"
 
 @interface MPRemoveUnicodeCharsTest : XCTestCase
 
@@ -28,7 +28,7 @@
 
   NSString *testStringWithOutUnicode = @"TestString";
   
-  XCTAssertTrue([[testStringWithUnicode tt_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
+  XCTAssertTrue([[testStringWithUnicode mp_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
 }
 
 -(void) testRemoving_POP_DIRECTIONAL_FORMATTING_UnicodeChar
@@ -44,7 +44,7 @@
   
   NSString *testStringWithOutUnicode = @"TestString";
   
-  XCTAssertTrue([[testStringWithUnicode tt_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
+  XCTAssertTrue([[testStringWithUnicode mp_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
 }
 
 -(void) testRemoving_LINE_FEED_UnicodeChar
@@ -59,8 +59,8 @@
   [testStringWithUnicode appendString:@"String"];
   
   NSString *testStringWithOutUnicode = @"Test\\nString";
-  
-  XCTAssertTrue([[testStringWithUnicode tt_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
+
+  XCTAssertTrue([[testStringWithUnicode mp_removeUnicode] isEqualToString:testStringWithOutUnicode], @"Unicode character was not removed.");
 }
 
 @end
