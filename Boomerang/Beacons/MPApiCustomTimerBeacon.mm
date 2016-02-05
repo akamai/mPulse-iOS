@@ -34,7 +34,7 @@
     _timerIndex = -1;
     _timerName = timerName;
     
-    for (MPTouchTimer *timer in [[[MPConfig sharedInstance] touchConfig] timers])
+    for (MPConfigTimer *timer in [[[MPConfig sharedInstance] pageParamsConfig] timers])
     {
       if ([timer.name isEqualToString:timerName])
       {
@@ -80,7 +80,7 @@
     _timerIndex = -1;
     _timerName = timerName;
 
-    for (MPTouchTimer *timer in [[[MPConfig sharedInstance] touchConfig] timers])
+    for (MPConfigTimer *timer in [[[MPConfig sharedInstance] pageParamsConfig] timers])
     {
       if ([timer.name isEqualToString:timerName])
       {

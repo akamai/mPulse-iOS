@@ -26,7 +26,7 @@
 
   MPConfig *config = [MPConfig sharedInstance];
 
-  for (MPTouchMetric *metric in [[config touchConfig] metrics])
+  for (MPConfigMetric *metric in [[config pageParamsConfig] metrics])
   {
     if ([metric.name isEqualToString:metricName])
     {
