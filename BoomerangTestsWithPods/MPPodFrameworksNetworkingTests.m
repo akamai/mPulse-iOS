@@ -14,7 +14,6 @@
 #import "MPBeaconCollector.h"
 #import "MPInterceptURLConnectionDelegate.h"
 #import "MPInterceptURLSessionDelegate.h"
-#import "MPHttpRequestDelegateHelper.h"
 #import "AFJSONRequestOperation.h"
 #import "AFImageRequestOperation.h"
 #import "AFXMLRequestOperation.h"
@@ -24,7 +23,6 @@
 
 @interface MPPodFrameworksNetworkingTests : MPBeaconTestBase
 {
-  MPHttpRequestDelegateHelper *requestHelper;
 }
 
 @end
@@ -66,9 +64,6 @@ static short const NSURLSUCCESS = 0;
   
   // Intialization of BoomerangURLConnectionDelegate
   [MPInterceptURLConnectionDelegate sharedInstance];
-  
-  // Initialize MPHttpRequestDelegateHelper for delegation
-  requestHelper = [[MPHttpRequestDelegateHelper alloc] init];
 }
 
 /*

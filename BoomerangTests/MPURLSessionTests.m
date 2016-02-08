@@ -1,740 +1,79 @@
 //
-//  MPHttpRequestTests.m
+//  MPURLSessionTests.m
 //  Boomerang
 //
-//  Created by Shilpi Nayak on 6/25/14.
-//  Copyright (c) 2014 SOASTA. All rights reserved.
+//  Copyright © 2016 SOASTA. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-#import <Foundation/Foundation.h>
-#import "MPBeaconCollector.h"
-#import "MPInterceptURLConnectionDelegate.h"
+#import "MPHttpRequestTestBase.h"
 #import "MPInterceptURLSessionDelegate.h"
-#import "MPApiNetworkRequestBeacon.h"
-#import "MPConfig.h"
-#import "MPulse.h"
-#import "MPulsePrivate.h"
-#import "MPSession.h"
-#import "MPHttpRequestDelegateHelper.h"
-#import "MPBeaconTestBase.h"
+#import "MPURLSessionDelegateHelper.h"
+#import "MPBeaconCollector.h"
 
-@interface MPHttpRequestTests : MPBeaconTestBase<NSURLSessionTaskDelegate>
+@interface MPURLSessionTests : MPHttpRequestTestBase<NSURLSessionTaskDelegate>
 {
-  MPHttpRequestDelegateHelper *requestHelper;
 }
 
 @end
 
-@implementation MPHttpRequestTests
-//
-// Constants
-//
+@implementation MPURLSessionTests
 
-//
-// URLs
-//
-// A good URL
-NSString *const SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=3000";
-
-// A URL that redirects
-NSString *const REDIRECT_URL = @"http://67.111.67.24:8080/concerto";
-
-// A 404 URL
-NSString *const PAGENOTFOUND_URL = @"http://67.111.67.24:8080/concertoXYZ";
-
-// A URL where the port isn't listening
-NSString *const CONNECTION_REFUSED_URL = @"http://67.111.67.24:1200/concertoXYZ";
-
-// An unknown host
-NSString *const UNKNOWN_HOST_URL = @"http://bearsbearsbears123.com/";
-
-// A port where the connection couldn't be initiated
-NSString *const CONNECTION_TIMEOUT_URL = @"http://1.2.3.4:8080/concerto";
-
-// A port where the socket is delayed in sending a response
-NSString *const SOCKET_TIMEOUT_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=300000";
-
-// A URL where the download takes too long (chunked-data)
-NSString *const LONG_DOWNLOAD_URL = @"http://67.111.67.24:8080/concerto/DevTest/chunkedResponse?chunkSize=100&chunkCount=1000000&chunkDelay=100";
-
-//
-// Timeouts
-//
-
-// Wait for beacon to be added after connection - ensures MPBeaconCollector has records.
-static int const BEACON_ADD_WAIT = 5;
-
-// How long to set the socket to timeout
-static int const SOCKET_TIMEOUT_INTERVAL = 10;
-
-// Loop time out for connections that delegate.  On iOS <= 4, some actions may
-// take 300 seconds (5 minutes) to timeout, especially on devices (vs. emulator).
-// Set to a safe value (6 minutes) to ensure we capture them in any environment.
-static int const LOOP_TIMEOUT = 360;
-
-// Wait for download to start
-static int const DOWNLOAD_START_WAIT = 5;
-
-// Skip Network Error Code check
-static int const SKIP_NETWORK_ERROR_CODE_CHECK = 9999;
-
-// HTTP 404 = Page Not Found
-static short const HTTP_ERROR_PAGE_NOT_FOUND = 404;
-
-// NSURL Success Code
-static short const NSURLSUCCESS = 0;
-
+/**
+ * Class setup
+ */
 -(void) setUp
 {
   [super setUp];
   
   // Intialization of BoomerangURLSessionDelegate
   [MPInterceptURLSessionDelegate sharedInstance];
-  
-  // Intialization of BoomerangURLConnectionDelegate
-  [MPInterceptURLConnectionDelegate sharedInstance];
-  
-  // Initialize MPHttpRequestDelegateHelper for delegation
-  requestHelper = [[MPHttpRequestDelegateHelper alloc] init];
 }
 
 #pragma mark -
-#pragma mark Response XCTests
+#pragma mark Helpers
 
-/*
- * Checks if the records collected by MPBeaconCollector have the desired number of beacons, network request duration,
- * url and network error code
- * called after each NSURLConnection methods
+/**
+ * Validates beacons from a resumeData test
  */
--(void) responseBeaconTest:(NSString *)url
-               minDuration:(long)minDuration
-          networkErrorCode:(short)networkErrorCode
+-(void) validateResumeDataBeacon
 {
-  NSMutableArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
+  NSArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
+  XCTAssert(testBeacons != nil, "Beacons must exist");
   
-  XCTAssertNotEqual(testBeacons, nil);
-  
-  // ensure there isn't a rogue AppLaunch beacon, and if so, remove it first
-  if ([testBeacons count] >= 1)
+  if (testBeacons == nil)
   {
-    if ([[testBeacons objectAtIndex:0] getBeaconType] == APP_LAUNCH)
-    {
-      [testBeacons removeObjectAtIndex:0];
-    }
-  }
-
-  // beacon count
-  XCTAssertEqual([testBeacons count], 1, "Beacons count incorrect");
-  
-  if ([testBeacons count] != 1)
-  {
-    // don't know up if there are no beacons
     return;
   }
   
-  // ensure it's a network beacon
-  XCTAssertEqual(API_NETWORK_REQUEST, [[testBeacons objectAtIndex:0] getBeaconType]);
+  XCTAssertEqual([testBeacons count], 2, "Beacon count incorrect");
+  
+  if ([testBeacons count] != 1)
+  {
+    return;
+  }
   
   MPApiNetworkRequestBeacon *beacon = [testBeacons objectAtIndex:0];
   
-  MPLogDebug(@"Network Request URL : %@ Duration : %d Error Code %d",
-             beacon.url,
-             beacon.duration,
-             beacon.networkErrorCode);
-  
-  XCTAssertEqualObjects(beacon.url, url, @" Wrong URL string");
-  
-  if (minDuration > 0)
-  {
-    XCTAssertTrue((beacon.duration) >= minDuration, "Network request duration");
-  }
-  
-  if (networkErrorCode != SKIP_NETWORK_ERROR_CODE_CHECK)
-  {
-    // if the test is done via VPN, the actual error code may differ below
-    if (networkErrorCode == NSURLErrorCannotConnectToHost || networkErrorCode == NSURLErrorTimedOut)
-    {
-      // allow for either error, which are very similar
-      XCTAssertTrue(beacon.networkErrorCode == NSURLErrorCannotConnectToHost ||
-                    beacon.networkErrorCode == NSURLErrorTimedOut , "Wrong network error code");
-    }
-    else
-    {
-      XCTAssertEqual(beacon.networkErrorCode, networkErrorCode, "Wrong network error code");
-    }
-  }
+  XCTAssertEqualObjects(beacon.url, LONG_DOWNLOAD_URL, @" Wrong URL string.");
+  XCTAssertEqual(beacon.networkErrorCode, NSURLErrorCancelled, "Wrong network error code");
 }
 
-#pragma mark -
-#pragma mark NSURLConnection methods
-
--(void) syncRequest:(NSString *)urlString
-          isSuccess:(BOOL)isSuccess
-      checkResponse:(BOOL)checkResponse
-     responseString:(NSString *)responseString
+/**
+ * Gets a shared NSURLSession with the proper timeouts configured
+ *
+ * @returns Shared Session
+ */
+-(NSURLSession *) getSharedSession
 {
-  NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  // grab the shared session
+  NSURLSession *session = [NSURLSession sharedSession];
   
-  NSURLRequest *request = [NSURLRequest requestWithURL:url
-                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                       timeoutInterval:SOCKET_TIMEOUT_INTERVAL];
+  // set our timeouts
+  session.configuration.timeoutIntervalForRequest = SOCKET_TIMEOUT_INTERVAL;
+  session.configuration.timeoutIntervalForResource = SOCKET_TIMEOUT_INTERVAL;
   
-  NSURLResponse *response = nil;
-  NSError *error = nil;
-  NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-  
-  // check for error and fail if success is expected
-  if (error != nil)
-  {
-    MPLogDebug(@"Request failed. %@", error);
-    
-    if (isSuccess)
-    {
-      XCTFail("Request Failed in function @%s", __FUNCTION__);
-    }
-  }
-  
-  // verify response text if asked for
-  if (checkResponse)
-  {
-    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    MPLogDebug( @"Response data: %@" , dataString);
-    XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
-  }
-  
-  // sleep - waiting for network beacon to be added
-  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
+  return session;
 }
-
--(void) connectionWithRequest:(NSString *)urlString
-                    isSuccess:(BOOL)isSuccess
-                checkResponse:(BOOL)checkResponse
-               responseString:(NSString *)responseString
-{
-  NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-  
-  NSURLRequest *request = [NSURLRequest requestWithURL:url
-                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                       timeoutInterval:SOCKET_TIMEOUT_INTERVAL];
-  
-  NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:requestHelper];
-  NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:LOOP_TIMEOUT];
-  
-  while (![requestHelper finished])
-  {
-    // Not finished yet.
-    
-    // Give the asynchronous HTTP request some time to work.
-    
-    // This will return if either:
-    // (a) the HTTP request status changes in any way
-    // (b) we time out.
-    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
-  }
-  
-  // check for error and fail if success is expected
-  if ([requestHelper error] != nil || connection == nil)
-  {
-    
-    if (isSuccess)
-    {
-      XCTFail("Request Failed in function @%s", __FUNCTION__);
-    }
-  }
-  
-  // verify response text if asked for
-  if (checkResponse)
-  {
-    NSString *dataString = [[NSString alloc] initWithData:[requestHelper responseData] encoding:NSUTF8StringEncoding];
-    MPLogDebug( @"Response data: %@" , dataString);
-    XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
-  }
-  
-  // sleep - wating for network beacon to be added
-  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
-}
-
--(void) asyncRequest:(NSString *)urlString
-           isSuccess:(BOOL)isSuccess
-       checkResponse:(BOOL)checkResponse
-      responseString:(NSString *)responseString
-{
-  NSURL *url = [NSURL URLWithString:urlString];
-  
-  NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                              cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                          timeoutInterval:SOCKET_TIMEOUT_INTERVAL];
-  
-  NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-  [NSURLConnection sendAsynchronousRequest:urlRequest
-                                     queue:queue
-                         completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-   {
-     // check for error and fail if success is expected
-     if (error != nil)
-     {
-       MPLogDebug(@"Request failed. %@", error);
-       if (isSuccess)
-       {
-         XCTFail("Request Failed in function @%s", __FUNCTION__);
-       }
-     }
-     
-     // verify response text if asked for
-     if (checkResponse)
-     {
-       NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-       MPLogDebug( @"Response data: %@" , dataString);
-       XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
-     }
-   }];
-  
-  // sleep - waiting for session start beacon to be added
-  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
-}
-
--(void) initWithRequestStartImmediatelyYes:(NSString *)urlString
-                                 isSuccess:(BOOL)isSuccess
-                             checkResponse:(BOOL)checkResponse
-                            responseString:(NSString *)responseString
-{
-  NSURL *url = [NSURL URLWithString:urlString];
-  NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-  
-  NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:requestHelper];
-  NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:LOOP_TIMEOUT];
-  
-  while (![requestHelper finished])
-  {
-    // Not finished yet.
-    
-    // Give the asynchronous HTTP request some time to work.
-    
-    // This will return if either:
-    // (a) the HTTP request status changes in any way
-    // (b) we time out.
-    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
-  }
-  
-  // check for error and fail if success is expected
-  if ([requestHelper error] != nil || connection == nil)
-  {
-    
-    if (isSuccess)
-    {
-      XCTFail("Request Failed in function @%s", __FUNCTION__);
-    }
-  }
-  
-  // verify response text if asked for
-  if (checkResponse)
-  {
-    NSString *dataString = [[NSString alloc] initWithData:[requestHelper responseData] encoding:NSUTF8StringEncoding];
-    MPLogDebug( @"Response data: %@" , dataString);
-    XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
-  }
-  
-  // sleep - waiting for session start beacon to be added
-  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
-}
-
--(void) initWithRequestStartImmediatelyNo:(NSString *)urlString
-                                isSuccess:(BOOL)isSuccess
-                            checkResponse:(BOOL)checkResponse
-                           responseString:(NSString *)responseString
-{
-  NSURL *url = [NSURL URLWithString:urlString];
-  NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-  
-  NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:theRequest
-                                                                delegate:requestHelper
-                                                        startImmediately:NO];
-  
-  [connection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-  [connection start];
-  
-  NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:LOOP_TIMEOUT];
-  
-  while (![requestHelper finished])
-  {
-    // Not finished yet.
-    
-    // Give the asynchronous HTTP request some time to work.
-    
-    // This will return if either:
-    // (a) the HTTP request status changes in any way
-    // (b) we time out.
-    
-    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
-  }
-  
-  // check for error and fail if success is expected
-  if ([requestHelper error] != nil)
-  {
-    
-    if (isSuccess)
-    {
-      XCTFail("Request Failed in function @%s. Success expected", __FUNCTION__);
-    }
-  }
-  
-  // verify response text if asked for
-  if (checkResponse)
-  {
-    NSString *dataString = [[NSString alloc] initWithData:[requestHelper responseData] encoding:NSUTF8StringEncoding];
-    MPLogDebug( @"Response data: %@" , dataString);
-    XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
-  }
-  
-  // sleep - waiting for session start beacon to be added
-  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
-}
-
-#pragma mark -
-#pragma mark SynchronousConnection Tests
-
--(void) testSyncRequestSuccess
-{
-  // Send Synchronous Request
-  [self syncRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
-  
-  // Test for success with duration more than 3 sec
-  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testSyncRequestSuccessHTTPRedirect
-{
-  // Send Synchronous Request
-  [self syncRequest:REDIRECT_URL isSuccess:YES checkResponse:NO responseString:@""];
-  
-  // Test for success
-  [self responseBeaconTest:REDIRECT_URL minDuration:0 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testSyncRequestFailHTTPError
-{
-  // Send Synchronous Request
-  [self syncRequest:PAGENOTFOUND_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:PAGENOTFOUND_URL minDuration:0 networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND];
-}
-
--(void) testSyncRequestConnectionRefused
-{
-  // Send Synchronous Request
-  [self syncRequest:CONNECTION_REFUSED_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:NSURLErrorCannotConnectToHost];
-}
-
--(void) testSyncRequestUnknownHost
-{
-  // Send Synchronous Request
-  [self syncRequest:UNKNOWN_HOST_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:UNKNOWN_HOST_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
-}
-
--(void) testSyncRequestConnectionTimeOut
-{
-  // Send Synchronous Request
-  [self syncRequest:CONNECTION_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
--(void) testSyncRequestSocketTimeOut
-{
-  // Send Synchronous Request
-  [self syncRequest:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
-#pragma mark -
-#pragma mark ConnectionWithRequest Tests
-
--(void) testConnectionWithRequestSuccess
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
-  
-  // Test for success with duration more than 3000 ms
-  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testConnectionWithRequestSuccessHTTPRedirect
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:REDIRECT_URL isSuccess:YES checkResponse:NO responseString:@""];
-  
-  // Test for success
-  [self responseBeaconTest:REDIRECT_URL minDuration:0 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testConnectionWithRequestFailHTTPError
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:PAGENOTFOUND_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:PAGENOTFOUND_URL minDuration:0 networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND];
-}
-
--(void) testConnectionWithRequestConnectionRefused
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:CONNECTION_REFUSED_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:NSURLErrorCannotConnectToHost];
-}
-
--(void) testConnectionWithRequestUnknownHost
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:UNKNOWN_HOST_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:UNKNOWN_HOST_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
-}
-
--(void) testConnectionWithRequestConnectionTimeOut
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:CONNECTION_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
--(void) testConnectionWithRequestSocketTimeOut
-{
-  // create connectionWithRequest
-  [self connectionWithRequest:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
-#pragma mark -
-#pragma mark AsynchronousConnection Tests
-
--(void) testAsyncRequestSuccess
-{
-  // send Asynchronous Request
-  [self asyncRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
-  
-  // Test for success
-  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testAsyncRequestSuccessHTTPRedirect
-{
-  // send Asynchronous Request
-  [self asyncRequest:REDIRECT_URL isSuccess:YES checkResponse:NO responseString:@""];
-  
-  // Test for success
-  [self responseBeaconTest:REDIRECT_URL minDuration:0 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testAsyncRequestFailHTTPError
-{
-  // send Asynchronous Request
-  [self asyncRequest:PAGENOTFOUND_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:PAGENOTFOUND_URL minDuration:0 networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND];
-}
-
--(void) testAsyncRequestConnectionRefused
-{
-  // send Asynchronous Request
-  [self asyncRequest:CONNECTION_REFUSED_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Loop until we see a beacon
-  [self waitForBeacon:LOOP_TIMEOUT];
-
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:NSURLErrorCannotConnectToHost];
-}
-
--(void) testAsyncRequestUnknownHost
-{
-  // send Asynchronous Request
-  [self asyncRequest:UNKNOWN_HOST_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Loop until we see a beacon
-  [self waitForBeacon:LOOP_TIMEOUT];
-  
-  // Test for failure
-  [self responseBeaconTest:UNKNOWN_HOST_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
-}
-
--(void) testAsyncRequestConnectionTimeOut
-{
-  // send Asynchronous Request
-  [self asyncRequest:CONNECTION_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Loop until we see a beacon
-  [self waitForBeacon:LOOP_TIMEOUT];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
--(void) testAsyncRequestSocketTimeOut
-{
-  // send Asynchronous Request
-  [self asyncRequest:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Loop until we see a beacon
-  [self waitForBeacon:LOOP_TIMEOUT];
-  
-  // Test for failure
-  [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
-#pragma mark -
-#pragma mark initWithRequestStartImmediatelyYes Tests
-
--(void) testInitWithRequestStartImmediatelyYesSuccess
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
-  
-  // Test for success
-  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testInitWithRequestStartImmediatelyYesSuccessHTTPRedirect
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:REDIRECT_URL isSuccess:YES checkResponse:NO responseString:@""];
-  
-  // Test for success
-  [self responseBeaconTest:REDIRECT_URL minDuration:0 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testInitWithRequestStartImmediatelyYesFailHTTPError
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:PAGENOTFOUND_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:PAGENOTFOUND_URL minDuration:0 networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND];
-}
-
--(void) testInitWithRequestStartImmediatelyYesConnectionRefused
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:CONNECTION_REFUSED_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:NSURLErrorCannotConnectToHost];
-}
-
--(void) testInitWithRequestStartImmediatelyYesUnknownHost
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:UNKNOWN_HOST_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:UNKNOWN_HOST_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
-}
-
--(void) testInitWithRequestStartImmediatelyYesConnectionTimeOut
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:CONNECTION_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
--(void) testInitWithRequestStartImmediatelyYesSocketTimeOut
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
-#pragma mark -
-#pragma mark initWithRequestStartImmediatelyNo Tests
-
--(void) testInitWithRequestStartImmediatelyNoSuccess
-{
-  // create connection - start response later
-  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
-  
-  // test for success with duration more than 3000 ms
-  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testInitWithRequestStartImmediatelyNoSuccessHTTPRedirect
-{
-  // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:REDIRECT_URL isSuccess:YES checkResponse:NO responseString:@""];
-  
-  // Test for success
-  [self responseBeaconTest:REDIRECT_URL minDuration:0 networkErrorCode:NSURLSUCCESS];
-}
-
--(void) testInitWithRequestStartImmediatelyNoFailHTTPError
-{
-  // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:PAGENOTFOUND_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:PAGENOTFOUND_URL minDuration:0 networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND];
-}
-
--(void) testInitWithRequestStartImmediatelyNoConnectionRefused
-{
-  // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:CONNECTION_REFUSED_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:NSURLErrorCannotConnectToHost];
-}
-
--(void) testInitWithRequestStartImmediatelyNoUnknownHost
-{
-  // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:UNKNOWN_HOST_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:UNKNOWN_HOST_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
-}
-
--(void) testInitWithRequestStartImmediatelyNoConnectionTimeOut
-{
-  // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:CONNECTION_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
--(void) testInitWithRequestStartImmediatelyNoSocketTimeOut
-{
-  // create connection - start response immediately
-  [self initWithRequestStartImmediatelyNo:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
-  
-  // Test for failure
-  [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
-}
-
-#pragma mark -
-#pragma mark NSURLSession methods
 
 -(void) dataTaskWithRequest:(NSString *)urlString
 {
@@ -789,6 +128,64 @@ static short const NSURLSUCCESS = 0;
   
   // start the task
   [task resume];
+}
+
+-(void) dataTaskWithRequestDelegate:(NSString *)urlString
+                        minDuration:(int)minDuration
+                   networkErrorCode:(int)networkErrorCode
+                        hasResponse:(BOOL)hasResponse
+
+{
+  // build a NSURL
+  NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  
+  // convert URL to a request
+  NSURLRequest *request = [NSURLRequest requestWithURL:url
+                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                       timeoutInterval:SOCKET_TIMEOUT_INTERVAL];
+
+  // session configuration
+  NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+  
+  // session connection queue
+  NSOperationQueue *connectionQueue = [[NSOperationQueue alloc] init];
+  connectionQueue.name = @"com.soasta.connqueue";
+  connectionQueue.maxConcurrentOperationCount = 4;
+
+  // Initialize MPURLSessionDelegateHelper for delegation
+  MPURLSessionDelegateHelper *delegate = [[MPURLSessionDelegateHelper alloc] init];
+
+  // specify a delegate
+  NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration
+                                                        delegate:delegate
+                                                   delegateQueue:connectionQueue];
+
+  NSURLSessionDataTask *task = [session dataTaskWithRequest:request];
+
+  // start the task
+  [task resume];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
+  // ensure the beacon is good
+  [self responseBeaconTest:urlString minDuration:minDuration networkErrorCode:networkErrorCode];
+
+  // ensure our delegate got called
+  XCTAssertEqual(delegate.firedDidCompleteWithError,
+                 true,
+                 @"NSURLSession delegate should have called didCompleteWithError");
+
+  if (hasResponse)
+  {
+    XCTAssertEqual(delegate.firedDidReceiveData,
+                   true,
+                   @"NSURLSession delegate should have called firedDidReceiveData");
+
+    XCTAssertEqual(delegate.firedDidReceiveResponse,
+                   true,
+                   @"NSURLSession delegate should have called firedDidReceiveResponse");
+  }
 }
 
 -(void) dataTaskWithURL:(NSString *)urlString
@@ -1141,7 +538,7 @@ didCompleteWithError:(NSError *)error
 #pragma mark -
 #pragma mark NSURLSession Tests
 #pragma mark -
-#pragma mark #pragma mark dataTaskWithRequest:
+#pragma mark dataTaskWithRequest:
 
 -(void) testDataTaskWithRequestSuccess
 {
@@ -1167,7 +564,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1183,7 +580,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
@@ -1193,12 +590,12 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
 #pragma mark -
-#pragma mark #pragma mark dataTaskWithRequest:completionHandler:
+#pragma mark dataTaskWithRequest:completionHandler:
 
 -(void) testDataTaskWithRequestCompetionHandlerSuccess
 {
@@ -1250,7 +647,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark dataTaskWithURL:
+#pragma mark dataTaskWithURL:
 
 -(void) testDataTaskWithURLSuccess
 {
@@ -1288,7 +685,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1303,7 +700,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark dataTaskWithURL:completionHandler:
+#pragma mark dataTaskWithURL:completionHandler:
 
 -(void) testDataTaskWithURLCompetionHandlerSuccess
 {
@@ -1355,7 +752,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark uploadTaskWithRequest:fromFile:
+#pragma mark uploadTaskWithRequest:fromFile:
 
 -(void) testUploadTaskWithRequestFromFileSuccess
 {
@@ -1393,7 +790,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1408,7 +805,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark uploadTaskWithRequest:completionHandler:
+#pragma mark uploadTaskWithRequest:completionHandler:
 
 -(void) testUploadTaskWithRequestFromFileCompetionHandlerSuccess
 {
@@ -1460,7 +857,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark uploadTaskWithRequest:fromData:
+#pragma mark uploadTaskWithRequest:fromData:
 
 -(void) testUploadTaskWithRequestFromDataSuccess
 {
@@ -1498,7 +895,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1513,7 +910,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark uploadTaskWithRequest:completionHandler:
+#pragma mark uploadTaskWithRequest:completionHandler:
 
 -(void) testUploadTaskWithRequestFromDataCompetionHandlerSuccess
 {
@@ -1565,7 +962,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark uploadTaskWithSteamedRequest:
+#pragma mark uploadTaskWithSteamedRequest:
 
 -(void) testUploadTaskWithStreamedRequestSuccess
 {
@@ -1603,7 +1000,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1618,7 +1015,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark downloadTaskWithRequest:
+#pragma mark downloadTaskWithRequest:
 
 -(void) testDownloadTaskWithRequestSuccess
 {
@@ -1656,7 +1053,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1671,7 +1068,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark downloadTaskWithRequest:completionHandler:
+#pragma mark downloadTaskWithRequest:completionHandler:
 
 -(void) testDownloadTaskWithRequestCompetionHandlerSuccess
 {
@@ -1723,7 +1120,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark downloadTaskWithURL:
+#pragma mark downloadTaskWithURL:
 
 -(void) testDownloadTaskWithURLSuccess
 {
@@ -1761,7 +1158,7 @@ didCompleteWithError:(NSError *)error
   
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
-
+  
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1776,7 +1173,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark downloadTaskWithURL:completionHandler:
+#pragma mark downloadTaskWithURL:completionHandler:
 
 -(void) testDownloadTaskWithURLCompetionHandlerSuccess
 {
@@ -1828,7 +1225,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark downloadTaskWithResumeData:
+#pragma mark downloadTaskWithResumeData:
 
 -(void) testDownloadTaskWithResumeData
 {
@@ -1872,7 +1269,7 @@ didCompleteWithError:(NSError *)error
 }
 
 #pragma mark -
-#pragma mark #pragma mark downloadTaskWithResumeData:completionHandler:
+#pragma mark downloadTaskWithResumeData:completionHandler:
 
 -(void) testDownloadTaskWithResumeDataCompetionHandler
 {
@@ -1920,85 +1317,63 @@ didCompleteWithError:(NSError *)error
   [NSThread sleepForTimeInterval:(DOWNLOAD_START_WAIT + BEACON_ADD_WAIT)];
 }
 
-/**
- * Validates beacons from a resumeData test
- */
--(void) validateResumeDataBeacon
+#pragma mark -
+#pragma mark dataTaskWithRequest With a Delegate
+
+-(void) testDataTaskWithRequestDelegateSuccess
 {
-  NSArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
-  XCTAssert(testBeacons != nil, "Beacons must exist");
-  
-  if (testBeacons == nil)
-  {
-    return;
-  }
-  
-  XCTAssertEqual([testBeacons count], 2, "Beacon count incorrect");
-  
-  if ([testBeacons count] != 1)
-  {
-    return;
-  }
-  
-  MPApiNetworkRequestBeacon *beacon = [testBeacons objectAtIndex:0];
-  
-  XCTAssertEqualObjects(beacon.url, LONG_DOWNLOAD_URL, @" Wrong URL string.");
-  XCTAssertEqual(beacon.networkErrorCode, NSURLErrorCancelled, "Wrong network error code");
+  [self dataTaskWithRequestDelegate:SUCCESS_URL
+                        minDuration:3000
+                   networkErrorCode:NSURLSUCCESS
+                        hasResponse:true];
 }
 
-/**
- * Waits for at least one beacon to show up, or, the timeout to be reached
- *
- * @param timeOut Timeout (in seconds)
- */
--(void) waitForBeacon:(int)timeOut
+-(void) testDataTaskWithRequestDelegateHTTPRedirect
 {
-  NSLog(@"Waiting up to %d seconds for a beacon...", timeOut);
-  
-  // keep track of when we started
-  NSDate *startTime = [NSDate date];
-  
-  NSDate *now = startTime;
-
-  while ([now timeIntervalSinceDate:startTime] < timeOut)
-  {
-    // sleep for one second first
-    [NSThread sleepForTimeInterval:1];
-    
-    now = [NSDate date];
-    
-    // look for beacons
-    NSArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
-    
-    if ([testBeacons count] > 0)
-    {
-      // determine how long it took
-      int took = [now timeIntervalSinceDate:startTime];
-
-      NSLog(@"Waited %d seconds for a beacon!", took);
-      return;
-    }
-  }
-  
-  NSLog(@"Waited %d seconds for a beacon, but nothing showed up!", timeOut);
-  // hit the time limit, return
+  [self dataTaskWithRequestDelegate:REDIRECT_URL
+                        minDuration:0
+                   networkErrorCode:NSURLSUCCESS
+                        hasResponse:true];
 }
 
-/**
- * Gets a shared NSURLSession with the proper timeouts configured
- *
- * @returns Shared Session
- */
--(NSURLSession *) getSharedSession
+-(void) testDataTaskWithRequestDelegateFailHTTPError
 {
-  // grab the shared session
-  NSURLSession *session = [NSURLSession sharedSession];
+  [self dataTaskWithRequestDelegate:PAGENOTFOUND_URL
+                        minDuration:0
+                   networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND
+                        hasResponse:true];
+}
 
-  // set our timeouts
-  session.configuration.timeoutIntervalForRequest = SOCKET_TIMEOUT_INTERVAL;
-  session.configuration.timeoutIntervalForResource = SOCKET_TIMEOUT_INTERVAL;
-  
-  return session;
+-(void) testDataTaskWithRequestDelegateConnectionRefused
+{
+  [self dataTaskWithRequestDelegate:CONNECTION_REFUSED_URL
+                        minDuration:0
+                   networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK
+                        hasResponse:false];
+}
+
+-(void) testDataTaskWithRequestDelegateUnknownHost
+{
+  [self dataTaskWithRequestDelegate:UNKNOWN_HOST_URL
+                        minDuration:0
+                   networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK
+                        hasResponse:false];
+}
+
+-(void) testDataTaskWithRequestDelegateConnectionTimeOut
+{
+  [self dataTaskWithRequestDelegate:CONNECTION_TIMEOUT_URL
+                        minDuration:0
+                   networkErrorCode:NSURLErrorTimedOut
+                        hasResponse:false];
+}
+
+-(void) testDataTaskWithRequestDelegateSocketTimeOut
+{
+  [self dataTaskWithRequestDelegate:SOCKET_TIMEOUT_URL
+                        minDuration:0
+                   networkErrorCode:NSURLErrorTimedOut
+                        hasResponse:false];
 }
 
 @end
