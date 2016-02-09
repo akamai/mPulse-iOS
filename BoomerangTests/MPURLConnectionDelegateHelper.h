@@ -1,5 +1,5 @@
 //
-//  MPHttpRequestDelegateHelper.h
+//  MPURLConnectionDelegateHelper.h
 //  Boomerang
 //
 //  Created by Shilpi Nayak on 7/8/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MPHttpRequestDelegateHelper : NSObject<NSURLConnectionDataDelegate>
+@interface MPURLConnectionDelegateHelper : NSObject<NSURLConnectionDataDelegate>
 
 @property (readonly) BOOL finished;
 @property (readonly) NSURLResponse *response;

@@ -13,7 +13,6 @@
 #import "MPulsePrivate.h"
 #import "MPURLConnection.h"
 #import "MPUtilities.h"
-#import "MPUIApplicationDelegateHelper.h"
 
 #import "NSURLConnection+MPIntercept.h"
 #import "NSURLSession+MPIntercept.h"

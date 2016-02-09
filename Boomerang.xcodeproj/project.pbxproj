@@ -257,14 +257,6 @@
 		5BF6D59119085E5E00C5F991 /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */; };
 		5BF6D59219085E5E00C5F991 /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */; };
 		5BF6D59319085E5E00C5F991 /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */; };
-		6D0EBBB918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */; };
-		6D0EBBBA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */; };
-		6D0EBBBB18D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */; };
-		6D0EBBBC18D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */; };
-		6D0EBBBD18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
-		6D0EBBBE18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
-		6D0EBBBF18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
-		6D0EBBC018D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
 		6D0EBBC118D10BB500FB62AA /* MPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBAB18D10BB500FB62AA /* MPUtilities.h */; };
 		6D0EBBC218D10BB500FB62AA /* MPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBAB18D10BB500FB62AA /* MPUtilities.h */; };
 		6D0EBBC318D10BB500FB62AA /* MPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0EBBAB18D10BB500FB62AA /* MPUtilities.h */; };
@@ -452,8 +444,7 @@
 		93F34C451C63CDC500AAF4C3 /* MPBeaconTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */; };
 		93F34C461C63CDC500AAF4C3 /* MPBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */; };
 		93F34C471C63CDC500AAF4C3 /* MPConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */; };
-		93F34C481C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */; };
-		93F34C491C63CDC500AAF4C3 /* MPHttpRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTests.m */; };
+		93F34C491C63CDC500AAF4C3 /* MPHttpRequestTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTestBase.m */; };
 		93F34C4B1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */; };
 		93F34C4C1C63CDC500AAF4C3 /* MPConfigMetricTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */; };
 		93F34C4D1C63CDC500AAF4C3 /* MPConfigTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */; };
@@ -495,7 +486,6 @@
 		93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87FC551909DA81009CA061 /* MPConfig.m */; };
 		93F34C8D1C63D2AE00AAF4C3 /* MPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B87FC571909DA81009CA061 /* MPSession.m */; };
 		93F34C8E1C63D2AE00AAF4C3 /* MPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF429121649A31D0058AC81 /* MPulse.m */; };
-		93F34C8F1C63D2AE00AAF4C3 /* MPUIApplicationDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */; };
 		93F34C901C63D2AE00AAF4C3 /* MPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF428FF164470E00058AC81 /* MPURLConnection.m */; };
 		93F34C911C63D2AE00AAF4C3 /* MPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBBAC18D10BB500FB62AA /* MPUtilities.m */; };
 		93F34C921C63D33800AAF4C3 /* libMPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428C81642E1CD0058AC81 /* libMPulse.a */; };
@@ -522,7 +512,6 @@
 		93F34CE51C63D4A700AAF4C3 /* libMPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF428C81642E1CD0058AC81 /* libMPulse.a */; };
 		93F34CED1C63D4CA00AAF4C3 /* MPPodFrameworksNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C3B1C63CDC500AAF4C3 /* MPPodFrameworksNetworkingTests.m */; };
 		93F34CF41C63D68F00AAF4C3 /* MPBeaconTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */; };
-		93F34CF51C63D69700AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */; };
 		93F34CF61C63D74D00AAF4C3 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
 		93F34CF71C63D74D00AAF4C3 /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
 		93F34CF81C63D74D00AAF4C3 /* descriptor_database.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E4190F629C00915617 /* descriptor_database.cc */; };
@@ -555,6 +544,12 @@
 		93F34D131C63D74D00AAF4C3 /* unknown_field_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF360190F629C00915617 /* unknown_field_set.cc */; };
 		93F34D141C63D74D00AAF4C3 /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF363190F629C00915617 /* wire_format.cc */; };
 		93F34D151C63D74D00AAF4C3 /* wire_format_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF365190F629C00915617 /* wire_format_lite.cc */; };
+		93F34D181C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34D171C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m */; };
+		93F34D191C68E31600AAF4C3 /* MPURLConnectionDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34D171C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m */; };
+		93F34D1C1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34D1B1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m */; };
+		93F34D1D1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34D1B1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m */; };
+		93F34D211C68EC1B00AAF4C3 /* MPURLSessionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34D201C68EC1B00AAF4C3 /* MPURLSessionTests.m */; };
+		93F34D241C68EC2900AAF4C3 /* MPURLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34D231C68EC2900AAF4C3 /* MPURLConnectionTests.m */; };
 		F76730B2190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		F76730B3190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
 		F76730B5190882BB00228AB7 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
@@ -934,8 +929,6 @@
 		5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPAppInactiveBeacon.m; path = Beacons/MPAppInactiveBeacon.m; sourceTree = "<group>"; };
 		6D0974331912D6DE00A180AD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		6D0974351912D6EC00A180AD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libxml2.2.dylib; sourceTree = DEVELOPER_DIR; };
-		6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUIApplicationDelegateHelper.h; sourceTree = "<group>"; };
-		6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUIApplicationDelegateHelper.m; sourceTree = "<group>"; };
 		6D0EBBAB18D10BB500FB62AA /* MPUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUtilities.h; sourceTree = "<group>"; };
 		6D0EBBAC18D10BB500FB62AA /* MPUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUtilities.m; sourceTree = "<group>"; };
 		6D9BE116192581800074F273 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -1001,10 +994,8 @@
 		93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconTestBase.m; sourceTree = "<group>"; };
 		93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBeaconTests.m; sourceTree = "<group>"; };
 		93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigTests.m; sourceTree = "<group>"; };
-		93F34C381C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHttpRequestDelegateHelper.h; sourceTree = "<group>"; };
-		93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestDelegateHelper.m; sourceTree = "<group>"; };
-		93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestTests.m; sourceTree = "<group>"; };
-		93F34C3B1C63CDC500AAF4C3 /* MPPodFrameworksNetworkingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPodFrameworksNetworkingTests.m; path = ../BoomerangTests/MPPodFrameworksNetworkingTests.m; sourceTree = "<group>"; };
+		93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHttpRequestTestBase.m; sourceTree = "<group>"; };
+		93F34C3B1C63CDC500AAF4C3 /* MPPodFrameworksNetworkingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPodFrameworksNetworkingTests.m; sourceTree = "<group>"; };
 		93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRemoveUnicodeCharsTest.m; sourceTree = "<group>"; };
 		93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigMetricTests.m; sourceTree = "<group>"; };
 		93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigTimerTests.m; sourceTree = "<group>"; };
@@ -1014,6 +1005,13 @@
 		93F34CEE1C63D53400AAF4C3 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		93F34CF01C63D53600AAF4C3 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
 		93F34CF21C63D53A00AAF4C3 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
+		93F34D161C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPURLConnectionDelegateHelper.h; sourceTree = "<group>"; };
+		93F34D171C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLConnectionDelegateHelper.m; sourceTree = "<group>"; };
+		93F34D1A1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPURLSessionDelegateHelper.h; sourceTree = "<group>"; };
+		93F34D1B1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLSessionDelegateHelper.m; sourceTree = "<group>"; };
+		93F34D201C68EC1B00AAF4C3 /* MPURLSessionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLSessionTests.m; sourceTree = "<group>"; };
+		93F34D231C68EC2900AAF4C3 /* MPURLConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLConnectionTests.m; sourceTree = "<group>"; };
+		93F34D251C68F17B00AAF4C3 /* MPHttpRequestTestBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHttpRequestTestBase.h; sourceTree = "<group>"; };
 		DDD801557B828A1872ECC26C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A774000E4C7617F29828EB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientBeaconBatch.pb.cc; sourceTree = "<group>"; };
@@ -1332,8 +1330,6 @@
 				2CF429111649A31D0058AC81 /* MPulse.h */,
 				2CF429121649A31D0058AC81 /* MPulse.m */,
 				5B31D8531A75CC7500941F62 /* MPulsePrivate.h */,
-				6D0EBBA918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h */,
-				6D0EBBAA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m */,
 				2CF428FE164470E00058AC81 /* MPURLConnection.h */,
 				2CF428FF164470E00058AC81 /* MPURLConnection.m */,
 				6D0EBBAB18D10BB500FB62AA /* MPUtilities.h */,
@@ -1469,10 +1465,15 @@
 				93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */,
 				93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */,
 				93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */,
-				93F34C381C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.h */,
-				93F34C391C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m */,
-				93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTests.m */,
+				93F34D251C68F17B00AAF4C3 /* MPHttpRequestTestBase.h */,
+				93F34C3A1C63CDC500AAF4C3 /* MPHttpRequestTestBase.m */,
 				93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */,
+				93F34D161C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.h */,
+				93F34D171C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m */,
+				93F34D231C68EC2900AAF4C3 /* MPURLConnectionTests.m */,
+				93F34D1A1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.h */,
+				93F34D1B1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m */,
+				93F34D201C68EC1B00AAF4C3 /* MPURLSessionTests.m */,
 			);
 			path = BoomerangTests;
 			sourceTree = "<group>";
@@ -1697,7 +1698,6 @@
 				F78AF542190F629C00915617 /* package_info.h in Headers */,
 				F78AF594190F629C00915617 /* hash.h in Headers */,
 				F78AF4AA190F629C00915617 /* descriptor_database.h in Headers */,
-				6D0EBBBA18D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */,
 				F775D60E1907758300EF7369 /* MPBeacon.h in Headers */,
 				F78AF4E8190F629C00915617 /* coded_stream.h in Headers */,
 				5B18994619102268009794C1 /* MPReachability.h in Headers */,
@@ -1766,7 +1766,6 @@
 				F78AF59D190F629C00915617 /* once.h in Headers */,
 				F78AF56E190F629C00915617 /* atomicops_internals_atomicword_compat.h in Headers */,
 				F78AF4EA190F629C00915617 /* coded_stream_inl.h in Headers */,
-				6D0EBBB918D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */,
 				2CF42900164470E00058AC81 /* MPURLConnection.h in Headers */,
 				5B87FC601909DA81009CA061 /* MPSession.h in Headers */,
 				F78AF4E0190F629C00915617 /* generated_message_util.h in Headers */,
@@ -1871,7 +1870,6 @@
 				F78AF59F190F629C00915617 /* once.h in Headers */,
 				F78AF570190F629C00915617 /* atomicops_internals_atomicword_compat.h in Headers */,
 				F78AF4EC190F629C00915617 /* coded_stream_inl.h in Headers */,
-				6D0EBBBB18D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */,
 				5BC5E04818D0FD790095F33A /* MPURLConnection.h in Headers */,
 				5B87FC621909DA81009CA061 /* MPSession.h in Headers */,
 				F78AF4E2190F629C00915617 /* generated_message_util.h in Headers */,
@@ -1985,7 +1983,6 @@
 				5BC5E06E18D0FD820095F33A /* MPURLConnection.h in Headers */,
 				5B1899671911691F009794C1 /* extension_set.h in Headers */,
 				5B18997119116928009794C1 /* message_lite.h in Headers */,
-				6D0EBBBC18D10BB500FB62AA /* MPUIApplicationDelegateHelper.h in Headers */,
 				5B18996519116915009794C1 /* dynamic_message.h in Headers */,
 				5B1899A419116945009794C1 /* stl_util.h in Headers */,
 				6D9BE1EB1925825A0074F273 /* MPInterceptURLConnectionDelegate.h in Headers */,
@@ -2301,7 +2298,6 @@
 				272075DC18F59B8B008DB644 /* MPBeaconCollector.m in Sources */,
 				F78AF4A6190F629C00915617 /* descriptor_database.cc in Sources */,
 				5BF6D59119085E5E00C5F991 /* MPAppInactiveBeacon.m in Sources */,
-				6D0EBBBE18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				27EE51A918FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.mm in Sources */,
 				F78AF4C7190F629C00915617 /* extension_set_heavy.cc in Sources */,
 				27EE51BD18FC8A760079D9E7 /* MPApiCustomMetricBeacon.mm in Sources */,
@@ -2361,7 +2357,6 @@
 				93F34B3F1C5FB3AC00AAF4C3 /* NSData+Gzip.m in Sources */,
 				F78AF4E3190F629C00915617 /* coded_stream.cc in Sources */,
 				F78AF4A5190F629C00915617 /* descriptor_database.cc in Sources */,
-				6D0EBBBD18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				27EE51A818FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.mm in Sources */,
 				6D9BE146192581800074F273 /* NSObject+TT_SBJSON.m in Sources */,
 				5B234814198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */,
@@ -2443,7 +2438,6 @@
 				272075DE18F59B8B008DB644 /* MPBeaconCollector.m in Sources */,
 				F78AF4E6190F629C00915617 /* coded_stream.cc in Sources */,
 				F78AF4A8190F629C00915617 /* descriptor_database.cc in Sources */,
-				6D0EBBBF18D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				27EE51AB18FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.mm in Sources */,
 				5B234817198957910037EFEC /* MPNetworkErrorBeaconGenerator.m in Sources */,
 				6D9BE149192581800074F273 /* NSObject+TT_SBJSON.m in Sources */,
@@ -2526,7 +2520,6 @@
 				5B18998D19116939009794C1 /* wire_format.cc in Sources */,
 				5B1899621911690E009794C1 /* descriptor_database.cc in Sources */,
 				5B1899AA19116945009794C1 /* substitute.cc in Sources */,
-				6D0EBBC018D10BB500FB62AA /* MPUIApplicationDelegateHelper.m in Sources */,
 				5B1899791911692F009794C1 /* coded_stream.cc in Sources */,
 				5B18994C19102268009794C1 /* MPReachability.m in Sources */,
 				5B804ADF1BA32EC7002FC459 /* MPInterceptUtils.m in Sources */,
@@ -2588,6 +2581,7 @@
 				93F34C831C63D2AE00AAF4C3 /* NSObject+TT_SBJSON.m in Sources */,
 				93F34C841C63D2AE00AAF4C3 /* NSString+TT_SBJSON.m in Sources */,
 				93F34C851C63D2AE00AAF4C3 /* TT_SBJSON.m in Sources */,
+				93F34D211C68EC1B00AAF4C3 /* MPURLSessionTests.m in Sources */,
 				93F34C861C63D2AE00AAF4C3 /* TT_SBJsonBase.m in Sources */,
 				93F34C871C63D2AE00AAF4C3 /* TT_SBJsonParser.m in Sources */,
 				93F34C881C63D2AE00AAF4C3 /* TT_SBJsonWriter.m in Sources */,
@@ -2596,24 +2590,25 @@
 				93F34C8B1C63D2AE00AAF4C3 /* MPTTYLogger.m in Sources */,
 				93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */,
 				93F34C8D1C63D2AE00AAF4C3 /* MPSession.m in Sources */,
+				93F34D181C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m in Sources */,
 				93F34C8E1C63D2AE00AAF4C3 /* MPulse.m in Sources */,
-				93F34C8F1C63D2AE00AAF4C3 /* MPUIApplicationDelegateHelper.m in Sources */,
 				93F34C901C63D2AE00AAF4C3 /* MPURLConnection.m in Sources */,
 				93F34C911C63D2AE00AAF4C3 /* MPUtilities.m in Sources */,
 				93F34C4B1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m in Sources */,
 				93F34C451C63CDC500AAF4C3 /* MPBeaconTestBase.m in Sources */,
 				93F34C4C1C63CDC500AAF4C3 /* MPConfigMetricTests.m in Sources */,
+				93F34D241C68EC2900AAF4C3 /* MPURLConnectionTests.m in Sources */,
 				93F34C4D1C63CDC500AAF4C3 /* MPConfigTimerTests.m in Sources */,
 				93F34C431C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m in Sources */,
 				93F34C461C63CDC500AAF4C3 /* MPBeaconTests.m in Sources */,
-				93F34C481C63CDC500AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */,
 				93F34C401C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m in Sources */,
 				93F34C421C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m in Sources */,
 				93F34C441C63CDC500AAF4C3 /* MPBatchTests.mm in Sources */,
 				93F34C471C63CDC500AAF4C3 /* MPConfigTests.m in Sources */,
 				93F34C3F1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m in Sources */,
+				93F34D1C1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m in Sources */,
 				93F34C411C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m in Sources */,
-				93F34C491C63CDC500AAF4C3 /* MPHttpRequestTests.m in Sources */,
+				93F34C491C63CDC500AAF4C3 /* MPHttpRequestTestBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2621,6 +2616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F34D191C68E31600AAF4C3 /* MPURLConnectionDelegateHelper.m in Sources */,
 				93F34CF61C63D74D00AAF4C3 /* descriptor.cc in Sources */,
 				93F34CF71C63D74D00AAF4C3 /* descriptor.pb.cc in Sources */,
 				93F34CF81C63D74D00AAF4C3 /* descriptor_database.cc in Sources */,
@@ -2642,6 +2638,7 @@
 				93F34D081C63D74D00AAF4C3 /* repeated_field.cc in Sources */,
 				93F34D091C63D74D00AAF4C3 /* service.cc in Sources */,
 				93F34D0A1C63D74D00AAF4C3 /* atomicops_internals_x86_gcc.cc in Sources */,
+				93F34D1D1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m in Sources */,
 				93F34D0B1C63D74D00AAF4C3 /* atomicops_internals_x86_msvc.cc in Sources */,
 				93F34D0C1C63D74D00AAF4C3 /* common.cc in Sources */,
 				93F34D0D1C63D74D00AAF4C3 /* once.cc in Sources */,
@@ -2653,7 +2650,6 @@
 				93F34D131C63D74D00AAF4C3 /* unknown_field_set.cc in Sources */,
 				93F34D141C63D74D00AAF4C3 /* wire_format.cc in Sources */,
 				93F34D151C63D74D00AAF4C3 /* wire_format_lite.cc in Sources */,
-				93F34CF51C63D69700AAF4C3 /* MPHttpRequestDelegateHelper.m in Sources */,
 				93F34CF41C63D68F00AAF4C3 /* MPBeaconTestBase.m in Sources */,
 				93F34CED1C63D4CA00AAF4C3 /* MPPodFrameworksNetworkingTests.m in Sources */,
 			);

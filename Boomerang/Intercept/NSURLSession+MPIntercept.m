@@ -86,28 +86,46 @@
     // create a beacon to track
     MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
     
-    task = [self boomerangDataTaskWithRequest:request
-                            completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
+    if (self.delegate != nil && completionHandler == nil)
     {
-      @try
-      {
-        // the task is complete, parse the beacon
-        [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
-      }
-      @catch (NSException *exception)
-      {
-        MPLogError(@"Exception occured in boomerangDataTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
-      }
-      @finally
-      {
-        // call back the completionHandler if specified
-        if (completionHandler != nil)
-        {
-          completionHandler(data, response, error);
-        }
-      }
-    }];
+      //
+      // If the caller has specified a delegate, a completionHandler should not be specified (as
+      // the delegate methods won't be called).  Rely on our swizzled delegate to detect when
+      // the request is complete.
+      //
+      task = [self boomerangDataTaskWithRequest:request completionHandler:nil];
 
+      // ensure we track this beacon for the delegate
+      [[MPInterceptURLSessionDelegate sharedInstance] addBeacon:beacon forTask:task];
+    }
+    else
+    {
+      //
+      // If the caller has not specified a delegate, we can use an inline completionHandler block.
+      //
+      task = [self boomerangDataTaskWithRequest:request
+                              completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
+      {
+        @try
+        {
+          // the task is complete, parse the beacon
+          [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
+        }
+        @catch (NSException *exception)
+        {
+          MPLogError(@"Exception occured in boomerangDataTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
+        }
+        @finally
+        {
+          // call back the completionHandler if specified
+          if (completionHandler != nil)
+          {
+            completionHandler(data, response, error);
+          }
+        }
+      }];
+    }
+    
     return task;
   }
   @catch (NSException *exception)
@@ -164,29 +182,47 @@
     
     // create a beacon to track
     MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
-    
-    task = [self boomerangUploadTaskWithRequest:request
-                                       fromFile:fileURL
-                              completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
-           {
-             @try
-             {
-               // the task is complete, parse the beacon
-               [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
-             }
-             @catch (NSException *exception)
-             {
-               MPLogError(@"Exception occured in boomerangUploadTaskWithRequest:fromFile:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
-             }
-             @finally
-             {
-               // call back the completionHandler if specified
-               if (completionHandler != nil)
-               {
-                 completionHandler(data, response, error);
-               }
-             }
-           }];
+
+    if (self.delegate != nil && completionHandler == nil)
+    {
+      //
+      // If the caller has specified a delegate, a completionHandler should not be specified (as
+      // the delegate methods won't be called).  Rely on our swizzled delegate to detect when
+      // the request is complete.
+      //
+      task = [self boomerangUploadTaskWithRequest:request fromFile:fileURL completionHandler:nil];
+
+      // ensure we track this beacon for the delegate
+      [[MPInterceptURLSessionDelegate sharedInstance] addBeacon:beacon forTask:task];
+    }
+    else
+    {
+      //
+      // If the caller has not specified a delegate, we can use an inline completionHandler block.
+      //
+      task = [self boomerangUploadTaskWithRequest:request
+                                         fromFile:fileURL
+                                completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
+      {
+        @try
+        {
+          // the task is complete, parse the beacon
+          [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
+        }
+        @catch (NSException *exception)
+        {
+        MPLogError(@"Exception occured in boomerangUploadTaskWithRequest:fromFile:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
+        }
+        @finally
+        {
+          // call back the completionHandler if specified
+          if (completionHandler != nil)
+          {
+            completionHandler(data, response, error);
+          }
+        }
+      }];
+    }
   }
   @catch (NSException *exception)
   {
@@ -246,29 +282,47 @@
     
     // create a beacon to track
     MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
-    
-    task = [self boomerangUploadTaskWithRequest:request
-                                       fromData:data
-                              completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
-           {
-             @try
-             {
-               // the task is complete, parse the beacon
-               [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
-             }
-             @catch (NSException *exception)
-             {
-               MPLogError(@"Exception occured in boomerangUploadTaskWithRequest:fromData:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
-             }
-             @finally
-             {
-               // call back the completionHandler if specified
-               if (completionHandler != nil)
-               {
-                 completionHandler(data, response, error);
-               }
-             }
-           }];
+
+    if (self.delegate != nil && completionHandler == nil)
+    {
+      //
+      // If the caller has specified a delegate, a completionHandler should not be specified (as
+      // the delegate methods won't be called).  Rely on our swizzled delegate to detect when
+      // the request is complete.
+      //
+      task = [self boomerangUploadTaskWithRequest:request fromData:data completionHandler:completionHandler];
+
+      // ensure we track this beacon for the delegate
+      [[MPInterceptURLSessionDelegate sharedInstance] addBeacon:beacon forTask:task];
+    }
+    else
+    {
+      //
+      // If the caller has not specified a delegate, we can use an inline completionHandler block.
+      //
+      task = [self boomerangUploadTaskWithRequest:request
+                                         fromData:data
+                                completionHandler:^void(NSData* data, NSURLResponse *response, NSError *error)
+      {
+        @try
+        {
+          // the task is complete, parse the beacon
+          [MPInterceptUtils parseResponse:beacon data:data response:response error:error];
+        }
+        @catch (NSException *exception)
+        {
+          MPLogError(@"Exception occured in boomerangUploadTaskWithRequest:fromData:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
+        }
+        @finally
+        {
+          // call back the completionHandler if specified
+          if (completionHandler != nil)
+          {
+            completionHandler(data, response, error);
+          }
+        }
+      }];
+    }
   }
   @catch (NSException *exception)
   {
@@ -351,28 +405,46 @@
     
     // create a beacon to track
     MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:[request URL]];
-    
-    task = [self boomerangDownloadTaskWithRequest:request
-                                completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
-            {
-              @try
-              {
-                // the task is complete, parse the beacon
-                [MPInterceptUtils parseResponse:beacon data:nil response:response error:error];
-              }
-              @catch (NSException *exception)
-              {
-                MPLogError(@"Exception occured in boomerangDownloadTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
-              }
-              @finally
-              {
-                // call back the completionHandler if specified
-                if (completionHandler != nil)
-                {
-                  completionHandler(location, response, error);
-                }
-              }
-            }];
+
+    if (self.delegate != nil && completionHandler == nil)
+    {
+      //
+      // If the caller has specified a delegate, a completionHandler should not be specified (as
+      // the delegate methods won't be called).  Rely on our swizzled delegate to detect when
+      // the request is complete.
+      //
+      task = [self boomerangDownloadTaskWithRequest:request completionHandler:completionHandler];
+
+      // ensure we track this beacon for the delegate
+      [[MPInterceptURLSessionDelegate sharedInstance] addBeacon:beacon forTask:task];
+    }
+    else
+    {
+      //
+      // If the caller has not specified a delegate, we can use an inline completionHandler block.
+      //
+      task = [self boomerangDownloadTaskWithRequest:request
+                                  completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
+      {
+        @try
+        {
+          // the task is complete, parse the beacon
+          [MPInterceptUtils parseResponse:beacon data:nil response:response error:error];
+        }
+        @catch (NSException *exception)
+        {
+          MPLogError(@"Exception occured in boomerangDownloadTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
+        }
+        @finally
+        {
+          // call back the completionHandler if specified
+          if (completionHandler != nil)
+          {
+            completionHandler(location, response, error);
+          }
+        }
+      }];
+    }
   }
   @catch (NSException *exception)
   {
@@ -423,27 +495,45 @@
     // create a beacon to track
     MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
     
-    task = [self boomerangDownloadTaskWithResumeData:resumeData
-                                   completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
+    if (self.delegate != nil && completionHandler == nil)
     {
-      @try
+      //
+      // If the caller has specified a delegate, a completionHandler should not be specified (as
+      // the delegate methods won't be called).  Rely on our swizzled delegate to detect when
+      // the request is complete.
+      //
+      task = [self boomerangDownloadTaskWithResumeData:resumeData completionHandler:completionHandler];
+
+      // ensure we track this beacon for the delegate
+      [[MPInterceptURLSessionDelegate sharedInstance] addBeacon:beacon forTask:task];
+    }
+    else
+    {
+      //
+      // If the caller has not specified a delegate, we can use an inline completionHandler block.
+      //
+      task = [self boomerangDownloadTaskWithResumeData:resumeData
+                                     completionHandler:^void(NSURL *location, NSURLResponse *response, NSError *error)
       {
-        // the task is complete, parse the beacon
-        [MPInterceptUtils parseResponse:beacon data:nil response:response error:error];
-      }
-      @catch (NSException *exception)
-      {
-        MPLogError(@"Exception occured in boomerangDownloadTaskWithResumeData:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
-      }
-      @finally
-      {
-        // call back the completionHandler if specified
-        if (completionHandler != nil)
+        @try
         {
-          completionHandler(location, response, error);
+          // the task is complete, parse the beacon
+          [MPInterceptUtils parseResponse:beacon data:nil response:response error:error];
         }
-      }
-    }];
+        @catch (NSException *exception)
+        {
+          MPLogError(@"Exception occured in boomerangDownloadTaskWithResumeData:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
+        }
+        @finally
+        {
+          // call back the completionHandler if specified
+          if (completionHandler != nil)
+          {
+            completionHandler(location, response, error);
+          }
+        }
+      }];
+    }
   }
   @catch (NSException *exception)
   {

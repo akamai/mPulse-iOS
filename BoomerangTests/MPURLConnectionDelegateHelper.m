@@ -1,15 +1,15 @@
 //
-//  MPHttpRequestDelegateHelper.m
+//  MPURLConnectionDelegateHelper.m
 //  Boomerang
 //
 //  Created by Shilpi Nayak on 7/8/14.
 //  Copyright (c) 2014 SOASTA. All rights reserved.
 //
 
-#import "MPHttpRequestDelegateHelper.h"
+#import "MPURLConnectionDelegateHelper.h"
 #import "NSObject+TT_SBJSON.h"
 
-@implementation MPHttpRequestDelegateHelper
+@implementation MPURLConnectionDelegateHelper
 {
 @private
     NSURLRequest *_request;
@@ -18,7 +18,6 @@
 
 #pragma mark -
 #pragma mark NSURLConnectionDataDelegate methods
-
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
@@ -50,7 +49,6 @@
     [self signal];
 }
 
-
 -(void) connection:(NSURLConnection *)connection
    didSendBodyData:(NSInteger)bytesWritten
  totalBytesWritten:(NSInteger)totalBytesWritten
@@ -77,4 +75,5 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     [_condition signal];
     [_condition unlock];
 }
+
 @end
