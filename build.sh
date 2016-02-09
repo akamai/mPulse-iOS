@@ -34,27 +34,31 @@ elif [ $# -eq 4 ]; then
 fi
 
 #This function assumes that:
-#1. First argument would be the prefix of Xcode project built. (Example: TouchTestDriver/TouchTestDriver/TouchTestDriver)
-#2. Second argument would be the Xcode target to be built. (Example: TouchTestDriverLib)
-#3. Third argument would be the library name without the suffix. (Example: TouchTestDriver/libTouchTestDriver)
+#1. First argument would be the prefix of Xcode project built. (Example: Boomerang)
+#2. Second argument would be the Xcode target to be built. (Example: BoomerangLib)
+#3. Third argument would be the library name without the suffix. (Example: libMPulse)
 function buildLibrary
 {
+  XCODE_PROJECT=$1
+  XCODE_TARGET=$2
+  XCODE_LIB=$3
+
   # Remove any old slices we might have
-  rm -rf build/StaticLibraries/$3*
-  rm -rf build/DynamicLibraries/$3*
+  rm -rf build/StaticLibraries/${XCODE_LIB}*
+  rm -rf build/DynamicLibraries/${XCODE_LIB}*
 
   # Build the armv7, armv7s, arm64 and i386 slices
   /usr/bin/xcodebuild -version
-  /usr/bin/xcodebuild -target $2 -project $1.xcodeproj -configuration $BUILD_MODE clean build
+  /usr/bin/xcodebuild -target $XCODE_TARGET -project ${XCODE_PROJECT}.xcodeproj -configuration $BUILD_MODE clean build
 
   # Codesign the dynamic library
   if [ "$CODE_SIGN" -eq "true" ]; then
-    /usr/bin/codesign --timestamp=none -f -s "iPhone Distribution: SOASTA Inc." "build/DynamicLibraries/$3.dylib"
+    /usr/bin/codesign --timestamp=none -f -s "iPhone Distribution: SOASTA Inc." "build/DynamicLibraries/${XCODE_LIB}.dylib"
   fi
 
   # Removing the armv6 individual slice.
-  rm -rf build/StaticLibraries/$3_armv6.*
-  rm -rf build/DynamicLibraries/$3_armv6.*
+  rm -rf build/StaticLibraries/${XCODE_LIB}_armv6.*
+  rm -rf build/DynamicLibraries/${XCODE_LIB}_armv6.*
 }
 
 # Inject Build Version Number into MPulse.m file
