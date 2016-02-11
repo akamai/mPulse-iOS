@@ -52,7 +52,7 @@ function buildLibrary
   /usr/bin/xcodebuild -target $XCODE_TARGET -project ${XCODE_PROJECT}.xcodeproj -configuration $BUILD_MODE clean build
 
   # Codesign the dynamic library
-  if [ "$CODE_SIGN" -eq "true" ]; then
+  if [ "$CODE_SIGN" = "true" ]; then
     /usr/bin/codesign --timestamp=none -f -s "iPhone Distribution: SOASTA Inc." "build/DynamicLibraries/${XCODE_LIB}.dylib"
   fi
 
