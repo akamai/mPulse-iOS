@@ -1,5 +1,5 @@
 //
-//  MPAppCrashBeaconBeaconTests.m
+//  MPAppErrorBeaconBeaconTests.m
 //  Boomerang
 //
 //  Created by Mukul Sharma on 5/22/15.
@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <Foundation/Foundation.h>
-#import "MPAppCrashBeacon.h"
+#import "MPAppErrorBeacon.h"
 #import "MPBeaconCollector.h"
 #import "MPConfig.h"
 #import "MPulse.h"
@@ -16,13 +16,13 @@
 #import "MPSession.h"
 #import "MPBeaconTestBase.h"
 
-@interface MPAppCrashBeaconBeaconTests : MPBeaconTestBase
+@interface MPAppErrorBeaconBeaconTests : MPBeaconTestBase
 {
 }
 
 @end
 
-@implementation MPAppCrashBeaconBeaconTests
+@implementation MPAppErrorBeaconBeaconTests
 
 // Wait for beacon to be added after connection - ensures MPBeaconCollector has records.
 static int const BEACON_ADD_WAIT = 5;
@@ -41,7 +41,7 @@ static int const BEACON_ADD_WAIT = 5;
   
   for (int i = 0; i < [beaconValidation count]; i++)
   {
-    MPAppCrashBeacon *beacon = [testBeacons objectAtIndex:i];
+    MPAppErrorBeacon *beacon = [testBeacons objectAtIndex:i];
     
     NSArray *validation = [beaconValidation objectAtIndex:i];
     
@@ -78,7 +78,7 @@ static int const BEACON_ADD_WAIT = 5;
 
 -(void) testAppCrashBeacon
 {
-  [MPAppCrashBeacon sendBeacon];
+  [MPAppErrorBeacon sendBeacon];
   
   // Sleep - waiting for beacon to be added
   [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
@@ -89,9 +89,9 @@ static int const BEACON_ADD_WAIT = 5;
 
 -(void) testSendThreeCrashBeacons
 {
-  [MPAppCrashBeacon sendBeacon];
-  [MPAppCrashBeacon sendBeacon];
-  [MPAppCrashBeacon sendBeacon];
+  [MPAppErrorBeacon sendBeacon];
+  [MPAppErrorBeacon sendBeacon];
+  [MPAppErrorBeacon sendBeacon];
   
   // Sleep - waiting for beacons to be added
   [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
@@ -104,11 +104,11 @@ static int const BEACON_ADD_WAIT = 5;
 {
   [[MPulse sharedInstance] setViewGroup:@"Foo"];
   [[MPulse sharedInstance] setABTest:@"A/B"];
-  [MPAppCrashBeacon sendBeacon];
+  [MPAppErrorBeacon sendBeacon];
   
   [[MPulse sharedInstance] resetViewGroup];
   [[MPulse sharedInstance] resetABTest];
-  [MPAppCrashBeacon sendBeacon];
+  [MPAppErrorBeacon sendBeacon];
   
   // Sleep - waiting for beacon to be added
   [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
@@ -122,7 +122,7 @@ static int const BEACON_ADD_WAIT = 5;
 
 -(void) testBeaconType
 {
-  MPAppCrashBeacon *beacon = [[MPAppCrashBeacon alloc] init];
+  MPAppErrorBeacon *beacon = [[MPAppErrorBeacon alloc] init];
   
   XCTAssertNotNil(beacon);
   XCTAssertEqual([beacon getBeaconType], APP_CRASH);
