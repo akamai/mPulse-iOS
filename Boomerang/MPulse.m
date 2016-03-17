@@ -34,7 +34,6 @@
 {
   // Dictionary to store Custom Timer instances
   NSMutableDictionary* _customTimerDictionary;
-  NSString *_pageGroup;
   NSString *_abTest;
   NSMutableArray *_customDimensions;
   NSString *_viewGroup;
@@ -115,7 +114,6 @@ static MPulse *mPulseInstance = nil;
 -(id) init
 {
   _customTimerDictionary = [[NSMutableDictionary alloc] init];
-  _pageGroup = @""; // Initialize to an empty string instead of nil
   
   NSMutableArray *emptyDimensions = [[NSMutableArray alloc] initWithCapacity:10];
   for (int d = 0; d < 10; d++)
