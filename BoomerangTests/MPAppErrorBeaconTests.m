@@ -59,7 +59,7 @@ static int const BEACON_ADD_WAIT = 5;
       abTest = [validation objectAtIndex:1];
     }
 
-    XCTAssertEqual([beacon getBeaconType], APP_CRASH, "Beacon type");
+    XCTAssertEqual([beacon getBeaconType], APP_ERROR, "Beacon type");
     
     if (![viewGroup isEqualToString:@""])
     {
@@ -74,9 +74,9 @@ static int const BEACON_ADD_WAIT = 5;
 }
 
 #pragma mark -
-#pragma mark App Crash Beacon Tests
+#pragma mark App Error Beacon Tests
 
--(void) testAppCrashBeacon
+-(void) testAppErrorBeacon
 {
   [MPAppErrorBeacon sendBeacon];
   
@@ -87,7 +87,7 @@ static int const BEACON_ADD_WAIT = 5;
   [self validateBeacons:@[@[]]];
 }
 
--(void) testSendThreeCrashBeacons
+-(void) testSendThreeErrorBeacons
 {
   [MPAppErrorBeacon sendBeacon];
   [MPAppErrorBeacon sendBeacon];
@@ -125,7 +125,7 @@ static int const BEACON_ADD_WAIT = 5;
   MPAppErrorBeacon *beacon = [[MPAppErrorBeacon alloc] init];
   
   XCTAssertNotNil(beacon);
-  XCTAssertEqual([beacon getBeaconType], APP_CRASH);
+  XCTAssertEqual([beacon getBeaconType], APP_ERROR);
 }
 
 @end
