@@ -85,6 +85,8 @@
       if ([timer.name isEqualToString:timerName])
       {
         _timerIndex = timer.index;
+
+        // the given value is a NSTimeInterval (in seconds), but we need to keep track in milliseconds
         _timerValue = value * 1000;
 
         _hasTimerStarted = YES;
@@ -162,7 +164,7 @@
  */
 -(void) endTimer
 {
-  // convert to milliseconds
+  // convert a NSTimeInterval (in seconds) to milliseconds
   _timerValue = [[NSDate date] timeIntervalSinceDate:_startTime] * 1000;
   _hasTimerEnded = YES;
   

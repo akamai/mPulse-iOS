@@ -58,7 +58,7 @@
     = (::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord*)recordPtr;
   
   // timestamp - convert to milliseconds
-  long msTimestamp = [_timestamp timeIntervalSince1970] * 1000;
+  int64_t msTimestamp = [_timestamp timeIntervalSince1970] * 1000;
   record->set_timestamp(msTimestamp);
   
   // beacon type
