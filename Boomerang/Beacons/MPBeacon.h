@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, MPBeaconTypeEnum) {
   API_CUSTOM_TIMER = 9,     // Custom Timer
   APP_LAUNCH = 10,          // App launch
   APP_INACTIVE = 11,        // App inactive
-  APP_CRASH = 12,           // App crash
+  APP_ERROR = 12,           // App error
   BATCH = 13,               // Batch
 };
 

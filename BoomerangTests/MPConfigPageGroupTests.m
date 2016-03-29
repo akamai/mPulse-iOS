@@ -1,24 +1,24 @@
 //
-//  MPConfigMetricTests.m
+//  MPConfigPageGroupTests.m
 //  Boomerang
 //
-//  Created by Giri Senji on 5/28/14.
-//  Copyright (c) 2014 SOASTA. All rights reserved.
+//  Created by Nicholas Jansma on 3/28/16.
+//  Copyright © 2016 SOASTA. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "MPConfigMetric.h"
+#import "MPConfigPageGroup.h"
 #import "NSObject+TT_SBJSON.h"
 #import "NSString+MPExtensions.h"
 #import "JSON.h"
 
-@interface MPConfigMetricTests : XCTestCase
+@interface MPConfigPageGroupTests : XCTestCase
 
 @end
 
-@implementation MPConfigMetricTests
+@implementation MPConfigPageGroupTests
 
--(void) testConfigMetric
+-(void) testConfigPageGroup
 {
   // Human readable version of JSON
   //    {
@@ -29,8 +29,8 @@
   //      "dataType": "MetricDataType"
   //    }
   NSString *metricJson = @"{\"name\":\"MetricName\",\"index\":\"10\",\"type\":\"MetricType\",\"label\":\"MetricLabel\",\"dataType\":\"MetricDataType\"}";
-
-  MPConfigMetric *metric = [[MPConfigMetric alloc] initWithDictionary:[metricJson tt_JSONValue]];
+  
+  MPConfigPageGroup *metric = [[MPConfigPageGroup alloc] initWithDictionary:[metricJson tt_JSONValue]];
   
   XCTAssertNotNil(metric, @"initWithDictionary should always return a valid MPConfigMetric.");
   

@@ -26,7 +26,7 @@
  */
 -(MPBeaconTypeEnum) getBeaconType
 {
-  return APP_CRASH;
+  return APP_ERROR;
 }
 
 /**

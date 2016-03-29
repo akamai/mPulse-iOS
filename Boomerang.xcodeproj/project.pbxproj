@@ -338,6 +338,15 @@
 		93318A571B8796FB003A430F /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */; };
 		93318A5A1B87A256003A430F /* MPInterceptUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 93318A581B87A256003A430F /* MPInterceptUtils.h */; };
 		93318A5B1B87A256003A430F /* MPInterceptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A591B87A256003A430F /* MPInterceptUtils.m */; };
+		933D781F1CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */; };
+		933D78201CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */; };
+		933D78221CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */; };
+		933D78231CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */; };
+		933D78811CAB129400774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		933D78821CAB129400774235 /* strtod.h in Headers */ = {isa = PBXBuildFile; fileRef = 933D78801CAB129400774235 /* strtod.h */; };
+		933D78831CAB136700774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		933D78841CAB136C00774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		933D78851CAB137000774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
 		9348A2401BA31B2A00732150 /* MPInterceptURLSessionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9348A23F1BA31B2A00732150 /* MPInterceptURLSessionDelegate.h */; };
 		934E97D41BBAFA08008BBDE8 /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
 		934E98001BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
@@ -956,6 +965,10 @@
 		93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "NSURLSession+MPIntercept.m"; path = "Intercept/NSURLSession+MPIntercept.m"; sourceTree = "<group>"; };
 		93318A581B87A256003A430F /* MPInterceptUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = MPInterceptUtils.h; path = Intercept/MPInterceptUtils.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		93318A591B87A256003A430F /* MPInterceptUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MPInterceptUtils.m; path = Intercept/MPInterceptUtils.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigPageGroupTests.m; sourceTree = "<group>"; };
+		933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigPageParamsTests.m; sourceTree = "<group>"; };
+		933D787F1CAB129400774235 /* strtod.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strtod.cc; sourceTree = "<group>"; };
+		933D78801CAB129400774235 /* strtod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strtod.h; sourceTree = "<group>"; };
 		9348A23F1BA31B2A00732150 /* MPInterceptURLSessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = MPInterceptURLSessionDelegate.h; path = Intercept/MPInterceptURLSessionDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppErrorBeacon.h; path = Beacons/MPAppErrorBeacon.h; sourceTree = "<group>"; };
 		934E97D91BC70DB9008BBDE8 /* StyleSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StyleSettings.plist; sourceTree = "<group>"; };
@@ -1463,6 +1476,8 @@
 				93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */,
 				93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */,
 				93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */,
+				933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */,
+				933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */,
 				93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */,
 				93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */,
 				93F34D251C68F17B00AAF4C3 /* MPHttpRequestTestBase.h */,
@@ -1554,6 +1569,8 @@
 		F78AF2F5190F629C00915617 /* io */ = {
 			isa = PBXGroup;
 			children = (
+				933D787F1CAB129400774235 /* strtod.cc */,
+				933D78801CAB129400774235 /* strtod.h */,
 				F78AF2F6190F629C00915617 /* coded_stream.cc */,
 				F78AF2F7190F629C00915617 /* coded_stream.h */,
 				F78AF2F8190F629C00915617 /* coded_stream_inl.h */,
@@ -1807,6 +1824,7 @@
 				5B18994519102268009794C1 /* MPReachability.h in Headers */,
 				F78AF574190F629C00915617 /* atomicops_internals_mips_gcc.h in Headers */,
 				F775D60D1907758300EF7369 /* MPBeacon.h in Headers */,
+				933D78821CAB129400774235 /* strtod.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2232,6 +2250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D78831CAB136700774235 /* strtod.cc in Sources */,
 				93F34B8D1C5FBA8600AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34B8E1C5FBA8600AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34B8F1C5FBA8600AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2331,6 +2350,7 @@
 				F78AF61E190F629C00915617 /* unknown_field_set.cc in Sources */,
 				F78AF64919105FF400915617 /* MPBatchTransport.m in Sources */,
 				93F34B2F1C5FAE7200AAF4C3 /* MPConfigMetric.m in Sources */,
+				933D78811CAB129400774235 /* strtod.cc in Sources */,
 				271A7F9F18FDBD8500DA420A /* MPAppLaunchBeacon.mm in Sources */,
 				93F34B001C5ACEF300AAF4C3 /* MPTTYLogger.m in Sources */,
 				F78AF629190F629C00915617 /* wire_format.cc in Sources */,
@@ -2392,6 +2412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D78841CAB136C00774235 /* strtod.cc in Sources */,
 				93F34B941C5FBA8D00AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34B951C5FBA8D00AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34B961C5FBA8D00AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2472,6 +2493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D78851CAB137000774235 /* strtod.cc in Sources */,
 				93F34BA21C5FBA9900AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34BA31C5FBA9900AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34BA41C5FBA9900AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2563,6 +2585,7 @@
 				93F34C711C63D2AE00AAF4C3 /* MPBatch.mm in Sources */,
 				93F34C721C63D2AE00AAF4C3 /* MPBatchTransport.m in Sources */,
 				93F34C731C63D2AE00AAF4C3 /* MPBeaconCollector.m in Sources */,
+				933D781F1CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */,
 				93F34C741C63D2AE00AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34C751C63D2AE00AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34C761C63D2AE00AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2586,6 +2609,7 @@
 				93F34C871C63D2AE00AAF4C3 /* TT_SBJsonParser.m in Sources */,
 				93F34C881C63D2AE00AAF4C3 /* TT_SBJsonWriter.m in Sources */,
 				93F34C891C63D2AE00AAF4C3 /* MPASLLogger.m in Sources */,
+				933D78221CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */,
 				93F34C8A1C63D2AE00AAF4C3 /* MPLog.m in Sources */,
 				93F34C8B1C63D2AE00AAF4C3 /* MPTTYLogger.m in Sources */,
 				93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */,
@@ -2631,9 +2655,11 @@
 				93F34D011C63D74D00AAF4C3 /* tokenizer.cc in Sources */,
 				93F34D021C63D74D00AAF4C3 /* zero_copy_stream.cc in Sources */,
 				93F34D031C63D74D00AAF4C3 /* zero_copy_stream_impl.cc in Sources */,
+				933D78201CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */,
 				93F34D041C63D74D00AAF4C3 /* zero_copy_stream_impl_lite.cc in Sources */,
 				93F34D051C63D74D00AAF4C3 /* message.cc in Sources */,
 				93F34D061C63D74D00AAF4C3 /* message_lite.cc in Sources */,
+				933D78231CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */,
 				93F34D071C63D74D00AAF4C3 /* reflection_ops.cc in Sources */,
 				93F34D081C63D74D00AAF4C3 /* repeated_field.cc in Sources */,
 				93F34D091C63D74D00AAF4C3 /* service.cc in Sources */,
