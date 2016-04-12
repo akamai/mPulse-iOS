@@ -9,6 +9,7 @@
 #import "MPInterceptURLSessionDelegate.h"
 #import "MPURLSessionDelegateHelper.h"
 #import "MPBeaconCollector.h"
+#import "MPConfig.h"
 
 @interface MPURLSessionTests : MPHttpRequestTestBase<NSURLSessionTaskDelegate>
 {
@@ -594,6 +595,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testDataTaskWithRequestBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self dataTaskWithRequest:[config.beaconURL absoluteString]];
+  
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+  
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark dataTaskWithRequest:completionHandler:
 
@@ -643,6 +656,15 @@ didCompleteWithError:(NSError *)error
 {
   [self dataTaskWithRequestCompletionHandler:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@"" done:^{
     [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
+  }];
+}
+
+-(void) testDataTaskWithRequestCompetionHandlerBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self dataTaskWithRequestCompletionHandler:[config.beaconURL absoluteString] isSuccess:NO checkResponse:NO responseString:@"" done:^{
+    [self assertNoBeacons];
   }];
 }
 
@@ -703,6 +725,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testDataTaskWithURLBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self dataTaskWithURL:[config.beaconURL absoluteString]];
+  
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+  
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark dataTaskWithURL:completionHandler:
 
@@ -752,6 +786,15 @@ didCompleteWithError:(NSError *)error
 {
   [self dataTaskWithURLCompletionHandler:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@"" done:^{
     [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
+  }];
+}
+
+-(void) testDataTaskWithURLCompetionHandlerBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self dataTaskWithURLCompletionHandler:[config.beaconURL absoluteString] isSuccess:NO checkResponse:NO responseString:@"" done:^{
+    [self assertNoBeacons];
   }];
 }
 
@@ -812,6 +855,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testUploadTaskWithRequestFromFileBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+
+  [self uploadTaskWithRequestFromFile:[config.configURL absoluteString]];
+  
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+  
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark uploadTaskWithRequest:completionHandler:
 
@@ -861,6 +916,15 @@ didCompleteWithError:(NSError *)error
 {
   [self uploadTaskWithRequestFromFileCompletionHandler:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@"" done:^{
     [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
+  }];
+}
+
+-(void) testUploadTaskWithRequestFromFileCompetionHandlerBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self uploadTaskWithRequestFromFileCompletionHandler:[config.configURL absoluteString] isSuccess:NO checkResponse:NO responseString:@"" done:^{
+    [self assertNoBeacons];
   }];
 }
 
@@ -921,6 +985,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testUploadTaskWithRequestFromDataBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+
+  [self uploadTaskWithRequestFromData:[config.configURL absoluteString]];
+
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark uploadTaskWithRequest:completionHandler:
 
@@ -970,6 +1046,15 @@ didCompleteWithError:(NSError *)error
 {
   [self uploadTaskWithRequestFromDataCompletionHandler:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@"" done:^{
     [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
+  }];
+}
+
+-(void) testUploadTaskWithRequestFromDataCompetionHandlerBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self uploadTaskWithRequestFromDataCompletionHandler:[config.configURL absoluteString] isSuccess:NO checkResponse:NO responseString:@"" done:^{
+    [self assertNoBeacons];
   }];
 }
 
@@ -1030,6 +1115,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testUploadTaskWithStreamedRequestBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self uploadTaskWithStreamedRequest:[config.configURL absoluteString]];
+  
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+  
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark downloadTaskWithRequest:
 
@@ -1087,6 +1184,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testDownloadTaskWithRequestBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self downloadTaskWithRequest:[config.configURL absoluteString]];
+  
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+  
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark downloadTaskWithRequest:completionHandler:
 
@@ -1136,6 +1245,15 @@ didCompleteWithError:(NSError *)error
 {
   [self downloadTaskWithRequestCompletionHandler:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@"" done:^{
     [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
+  }];
+}
+
+-(void) testDownloadTaskWithRequestCompetionHandlerBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+
+  [self downloadTaskWithRequestCompletionHandler:[config.configURL absoluteString] isSuccess:NO checkResponse:NO responseString:@"" done:^{
+    [self assertNoBeacons];
   }];
 }
 
@@ -1196,6 +1314,18 @@ didCompleteWithError:(NSError *)error
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
 
+-(void) testDownloadTaskWithURLBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self downloadTaskWithURL:[config.configURL absoluteString]];
+  
+  // wait for a second to make sure there were no crashes
+  [NSThread sleepForTimeInterval:1];
+  
+  [self assertNoBeacons];
+}
+
 #pragma mark -
 #pragma mark downloadTaskWithURL:completionHandler:
 
@@ -1245,6 +1375,15 @@ didCompleteWithError:(NSError *)error
 {
   [self downloadTaskWithURLCompletionHandler:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@"" done:^{
     [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
+  }];
+}
+
+-(void) testDownloadTaskWithURLCompetionHandlerBeaconUrl
+{
+  MPConfig *config = [MPConfig sharedInstance];
+  
+  [self downloadTaskWithURLCompletionHandler:[config.configURL absoluteString] isSuccess:NO checkResponse:NO responseString:@"" done:^{
+    [self assertNoBeacons];
   }];
 }
 

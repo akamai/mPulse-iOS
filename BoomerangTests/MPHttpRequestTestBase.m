@@ -148,6 +148,19 @@ short const NSURLSUCCESS = 0;
 }
 
 /**
+ * Ensures no beacons were sent
+ */
+-(void) assertNoBeacons
+{
+  NSMutableArray *testBeacons = [[MPBeaconCollector sharedInstance] getBeacons];
+
+  XCTAssertNotEqual(testBeacons, nil);
+
+  // beacon count
+  XCTAssertEqual([testBeacons count], 0, "Beacons count incorrect");
+}
+
+/**
  * Waits for at least one beacon to show up, or, the timeout to be reached
  *
  * @param timeOut Timeout (in seconds)
