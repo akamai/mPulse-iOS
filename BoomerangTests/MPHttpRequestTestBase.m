@@ -57,7 +57,7 @@ NSString *const LONG_DOWNLOAD_URL = @"http://67.111.67.24:8080/concerto/DevTest/
 int const BEACON_ADD_WAIT = 5;
 
 // How long to set the socket to timeout
-int const SOCKET_TIMEOUT_INTERVAL = 10;
+int const SOCKET_TIMEOUT_INTERVAL = 5;
 
 // Loop time out for connections that delegate.  On iOS <= 4, some actions may
 // take 300 seconds (5 minutes) to timeout, especially on devices (vs. emulator).

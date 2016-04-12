@@ -670,6 +670,10 @@ didCompleteWithError:(NSError *)error
 -(void) testDataTaskWithURLConnectionRefused
 {
   [self dataTaskWithURL:CONNECTION_REFUSED_URL];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -775,6 +779,10 @@ didCompleteWithError:(NSError *)error
 -(void) testUploadTaskWithRequestFromFileConnectionRefused
 {
   [self uploadTaskWithRequestFromFile:CONNECTION_REFUSED_URL];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -880,6 +888,10 @@ didCompleteWithError:(NSError *)error
 -(void) testUploadTaskWithRequestFromDataConnectionRefused
 {
   [self uploadTaskWithRequestFromData:CONNECTION_REFUSED_URL];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -985,6 +997,10 @@ didCompleteWithError:(NSError *)error
 -(void) testUploadTaskWithStreamedRequestConnectionRefused
 {
   [self uploadTaskWithStreamedRequest:CONNECTION_REFUSED_URL];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -997,7 +1013,7 @@ didCompleteWithError:(NSError *)error
 -(void) testUploadTaskWithStreamedRequestConnectionTimeOut
 {
   [self uploadTaskWithStreamedRequest:CONNECTION_TIMEOUT_URL];
-  
+
   // Loop until we see a beacon
   [self waitForBeacon:LOOP_TIMEOUT];
   
@@ -1038,6 +1054,10 @@ didCompleteWithError:(NSError *)error
 -(void) testDownloadTaskWithRequestConnectionRefused
 {
   [self downloadTaskWithRequest:CONNECTION_REFUSED_URL];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
@@ -1143,6 +1163,10 @@ didCompleteWithError:(NSError *)error
 -(void) testDownloadTaskWithURLConnectionRefused
 {
   [self downloadTaskWithURL:CONNECTION_REFUSED_URL];
+
+  // Loop until we see a beacon
+  [self waitForBeacon:LOOP_TIMEOUT];
+
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
 }
 
