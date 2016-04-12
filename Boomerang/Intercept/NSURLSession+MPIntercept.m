@@ -73,14 +73,8 @@
     // ensure we want to track this URL first
     if (![MPInterceptUtils shouldIntercept:[request URL]])
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangDataTaskWithRequest:request completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangDataTaskWithRequest:request];
-      }
+      // send to the un-swizzled method with whatever completion handler was given
+      return [self boomerangDataTaskWithRequest:request completionHandler:completionHandler];
     }
     
     // create a beacon to track
@@ -133,14 +127,7 @@
     MPLogError(@"Exception occured in boomerangDataTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
     if (task == nil)
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangDataTaskWithRequest:request completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangDataTaskWithRequest:request];
-      }
+      return [self boomerangDataTaskWithRequest:request completionHandler:completionHandler];
     }
   }
 }
@@ -168,16 +155,9 @@
     // ensure we want to track this URL first
     if (![MPInterceptUtils shouldIntercept:[request URL]])
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangUploadTaskWithRequest:request
-                                           fromFile:fileURL
-                                  completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangUploadTaskWithRequest:request fromFile:fileURL];
-      }
+      return [self boomerangUploadTaskWithRequest:request
+                                         fromFile:fileURL
+                                completionHandler:completionHandler];
     }
     
     // create a beacon to track
@@ -229,16 +209,9 @@
     MPLogError(@"Exception occured in boomerangUploadTaskWithRequest:fromFile:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
     if (task == nil)
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangUploadTaskWithRequest:request
-                                           fromFile:fileURL
-                                  completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangUploadTaskWithRequest:request fromFile:fileURL];
-      }
+      return [self boomerangUploadTaskWithRequest:request
+                                         fromFile:fileURL
+                                completionHandler:completionHandler];
     }
   }
 
@@ -268,16 +241,9 @@
     // ensure we want to track this URL first
     if (![MPInterceptUtils shouldIntercept:[request URL]])
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangUploadTaskWithRequest:request
-                                           fromData:data
-                                  completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangUploadTaskWithRequest:request fromData:data];
-      }
+      return [self boomerangUploadTaskWithRequest:request
+                                         fromData:data
+                                completionHandler:completionHandler];
     }
     
     // create a beacon to track
@@ -329,16 +295,9 @@
     MPLogError(@"Exception occured in boomerangUploadTaskWithRequest:fromData:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
     if (task == nil)
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangUploadTaskWithRequest:request
-                                           fromData:data
-                                  completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangUploadTaskWithRequest:request fromData:data];
-      }
+      return [self boomerangUploadTaskWithRequest:request
+                                         fromData:data
+                                completionHandler:completionHandler];
     }
   }
 
@@ -393,14 +352,7 @@
     // ensure we want to track this URL first
     if (![MPInterceptUtils shouldIntercept:[request URL]])
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangDownloadTaskWithRequest:request completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangDownloadTaskWithRequest:request];
-      }
+      return [self boomerangDownloadTaskWithRequest:request completionHandler:completionHandler];
     }
     
     // create a beacon to track
@@ -451,14 +403,7 @@
     MPLogError(@"Exception occured in boomerangDownloadTaskWithRequest:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
     if (task == nil)
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangDownloadTaskWithRequest:request completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangDownloadTaskWithRequest:request];
-      }
+      return [self boomerangDownloadTaskWithRequest:request completionHandler:completionHandler];
     }
   }
 
@@ -482,14 +427,7 @@
     // ensure we want to track this URL first
     if (url == nil || ![MPInterceptUtils shouldIntercept:url])
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangDownloadTaskWithResumeData:resumeData completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangDownloadTaskWithResumeData:resumeData];
-      }
+      return [self boomerangDownloadTaskWithResumeData:resumeData completionHandler:completionHandler];
     }
     
     // create a beacon to track
@@ -540,14 +478,7 @@
     MPLogError(@"Exception occured in boomerangDownloadTaskWithResumeData:completionHandler: method. Exception %@, received: %@", [exception name], [exception reason]);
     if (task == nil)
     {
-      if (completionHandler != nil)
-      {
-        return [self boomerangDownloadTaskWithResumeData:resumeData completionHandler:completionHandler];
-      }
-      else
-      {
-        return [self boomerangDownloadTaskWithResumeData:resumeData];
-      }
+      return [self boomerangDownloadTaskWithResumeData:resumeData completionHandler:completionHandler];
     }
   }
 

@@ -29,6 +29,10 @@
 -(void) responseBeaconTest:(NSString *)url
                minDuration:(long)minDuration
           networkErrorCode:(short)networkErrorCode;
+/**
+ * Ensures no beacons were sent
+ */
+-(void) assertNoBeacons;
 
 /**
  * Waits for at least one beacon to show up, or, the timeout to be reached
