@@ -109,6 +109,7 @@ static MPInterceptURLSessionDelegate *interceptURLSessionDelegateInstance = NULL
     
     // initialize our beacons array
     m_beacons = [[NSMutableDictionary alloc] init];
+    m_beacons_lock = [[NSLock alloc] init];
     
     // Process all delegate classes
     int numClasses = objc_getClassList(NULL, 0);
@@ -212,7 +213,13 @@ void boomerangURLSession_task_didCompleteWithError(id self,
   
   MPLogDebug(@"Adding beacon for task: %@", key);
 
-  [m_beacons setObject:beacon forKey:key];
+  [m_beacons_lock lock];
+  @try {
+    [m_beacons setObject:beacon forKey:key];
+  }
+  @finally {
+    [m_beacons_lock unlock];
+  }
 }
 
 /**
@@ -224,9 +231,15 @@ void boomerangURLSession_task_didCompleteWithError(id self,
 {
   NSString* key = [NSString stringWithFormat:@"%p", task];
   
-  MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
-  
-  return beacon;
+  [m_beacons_lock lock];
+  @try {
+    MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
+    
+    return beacon;
+  }
+  @finally {
+    [m_beacons_lock unlock];
+  }
 }
 
 @end

@@ -12,6 +12,7 @@
 {
   // beacons we're keeping track of for NSURLSessionTaskDelegate
   NSMutableDictionary *m_beacons;
+  NSLock *m_beacons_lock;
 }
 
 /**

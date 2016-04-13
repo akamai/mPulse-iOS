@@ -12,6 +12,7 @@
 @interface MPInterceptURLConnectionDelegate : NSObject
 {
   NSMutableDictionary *m_beacons;
+  NSLock *m_beacons_lock;
 }
 
 +(MPInterceptURLConnectionDelegate*) sharedInstance;

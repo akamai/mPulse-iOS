@@ -51,6 +51,9 @@
 // A good URL
 extern NSString *const SUCCESS_URL;
 
+// A good URL with little delay
+extern NSString *const QUICK_SUCCESS_URL;
+
 // A URL that redirects
 extern NSString *const REDIRECT_URL;
 
