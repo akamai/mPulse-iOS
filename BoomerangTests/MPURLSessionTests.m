@@ -1549,15 +1549,17 @@ didCompleteWithError:(NSError *)error
   const int THREAD_COUNT = 100;
   const int REQUEST_COUNT = 50;
     
-  for (int i=0; i < THREAD_COUNT; i++) {
+  for (int i=0; i < THREAD_COUNT; i++)
+  {
     dispatch_group_enter(_taskGroup);
     NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadLoop:) object:@{@"threadnum": [NSNumber numberWithInt:i], @"requests": [NSNumber numberWithInt:REQUEST_COUNT]}];
     [thread start];
   }
     
-  if (dispatch_group_wait(_taskGroup, dispatch_time(DISPATCH_TIME_NOW, THREAD_TIMEOUT_NS)) != 0) {
+  if (dispatch_group_wait(_taskGroup, dispatch_time(DISPATCH_TIME_NOW, THREAD_TIMEOUT_NS)) != 0)
+  {
     // Timeout
-    XCTAssert(NO, @"Timeout occured");
+    XCTFail(@"Timeout occured");
   }
 }
 
@@ -1567,7 +1569,8 @@ didCompleteWithError:(NSError *)error
   int threadnum = [threadInfo[@"threadnum"] intValue];
   
   NSLog(@"thread %d started", threadnum);
-  while (requests-- > 0) {
+  while (requests-- > 0)
+  {
     [self dataTaskWithRequest:QUICK_SUCCESS_URL];
   }
   NSLog(@"thread %d done", threadnum);

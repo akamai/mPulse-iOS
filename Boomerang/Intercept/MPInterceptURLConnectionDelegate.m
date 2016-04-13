@@ -57,7 +57,6 @@ static MPInterceptURLConnectionDelegate *interceptURLConnectionDelegateInstance 
                             @selector(boomerangInitWithRequest:delegate:startImmediately:));
     
     m_beacons = [[NSMutableDictionary alloc] init];
-    m_beacons_lock = [[NSLock alloc] init];
     
     int numClasses = objc_getClassList(NULL, 0);
     Class classes[numClasses];
@@ -92,25 +91,18 @@ static MPInterceptURLConnectionDelegate *interceptURLConnectionDelegateInstance 
 -(void)addBeacon:(MPApiNetworkRequestBeacon *)value forKey:(NSString *)key
 {
   MPLogDebug(@"Adding beacon for key: %@", key);
-  [m_beacons_lock lock];
-  @try {
+  @synchronized(m_beacons)
+  {
     [m_beacons setObject:value forKey:key];
-  }
-  @finally {
-    [m_beacons_lock unlock];
   }
 }
 
 -(MPApiNetworkRequestBeacon *)getBeaconForKey:(NSString *)key
 {
-  [m_beacons_lock lock];
-  @try {
+  @synchronized(m_beacons)
+  {
     MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
-    
     return beacon;
-  }
-  @finally {
-    [m_beacons_lock unlock];
   }
 }
 
