@@ -13,7 +13,7 @@
 @implementation MPInterceptURLSessionDelegate
 
 // Sync lock object
-static id syncLockObject;
+static NSString* syncLockObject = @"MPInterceptURLSessionDelegate:lock";
 
 // Singleton
 static MPInterceptURLSessionDelegate *interceptURLSessionDelegateInstance = NULL;
