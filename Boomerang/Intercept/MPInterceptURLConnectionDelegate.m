@@ -13,7 +13,7 @@
 
 @implementation MPInterceptURLConnectionDelegate
 
-static id syncLockObject;
+static NSString* syncLockObject = @"MPInterceptURLConnectionDelegate:lock";
 
 // SINGLETON
 static MPInterceptURLConnectionDelegate *interceptURLConnectionDelegateInstance = NULL;
@@ -91,12 +91,19 @@ static MPInterceptURLConnectionDelegate *interceptURLConnectionDelegateInstance 
 -(void)addBeacon:(MPApiNetworkRequestBeacon *)value forKey:(NSString *)key
 {
   MPLogDebug(@"Adding beacon for key: %@", key);
-  [m_beacons setObject:value forKey:key];
+  @synchronized(m_beacons)
+  {
+    [m_beacons setObject:value forKey:key];
+  }
 }
 
 -(MPApiNetworkRequestBeacon *)getBeaconForKey:(NSString *)key
 {
-  return (MPApiNetworkRequestBeacon *)[m_beacons objectForKey:key];
+  @synchronized(m_beacons)
+  {
+    MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
+    return beacon;
+  }
 }
 
 // Process the Delegates that do not conform with NSURLConnectionDelegate Protocol

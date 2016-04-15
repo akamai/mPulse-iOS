@@ -28,6 +28,9 @@
 // A good URL
 NSString *const SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=3000";
 
+// A good URL with little delay
+NSString *const QUICK_SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=1";
+
 // A URL that redirects
 NSString *const REDIRECT_URL = @"http://67.111.67.24:8080/concerto";
 

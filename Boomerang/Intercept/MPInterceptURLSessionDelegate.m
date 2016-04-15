@@ -13,7 +13,7 @@
 @implementation MPInterceptURLSessionDelegate
 
 // Sync lock object
-static id syncLockObject;
+static NSString* syncLockObject = @"MPInterceptURLSessionDelegate:lock";
 
 // Singleton
 static MPInterceptURLSessionDelegate *interceptURLSessionDelegateInstance = NULL;
@@ -212,7 +212,10 @@ void boomerangURLSession_task_didCompleteWithError(id self,
   
   MPLogDebug(@"Adding beacon for task: %@", key);
 
-  [m_beacons setObject:beacon forKey:key];
+  @synchronized(m_beacons)
+  {
+    [m_beacons setObject:beacon forKey:key];
+  }
 }
 
 /**
@@ -224,9 +227,11 @@ void boomerangURLSession_task_didCompleteWithError(id self,
 {
   NSString* key = [NSString stringWithFormat:@"%p", task];
   
-  MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
-  
-  return beacon;
+  @synchronized(m_beacons)
+  {
+    MPApiNetworkRequestBeacon* beacon = [m_beacons objectForKey:key];
+    return beacon;
+  }
 }
 
 @end

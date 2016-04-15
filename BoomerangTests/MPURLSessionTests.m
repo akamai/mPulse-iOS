@@ -13,6 +13,7 @@
 
 @interface MPURLSessionTests : MPHttpRequestTestBase<NSURLSessionTaskDelegate>
 {
+  dispatch_group_t _taskGroup;
 }
 
 @end
@@ -28,6 +29,9 @@
   
   // Intialization of BoomerangURLSessionDelegate
   [MPInterceptURLSessionDelegate sharedInstance];
+  
+  // Used to join threads in the threading test
+  _taskGroup = dispatch_group_create();
 }
 
 #pragma mark -
@@ -1537,6 +1541,41 @@ didCompleteWithError:(NSError *)error
                         minDuration:0
                    networkErrorCode:NSURLErrorTimedOut
                         hasResponse:false];
+}
+
+-(void) testThreadedDataTaskWithRequestSuccess
+{
+  const long THREAD_TIMEOUT_NS = (long) 10 * 60 * 1000000000; // 10 mins should be more than enough
+  const int THREAD_COUNT = 100;
+  const int REQUEST_COUNT = 50;
+    
+  for (int i=0; i < THREAD_COUNT; i++)
+  {
+    dispatch_group_enter(_taskGroup);
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadLoop:) object:@{@"threadnum": [NSNumber numberWithInt:i], @"requests": [NSNumber numberWithInt:REQUEST_COUNT]}];
+    [thread start];
+  }
+    
+  if (dispatch_group_wait(_taskGroup, dispatch_time(DISPATCH_TIME_NOW, THREAD_TIMEOUT_NS)) != 0)
+  {
+    // Timeout
+    XCTFail(@"Timeout occured");
+  }
+}
+
+- (void)threadLoop: (NSDictionary *)threadInfo
+{
+  int requests = [threadInfo[@"requests"] intValue];
+  int threadnum = [threadInfo[@"threadnum"] intValue];
+  
+  NSLog(@"thread %d started", threadnum);
+  while (requests-- > 0)
+  {
+    [self dataTaskWithRequest:QUICK_SUCCESS_URL];
+  }
+  NSLog(@"thread %d done", threadnum);
+    
+  dispatch_group_leave(_taskGroup);
 }
 
 @end
