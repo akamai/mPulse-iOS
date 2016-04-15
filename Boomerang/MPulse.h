@@ -2,7 +2,7 @@
 //  MPulse.h
 //  MPulse
 //
-//  Copyright (c) 2012-2015 SOASTA. All rights reserved.
+//  Copyright (c) 2012-2016 SOASTA. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
