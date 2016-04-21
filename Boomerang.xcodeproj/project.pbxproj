@@ -97,7 +97,6 @@
 		5B18994B19102268009794C1 /* MPReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B18993419102268009794C1 /* MPReachability.m */; };
 		5B18994C19102268009794C1 /* MPReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B18993419102268009794C1 /* MPReachability.m */; };
 		5B18995B19116899009794C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD27BA81905A0FE00881F84 /* SystemConfiguration.framework */; };
-		5B18995D191168A0009794C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B18995C191168A0009794C1 /* SystemConfiguration.framework */; };
 		5B18995E19116900009794C1 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
 		5B18995F19116902009794C1 /* descriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = F78AF2E0190F629C00915617 /* descriptor.h */; };
 		5B18996019116905009794C1 /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
@@ -193,7 +192,6 @@
 		5B31D8571A75CC7500941F62 /* MPulsePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B31D8531A75CC7500941F62 /* MPulsePrivate.h */; };
 		5B31D8581A75CC7500941F62 /* MPulsePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B31D8531A75CC7500941F62 /* MPulsePrivate.h */; };
 		5B63D66B1912EBA700F4D865 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B63D66A1912EBA700F4D865 /* CoreGraphics.framework */; };
-		5B63D66D1912EBAB00F4D865 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B63D66C1912EBAB00F4D865 /* CoreGraphics.framework */; };
 		5B804ACE1BA32CBD002FC459 /* MPInterceptURLSessionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9348A23F1BA31B2A00732150 /* MPInterceptURLSessionDelegate.h */; };
 		5B804ACF1BA32CBD002FC459 /* MPInterceptURLSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A4D1B879488003A430F /* MPInterceptURLSessionDelegate.m */; };
 		5B804AD01BA32CBD002FC459 /* NSURLSession+MPIntercept.h in Headers */ = {isa = PBXBuildFile; fileRef = 93318A541B8796FB003A430F /* NSURLSession+MPIntercept.h */; };
@@ -230,9 +228,6 @@
 		5B9CA7F61925D8E1009BE429 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F51925D8E1009BE429 /* OpenGLES.framework */; };
 		5B9CA7F81925D8E8009BE429 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F71925D8E8009BE429 /* MapKit.framework */; };
 		5B9CA7FA1925D906009BE429 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7F91925D906009BE429 /* QuartzCore.framework */; };
-		5B9CA7FC1925DA7C009BE429 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7FB1925DA7C009BE429 /* MapKit.framework */; };
-		5B9CA7FE1925DA80009BE429 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7FD1925DA80009BE429 /* QuartzCore.framework */; };
-		5B9CA8001925DA89009BE429 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CA7FF1925DA89009BE429 /* OpenGLES.framework */; };
 		5BC5E02E18D0FD790095F33A /* MPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF428FF164470E00058AC81 /* MPURLConnection.m */; };
 		5BC5E03018D0FD790095F33A /* MPulse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF429121649A31D0058AC81 /* MPulse.m */; };
 		5BC5E03B18D0FD790095F33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8019371651537C0037FF54 /* CoreLocation.framework */; };
@@ -333,6 +328,11 @@
 		6D9BE1F61925825A0074F273 /* NSURLConnection+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1E31925825A0074F273 /* NSURLConnection+MPIntercept.m */; };
 		6D9BE1F81925825A0074F273 /* NSURLConnection+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1E31925825A0074F273 /* NSURLConnection+MPIntercept.m */; };
 		6D9BE1F91925825A0074F273 /* NSURLConnection+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9BE1E31925825A0074F273 /* NSURLConnection+MPIntercept.m */; };
+		930512261CC94C5800B6A751 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930512251CC94C5800B6A751 /* CoreGraphics.framework */; };
+		930512281CC94C6400B6A751 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930512271CC94C6400B6A751 /* SystemConfiguration.framework */; };
+		9305122A1CC94C6A00B6A751 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930512291CC94C6A00B6A751 /* MapKit.framework */; };
+		9305122C1CC94C7100B6A751 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305122B1CC94C7100B6A751 /* QuartzCore.framework */; };
+		9305122E1CC94C7600B6A751 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305122D1CC94C7600B6A751 /* OpenGLES.framework */; };
 		93318A4E1B879488003A430F /* MPInterceptURLSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A4D1B879488003A430F /* MPInterceptURLSessionDelegate.m */; };
 		93318A561B8796FB003A430F /* NSURLSession+MPIntercept.h in Headers */ = {isa = PBXBuildFile; fileRef = 93318A541B8796FB003A430F /* NSURLSession+MPIntercept.h */; };
 		93318A571B8796FB003A430F /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */; };
@@ -951,6 +951,11 @@
 		6DE14B1D1912CDFD00F345E3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6DE14B201912CE2600F345E3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libxml2.dylib; sourceTree = DEVELOPER_DIR; };
 		6DE50DB519184427003024FF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		930512251CC94C5800B6A751 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		930512271CC94C6400B6A751 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		930512291CC94C6A00B6A751 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		9305122B1CC94C7100B6A751 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		9305122D1CC94C7600B6A751 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		93318A4D1B879488003A430F /* MPInterceptURLSessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MPInterceptURLSessionDelegate.m; path = Intercept/MPInterceptURLSessionDelegate.m; sourceTree = "<group>"; };
 		93318A541B8796FB003A430F /* NSURLSession+MPIntercept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+MPIntercept.h"; path = "Intercept/NSURLSession+MPIntercept.h"; sourceTree = "<group>"; };
 		93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "NSURLSession+MPIntercept.m"; path = "Intercept/NSURLSession+MPIntercept.m"; sourceTree = "<group>"; };
@@ -1150,11 +1155,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B9CA8001925DA89009BE429 /* OpenGLES.framework in Frameworks */,
-				5B9CA7FE1925DA80009BE429 /* QuartzCore.framework in Frameworks */,
-				5B9CA7FC1925DA7C009BE429 /* MapKit.framework in Frameworks */,
-				5B63D66D1912EBAB00F4D865 /* CoreGraphics.framework in Frameworks */,
-				5B18995D191168A0009794C1 /* SystemConfiguration.framework in Frameworks */,
+				9305122E1CC94C7600B6A751 /* OpenGLES.framework in Frameworks */,
+				9305122C1CC94C7100B6A751 /* QuartzCore.framework in Frameworks */,
+				9305122A1CC94C6A00B6A751 /* MapKit.framework in Frameworks */,
+				930512281CC94C6400B6A751 /* SystemConfiguration.framework in Frameworks */,
+				930512261CC94C5800B6A751 /* CoreGraphics.framework in Frameworks */,
 				5BC5E06118D0FD820095F33A /* CoreLocation.framework in Frameworks */,
 				5BC5E06218D0FD820095F33A /* CoreTelephony.framework in Frameworks */,
 				5BC5E06318D0FD820095F33A /* UIKit.framework in Frameworks */,
@@ -1277,6 +1282,11 @@
 		2CF428CA1642E1CD0058AC81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9305122D1CC94C7600B6A751 /* OpenGLES.framework */,
+				9305122B1CC94C7100B6A751 /* QuartzCore.framework */,
+				930512291CC94C6A00B6A751 /* MapKit.framework */,
+				930512271CC94C6400B6A751 /* SystemConfiguration.framework */,
+				930512251CC94C5800B6A751 /* CoreGraphics.framework */,
 				93F34CF21C63D53A00AAF4C3 /* libSDWebImage.a */,
 				93F34CF01C63D53600AAF4C3 /* libAFNetworking.a */,
 				93F34CEE1C63D53400AAF4C3 /* libPods.a */,
@@ -2184,7 +2194,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\n# Make output folders\n#\nmkdir -p \"${BUILD_DIR}/${CONFIGURATION}/Library\"\nmkdir -p \"${BUILD_DIR}/StaticLibraries\"\nmkdir -p \"${BUILD_DIR}/StaticLibraries/Pods\"\nmkdir -p \"${BUILD_DIR}/DynamicLibraries\"\nmkdir -p \"${BUILD_DIR}/${CONFIGURATION}-iphoneos\"\nmkdir -p \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\"\n\n#\n# MPulse.framework\n#\n\n# dirs\nrm -rf \"${BUILD_DIR}/StaticLibraries/MPulse.framework\"\nmkdir -p \"${BUILD_DIR}/StaticLibraries/MPulse.framework\"\nmkdir -p \"${BUILD_DIR}/StaticLibraries/MPulse.framework/Versions\"\nmkdir -p \"${BUILD_DIR}/StaticLibraries/MPulse.framework/Versions/A\"\nmkdir -p \"${BUILD_DIR}/StaticLibraries/MPulse.framework/Versions/A/Headers\"\n\n# create symlinks\ncd \"${BUILD_DIR}/StaticLibraries/MPulse.framework\"\nln -s Versions/Current/Headers Headers\nln -s Versions/Current/MPulse MPulse\ncd Versions\nln -s A Current\ncd ../../../../\n\n#\n# Copy iphoneos and iphonesim library versions for CocoaPods deployment\n#\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libMPulse.a\" \"${BUILD_DIR}/StaticLibraries/Pods/libMPulse.a\"\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libMPulse.a\" \"${BUILD_DIR}/StaticLibraries/Pods/libMPulseSim.a\"\n\n#\n# Combine lib files for device and simulator platforms into one\n#\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libMPulse.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libMPulse.a\" -output \"${BUILD_DIR}/${CONFIGURATION}/Library/libMPulse.a\"\n\n# combine dynamic lib files for device and simulator platforms into one\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libMPulse.dylib\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libMPulse.dylib\" -output \"${BUILD_DIR}/${CONFIGURATION}/Library/libMPulse.dylib\"\n\n#\n# Copy the headers (we could have used a copy files build phase, too)\n#\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/usr\" \"${BUILD_DIR}/${CONFIGURATION}/Library\"\n\n#\n# Copy the recently created files to an accessible folder\n#\ncp \"${BUILD_DIR}/${CONFIGURATION}/Library/libMPulse.a\" \"${BUILD_DIR}/StaticLibraries/\"\n\n#\n# Move headers to regular and pods dirs\n#\ncp -R \"${BUILD_DIR}/${CONFIGURATION}/Library/usr/local/include/\" \"${BUILD_DIR}/StaticLibraries/\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}/Library/usr/local/include/\" \"${BUILD_DIR}/StaticLibraries/Pods\"\n\n#\n# Copy the recently created files to an accessible folder\n#\ncp \"${BUILD_DIR}/${CONFIGURATION}/Library/libMPulse.dylib\" \"${BUILD_DIR}/DynamicLibraries/\"\n\n#\n# Copy recently created library and headers to the Framework directory as well\n#\ncp \"${BUILD_DIR}/${CONFIGURATION}/Library/libMPulse.a\" \"${BUILD_DIR}/StaticLibraries/MPulse.framework/Versions/A/MPulse\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}/Library/usr/local/include/\" \"${BUILD_DIR}/StaticLibraries/MPulse.framework/Versions/A/Headers/\"\n";
+			shellScript = "${SRCROOT}/post-build.sh";
 		};
 		934E97D81BC70C21008BBDE8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2910,7 +2920,7 @@
 					armv7s,
 					armv7,
 				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SOASTA Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2930,8 +2940,6 @@
 					"-all_load",
 					"-ObjC",
 					"-F$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/",
-					"-framework",
-					GraphicsServices,
 					"-compatibility_version",
 					0.0.0,
 					"-current_version",
@@ -2975,8 +2983,6 @@
 					"-all_load",
 					"-ObjC",
 					"-F$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/",
-					"-framework",
-					GraphicsServices,
 					"-compatibility_version",
 					0.0.0,
 					"-current_version",

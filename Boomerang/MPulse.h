@@ -10,7 +10,7 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number
+// mPulse Build Number - 1.0.0
 extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
