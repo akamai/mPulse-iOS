@@ -5,12 +5,10 @@ set -e
 
 #This script assumes that:
 #1. First argument would be the mPulse build version
-#2. Second argument would be the path to Xcode
-#3. Third argument would be the build mode for Xcode build
-#4. Fourth arugment is whether or not to code-sign
+#2. Second argument would be the build mode for Xcode build
+#3. Third arugment is whether or not to code-sign
 
 USER_HOME=$(eval echo ~${SUDO_USER})
-XCODE4_PATH="$USER_HOME/Desktop/Xcode.app"
 BUILD_VERSION_NUMBER="1.0.0"
 BUILD_MODE="Release"
 CODE_SIGN=true
@@ -21,16 +19,11 @@ elif [ $# -eq 1 ]; then
   BUILD_VERSION_NUMBER=$1
 elif [ $# -eq 2 ]; then
   BUILD_VERSION_NUMBER=$1
-  XCODE4_PATH=$2
+  BUILD_MODE=$2
 elif [ $# -eq 3 ]; then
   BUILD_VERSION_NUMBER=$1
-  XCODE4_PATH=$2
-  BUILD_MODE=$3
-elif [ $# -eq 4 ]; then
-  BUILD_VERSION_NUMBER=$1
-  XCODE4_PATH=$2
-  BUILD_MODE=$3
-  CODE_SIGN=$4
+  BUILD_MODE=$2
+  CODE_SIGN=$3
 fi
 
 #This function assumes that:

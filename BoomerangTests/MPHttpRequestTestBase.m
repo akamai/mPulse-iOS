@@ -32,7 +32,7 @@ NSString *const SUCCESS_URL = @"http://boomerang-test.soasta.com:3000/delay?resp
 NSString *const QUICK_SUCCESS_URL = @"http://boomerang-test.soasta.com:3000/delay?response=abcdefghijklmnopqrstuvwxyz1234567890&delay=1";
 
 // A URL that redirects
-NSString *const REDIRECT_URL = @"http://boomerang-test.soasta.com:3000/delay?file=/assets/img.jpg&delay=0";
+NSString *const REDIRECT_URL = @"http://boomerang-test.soasta.com:3000/redirect?file=/assets/img.jpg";
 
 // A 404 URL
 NSString *const PAGENOTFOUND_URL = @"http://boomerang-test.soasta.com:3000/404";
@@ -50,7 +50,7 @@ NSString *const CONNECTION_TIMEOUT_URL = @"http://1.2.3.4:8080/";
 NSString *const SOCKET_TIMEOUT_URL = @"http://boomerang-test.soasta.com:3000/delay?response=abcdefghijklmnopqrstuvwxyz1234567890&delay=300000";
 
 // A URL where the download takes too long (chunked-data)
-NSString *const LONG_DOWNLOAD_URL = @"http://boomerang-test.soasta.com:3000/chunkedResponse?chunkSize=100&chunkCount=1000000&chunkDelay=100";
+NSString *const LONG_DOWNLOAD_URL = @"http://boomerang-test.soasta.com:3000/chunked?chunkSize=100&chunkCount=1000000&chunkDelay=100";
 
 //
 // Timeouts

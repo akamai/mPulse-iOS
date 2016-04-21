@@ -37,10 +37,10 @@
 // URLs
 //
 // A good URL
-NSString *const SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=3000";
+NSString *const SUCCESS_URL = @"http://boomerang-test.soasta.com:3000/delay?response=abcdefghijklmnopqrstuvwxyz1234567890&delay=3000";
 
 // An Image download URL
-NSString *IMAGE_DOWNLOAD_URL = @"http://indianapublicmedia.org/support/files/2011/09/04_03_1-Stock-Market-Prices_web.jpg";
+NSString *IMAGE_DOWNLOAD_URL = @"http://boomerang-test.soasta.com:3000/assets/img.jpg";
 
 //
 // Timeouts
@@ -58,10 +58,10 @@ static short const NSURLSUCCESS = 0;
 -(void) setUp
 {
   [super setUp];
-  
+
   // Intialization of BoomerangURLSessionDelegate
   [MPInterceptURLSessionDelegate sharedInstance];
-  
+
   // Intialization of BoomerangURLConnectionDelegate
   [MPInterceptURLConnectionDelegate sharedInstance];
 }
@@ -77,12 +77,12 @@ static short const NSURLSUCCESS = 0;
 {
   // Sleep - wait for beacon to be added
   [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
-  
+
   NSArray *beacons = [[MPBeaconCollector sharedInstance] getBeacons];
   XCTAssertEqual([beacons count], 1, "Dictionary size incorrect");
-  
+
   MPApiNetworkRequestBeacon *beacon = (MPApiNetworkRequestBeacon *)[beacons objectAtIndex:0];
-  
+
   XCTAssertTrue([beacon duration] >= minDuration, "network request duration error");
   XCTAssertEqualObjects([beacon url], urlString, @" Wrong URL string.");
   XCTAssertTrue([beacon networkErrorCode] == networkErrorCode, "Wrong network error code");
@@ -199,7 +199,7 @@ static short const NSURLSUCCESS = 0;
        downloadComplete = YES;
      }
    }];
-  
+
   int secondsSlept = 0;
 
   while (!downloadComplete)
@@ -209,11 +209,11 @@ static short const NSURLSUCCESS = 0;
     {
       break;
     }
-    
+
     sleep(2); // Sleep until download is complete
     secondsSlept += 2;
   }
-  
+
   // Test for success
   [self responseBeaconTest:IMAGE_DOWNLOAD_URL
                minDuration:0
