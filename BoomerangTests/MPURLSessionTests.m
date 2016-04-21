@@ -1547,7 +1547,7 @@ didCompleteWithError:(NSError *)error
 {
   const long THREAD_TIMEOUT_NS = (long) 10 * 60 * 1000000000; // 10 mins should be more than enough
   const int THREAD_COUNT = 100;
-  const int REQUEST_COUNT = 50;
+  const int REQUEST_COUNT = 5;
     
   for (int i=0; i < THREAD_COUNT; i++)
   {
