@@ -79,7 +79,7 @@ BOOL networkRequestComplete = NO;
 {
   NSDate *timerStart = [NSDate date];
 
-  [MPulse initializeWithAPIKey:API_KEY andServerURL:[NSURL URLWithString:@"http://67.111.67.24:8080/concerto/api/config.json?delay=5000"]];
+  [MPulse initializeWithAPIKey:API_KEY andServerURL:[NSURL URLWithString:@"http://boomerang-test.soasta.com:3000/config.json?delay=5000"]];
 
   NSDate *timerEnd = [NSDate date];
   NSTimeInterval executionTime = [timerEnd timeIntervalSinceDate:timerStart];
