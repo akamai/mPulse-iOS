@@ -17,8 +17,8 @@ static MPNetworkErrorBeaconGenerator *sharedObject = nil;
 static int ERROR_REPLAY_INTERVAL = 30; // In seconds
 
 // URLs that generate different network error
-NSString *const MPPAGENOTFOUND_URL = @"http://67.111.67.24:8080/concertoXYZ";
-NSString *const MPCONNECTION_REFUSED_URL = @"http://67.111.67.24:1200/concerto";
+NSString *const MPPAGENOTFOUND_URL = @"http://boomerang-test.soasta.com:3000/404";
+NSString *const MPCONNECTION_REFUSED_URL = @"http://boomerang-test.soasta.com:1200/";
 NSString *const MPUNKNOWN_HOST_URL = @"http://bearsbearsbears123.com";
 NSString *const MPCONNECTION_TIMEOUT_URL = @"http://1.2.3.4:8080/concerto";
 

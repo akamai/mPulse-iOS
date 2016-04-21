@@ -266,7 +266,7 @@
 -(void) testSyncRequestSuccess
 {
   // Send Synchronous Request
-  [self syncRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
+  [self syncRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
   
   // Test for success with duration more than 3 sec
   [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
@@ -332,7 +332,7 @@
 -(void) testConnectionWithRequestSuccess
 {
   // create connectionWithRequest
-  [self connectionWithRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
+  [self connectionWithRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
   
   // Test for success with duration more than 3000 ms
   [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
@@ -398,7 +398,7 @@
 -(void) testAsyncRequestSuccess
 {
   // send Asynchronous Request
-  [self asyncRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
+  [self asyncRequest:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
   
   // Test for success
   [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
@@ -476,7 +476,7 @@
 -(void) testInitWithRequestStartImmediatelyYesSuccess
 {
   // create connection - start response immediately
-  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
+  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
   
   // Test for success
   [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
@@ -542,7 +542,7 @@
 -(void) testInitWithRequestStartImmediatelyNoSuccess
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"delayed: 3000 milliseconds"];
+  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
   
   // test for success with duration more than 3000 ms
   [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
@@ -604,9 +604,9 @@
 
 -(void) testThreadedconnectionWithRequestSuccess
 {
-  const long THREAD_TIMEOUT_NS = (long) 10 * 60 * 1000000000; // 10 mins should be more than enough
+  const int64_t THREAD_TIMEOUT_NS = (int64_t)(60 * NSEC_PER_SEC);
   const int THREAD_COUNT = 100;
-  const int REQUEST_COUNT = 50;
+  const int REQUEST_COUNT = 5;
   
   for (int i=0; i < THREAD_COUNT; i++)
   {

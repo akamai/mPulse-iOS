@@ -26,31 +26,31 @@
 // URLs
 //
 // A good URL
-NSString *const SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=3000";
+NSString *const SUCCESS_URL = @"http://boomerang-test.soasta.com:3000/delay?response=abcdefghijklmnopqrstuvwxyz1234567890&delay=3000";
 
 // A good URL with little delay
-NSString *const QUICK_SUCCESS_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=1";
+NSString *const QUICK_SUCCESS_URL = @"http://boomerang-test.soasta.com:3000/delay?response=abcdefghijklmnopqrstuvwxyz1234567890&delay=1";
 
 // A URL that redirects
-NSString *const REDIRECT_URL = @"http://67.111.67.24:8080/concerto";
+NSString *const REDIRECT_URL = @"http://boomerang-test.soasta.com:3000/redirect?file=/assets/img.jpg";
 
 // A 404 URL
-NSString *const PAGENOTFOUND_URL = @"http://67.111.67.24:8080/concertoXYZ";
+NSString *const PAGENOTFOUND_URL = @"http://boomerang-test.soasta.com:3000/404";
 
 // A URL where the port isn't listening
-NSString *const CONNECTION_REFUSED_URL = @"http://67.111.67.24:1200/concertoXYZ";
+NSString *const CONNECTION_REFUSED_URL = @"http://boomerang-test.soasta.com:1200/";
 
 // An unknown host
 NSString *const UNKNOWN_HOST_URL = @"http://bearsbearsbears123.com/";
 
 // A port where the connection couldn't be initiated
-NSString *const CONNECTION_TIMEOUT_URL = @"http://1.2.3.4:8080/concerto";
+NSString *const CONNECTION_TIMEOUT_URL = @"http://1.2.3.4:8080/";
 
 // A port where the socket is delayed in sending a response
-NSString *const SOCKET_TIMEOUT_URL = @"http://67.111.67.24:8080/concerto/DevTest/delay?timeToDelay=300000";
+NSString *const SOCKET_TIMEOUT_URL = @"http://boomerang-test.soasta.com:3000/delay?response=abcdefghijklmnopqrstuvwxyz1234567890&delay=300000";
 
 // A URL where the download takes too long (chunked-data)
-NSString *const LONG_DOWNLOAD_URL = @"http://67.111.67.24:8080/concerto/DevTest/chunkedResponse?chunkSize=100&chunkCount=1000000&chunkDelay=100";
+NSString *const LONG_DOWNLOAD_URL = @"http://boomerang-test.soasta.com:3000/chunked?chunkSize=100&chunkCount=1000000&chunkDelay=100";
 
 //
 // Timeouts
@@ -202,3 +202,4 @@ short const NSURLSUCCESS = 0;
 }
 
 @end
+  
