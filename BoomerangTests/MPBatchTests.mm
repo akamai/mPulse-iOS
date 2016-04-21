@@ -99,7 +99,7 @@
   record = protobufBatch.beacon_records(1);
   ::client_beacon_batch::ClientBeaconBatch_ClientBeaconRecord_ApiCustomTimerData timerData
     = record.api_custom_timer_data();
-  XCTAssertEqual(1.0f, timerData.timer_value());
+  XCTAssertEqual(1000, timerData.timer_value());
   XCTAssertEqual(1, timerData.timer_index());
   
   // Network Beacon
