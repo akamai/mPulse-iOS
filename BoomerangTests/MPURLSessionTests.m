@@ -1545,7 +1545,7 @@ didCompleteWithError:(NSError *)error
 
 -(void) testThreadedDataTaskWithRequestSuccess
 {
-  const long THREAD_TIMEOUT_NS = (long) 10 * 60 * 1000000000; // 10 mins should be more than enough
+  const int64_t THREAD_TIMEOUT_NS = (int64_t)(60 * NSEC_PER_SEC);
   const int THREAD_COUNT = 100;
   const int REQUEST_COUNT = 5;
     
