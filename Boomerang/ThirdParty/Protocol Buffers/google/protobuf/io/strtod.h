@@ -28,38 +28,23 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-// Author: kenton@google.com (Kenton Varda)
-//  Based on original Protocol Buffers design by
-//  Sanjay Ghemawat, Jeff Dean, and others.
+// A locale-independent version of strtod(), used to parse floating
+// point default values in .proto files, where the decimal separator
+// is always a dot.
 
-#include <google/protobuf/generated_message_util.h>
-
-#include <limits>
+#ifndef GOOGLE_PROTOBUF_IO_STRTOD_H__
+#define GOOGLE_PROTOBUF_IO_STRTOD_H__
 
 namespace google {
 namespace protobuf {
-namespace internal {
+namespace io {
 
-double Infinity() {
-  return std::numeric_limits<double>::infinity();
-}
-double NaN() {
-  return std::numeric_limits<double>::quiet_NaN();
-}
+// A locale-independent version of the standard strtod(), which always
+// uses a dot as the decimal separator.
+double NoLocaleStrtod(const char* str, char** endptr);
 
-const ::std::string* empty_string_;
-GOOGLE_PROTOBUF_DECLARE_ONCE(empty_string_once_init_);
-
-void DeleteEmptyString() {
-  delete empty_string_;
-}
-
-void InitEmptyString() {
-  empty_string_ = new string;
-  OnShutdown(&DeleteEmptyString);
-}
-
-
-}  // namespace internal
+}  // namespace io
 }  // namespace protobuf
+
 }  // namespace google
+#endif  // GOOGLE_PROTOBUF_IO_STRTOD_H__

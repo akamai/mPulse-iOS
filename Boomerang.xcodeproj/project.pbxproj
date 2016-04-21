@@ -338,23 +338,32 @@
 		93318A571B8796FB003A430F /* NSURLSession+MPIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */; };
 		93318A5A1B87A256003A430F /* MPInterceptUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 93318A581B87A256003A430F /* MPInterceptUtils.h */; };
 		93318A5B1B87A256003A430F /* MPInterceptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 93318A591B87A256003A430F /* MPInterceptUtils.m */; };
+		933D781F1CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */; };
+		933D78201CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */; };
+		933D78221CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */; };
+		933D78231CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */; };
+		933D78811CAB129400774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		933D78821CAB129400774235 /* strtod.h in Headers */ = {isa = PBXBuildFile; fileRef = 933D78801CAB129400774235 /* strtod.h */; };
+		933D78831CAB136700774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		933D78841CAB136C00774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		933D78851CAB137000774235 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
 		9348A2401BA31B2A00732150 /* MPInterceptURLSessionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9348A23F1BA31B2A00732150 /* MPInterceptURLSessionDelegate.h */; };
-		934E97D41BBAFA08008BBDE8 /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppCrashBeacon.h */; };
+		934E97D41BBAFA08008BBDE8 /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
 		934E98001BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
 		934E98011BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
 		93F224901C29B52C00C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
 		93F224921C29B53400C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
-		93F224931C29B53400C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppCrashBeacon.h */; };
-		93F224951C29B55900C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */; };
-		93F224961C29B57500C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */; };
+		93F224931C29B53400C8580E /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
+		93F224951C29B55900C8580E /* MPAppErrorBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */; };
+		93F224961C29B57500C8580E /* MPAppErrorBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */; };
 		93F224971C29B58100C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
-		93F224981C29B58100C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */; };
+		93F224981C29B58100C8580E /* MPAppErrorBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */; };
 		93F224991C29B58900C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
-		93F2249A1C29B58900C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F2249A1C29B58900C8580E /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
 		93F2249B1C29B59200C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
-		93F2249C1C29B59200C8580E /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */; };
+		93F2249C1C29B59200C8580E /* MPAppErrorBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */; };
 		93F2249D1C29B59E00C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
-		93F2249E1C29B59E00C8580E /* MPAppCrashBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppCrashBeacon.h */; };
+		93F2249E1C29B59E00C8580E /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
 		93F34AFB1C5ACEF300AAF4C3 /* MPASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F34AF51C5ACEF300AAF4C3 /* MPASLLogger.h */; };
 		93F34AFC1C5ACEF300AAF4C3 /* MPASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34AF61C5ACEF300AAF4C3 /* MPASLLogger.m */; };
 		93F34AFD1C5ACEF300AAF4C3 /* MPLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F34AF71C5ACEF300AAF4C3 /* MPLog.h */; };
@@ -437,7 +446,7 @@
 		93F34BAF1C5FBAA500AAF4C3 /* NSString+MPExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F34B401C5FB60D00AAF4C3 /* NSString+MPExtensions.h */; };
 		93F34C3F1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C2E1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m */; };
 		93F34C401C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C2F1C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m */; };
-		93F34C411C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C301C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m */; };
+		93F34C411C63CDC500AAF4C3 /* MPAppErrorBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C301C63CDC500AAF4C3 /* MPAppErrorBeaconTests.m */; };
 		93F34C421C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C311C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m */; };
 		93F34C431C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C321C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m */; };
 		93F34C441C63CDC500AAF4C3 /* MPBatchTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F34C331C63CDC500AAF4C3 /* MPBatchTests.mm */; };
@@ -451,7 +460,7 @@
 		93F34C691C63D2AE00AAF4C3 /* MPApiCustomMetricBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51B718FC8A760079D9E7 /* MPApiCustomMetricBeacon.mm */; };
 		93F34C6A1C63D2AE00AAF4C3 /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
 		93F34C6B1C63D2AE00AAF4C3 /* MPApiNetworkRequestBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27EE51A118FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.mm */; };
-		93F34C6C1C63D2AE00AAF4C3 /* MPAppCrashBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */; };
+		93F34C6C1C63D2AE00AAF4C3 /* MPAppErrorBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */; };
 		93F34C6D1C63D2AE00AAF4C3 /* MPAppInactiveBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */; };
 		93F34C6E1C63D2AE00AAF4C3 /* MPAppLaunchBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 271A7F9A18FDBD8500DA420A /* MPAppLaunchBeacon.mm */; };
 		93F34C6F1C63D2AE00AAF4C3 /* MPBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = F775D60C1907758300EF7369 /* MPBeacon.mm */; };
@@ -961,12 +970,16 @@
 		93318A551B8796FB003A430F /* NSURLSession+MPIntercept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "NSURLSession+MPIntercept.m"; path = "Intercept/NSURLSession+MPIntercept.m"; sourceTree = "<group>"; };
 		93318A581B87A256003A430F /* MPInterceptUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = MPInterceptUtils.h; path = Intercept/MPInterceptUtils.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		93318A591B87A256003A430F /* MPInterceptUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MPInterceptUtils.m; path = Intercept/MPInterceptUtils.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigPageGroupTests.m; sourceTree = "<group>"; };
+		933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConfigPageParamsTests.m; sourceTree = "<group>"; };
+		933D787F1CAB129400774235 /* strtod.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strtod.cc; sourceTree = "<group>"; };
+		933D78801CAB129400774235 /* strtod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strtod.h; sourceTree = "<group>"; };
 		9348A23F1BA31B2A00732150 /* MPInterceptURLSessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = MPInterceptURLSessionDelegate.h; path = Intercept/MPInterceptURLSessionDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		934E97D21BBAFA08008BBDE8 /* MPAppCrashBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppCrashBeacon.h; path = Beacons/MPAppCrashBeacon.h; sourceTree = "<group>"; };
+		934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAppErrorBeacon.h; path = Beacons/MPAppErrorBeacon.h; sourceTree = "<group>"; };
 		934E97D91BC70DB9008BBDE8 /* StyleSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StyleSettings.plist; sourceTree = "<group>"; };
 		934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPApiCustomTimerBeacon.h; path = Beacons/MPApiCustomTimerBeacon.h; sourceTree = "<group>"; };
 		934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPApiCustomTimerBeacon.mm; path = Beacons/MPApiCustomTimerBeacon.mm; sourceTree = "<group>"; };
-		93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPAppCrashBeacon.mm; path = Beacons/MPAppCrashBeacon.mm; sourceTree = "<group>"; };
+		93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPAppErrorBeacon.mm; path = Beacons/MPAppErrorBeacon.mm; sourceTree = "<group>"; };
 		93F34AF51C5ACEF300AAF4C3 /* MPASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPASLLogger.h; path = Boomerang/ThirdParty/LumberJack/MPASLLogger.h; sourceTree = SOURCE_ROOT; };
 		93F34AF61C5ACEF300AAF4C3 /* MPASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPASLLogger.m; path = Boomerang/ThirdParty/LumberJack/MPASLLogger.m; sourceTree = SOURCE_ROOT; };
 		93F34AF71C5ACEF300AAF4C3 /* MPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPLog.h; path = Boomerang/ThirdParty/LumberJack/MPLog.h; sourceTree = SOURCE_ROOT; };
@@ -991,7 +1004,7 @@
 		93F34C2A1C63CD8900AAF4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93F34C2E1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPApiCustomMetricBeaconTests.m; sourceTree = "<group>"; };
 		93F34C2F1C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPApiCustomTimerBeaconTests.m; sourceTree = "<group>"; };
-		93F34C301C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppCrashBeaconTests.m; sourceTree = "<group>"; };
+		93F34C301C63CDC500AAF4C3 /* MPAppErrorBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppErrorBeaconTests.m; sourceTree = "<group>"; };
 		93F34C311C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppInactiveBeaconTests.m; sourceTree = "<group>"; };
 		93F34C321C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAppLaunchBeaconTests.m; sourceTree = "<group>"; };
 		93F34C331C63CDC500AAF4C3 /* MPBatchTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPBatchTests.mm; sourceTree = "<group>"; };
@@ -1239,8 +1252,8 @@
 				934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */,
 				27EE51A018FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.h */,
 				27EE51A118FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.mm */,
-				934E97D21BBAFA08008BBDE8 /* MPAppCrashBeacon.h */,
-				93F224941C29B55900C8580E /* MPAppCrashBeacon.mm */,
+				934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */,
+				93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */,
 				5BF6D58A19085E5E00C5F991 /* MPAppInactiveBeacon.h */,
 				5BF6D58B19085E5E00C5F991 /* MPAppInactiveBeacon.m */,
 				271A7F9918FDBD8500DA420A /* MPAppLaunchBeacon.h */,
@@ -1465,7 +1478,7 @@
 				93F34C2A1C63CD8900AAF4C3 /* Info.plist */,
 				93F34C2E1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m */,
 				93F34C2F1C63CDC500AAF4C3 /* MPApiCustomTimerBeaconTests.m */,
-				93F34C301C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m */,
+				93F34C301C63CDC500AAF4C3 /* MPAppErrorBeaconTests.m */,
 				93F34C311C63CDC500AAF4C3 /* MPAppInactiveBeaconTests.m */,
 				93F34C321C63CDC500AAF4C3 /* MPAppLaunchBeaconTests.m */,
 				93F34C331C63CDC500AAF4C3 /* MPBatchTests.mm */,
@@ -1473,6 +1486,8 @@
 				93F34C351C63CDC500AAF4C3 /* MPBeaconTestBase.m */,
 				93F34C361C63CDC500AAF4C3 /* MPBeaconTests.m */,
 				93F34C3D1C63CDC500AAF4C3 /* MPConfigMetricTests.m */,
+				933D781E1CA9D68900774235 /* MPConfigPageGroupTests.m */,
+				933D78211CA9D71700774235 /* MPConfigPageParamsTests.m */,
 				93F34C371C63CDC500AAF4C3 /* MPConfigTests.m */,
 				93F34C3E1C63CDC500AAF4C3 /* MPConfigTimerTests.m */,
 				93F34D251C68F17B00AAF4C3 /* MPHttpRequestTestBase.h */,
@@ -1564,6 +1579,8 @@
 		F78AF2F5190F629C00915617 /* io */ = {
 			isa = PBXGroup;
 			children = (
+				933D787F1CAB129400774235 /* strtod.cc */,
+				933D78801CAB129400774235 /* strtod.h */,
 				F78AF2F6190F629C00915617 /* coded_stream.cc */,
 				F78AF2F7190F629C00915617 /* coded_stream.h */,
 				F78AF2F8190F629C00915617 /* coded_stream_inl.h */,
@@ -1638,7 +1655,7 @@
 				93F34B841C5FBA5600AAF4C3 /* MPLog.h in Headers */,
 				93F34B851C5FBA5600AAF4C3 /* MPTTYLogger.h in Headers */,
 				93F224921C29B53400C8580E /* MPApiCustomTimerBeacon.h in Headers */,
-				93F224931C29B53400C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F224931C29B53400C8580E /* MPAppErrorBeacon.h in Headers */,
 				6D0EBBC218D10BB500FB62AA /* MPUtilities.h in Headers */,
 				27EE51A518FC8A2D0079D9E7 /* MPApiNetworkRequestBeacon.h in Headers */,
 				6D9BE14C192581800074F273 /* NSString+TT_SBJSON.h in Headers */,
@@ -1768,7 +1785,7 @@
 				6D9BE15D192581800074F273 /* TT_SBJsonBase.h in Headers */,
 				F78AF58C190F629C00915617 /* common.h in Headers */,
 				F76730B7190882BB00228AB7 /* ClientBeaconBatch.pb.h in Headers */,
-				934E97D41BBAFA08008BBDE8 /* MPAppCrashBeacon.h in Headers */,
+				934E97D41BBAFA08008BBDE8 /* MPAppErrorBeacon.h in Headers */,
 				F78AF577190F629C00915617 /* atomicops_internals_pnacl.h in Headers */,
 				5B87FC581909DA81009CA061 /* MPConfig.h in Headers */,
 				93318A561B8796FB003A430F /* NSURLSession+MPIntercept.h in Headers */,
@@ -1817,6 +1834,7 @@
 				5B18994519102268009794C1 /* MPReachability.h in Headers */,
 				F78AF574190F629C00915617 /* atomicops_internals_mips_gcc.h in Headers */,
 				F775D60D1907758300EF7369 /* MPBeacon.h in Headers */,
+				933D78821CAB129400774235 /* strtod.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1836,7 +1854,7 @@
 				93F34B7E1C5FBA4600AAF4C3 /* MPLog.h in Headers */,
 				93F34B7F1C5FBA4600AAF4C3 /* MPTTYLogger.h in Headers */,
 				93F224991C29B58900C8580E /* MPApiCustomTimerBeacon.h in Headers */,
-				93F2249A1C29B58900C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F2249A1C29B58900C8580E /* MPAppErrorBeacon.h in Headers */,
 				F78AF5CE190F629C00915617 /* substitute.h in Headers */,
 				F78AF598190F629C00915617 /* map-util.h in Headers */,
 				F78AF555190F629C00915617 /* repeated_field.h in Headers */,
@@ -1934,7 +1952,7 @@
 				93F34B771C5FBA0800AAF4C3 /* MPASLLogger.h in Headers */,
 				93F34B781C5FBA0800AAF4C3 /* MPLog.h in Headers */,
 				93F34B791C5FBA0800AAF4C3 /* MPTTYLogger.h in Headers */,
-				93F2249E1C29B59E00C8580E /* MPAppCrashBeacon.h in Headers */,
+				93F2249E1C29B59E00C8580E /* MPAppErrorBeacon.h in Headers */,
 				6D0EBBC418D10BB500FB62AA /* MPUtilities.h in Headers */,
 				5B18997E19116930009794C1 /* package_info.h in Headers */,
 				6D9BE14E192581800074F273 /* NSString+TT_SBJSON.h in Headers */,
@@ -2242,6 +2260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D78831CAB136700774235 /* strtod.cc in Sources */,
 				93F34B8D1C5FBA8600AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34B8E1C5FBA8600AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34B8F1C5FBA8600AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2252,7 +2271,7 @@
 				93F34B801C5FBA4F00AAF4C3 /* MPASLLogger.m in Sources */,
 				93F34B811C5FBA4F00AAF4C3 /* MPLog.m in Sources */,
 				93F34B821C5FBA4F00AAF4C3 /* MPTTYLogger.m in Sources */,
-				93F224961C29B57500C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F224961C29B57500C8580E /* MPAppErrorBeacon.mm in Sources */,
 				93F224901C29B52C00C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
 				F78AF4D2190F629C00915617 /* generated_message_reflection.cc in Sources */,
 				F78AF57B190F629C00915617 /* atomicops_internals_x86_gcc.cc in Sources */,
@@ -2332,7 +2351,7 @@
 				6D0EBBC518D10BB500FB62AA /* MPUtilities.m in Sources */,
 				F78AF496190F629C00915617 /* descriptor.cc in Sources */,
 				93318A5B1B87A256003A430F /* MPInterceptUtils.m in Sources */,
-				93F224951C29B55900C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F224951C29B55900C8580E /* MPAppErrorBeacon.mm in Sources */,
 				2CF42901164470E00058AC81 /* MPURLConnection.m in Sources */,
 				F78AF599190F629C00915617 /* once.cc in Sources */,
 				6D9BE173192581800074F273 /* TT_SBJsonWriter.m in Sources */,
@@ -2341,6 +2360,7 @@
 				F78AF61E190F629C00915617 /* unknown_field_set.cc in Sources */,
 				F78AF64919105FF400915617 /* MPBatchTransport.m in Sources */,
 				93F34B2F1C5FAE7200AAF4C3 /* MPConfigMetric.m in Sources */,
+				933D78811CAB129400774235 /* strtod.cc in Sources */,
 				271A7F9F18FDBD8500DA420A /* MPAppLaunchBeacon.mm in Sources */,
 				93F34B001C5ACEF300AAF4C3 /* MPTTYLogger.m in Sources */,
 				F78AF629190F629C00915617 /* wire_format.cc in Sources */,
@@ -2402,6 +2422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D78841CAB136C00774235 /* strtod.cc in Sources */,
 				93F34B941C5FBA8D00AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34B951C5FBA8D00AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34B961C5FBA8D00AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2413,7 +2434,7 @@
 				93F34B7B1C5FBA3700AAF4C3 /* MPLog.m in Sources */,
 				93F34B7C1C5FBA3700AAF4C3 /* MPTTYLogger.m in Sources */,
 				93F224971C29B58100C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
-				93F224981C29B58100C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F224981C29B58100C8580E /* MPAppErrorBeacon.mm in Sources */,
 				F78AF561190F629C00915617 /* service.cc in Sources */,
 				F78AF4B7190F629C00915617 /* dynamic_message.cc in Sources */,
 				6D9BE152192581800074F273 /* NSString+TT_SBJSON.m in Sources */,
@@ -2482,6 +2503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D78851CAB137000774235 /* strtod.cc in Sources */,
 				93F34BA21C5FBA9900AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34BA31C5FBA9900AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34BA41C5FBA9900AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2493,7 +2515,7 @@
 				93F34B751C5FB9D200AAF4C3 /* MPLog.m in Sources */,
 				93F34B761C5FB9D200AAF4C3 /* MPTTYLogger.m in Sources */,
 				93F2249B1C29B59200C8580E /* MPApiCustomTimerBeacon.mm in Sources */,
-				93F2249C1C29B59200C8580E /* MPAppCrashBeacon.mm in Sources */,
+				93F2249C1C29B59200C8580E /* MPAppErrorBeacon.mm in Sources */,
 				5B18996A1911691F009794C1 /* generated_message_reflection.cc in Sources */,
 				6D9BE153192581800074F273 /* NSString+TT_SBJSON.m in Sources */,
 				5B18995E19116900009794C1 /* descriptor.cc in Sources */,
@@ -2565,7 +2587,7 @@
 				93F34C691C63D2AE00AAF4C3 /* MPApiCustomMetricBeacon.mm in Sources */,
 				93F34C6A1C63D2AE00AAF4C3 /* MPApiCustomTimerBeacon.mm in Sources */,
 				93F34C6B1C63D2AE00AAF4C3 /* MPApiNetworkRequestBeacon.mm in Sources */,
-				93F34C6C1C63D2AE00AAF4C3 /* MPAppCrashBeacon.mm in Sources */,
+				93F34C6C1C63D2AE00AAF4C3 /* MPAppErrorBeacon.mm in Sources */,
 				93F34C6D1C63D2AE00AAF4C3 /* MPAppInactiveBeacon.m in Sources */,
 				93F34C6E1C63D2AE00AAF4C3 /* MPAppLaunchBeacon.mm in Sources */,
 				93F34C6F1C63D2AE00AAF4C3 /* MPBeacon.mm in Sources */,
@@ -2573,6 +2595,7 @@
 				93F34C711C63D2AE00AAF4C3 /* MPBatch.mm in Sources */,
 				93F34C721C63D2AE00AAF4C3 /* MPBatchTransport.m in Sources */,
 				93F34C731C63D2AE00AAF4C3 /* MPBeaconCollector.m in Sources */,
+				933D781F1CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */,
 				93F34C741C63D2AE00AAF4C3 /* MPConfigDimension.m in Sources */,
 				93F34C751C63D2AE00AAF4C3 /* MPConfigMetric.m in Sources */,
 				93F34C761C63D2AE00AAF4C3 /* MPConfigPageGroup.m in Sources */,
@@ -2596,6 +2619,7 @@
 				93F34C871C63D2AE00AAF4C3 /* TT_SBJsonParser.m in Sources */,
 				93F34C881C63D2AE00AAF4C3 /* TT_SBJsonWriter.m in Sources */,
 				93F34C891C63D2AE00AAF4C3 /* MPASLLogger.m in Sources */,
+				933D78221CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */,
 				93F34C8A1C63D2AE00AAF4C3 /* MPLog.m in Sources */,
 				93F34C8B1C63D2AE00AAF4C3 /* MPTTYLogger.m in Sources */,
 				93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */,
@@ -2617,7 +2641,7 @@
 				93F34C471C63CDC500AAF4C3 /* MPConfigTests.m in Sources */,
 				93F34C3F1C63CDC500AAF4C3 /* MPApiCustomMetricBeaconTests.m in Sources */,
 				93F34D1C1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m in Sources */,
-				93F34C411C63CDC500AAF4C3 /* MPAppCrashBeaconTests.m in Sources */,
+				93F34C411C63CDC500AAF4C3 /* MPAppErrorBeaconTests.m in Sources */,
 				93F34C491C63CDC500AAF4C3 /* MPHttpRequestTestBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2641,9 +2665,11 @@
 				93F34D011C63D74D00AAF4C3 /* tokenizer.cc in Sources */,
 				93F34D021C63D74D00AAF4C3 /* zero_copy_stream.cc in Sources */,
 				93F34D031C63D74D00AAF4C3 /* zero_copy_stream_impl.cc in Sources */,
+				933D78201CA9D68900774235 /* MPConfigPageGroupTests.m in Sources */,
 				93F34D041C63D74D00AAF4C3 /* zero_copy_stream_impl_lite.cc in Sources */,
 				93F34D051C63D74D00AAF4C3 /* message.cc in Sources */,
 				93F34D061C63D74D00AAF4C3 /* message_lite.cc in Sources */,
+				933D78231CA9D71700774235 /* MPConfigPageParamsTests.m in Sources */,
 				93F34D071C63D74D00AAF4C3 /* reflection_ops.cc in Sources */,
 				93F34D081C63D74D00AAF4C3 /* repeated_field.cc in Sources */,
 				93F34D091C63D74D00AAF4C3 /* service.cc in Sources */,

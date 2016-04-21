@@ -85,7 +85,9 @@
       if ([timer.name isEqualToString:timerName])
       {
         _timerIndex = timer.index;
-        _timerValue = value;
+
+        // the given value is a NSTimeInterval (in seconds), but we need to keep track in milliseconds
+        _timerValue = value * 1000;
 
         _hasTimerStarted = YES;
         _hasTimerEnded = YES;
@@ -162,7 +164,8 @@
  */
 -(void) endTimer
 {
-  _timerValue = [[NSDate date] timeIntervalSinceDate:_startTime];
+  // convert a NSTimeInterval (in seconds) to milliseconds
+  _timerValue = [[NSDate date] timeIntervalSinceDate:_startTime] * 1000;
   _hasTimerEnded = YES;
   
   MPLogDebug(@"Initialized timer beacon: index=%d, value=%f", (int)_timerIndex, _timerValue);

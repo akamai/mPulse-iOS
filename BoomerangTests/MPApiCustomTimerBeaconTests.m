@@ -115,7 +115,7 @@ static int const BEACON_ADD_WAIT = 5;
   
   // Test for time beacon being added to the batch with duration exactly 3 seconds
   [self validateBeacons:@[
-                          @[@"Touch Timer", @0, @0, @3]
+                          @[@"Touch Timer", @0, @0, @3000]
                         ]];
 }
 
@@ -173,7 +173,7 @@ static int const BEACON_ADD_WAIT = 5;
   
   // new values
   XCTAssertTrue(beacon.timerValue >= 0, "Duration after end");
-  XCTAssertTrue(beacon.timerValue <= 3, "Duration after end");
+  XCTAssertTrue(beacon.timerValue <= 3000, "Duration after end");
   XCTAssertTrue(beacon.timerValue != oldTime, "Duration after end");
   XCTAssertEqual(beacon.hasTimerEnded, YES, "hasTimerEnded after end");
   XCTAssertEqual(beacon.hasTimerStarted, YES, "hasTimerStarted after end");
@@ -190,9 +190,9 @@ static int const BEACON_ADD_WAIT = 5;
   
   // Test for 3 beacons
   [self validateBeacons:@[
-                          @[@"Touch Timer", @0, @0, @1],
-                          @[@"Touch Timer", @0, @0, @2],
-                          @[@"Code Timer",  @1, @0, @3]
+                          @[@"Touch Timer", @0, @0, @1000],
+                          @[@"Touch Timer", @0, @0, @2000],
+                          @[@"Code Timer",  @1, @0, @3000]
                         ]];
 }
 
@@ -239,8 +239,8 @@ static int const BEACON_ADD_WAIT = 5;
   
   // Test for time beacon being added to the batch with duration exactly 3 seconds
   [self validateBeacons:@[
-                          @[@"Touch Timer", @0, @0, @1, @"Foo", @"A/B"],
-                          @[@"Touch Timer", @0, @0, @2, @"", @""]
+                          @[@"Touch Timer", @0, @0, @1000, @"Foo", @"A/B"],
+                          @[@"Touch Timer", @0, @0, @2000, @"", @""]
                         ]];
 }
 
