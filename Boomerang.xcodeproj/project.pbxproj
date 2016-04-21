@@ -2194,7 +2194,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/post-build.sh";
+			shellScript = "\"${SRCROOT}/post-build.sh\"";
 		};
 		934E97D81BC70C21008BBDE8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
