@@ -8,10 +8,12 @@
 #import "MPHttpRequestTestBase.h"
 #import "MPInterceptURLConnectionDelegate.h"
 #import "MPURLConnectionDelegateHelper.h"
+#import "MPURLConnectionNonConformingDelegateHelperSubclass.h"
 
 @interface MPURLConnectionTests : MPHttpRequestTestBase<NSURLConnectionDataDelegate>
 {
   MPURLConnectionDelegateHelper *requestHelper;
+  MPURLConnectionNonConformingDelegateHelperSubclass *requestHelperSubclass;
 
   dispatch_group_t _taskGroup;
 }
@@ -30,8 +32,9 @@
   // Intialization of BoomerangURLConnectionDelegate
   [MPInterceptURLConnectionDelegate sharedInstance];
   
-  // Initialize MPURLConnectionDelegateHelper for delegation
+  // Initialize MPURLConnectionDelegateHelpers for delegation
   requestHelper = [[MPURLConnectionDelegateHelper alloc] init];
+  requestHelperSubclass = [[MPURLConnectionNonConformingDelegateHelperSubclass alloc] init];
   
   // Used to join threads in the threading test
   _taskGroup = dispatch_group_create();
@@ -252,6 +255,58 @@
   if (checkResponse)
   {
     NSString *dataString = [[NSString alloc] initWithData:[requestHelper responseData] encoding:NSUTF8StringEncoding];
+    MPLogDebug( @"Response data: %@" , dataString);
+    XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
+  }
+  
+  // sleep - waiting for session start beacon to be added
+  [NSThread sleepForTimeInterval:BEACON_ADD_WAIT];
+}
+
+-(void) initWithRequestStartImmediatelyNoWithNonConforming:(NSString *)urlString
+                                                 isSuccess:(BOOL)isSuccess
+                                             checkResponse:(BOOL)checkResponse
+                                            responseString:(NSString *)responseString
+{
+  NSURL *url = [NSURL URLWithString:urlString];
+  NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+  
+  NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:theRequest
+                                                                delegate:requestHelperSubclass
+                                                        startImmediately:NO];
+  
+  [connection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+  [connection start];
+  
+  NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:LOOP_TIMEOUT];
+  
+  while (![requestHelperSubclass finished])
+  {
+    // Not finished yet.
+    
+    // Give the asynchronous HTTP request some time to work.
+    
+    // This will return if either:
+    // (a) the HTTP request status changes in any way
+    // (b) we time out.
+    
+    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
+  }
+  
+  // check for error and fail if success is expected
+  if ([requestHelperSubclass error] != nil)
+  {
+    
+    if (isSuccess)
+    {
+      XCTFail("Request Failed in function @%s. Success expected", __FUNCTION__);
+    }
+  }
+  
+  // verify response text if asked for
+  if (checkResponse)
+  {
+    NSString *dataString = [[NSString alloc] initWithData:[requestHelperSubclass responseData] encoding:NSUTF8StringEncoding];
     MPLogDebug( @"Response data: %@" , dataString);
     XCTAssertEqualObjects(dataString, responseString, @" Received wrong response string.");
   }
@@ -542,7 +597,10 @@
 -(void) testInitWithRequestStartImmediatelyNoSuccess
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyYes:SUCCESS_URL isSuccess:YES checkResponse:YES responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
+  [self initWithRequestStartImmediatelyNo:SUCCESS_URL
+                                 isSuccess:YES
+                             checkResponse:YES
+                            responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
   
   // test for success with duration more than 3000 ms
   [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
@@ -551,7 +609,10 @@
 -(void) testInitWithRequestStartImmediatelyNoSuccessHTTPRedirect
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:REDIRECT_URL isSuccess:YES checkResponse:NO responseString:@""];
+  [self initWithRequestStartImmediatelyNo:REDIRECT_URL
+                                isSuccess:YES
+                            checkResponse:NO
+                           responseString:@""];
   
   // Test for success
   [self responseBeaconTest:REDIRECT_URL minDuration:0 networkErrorCode:NSURLSUCCESS];
@@ -560,7 +621,10 @@
 -(void) testInitWithRequestStartImmediatelyNoFailHTTPError
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:PAGENOTFOUND_URL isSuccess:NO checkResponse:NO responseString:@""];
+  [self initWithRequestStartImmediatelyNo:PAGENOTFOUND_URL
+                                isSuccess:NO
+                            checkResponse:NO
+                           responseString:@""];
   
   // Test for failure
   [self responseBeaconTest:PAGENOTFOUND_URL minDuration:0 networkErrorCode:HTTP_ERROR_PAGE_NOT_FOUND];
@@ -569,7 +633,10 @@
 -(void) testInitWithRequestStartImmediatelyNoConnectionRefused
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:CONNECTION_REFUSED_URL isSuccess:NO checkResponse:NO responseString:@""];
+  [self initWithRequestStartImmediatelyNo:CONNECTION_REFUSED_URL
+                                isSuccess:NO
+                            checkResponse:NO
+                           responseString:@""];
   
   // Test for failure
   [self responseBeaconTest:CONNECTION_REFUSED_URL minDuration:0 networkErrorCode:NSURLErrorCannotConnectToHost];
@@ -578,7 +645,10 @@
 -(void) testInitWithRequestStartImmediatelyNoUnknownHost
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:UNKNOWN_HOST_URL isSuccess:NO checkResponse:NO responseString:@""];
+  [self initWithRequestStartImmediatelyNo:UNKNOWN_HOST_URL
+                                isSuccess:NO
+                            checkResponse:NO
+                           responseString:@""];
   
   // Test for failure
   [self responseBeaconTest:UNKNOWN_HOST_URL minDuration:0 networkErrorCode:SKIP_NETWORK_ERROR_CODE_CHECK];
@@ -587,7 +657,10 @@
 -(void) testInitWithRequestStartImmediatelyNoConnectionTimeOut
 {
   // create connection - start response later
-  [self initWithRequestStartImmediatelyNo:CONNECTION_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
+  [self initWithRequestStartImmediatelyNo:CONNECTION_TIMEOUT_URL
+                                isSuccess:NO
+                            checkResponse:NO
+                           responseString:@""];
   
   // Test for failure
   [self responseBeaconTest:CONNECTION_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
@@ -596,11 +669,28 @@
 -(void) testInitWithRequestStartImmediatelyNoSocketTimeOut
 {
   // create connection - start response immediately
-  [self initWithRequestStartImmediatelyNo:SOCKET_TIMEOUT_URL isSuccess:NO checkResponse:NO responseString:@""];
+  [self initWithRequestStartImmediatelyNo:SOCKET_TIMEOUT_URL
+                                isSuccess:NO
+                            checkResponse:NO
+                           responseString:@""];
   
   // Test for failure
   [self responseBeaconTest:SOCKET_TIMEOUT_URL minDuration:0 networkErrorCode:NSURLErrorTimedOut];
 }
+
+-(void) testInitWithRequestStartImmediatelyNoWithSubclass
+{
+  [self initWithRequestStartImmediatelyNoWithNonConforming:SUCCESS_URL
+                                                 isSuccess:YES
+                                             checkResponse:YES
+                                            responseString:@"abcdefghijklmnopqrstuvwxyz1234567890"];
+  
+  // test for success with duration more than 3000 ms
+  [self responseBeaconTest:SUCCESS_URL minDuration:3000 networkErrorCode:NSURLSUCCESS];
+}
+
+#pragma mark -
+#pragma mark Load Tests
 
 -(void) testThreadedconnectionWithRequestSuccess
 {
@@ -608,7 +698,7 @@
   const int THREAD_COUNT = 100;
   const int REQUEST_COUNT = 5;
   
-  for (int i=0; i < THREAD_COUNT; i++)
+  for (int i = 0; i < THREAD_COUNT; i++)
   {
     dispatch_group_enter(_taskGroup);
     NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadLoop:) object:@{@"threadnum": [NSNumber numberWithInt:i], @"requests": [NSNumber numberWithInt:REQUEST_COUNT]}];
@@ -622,16 +712,21 @@
   }
 }
 
-- (void)threadLoop: (NSDictionary *)threadInfo
+-(void) threadLoop:(NSDictionary *)threadInfo
 {
   int requests = [threadInfo[@"requests"] intValue];
   int threadnum = [threadInfo[@"threadnum"] intValue];
   
   NSLog(@"thread %d started", threadnum);
+
   while (requests-- > 0)
   {
-    [self connectionWithRequest:QUICK_SUCCESS_URL isSuccess:YES checkResponse:NO responseString:@"delayed: 1 milliseconds"];
+    [self connectionWithRequest:QUICK_SUCCESS_URL
+                      isSuccess:YES
+                  checkResponse:NO
+                 responseString:@"delayed: 1 milliseconds"];
   }
+
   NSLog(@"thread %d done", threadnum);
 
   dispatch_group_leave(_taskGroup);

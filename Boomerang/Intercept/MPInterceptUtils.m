@@ -17,14 +17,33 @@
  */
 void swizzleDelegate(Class klass, SEL methodName, SEL boomerangMethod, IMP swizzleMethod, IMP boomerangMethodSwizzle)
 {
-  if(!class_respondsToSelector(klass, methodName));
+  // see if this class responds to the base selector first or not
+  if (!class_respondsToSelector(klass, methodName))
   {
-    class_addMethod(klass, methodName, swizzleMethod, "v@:::");
+    // see if any of its parents respond to the selector
+    Class superClass = class_getSuperclass(klass);
+
+    while (superClass != nil && !class_respondsToSelector(superClass, methodName))
+    {
+      superClass = class_getSuperclass(superClass);
+    }
+    
+    if (superClass == nil)
+    {
+      // didn't have any parents responding to the selector, so let's put in our
+      // placeholder selector that we'll actually Swizzle out
+      class_addMethod(klass, methodName, swizzleMethod, "v@:::");
+    }
+    else
+    {
+      // swizzle the super class instead
+      klass = superClass;
+    }
   }
   
   class_addMethod(klass, boomerangMethod, boomerangMethodSwizzle, "v@:::");
   
-  if(class_respondsToSelector(klass, methodName))
+  if (class_respondsToSelector(klass, methodName))
   {
     swizzleInstanceMethod(klass,
                           methodName,
@@ -43,10 +62,15 @@ void swizzleInstanceMethod(Class c, SEL orig, SEL replace)
   
   if (origMethod != nil && newMethod != nil)
   {
-    if(class_addMethod(c, orig, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+    // try to add the class method first
+    if (class_addMethod(c, orig, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+    {
       class_replaceMethod(c, replace, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+    }
     else
+    {
       method_exchangeImplementations(origMethod, newMethod);
+    }
   }
   else
   {
@@ -82,10 +106,10 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
  * @param url URL to check
  * @return True if the URL should be intercepted
  */
-+ (BOOL) shouldIntercept:(NSURL*) url
++(BOOL) shouldIntercept:(NSURL*)url
 {
-  MPConfig* config = [MPConfig sharedInstance];
-  NSString* hostname = [url host];
+  MPConfig *config = [MPConfig sharedInstance];
+  NSString *hostname = [url host];
   
   if ([hostname isEqualToString:config.beaconURL.host] || [hostname isEqualToString:config.configURL.host])
   {
@@ -103,7 +127,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
  * @param response Response from network call
  * @param error Error from network call
  */
-+ (void)parseResponse:(MPApiNetworkRequestBeacon *)beacon
++(void) parseResponse:(MPApiNetworkRequestBeacon *)beacon
                  data:(NSData *)data
              response:(NSURLResponse *)response
                 error:(NSError *)error
@@ -113,7 +137,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
   {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
     
-    if([httpResponse statusCode] < 400)
+    if ([httpResponse statusCode] < 400)
     {
       // The request succeeded.
       
@@ -143,7 +167,7 @@ void swizzleClassMethod(Class c, SEL orig, SEL replace)
     // The request failed.
     
     // Send a failure beacon with the error code.
-    MPLogDebug(@"NSURLSession NetworkErrorCode : %ld",(long)[error code]);
+    MPLogDebug(@"NSURLSession NetworkErrorCode : %ld", (long)[error code]);
     [beacon setNetworkError:[error code] errorMessage:[[error userInfo] objectForKey:@"NSLocalizedDescription"]];
   }
 }

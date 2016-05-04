@@ -351,6 +351,42 @@
 		934E97D41BBAFA08008BBDE8 /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
 		934E98001BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
 		934E98011BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
+		93D1B4A81CD9049400818258 /* ClientBeaconBatch.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F76730B0190882BB00228AB7 /* ClientBeaconBatch.pb.cc */; };
+		93D1B4A91CD9050300818258 /* descriptor.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2DF190F629C00915617 /* descriptor.cc */; };
+		93D1B4AA1CD9050300818258 /* descriptor.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E1190F629C00915617 /* descriptor.pb.cc */; };
+		93D1B4AB1CD9050300818258 /* descriptor_database.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E4190F629C00915617 /* descriptor_database.cc */; };
+		93D1B4AC1CD9050300818258 /* dynamic_message.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2E8190F629C00915617 /* dynamic_message.cc */; };
+		93D1B4AD1CD9050300818258 /* extension_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2EB190F629C00915617 /* extension_set.cc */; };
+		93D1B4AE1CD9050300818258 /* extension_set_heavy.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2ED190F629C00915617 /* extension_set_heavy.cc */; };
+		93D1B4AF1CD9050300818258 /* generated_message_reflection.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F0190F629C00915617 /* generated_message_reflection.cc */; };
+		93D1B4B01CD9050300818258 /* generated_message_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F3190F629C00915617 /* generated_message_util.cc */; };
+		93D1B4B11CD9050300818258 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 933D787F1CAB129400774235 /* strtod.cc */; };
+		93D1B4B21CD9050300818258 /* coded_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2F6190F629C00915617 /* coded_stream.cc */; };
+		93D1B4B31CD9050300818258 /* gzip_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2FA190F629C00915617 /* gzip_stream.cc */; };
+		93D1B4B41CD9050300818258 /* printer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF2FE190F629C00915617 /* printer.cc */; };
+		93D1B4B51CD9050300818258 /* tokenizer.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF301190F629C00915617 /* tokenizer.cc */; };
+		93D1B4B61CD9050300818258 /* zero_copy_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF304190F629C00915617 /* zero_copy_stream.cc */; };
+		93D1B4B71CD9050300818258 /* zero_copy_stream_impl.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF306190F629C00915617 /* zero_copy_stream_impl.cc */; };
+		93D1B4B81CD9050300818258 /* zero_copy_stream_impl_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF308190F629C00915617 /* zero_copy_stream_impl_lite.cc */; };
+		93D1B4B91CD9050300818258 /* message.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF30C190F629C00915617 /* message.cc */; };
+		93D1B4BA1CD9050300818258 /* message_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF30E190F629C00915617 /* message_lite.cc */; };
+		93D1B4BB1CD9050300818258 /* reflection_ops.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF312190F629C00915617 /* reflection_ops.cc */; };
+		93D1B4BC1CD9050300818258 /* repeated_field.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF315190F629C00915617 /* repeated_field.cc */; };
+		93D1B4BD1CD9050300818258 /* service.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF319190F629C00915617 /* service.cc */; };
+		93D1B4BE1CD9050300818258 /* atomicops_internals_x86_gcc.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF323190F629C00915617 /* atomicops_internals_x86_gcc.cc */; };
+		93D1B4BF1CD9050300818258 /* atomicops_internals_x86_msvc.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF325190F629C00915617 /* atomicops_internals_x86_msvc.cc */; };
+		93D1B4C01CD9050300818258 /* common.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF327190F629C00915617 /* common.cc */; };
+		93D1B4C11CD9050300818258 /* once.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF32C190F629C00915617 /* once.cc */; };
+		93D1B4C21CD9050300818258 /* stringprintf.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF331190F629C00915617 /* stringprintf.cc */; };
+		93D1B4C31CD9050300818258 /* structurally_valid.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF334190F629C00915617 /* structurally_valid.cc */; };
+		93D1B4C41CD9050300818258 /* strutil.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF336190F629C00915617 /* strutil.cc */; };
+		93D1B4C51CD9050300818258 /* substitute.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF339190F629C00915617 /* substitute.cc */; };
+		93D1B4C61CD9050300818258 /* text_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF34F190F629C00915617 /* text_format.cc */; };
+		93D1B4C71CD9050300818258 /* unknown_field_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF360190F629C00915617 /* unknown_field_set.cc */; };
+		93D1B4C81CD9050300818258 /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF363190F629C00915617 /* wire_format.cc */; };
+		93D1B4C91CD9050300818258 /* wire_format_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = F78AF365190F629C00915617 /* wire_format_lite.cc */; };
+		93D1B4F01CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D1B4EF1CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.m */; };
+		93D1B4F31CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D1B4F21CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.m */; };
 		93F224901C29B52C00C8580E /* MPApiCustomTimerBeacon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */; };
 		93F224921C29B53400C8580E /* MPApiCustomTimerBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */; };
 		93F224931C29B53400C8580E /* MPAppErrorBeacon.h in Headers */ = {isa = PBXBuildFile; fileRef = 934E97D21BBAFA08008BBDE8 /* MPAppErrorBeacon.h */; };
@@ -979,6 +1015,10 @@
 		934E97D91BC70DB9008BBDE8 /* StyleSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StyleSettings.plist; sourceTree = "<group>"; };
 		934E97FE1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPApiCustomTimerBeacon.h; path = Beacons/MPApiCustomTimerBeacon.h; sourceTree = "<group>"; };
 		934E97FF1BD190A4008BBDE8 /* MPApiCustomTimerBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPApiCustomTimerBeacon.mm; path = Beacons/MPApiCustomTimerBeacon.mm; sourceTree = "<group>"; };
+		93D1B4EE1CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPURLConnectionNonConformingDelegateHelperSubclass.h; sourceTree = "<group>"; };
+		93D1B4EF1CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLConnectionNonConformingDelegateHelperSubclass.m; sourceTree = "<group>"; };
+		93D1B4F11CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPURLConnectionNonConformingDelegateHelper.h; sourceTree = "<group>"; };
+		93D1B4F21CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPURLConnectionNonConformingDelegateHelper.m; sourceTree = "<group>"; };
 		93F224941C29B55900C8580E /* MPAppErrorBeacon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MPAppErrorBeacon.mm; path = Beacons/MPAppErrorBeacon.mm; sourceTree = "<group>"; };
 		93F34AF51C5ACEF300AAF4C3 /* MPASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPASLLogger.h; path = Boomerang/ThirdParty/LumberJack/MPASLLogger.h; sourceTree = SOURCE_ROOT; };
 		93F34AF61C5ACEF300AAF4C3 /* MPASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPASLLogger.m; path = Boomerang/ThirdParty/LumberJack/MPASLLogger.m; sourceTree = SOURCE_ROOT; };
@@ -1495,6 +1535,10 @@
 				93F34C3C1C63CDC500AAF4C3 /* MPRemoveUnicodeCharsTest.m */,
 				93F34D161C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.h */,
 				93F34D171C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m */,
+				93D1B4F11CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.h */,
+				93D1B4F21CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.m */,
+				93D1B4EE1CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.h */,
+				93D1B4EF1CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.m */,
 				93F34D231C68EC2900AAF4C3 /* MPURLConnectionTests.m */,
 				93F34D1A1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.h */,
 				93F34D1B1C68EA6F00AAF4C3 /* MPURLSessionDelegateHelper.m */,
@@ -2584,6 +2628,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D1B4A91CD9050300818258 /* descriptor.cc in Sources */,
+				93D1B4AA1CD9050300818258 /* descriptor.pb.cc in Sources */,
+				93D1B4AB1CD9050300818258 /* descriptor_database.cc in Sources */,
+				93D1B4AC1CD9050300818258 /* dynamic_message.cc in Sources */,
+				93D1B4AD1CD9050300818258 /* extension_set.cc in Sources */,
+				93D1B4AE1CD9050300818258 /* extension_set_heavy.cc in Sources */,
+				93D1B4AF1CD9050300818258 /* generated_message_reflection.cc in Sources */,
+				93D1B4B01CD9050300818258 /* generated_message_util.cc in Sources */,
+				93D1B4B11CD9050300818258 /* strtod.cc in Sources */,
+				93D1B4B21CD9050300818258 /* coded_stream.cc in Sources */,
+				93D1B4B31CD9050300818258 /* gzip_stream.cc in Sources */,
+				93D1B4B41CD9050300818258 /* printer.cc in Sources */,
+				93D1B4B51CD9050300818258 /* tokenizer.cc in Sources */,
+				93D1B4B61CD9050300818258 /* zero_copy_stream.cc in Sources */,
+				93D1B4B71CD9050300818258 /* zero_copy_stream_impl.cc in Sources */,
+				93D1B4B81CD9050300818258 /* zero_copy_stream_impl_lite.cc in Sources */,
+				93D1B4B91CD9050300818258 /* message.cc in Sources */,
+				93D1B4BA1CD9050300818258 /* message_lite.cc in Sources */,
+				93D1B4BB1CD9050300818258 /* reflection_ops.cc in Sources */,
+				93D1B4BC1CD9050300818258 /* repeated_field.cc in Sources */,
+				93D1B4BD1CD9050300818258 /* service.cc in Sources */,
+				93D1B4BE1CD9050300818258 /* atomicops_internals_x86_gcc.cc in Sources */,
+				93D1B4BF1CD9050300818258 /* atomicops_internals_x86_msvc.cc in Sources */,
+				93D1B4C01CD9050300818258 /* common.cc in Sources */,
+				93D1B4C11CD9050300818258 /* once.cc in Sources */,
+				93D1B4C21CD9050300818258 /* stringprintf.cc in Sources */,
+				93D1B4C31CD9050300818258 /* structurally_valid.cc in Sources */,
+				93D1B4C41CD9050300818258 /* strutil.cc in Sources */,
+				93D1B4C51CD9050300818258 /* substitute.cc in Sources */,
+				93D1B4C61CD9050300818258 /* text_format.cc in Sources */,
+				93D1B4C71CD9050300818258 /* unknown_field_set.cc in Sources */,
+				93D1B4C81CD9050300818258 /* wire_format.cc in Sources */,
+				93D1B4C91CD9050300818258 /* wire_format_lite.cc in Sources */,
+				93D1B4A81CD9049400818258 /* ClientBeaconBatch.pb.cc in Sources */,
+				93D1B4F31CDA572200818258 /* MPURLConnectionNonConformingDelegateHelper.m in Sources */,
 				93F34C691C63D2AE00AAF4C3 /* MPApiCustomMetricBeacon.mm in Sources */,
 				93F34C6A1C63D2AE00AAF4C3 /* MPApiCustomTimerBeacon.mm in Sources */,
 				93F34C6B1C63D2AE00AAF4C3 /* MPApiNetworkRequestBeacon.mm in Sources */,
@@ -2625,6 +2704,7 @@
 				93F34C8C1C63D2AE00AAF4C3 /* MPConfig.m in Sources */,
 				93F34C8D1C63D2AE00AAF4C3 /* MPSession.m in Sources */,
 				93F34D181C68E25A00AAF4C3 /* MPURLConnectionDelegateHelper.m in Sources */,
+				93D1B4F01CDA4A9E00818258 /* MPURLConnectionNonConformingDelegateHelperSubclass.m in Sources */,
 				93F34C8E1C63D2AE00AAF4C3 /* MPulse.m in Sources */,
 				93F34C901C63D2AE00AAF4C3 /* MPURLConnection.m in Sources */,
 				93F34C911C63D2AE00AAF4C3 /* MPUtilities.m in Sources */,
