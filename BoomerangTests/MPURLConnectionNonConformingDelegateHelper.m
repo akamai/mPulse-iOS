@@ -21,22 +21,24 @@
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
   MPLogDebug(@"Request failed. %@", error);
-  
+
   _error = error;
-  
+
   [self signal];
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-  MPLogDebug(@"CALLING DIDRECEIVERESPONSE");
+  MPLogDebug(@"%s", __FUNCTION__);
+
   _response = response;
   _responseData = [NSMutableData alloc];
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-  MPLogDebug(@"CALLING DIDRECEIVEDATA");
+  MPLogDebug(@"%s", __FUNCTION__);
+
   _finished = NO;
   [_responseData appendData:data];
 }
@@ -44,7 +46,7 @@
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
   MPLogDebug(@"%s", __FUNCTION__);
-  
+
   [self signal];
 }
 
@@ -56,9 +58,11 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
   MPLogDebug(@"%s", __FUNCTION__);
 }
 
-- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
+-(NSCachedURLResponse *) connection:(NSURLConnection *)connection
+                 willCacheResponse:(NSCachedURLResponse *)cachedResponse
 {
   MPLogDebug(@"%s", __FUNCTION__);
+
   return nil;
 }
 
@@ -67,7 +71,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 -(void) signal
 {
   MPLogDebug(@"%s", __FUNCTION__);
-  
+
   _finished = YES;
   
   [_condition lock];
