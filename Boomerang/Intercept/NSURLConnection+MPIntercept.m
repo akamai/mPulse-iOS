@@ -188,17 +188,15 @@
   {
     NSURL *url = [request URL];
     
-    if (![MPInterceptUtils shouldIntercept:url])
+    if ([MPInterceptUtils shouldIntercept:url])
     {
-      return [self boomerangInitWithRequest:request delegate:delegate];
+      // We should try and swizzle all input delegates. Sometimes they don't respond to NSURLConnectionDelegate
+      // and thus we miss swizzling them during init.
+      [[MPInterceptURLConnectionDelegate sharedInstance] processNonConformingDelegate:[delegate class]];
+      
+      MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
+      [[MPInterceptURLConnectionDelegate sharedInstance] addBeacon:beacon forKey:[NSString stringWithFormat:@"%p", self]];
     }
-    
-    // We should try and swizzle all input delegates. Sometimes they don't respond to NSURLConnectionDelegate
-    // and thus we miss swizzling them during init.
-    [[MPInterceptURLConnectionDelegate sharedInstance] processNonConformingDelegate:[delegate class]];
-    
-    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
-    [[MPInterceptURLConnectionDelegate sharedInstance] addBeacon:beacon forKey:[NSString stringWithFormat:@"%p", self]];
   }
   @catch (NSException *exception)
   {
@@ -216,16 +214,15 @@
   {
     NSURL *url = [request URL];
     
-    if (![MPInterceptUtils shouldIntercept:url])
+    if ([MPInterceptUtils shouldIntercept:url])
     {
-      return [self boomerangInitWithRequest:request delegate:delegate startImmediately:startImmediately];
+      // We should try and swizzle all input delegates. Sometimes they don't respond to NSURLConnectionDelegate
+      // and thus we miss swizzling them during init.
+      [[MPInterceptURLConnectionDelegate sharedInstance] processNonConformingDelegate:[delegate class]];
+      
+      MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
+      [[MPInterceptURLConnectionDelegate sharedInstance] addBeacon:beacon forKey:[NSString stringWithFormat:@"%p", self]];
     }
-    // We should try and swizzle all input delegates. Sometimes they don't respond to NSURLConnectionDelegate
-    // and thus we miss swizzling them during init.
-    [[MPInterceptURLConnectionDelegate sharedInstance] processNonConformingDelegate:[delegate class]];
-    
-    MPApiNetworkRequestBeacon *beacon = [MPApiNetworkRequestBeacon initWithURL:url];
-    [[MPInterceptURLConnectionDelegate sharedInstance] addBeacon:beacon forKey:[NSString stringWithFormat:@"%p", self]];
   }
   @catch (NSException *exception)
   {
