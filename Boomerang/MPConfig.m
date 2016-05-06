@@ -211,7 +211,13 @@ NSString* const SESSION_ID_KEY = @"SESSION_ID";
     // Get protocol from configUrl
     NSRange protocolRange = [[_configURL absoluteString] rangeOfString:@"//"];  // beaconUrl starts with "//"
     NSString *protocol = [[_configURL absoluteString] substringToIndex:protocolRange.location];
-    
+
+    // trim trailing /
+    if ([beaconURLString hasSuffix:@"/"])
+    {
+      beaconURLString = [beaconURLString substringToIndex:[beaconURLString length] - 1];
+    }
+
     _beaconURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/batch", protocol, beaconURLString]];
     
     MPLogDebug(@"Beacon URL: %@", _beaconURL);
