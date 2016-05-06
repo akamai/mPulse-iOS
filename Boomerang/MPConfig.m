@@ -50,7 +50,6 @@ NSString* const SESSION_ID_KEY = @"SESSION_ID";
   
   if (_mPulseServerURL == nil || _APIKey == nil || [_APIKey length] == 0)
   {
-    MPLogInfo(@"mPulseApiKey or Server URL is missing. mPulse Mobile cannot function without the mPulse API Key/Server URL.");
     _beaconsEnabled = NO;
   }
   else
