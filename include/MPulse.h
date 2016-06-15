@@ -2,7 +2,7 @@
 //  MPulse.h
 //  MPulse
 //
-//  Copyright (c) 2012-2015 SOASTA. All rights reserved.
+//  Copyright (c) 2012-2016 SOASTA. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -10,8 +10,8 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 8282.40.109
-extern NSString* const BOOMERANG_VERSION;
+// mPulse Build Number - 2.0.0
+extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
  * @name    InitializeWithAPIKey
@@ -202,4 +202,43 @@ extern NSString* const BOOMERANG_VERSION;
  * @endcode
  */
 -(void) resetDimension:(NSString *)dimensionName;
+
+/**
+ * @name    Get A/B test
+ * @brief   Returns the current value of A/B test.
+ *
+ * This API lets users retreive the value of currently set A/B test value.
+ *
+ * Example Usage:
+ * @code
+ *    NSString *abTest = [[MPulse sharedInstance] getABTest];
+ * @endcode
+ */
+-(NSString *) getABTest;
+
+/**
+ * @name    Set A/B test
+ * @brief   Sets the value of A/B test.
+ *
+ * This API lets users set the value of A/B test which will be a part of all future beacons sent to server.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] setABTest:@"A"];
+ * @endcode
+ */
+-(void) setABTest:(NSString *)abTest;
+
+/**
+ * @name    Reset A/B test
+ * @brief   Resets the currently set A/B test value.
+ *
+ * This API lets users reset the current set A/B test value.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] resetABTest];
+ * @endcode
+ */
+-(void) resetABTest;
 @end
