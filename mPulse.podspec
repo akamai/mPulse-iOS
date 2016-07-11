@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.platform       = :ios
   s.ios.deployment_target = "6.0"
 
-  s.source_files   = 'include/*.h'
+  s.source_files   = 'include/*.h', 'Empty.m'
   s.public_header_files = 'include/*.h'
   s.preserve_paths = 'libMPulse.a', 'libMPulseSim.a'
   s.ios.vendored_library = 'libMPulse.a', 'libMPulseSim.a'
