@@ -10,8 +10,8 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.0.0
-extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
+// mPulse Build Number - 2.0.1
+extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
  * @name    InitializeWithAPIKey
@@ -27,7 +27,7 @@ extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
  *    MPulse* mPulse = [MPulse initializeWithAPIKey:@"SDNF-ENLK-MXXC-TDNA"];
  * @endcode
  */
-+(MPulse *) initializeWithAPIKey:(NSString*) APIKey;
++(MPulse *) initializeWithAPIKey:(NSString*)APIKey;
 
 /**
  * @name    SharedInstance
@@ -116,6 +116,9 @@ extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
  * This API lets users start a Timer specified by timerName and returns
  * the timerID which can be used to stop this Timer.
  *
+ * The current View Group, A/B Test and Custom Dimensions will be set
+ * for this timer.
+ *
  * Example Usage:
  * @code
  *    NSString* timerID = [[MPulse sharedInstance] startTimer:@"CustomTimer"];
@@ -134,7 +137,7 @@ extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
  *    [[MPulse sharedInstance] cancelTimer:@"timerID"];
  * @endcode
  */
--(void) cancelTimer:(NSString *) timerID;
+-(void) cancelTimer:(NSString *)timerID;
 
 /**
  * @name    Stop Timer
@@ -143,12 +146,31 @@ extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
  * This API lets users stop a previously started Timer specified by the timerID.
  * This also prepares the timer beacon to be sent to the server.
  *
+ * The current View Group, A/B Test and Custom Dimensions will not be updated.
+ *
  * Example Usage:
  * @code
  *    [[MPulse sharedInstance] stopTimer:@"timerID"];
  * @endcode
  */
--(void) stopTimer:(NSString *) timerID;
+-(void) stopTimer:(NSString *)timerID;
+
+/**
+ * @name    Stop Timer
+ * @brief   Stops Timer and prepares the timer beacon to be sent to server.
+ *
+ * This API lets users stop a previously started Timer specified by the timerID.
+ * This also prepares the timer beacon to be sent to the server.
+ *
+ * If updateDimensions is set to true, the current View Group, A/B Test
+ * and Custom Dimensions will be updated for this timer.
+ *
+ * Example Usage:
+ * @code
+ *    [[MPulse sharedInstance] stopTimer:@"timerID" updateDimensions:YES];
+ * @endcode
+ */
+-(void) stopTimer:(NSString *)timerID updateDimensions:(BOOL)updateDimensions;
 
 /**
  * @name    Send Timer
@@ -241,4 +263,5 @@ extern NSString* const MPULSE_BUILD_VERSION_NUMBER;
  * @endcode
  */
 -(void) resetABTest;
+
 @end
