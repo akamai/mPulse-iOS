@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.license        = { :type => 'Apache License, Version 2.0', :file => 'LICENSE'}
   s.summary        = "iOS library for mPulse Analytics"
   s.homepage       = "https://github.com/SOASTA/mPulse-iOS"
-  s.social_media_url = 'https://twitter.com/cloudtest'
+  s.social_media_url = 'https://twitter.com/soastainc'
   s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS.git", :tag => s.version }
   s.author         = { "SOASTA" => "support@soasta.com" }
 
