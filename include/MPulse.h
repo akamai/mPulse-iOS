@@ -10,256 +10,275 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.0.1
+// mPulse Build Number - 2.0.2
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
- * @name    InitializeWithAPIKey
- * @brief   Intializer for MPulse Instance which requires mPulse API Key.
+ * @brief Initializes mPulse with the specified API key.
  *
- * This API lets users initialize and obtain an MPulse class instance using mPulse API Key.
- * It must be the first call made to MPulse class and we recommend calling it from 
- * UIApplicationDelegate's method -
+ * This must be the first call made to the MPulse class and we recommend calling it from
+ * the application's UIApplicationDelegate's method:
+ * @code
  * - (void)applicationDidFinishLaunching:(UIApplication *)application;
+ * @endcode
  *
  * Example Usage:
  * @code
- *    MPulse* mPulse = [MPulse initializeWithAPIKey:@"SDNF-ENLK-MXXC-TDNA"];
+ * MPulse* mPulse = [MPulse initializeWithAPIKey:@"SDNF-ENLK-MXXC-TDNA"];
  * @endcode
+ *
+ * @param APIKey mPulse API key
+ * @return mPulse instance
  */
-+(MPulse *) initializeWithAPIKey:(NSString*)APIKey;
++(MPulse *) initializeWithAPIKey:(NSString *)APIKey;
 
 /**
- * @name    SharedInstance
- * @brief   Method to obtain MPulse instance.
+ * @brief Gets the current mPulse instance.
  *
- * This API provides an initialized MPulse instance to users.
- * Users must call sharedInstanceWithApiKey first in order to initialize the MPulse instance.
- * If not called, sharedInstance will return nil;
+ * Users must call initializeWithAPIKey first in order to initialize the MPulse class instance.
+ *
+ * If not initialized first, sharedInstance will return nil;
  *
  * Example Usage:
  * @code
- *    MPulse* mPulse = [MPulse sharedInstanceWithApiKey:@"SDNF-ENLK-MXXC-TDNA"];
+ * MPulse* mPulse = [MPulse sharedInstance];
  * @endcode
+ *
+ * @return MPulse class instance
  */+(MPulse *) sharedInstance;
 
 /**
- * @name    Get ViewGroup
- * @brief   Returns the current value of ViewGroup.
- *
- * This API lets users retreive the value of currently set view group value.
+ * @brief Gets the current View Group.
  *
  * Example Usage:
  * @code
- *    NSString *viewGroup = [[MPulse sharedInstance] getViewGroup];
+ * NSString *viewGroup = [[MPulse sharedInstance] getViewGroup];
  * @endcode
+ *
+ * @return The current View Group
  */
 -(NSString *) getViewGroup;
 
 /**
- * @name    Set ViewGroup
- * @brief   Sets the value of ViewGroup.
+ * @brief Sets the current View Group.
  *
- * This API lets users set the value of ViewGroup which will be a part of all future beacons sent to server.
+ * Once set, the View Group will be included on all future beacons.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] setViewGroup:@"ViewGroup1"];
+ * [[MPulse sharedInstance] setViewGroup:@"ViewGroup1"];
  * @endcode
+ *
+ * @param viewGroup View Group to set
  */
 -(void) setViewGroup:(NSString *)viewGroup;
 
-
 /**
- * @name    Reset ViewGroup
- * @brief   Resets the currently set ViewGroup value.
- *
- * This API lets users reset the current set ViewGroup value.
+ * @brief Resets (clears) the current View Group.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] resetViewGroup];
+ * [[MPulse sharedInstance] resetViewGroup];
  * @endcode
  */
 -(void) resetViewGroup;
 
 /**
- * @name    Enable MPulse
- * @brief   Enables MPulse and starts beacon processing.
+ * @brief Enables the mPulse library.
  *
- * This API lets users enable MPulse when beacon processing is required.
+ * When enabled, the mPulse library will send beacons.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] enable];
+ * [[MPulse sharedInstance] enable];
  * @endcode
  */
 -(void) enable;
 
 /**
- * @name    Disable MPulse
- * @brief   Disables MPulse and stops beacon processing.
+ * @brief Disables the mPulse library and stops sending beacons.
  *
- * This API lets users disable MPulse when beacon processing is not required.
+ * Once disabled, the mPulse library will no longer send beacons.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] disable];
+ * [[MPulse sharedInstance] disable];
  * @endcode
  */
 -(void) disable;
 
 /**
- * @name    Start Timer
- * @brief   Starts Timer and returns the Timer ID.
+ * @brief Starts a Custom Timer
  *
- * This API lets users start a Timer specified by timerName and returns
- * the timerID which can be used to stop this Timer.
+ * When called, this API will start the specified Custom Timer and will return a TimerID.
+ *
+ * The TimerID is later used to stop this timer.
  *
  * The current View Group, A/B Test and Custom Dimensions will be set
  * for this timer.
  *
  * Example Usage:
  * @code
- *    NSString* timerID = [[MPulse sharedInstance] startTimer:@"CustomTimer"];
+ * NSString* timerID = [[MPulse sharedInstance] startTimer:@"CustomTimer"];
  * @endcode
+ *
+ * @param timerName Custom Timer name
+ *
+ * @return A TimerID string that will be used to stop the timer.
  */
 -(NSString *) startTimer:(NSString *)timerName;
 
 /**
- * @name    Cancel Timer
- * @brief   Cancels Timer so that a timer beacon is not sent to the server.
+ * @brief Cancels a Custom Timer
  *
- * This API lets users cancel any previously started Timer specified by the timerID.
+ * Once cancelled, the timer is not sent to the server.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] cancelTimer:@"timerID"];
+ * [[MPulse sharedInstance] cancelTimer:@"timerID"];
  * @endcode
+ *
+ * @param timerID The TimerID to cancel
  */
 -(void) cancelTimer:(NSString *)timerID;
 
 /**
- * @name    Stop Timer
- * @brief   Stops Timer and prepares the timer beacon to be sent to server.
+ * @brief Stops a Custom Timer
  *
- * This API lets users stop a previously started Timer specified by the timerID.
- * This also prepares the timer beacon to be sent to the server.
+ * Stops a previously started Custom Timer specified by the timerID.
+ *
+ * Once stopped, a Custom Timer beacon will be sent to the server.
  *
  * The current View Group, A/B Test and Custom Dimensions will not be updated.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] stopTimer:@"timerID"];
+ * NSString* timerID = [[MPulse sharedInstance] startTimer:@"CustomTimer"];
+ * [[MPulse sharedInstance] stopTimer:timerID];
  * @endcode
+ *
+ * @param timerID TimerID
  */
 -(void) stopTimer:(NSString *)timerID;
 
 /**
- * @name    Stop Timer
- * @brief   Stops Timer and prepares the timer beacon to be sent to server.
+ * @brief Stops a Custom Timer and updates its dimensions
  *
- * This API lets users stop a previously started Timer specified by the timerID.
- * This also prepares the timer beacon to be sent to the server.
+ * Stops a previously started Custom Timer specified by the timerID.
  *
- * If updateDimensions is set to true, the current View Group, A/B Test
+ * Once stopped, a Custom Timer beacon will be sent to the server.
+ *
+ * If updateDimensions is true, he current View Group, A/B Test
  * and Custom Dimensions will be updated for this timer.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] stopTimer:@"timerID" updateDimensions:YES];
+ * NSString* timerID = [[MPulse sharedInstance] startTimer:@"CustomTimer"];
+ * [[MPulse sharedInstance] stopTimer:timerID updateDimensions:true];
  * @endcode
+ *
+ * @param timerID TimerID
+ * @param updateDimensions Whether or not to update dimensions
  */
 -(void) stopTimer:(NSString *)timerID updateDimensions:(BOOL)updateDimensions;
 
 /**
- * @name    Send Timer
- * @brief   Sends the value of a Timer to server.
+ * @brief Sends a Custom Timer with the specified name and value
  *
- * This API lets users send the value of a Timer specified by the timerName.
+ * You can use this API to send a Custom Timer with the specified value, instead of
+ * having the mPulse library track it for you using startTimer and endTimer.
+ *
+ * The value is a NSTimeInterval, so should be in seconds.milliseconds resolution.
+ *
+ * Once called, a Custom Timer beacon will be sent to the server.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] sendTimer:@"CustomTimer" value:200];
+ * // send a 1.5 second timer
+ * [[MPulse sharedInstance] sendTimer:@"CustomTimer" value:1.5];
  * @endcode
+ *
+ * @param timerName Custom Timer name
+ * @param value Custom Timer value in seconds
  */
 
 -(void) sendTimer:(NSString *)timerName value:(NSTimeInterval)value;
 
 /**
- * @name    Send Metric
- * @brief   Sends the value of a Metric to server.
+ * @brief Sends a Custom Metric
  *
- * This API lets users send the value of a Metric specified by the metricName.
+ * Once called, a Custom Metric beacon will be sent to the server with the
+ * specified value.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] sendMetric:@"CustomMetric" value:23];
+ * [[MPulse sharedInstance] sendMetric:@"CustomMetric" value:23];
  * @endcode
+ *
+ * @param metricName Custom Metric name
+ * @param value Custom Metric value
  */
 -(void) sendMetric:(NSString *)metricName value:(NSNumber *)value;
 
 /**
- * @name    Set Dimension
- * @brief   Sets the value of a Dimension.
+ * @brief Sets a Custom Dimension
  *
- * This API lets users set the value of a Dimension specified by the dimensionName.
+ * Once set, the Custom Dimension will be included on all future beacons.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] setDimension:@"CustomDimension" value:@"100"];
+ * [[MPulse sharedInstance] setDimension:@"CustomDimension" value:@"abc"];
  * @endcode
+ *
+ * @param dimensionName Custom Dimension name
+ * @param value Custom Dimension value
  */
 -(void) setDimension:(NSString *)dimensionName value:(NSString *)value;
 
 /**
- * @name    Reset Dimension
- * @brief   Resets the value of a Dimension.
- *
- * This API lets users reset the value of a Dimension specified by the dimensionName.
+ * @brief Resets (clears) specified Custom Dimension
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] resetDimension:@"CustomDimension"];
+ * [[MPulse sharedInstance] resetDimension:@"CustomDimension"];
  * @endcode
+ *
+ * @param dimensionName Custom Dimension name
  */
 -(void) resetDimension:(NSString *)dimensionName;
 
 /**
- * @name    Get A/B test
- * @brief   Returns the current value of A/B test.
- *
- * This API lets users retreive the value of currently set A/B test value.
+ * @brief Get the current A/B test
  *
  * Example Usage:
  * @code
- *    NSString *abTest = [[MPulse sharedInstance] getABTest];
+ * NSString *abTest = [[MPulse sharedInstance] getABTest];
  * @endcode
+ *
+ * @return The current A/B test
  */
 -(NSString *) getABTest;
 
 /**
- * @name    Set A/B test
- * @brief   Sets the value of A/B test.
+ * @brief Sets the A/B test
  *
- * This API lets users set the value of A/B test which will be a part of all future beacons sent to server.
+ * Once set, the A/B test will be included on all future beacons.
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] setABTest:@"A"];
+ * [[MPulse sharedInstance] setABTest:@"A"];
  * @endcode
+ *
+ * @param abTest The A/B test
  */
 -(void) setABTest:(NSString *)abTest;
 
 /**
- * @name    Reset A/B test
- * @brief   Resets the currently set A/B test value.
- *
- * This API lets users reset the current set A/B test value.
+ * @name Resets (clears) the A/B test
  *
  * Example Usage:
  * @code
- *    [[MPulse sharedInstance] resetABTest];
+ * [[MPulse sharedInstance] resetABTest];
  * @endcode
  */
 -(void) resetABTest;
