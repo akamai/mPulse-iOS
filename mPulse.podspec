@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/soastainc'
   s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS.git", :tag => s.version }
   s.author         = { "SOASTA" => "support@soasta.com" }
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
   s.platform       = :ios
   s.ios.deployment_target = "6.0"
