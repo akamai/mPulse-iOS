@@ -10,7 +10,7 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.0.3
+// mPulse Build Number - 2.0.4
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
@@ -274,7 +274,7 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 -(void) setABTest:(NSString *)abTest;
 
 /**
- * @name Resets (clears) the A/B test
+ * @brief Resets (clears) the A/B test
  *
  * Example Usage:
  * @code
