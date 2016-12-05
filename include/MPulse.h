@@ -10,7 +10,7 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.0.4
+// mPulse Build Number - 2.0.5
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
@@ -246,6 +246,16 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  * @param dimensionName Custom Dimension name
  */
 -(void) resetDimension:(NSString *)dimensionName;
+
+/**
+ * @brief Resets (clears) all Custom Dimensions
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] resetAllDimensions];
+ * @endcode
+ */
+-(void) resetAllDimensions;
 
 /**
  * @brief Get the current A/B test

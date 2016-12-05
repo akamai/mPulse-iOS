@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name           = "mPulse"
-  s.version        = "2.0.4"
+  s.version        = "2.0.5"
   s.license        = { :type => 'Apache License, Version 2.0', :file => 'LICENSE'}
   s.summary        = "iOS library for mPulse Analytics"
   s.homepage       = "https://github.com/SOASTA/mPulse-iOS"
