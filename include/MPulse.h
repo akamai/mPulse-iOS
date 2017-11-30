@@ -10,7 +10,7 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.0.5
+// mPulse Build Number - 2.3.0
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
@@ -292,5 +292,125 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  * @endcode
  */
 -(void) resetABTest;
+
+/**
+ * @brief Disable monitoring of all network requests
+ * 
+ * Sets NetworkFilterOptions to NONE, clears all filters and sets only one filter for blacklisting network requests
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] disableNetworkMonitoring];
+ * @endcode
+ */
+-(void) disableNetworkMonitoring;
+
+/**
+ * @brief Enable monitoring of network requests
+ *
+ * Sets NetworkFilterOptions to ALL, clears all filters and consumes PageGroup configuration to setup new filters
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] enableNetworkMonitoring];
+ * @endcode
+ */
+-(void) enableNetworkMonitoring;
+
+#ifndef MPFilter_h
+/**
+ * @brief Inline method type to filter on Network Request URLs
+ * 
+ * Provides easy inlined method definition facility for new URL filters. Use this to black or whitelist beacons you
+ * wish to keep or ignore as part of your sent beacons.
+ *
+ * Example Usage:
+ * @code
+ * MPURLFilter filter = ^BOOL (NSString *url) {
+ *
+ *   if (url == @"http://www.example.com/")
+ *   {
+ *     NSLog(@"URL matched 'http://www.example.com/'");
+ *    
+ *     return YES;
+ *   }
+ * };
+ * @endcode
+ */
+typedef BOOL (^MPURLFilter) (NSString *url);
+
+#endif /* MPFilter_h */
+
+/**
+ * @brief Add new filter to user-defined blacklist
+ *
+ * User defined Blacklists are applied after PageGroup configuration based filters to your network requests. A filter defined
+ * here will remove the applicable network requests from the group of beacons being sent to the mPulse Collectors.
+ *
+ * Filters defined here will not be cleared upon receiving a new Configuration from the server.
+ *
+ * We will only apply these filters if your current FilterOptions are set to ALL.
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] addURLBlackListFilter:@"Example.com Filter" filter:^BOOL (NSString *url) {
+ *  if (url == @"http://example.com")
+ *  {
+ *    return YES;
+ *  }
+ *
+ *  return NO;
+ * }];
+ * @endcode
+ */
+-(void) addURLBlackListFilter:(NSString *)name filter:(MPURLFilter)filter;
+
+/**
+ * @brief Add new filter to user-defined whitelist
+ *
+ * User defined Whitelists are applied after PageGroup configuration based filters to your network requests. A filter defined here
+ * will keep the applicable NetworkRequestBecon and send it back to mPulse Collectors.
+ *
+ * Filters defined here will not be cleared upon receiving a new Configuration from the server.
+ *
+ * These filters will only be applied if your current FilterOptions is set to MATCH
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] addURLBlackListFilter:@"Example.com Filter" filter:^BOOL (NSString *url) {
+ *  if (url == @"http://example.com")
+ *  {
+ *    return YES;
+ *  }
+ *
+ *  return NO;
+ * }];
+ * @endcode
+ */
+-(void) addURLWhiteListFilter:(NSString *)name filter:(MPURLFilter)filter;
+
+/**
+ * @brief Clear all filters from whitelist
+ *
+ * All filters from whitelist are cleared and you are free to define new entries to the whitelist
+ * 
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] clearWhiteListFilters];
+ * @endcode
+ */
+-(void) clearWhiteListFilters;
+
+/**
+ * @brief Clear all filters from blacklist
+ *
+ * All filters from blacklist are cleared and you are free to define new entries to the blacklist
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] clearBlackListFilters];
+ * @endcode
+ */
+-(void) clearBlackListFilters;
 
 @end
