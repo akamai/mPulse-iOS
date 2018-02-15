@@ -8,9 +8,22 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#ifndef MPFilterResult_h
+#define MPFilterResult_h
+
+@interface MPFilterResult : NSObject
+
+@property (readwrite) BOOL matched;
+@property (readwrite) NSString *filterName;
+@property (readwrite) NSString *viewGroup;
+
+@end
+
+#endif /* MPFilterResult_h */
+
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.3.1
+// mPulse Build Number - 2.3.2
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
@@ -317,7 +330,20 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  */
 -(void) enableNetworkMonitoring;
 
-#ifndef MPFilter_h
+/**
+ * @brief Enable monitoring of only matching requests
+ *
+ * Sets NetworkFilterOptions to MATCH, clears all filters and consumes PageGroup configuration to setup new filters
+ * 
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] enableFilteredNetworkMonitoring];
+ * @endcode
+ */
+-(void) enableFilteredNetworkMonitoring;
+
+#ifndef MPURLFilter_h
+#define MPURLFilter_h
 /**
  * @brief Inline method type to filter on Network Request URLs
  * 
@@ -337,9 +363,9 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  * };
  * @endcode
  */
-typedef BOOL (^MPURLFilter) (NSString *url);
+typedef MPFilterResult* (^MPURLFilter) (NSString *url);
 
-#endif /* MPFilter_h */
+#endif /* MPURLFilter_h */
 
 /**
  * @brief Add new filter to user-defined blacklist
