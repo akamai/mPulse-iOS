@@ -23,7 +23,7 @@
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.3.3
+// mPulse Build Number - 2.3.4
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
