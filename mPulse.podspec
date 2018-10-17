@@ -4,10 +4,10 @@ Pod::Spec.new do |s|
   s.version        = "2.3.4"
   s.license        = { :type => 'Apache License, Version 2.0', :file => 'LICENSE'}
   s.summary        = "iOS library for mPulse Analytics"
-  s.homepage       = "https://github.com/SOASTA/mPulse-iOS"
-  s.social_media_url = 'https://twitter.com/soastainc'
-  s.source         = { :git => "https://github.com/SOASTA/mPulse-iOS.git", :tag => s.version }
-  s.author         = { "SOASTA" => "support@soasta.com" }
+  s.homepage       = "https://github.com/akamai/mPulse-iOS"
+  s.social_media_url = 'https://twitter.com/akamai'
+  s.source         = { :git => "https://github.com/akamai/mPulse-iOS.git", :tag => s.version }
+  s.author         = { "Akamai" => "support@akamai.com" }
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
   s.platform       = :ios
