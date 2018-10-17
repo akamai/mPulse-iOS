@@ -2,7 +2,8 @@
 //  MPulse.h
 //  MPulse
 //
-//  Copyright (c) 2012-2016 SOASTA. All rights reserved.
+//  Copyright (c) 2012-2017 SOASTA. All rights reserved.
+//  Copyright (c) 2017-2018 Akamai Technologies, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
