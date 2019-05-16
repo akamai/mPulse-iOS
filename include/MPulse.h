@@ -257,7 +257,7 @@ typedef NS_ENUM(NSUInteger, MPulseDataOnDuplicate) {
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.6.0
+// mPulse Build Number - 2.6.1
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
@@ -300,7 +300,7 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  * @endcode
  *
  * @param APIKey mPulse API key
- * @param settings
+ * @param settings mPulse Settings
  * @return mPulse instance
  */
 +(MPulse *) initializeWithAPIKey:(NSString *)APIKey withSettings:(MPulseSettings *)settings;
@@ -530,7 +530,7 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  *
  * @param timerName Custom Timer name
  * @param value Custom Timer value in seconds
- * @param Option
+ * @param option Custom Metric and Timer Options
  */
 
 -(void) sendTimer:(NSString *)timerName value:(NSTimeInterval)value withOptions:(MPulseMetricTimerOptions *)options;
@@ -657,7 +657,7 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 /**
  * @brief Enable monitoring of network requests
  *
- * Sets NetworkFilterOptions to ALL, clears all filters and consumes PageGroup configuration to setup new filters
+ * Sets NetworkFilterOptions to ALL, clears all filters and consumes View Group configuration to setup new filters
  *
  * Example Usage:
  * @code
@@ -669,7 +669,7 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 /**
  * @brief Enable monitoring of only matching requests
  *
- * Sets NetworkFilterOptions to MATCH, clears all filters and consumes PageGroup configuration to setup new filters
+ * Sets NetworkFilterOptions to MATCH, clears all filters and consumes View Group configuration to setup new filters
  * 
  * Example Usage:
  * @code
@@ -706,7 +706,7 @@ typedef MPFilterResult* (^MPURLFilter) (NSString *url);
 /**
  * @brief Add new filter to user-defined blacklist
  *
- * User defined Blacklists are applied after PageGroup configuration based filters to your network requests. A filter defined
+ * User defined Blacklists are applied after View Group configuration based filters to your network requests. A filter defined
  * here will remove the applicable network requests from the group of beacons being sent to the mPulse Collectors.
  *
  * Filters defined here will not be cleared upon receiving a new Configuration from the server.
@@ -734,7 +734,7 @@ typedef MPFilterResult* (^MPURLFilter) (NSString *url);
 /**
  * @brief Add new filter to user-defined whitelist
  *
- * User defined Whitelists are applied after PageGroup configuration based filters to your network requests. A filter defined here
+ * User defined Whitelists are applied after View Group configuration based filters to your network requests. A filter defined here
  * will keep the applicable NetworkRequestBecon and send it back to mPulse Collectors.
  *
  * Filters defined here will not be cleared upon receiving a new Configuration from the server.
@@ -803,6 +803,16 @@ typedef MPFilterResult* (^MPURLFilter) (NSString *url);
  * @endcode
  */
 -(void) clearBlackListFilters;
+
+/**
+ * @brief Clear all View Group filters
+ *
+ * Example Usage:
+ * @code
+ * [[MPulse sharedInstance] clearViewGroupFilters];
+ * @endcode
+ */
+-(void) clearViewGroupFilters;
 
 /**
  * @brief Start an Action with default settings
@@ -930,4 +940,12 @@ typedef MPFilterResult* (^MPURLFilter) (NSString *url);
  * @endcode
  */
 -(void) setActionMaxResources:(int) maxResources;
+
+/**
+ * Enable debug logging.
+ *
+ * @param debug Whether or not to enable debug logging.
+ */
++(void) setDebug:(bool)debug;
+
 @end
