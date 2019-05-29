@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'include/*.h'
   s.preserve_paths = 'libmPulseDevice.a', 'libmPulseSim.a'
   s.ios.vendored_library = 'libmPulseDevice.a', 'libmPulseSim.a'
-  s.libraries      = 'z', 'c++', 'mPulseDevice', 'mPulseSim'
+  s.libraries      = 'z', 'c++'
   s.frameworks     = 'CoreLocation', 'CoreTelephony', 'SystemConfiguration'
   s.requires_arc   = true
 
