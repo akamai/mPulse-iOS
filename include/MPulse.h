@@ -257,7 +257,7 @@ typedef NS_ENUM(NSUInteger, MPulseDataOnDuplicate) {
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.6.1
+// mPulse Build Number - 2.6.2
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
