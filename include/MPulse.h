@@ -251,13 +251,19 @@ typedef NS_ENUM(NSUInteger, MPulseDataOnDuplicate) {
  */
 @property (readwrite) int maxActionResources;
 
+/**
+ * Tell mPulse to strip the queryString if value is non-zero, nil if the server configuration
+ * should be used, 0 if the query string should not be changed.
+ */
+@property (readwrite) NSNumber *stripQueryString;
+
 @end
 #endif /* MPulseSettings_h */
 
 
 @interface MPulse : NSObject
 
-// mPulse Build Number - 2.6.3
+// mPulse Build Number - 2.6.4
 extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
 
 /**
@@ -530,7 +536,7 @@ extern NSString *const MPULSE_BUILD_VERSION_NUMBER;
  *
  * @param timerName Custom Timer name
  * @param value Custom Timer value in seconds
- * @param option Custom Metric and Timer Options
+ * @param options Custom Metric and Timer Options
  */
 
 -(void) sendTimer:(NSString *)timerName value:(NSTimeInterval)value withOptions:(MPulseMetricTimerOptions *)options;
